@@ -1,0 +1,3461 @@
+[
+  {
+    "Mineraddr": "0x3fd8efaf1fe474ced03b9654aceeced3c3e92e40",
+    "Workers": [
+      {
+        "id": "rig1",
+        "hashrate": 107.3888888888889,
+        "reportedhashrate": 90.365108
+      }
+    ]
+  },
+  {
+    "Mineraddr": "0xc21c5f17a007d13e2055f8fceb5ef7da3f5ec7d3",
+    "Workers": [
+      {
+        "id": "sp_112",
+        "hashrate": 187.38888888888889,
+        "reportedhashrate": 185.375281
+      },
+      {
+        "id": "sp_21",
+        "hashrate": 184.38888888888889,
+        "reportedhashrate": 181.464512
+      },
+      {
+        "id": "sp_38",
+        "hashrate": 162.55555555555554,
+        "reportedhashrate": 185.474482
+      },
+      {
+        "id": "sp_52",
+        "hashrate": 161.83333333333334,
+        "reportedhashrate": 185.54688
+      },
+      {
+        "id": "sp_73",
+        "hashrate": 189.2222222222222,
+        "reportedhashrate": 185.551665
+      }
+    ]
+  },
+  {
+    "Mineraddr": "0x8042e7080445135c69f9a0a00db3338efa76ea2c",
+    "Workers": [
+      {
+        "id": "6x1050",
+        "hashrate": 62.94444444444445,
+        "reportedhashrate": 73.807929
+      },
+      {
+        "id": "rx580",
+        "hashrate": 110,
+        "reportedhashrate": 110.40085
+      }
+    ]
+  },
+  {
+    "Mineraddr": "0xabf19096e5d212d94e69f2eec222c92acef90b18",
+    "Workers": []
+  },
+  {
+    "Mineraddr": "0x814d2ace220a6ecba8084ef5a0e510d22a289d81",
+    "Workers": []
+  },
+  {
+    "Mineraddr": "0x7c8224e008969265159f1db097cb2d6ec21e0dea",
+    "Workers": []
+  },
+  {
+    "Mineraddr": "0x67549f47e94a83470a9d5e26e17e79db76961cce",
+    "Workers": [
+      {
+        "id": "12",
+        "hashrate": 153.66666666666666,
+        "reportedhashrate": 185.773121
+      }
+    ]
+  },
+  {
+    "Mineraddr": "0x8a3d60658aafc27815561692b07a72875fb609db",
+    "Workers": [
+      {
+        "id": "ivan1",
+        "hashrate": 162.88888888888889,
+        "reportedhashrate": 143.352474
+      }
+    ]
+  },
+  {
+    "Mineraddr": "0xe95994f90b85b5512ac3fa62add4c82fd7acbb21",
+    "Workers": []
+  },
+  {
+    "Mineraddr": "0x0d73b35d91ceeae8d53fe014a6ea654b1cf204b9",
+    "Workers": [
+      {
+        "id": "rig1",
+        "hashrate": 369.8888888888889,
+        "reportedhashrate": 394.611177
+      },
+      {
+        "id": "rig2",
+        "hashrate": 384.72222222222223,
+        "reportedhashrate": 395.296697
+      },
+      {
+        "id": "rig3",
+        "hashrate": 412.1666666666667,
+        "reportedhashrate": 395.271717
+      }
+    ]
+  },
+  {
+    "Mineraddr": "0x3a492688a2462ea2085e8e296b50f424cc051478",
+    "Workers": [
+      {
+        "id": "taku1",
+        "hashrate": 107.3888888888889,
+        "reportedhashrate": 117.531847
+      },
+      {
+        "id": "t_rig1",
+        "hashrate": 143.2777777777778,
+        "reportedhashrate": 141.197903
+      },
+      {
+        "id": "t_rig2",
+        "hashrate": 50,
+        "reportedhashrate": 50.648642
+      },
+      {
+        "id": "worker1",
+        "hashrate": 17.777777777777775,
+        "reportedhashrate": 21.685085
+      }
+    ]
+  },
+  {
+    "Mineraddr": "0xf6040507c351441a6613c30c24157ceaf571491d",
+    "Workers": [
+      {
+        "id": "acun-msi",
+        "hashrate": 143.33333333333334,
+        "reportedhashrate": 169.331647
+      },
+      {
+        "id": "acun-msi04",
+        "hashrate": 156.2777777777778,
+        "reportedhashrate": 163.41779
+      },
+      {
+        "id": "acun-msi07",
+        "hashrate": 131.11111111111111,
+        "reportedhashrate": 166.603614
+      },
+      {
+        "id": "acun-msi08",
+        "hashrate": 167.7777777777778,
+        "reportedhashrate": 171.228534
+      },
+      {
+        "id": "acun-msi3",
+        "hashrate": 169.61111111111111,
+        "reportedhashrate": 172.529212
+      },
+      {
+        "id": "acun-msi6",
+        "hashrate": 164.7777777777778,
+        "reportedhashrate": 166.958241
+      },
+      {
+        "id": "acun-msi9",
+        "hashrate": 187,
+        "reportedhashrate": 178.182017
+      }
+    ]
+  },
+  {
+    "Mineraddr": "0xeb50457a85e87b77aa95cef54f9a54795749da64",
+    "Workers": []
+  },
+  {
+    "Mineraddr": "0x41e0d80ae8d1a34c55417be4e334ba20af765f31",
+    "Workers": [
+      {
+        "id": "6gpu",
+        "hashrate": 193.66666666666666,
+        "reportedhashrate": 175.111527
+      },
+      {
+        "id": "serverna",
+        "hashrate": 170.7222222222222,
+        "reportedhashrate": 177.937148
+      },
+      {
+        "id": "serverna2",
+        "hashrate": 54.44444444444445,
+        "reportedhashrate": 57.909542
+      }
+    ]
+  },
+  {
+    "Mineraddr": "0x48ebda16d38afaa3e6d39b9565a05515cd4e8e96",
+    "Workers": [
+      {
+        "id": "ad-1",
+        "hashrate": 141.05555555555554,
+        "reportedhashrate": 147.255385
+      },
+      {
+        "id": "ad-2",
+        "hashrate": 164.7777777777778,
+        "reportedhashrate": 182.373396
+      },
+      {
+        "id": "ad-5",
+        "hashrate": 186.2777777777778,
+        "reportedhashrate": 182.525013
+      },
+      {
+        "id": "ad-6",
+        "hashrate": 176.61111111111111,
+        "reportedhashrate": 183.47557
+      },
+      {
+        "id": "ad-7",
+        "hashrate": 166.2777777777778,
+        "reportedhashrate": 182.826112
+      },
+      {
+        "id": "ad-8",
+        "hashrate": 155.88888888888889,
+        "reportedhashrate": 154.967297
+      },
+      {
+        "id": "ad-9",
+        "hashrate": 190.7222222222222,
+        "reportedhashrate": 182.73258
+      }
+    ]
+  },
+  {
+    "Mineraddr": "0x43c74e5d3fec6fe7859037b5d90c12dd21644562",
+    "Workers": [
+      {
+        "id": "kz1",
+        "hashrate": 110.72222222222223,
+        "reportedhashrate": 118.420492
+      },
+      {
+        "id": "kz2",
+        "hashrate": 117,
+        "reportedhashrate": 118.363893
+      },
+      {
+        "id": "kz3",
+        "hashrate": 119.6111111111111,
+        "reportedhashrate": 118.22652
+      },
+      {
+        "id": "kzi1",
+        "hashrate": 149.94444444444446,
+        "reportedhashrate": 148.049182
+      },
+      {
+        "id": "vg1",
+        "hashrate": 62.94444444444445,
+        "reportedhashrate": 86.251848
+      },
+      {
+        "id": "vg10",
+        "hashrate": 122.94444444444444,
+        "reportedhashrate": 117.883827
+      },
+      {
+        "id": "vg11",
+        "hashrate": 126.66666666666667,
+        "reportedhashrate": 117.96792
+      },
+      {
+        "id": "vg12",
+        "hashrate": 118.1111111111111,
+        "reportedhashrate": 118.260565
+      },
+      {
+        "id": "vg13",
+        "hashrate": 114.05555555555556,
+        "reportedhashrate": 113.925252
+      },
+      {
+        "id": "vg14",
+        "hashrate": 100.72222222222223,
+        "reportedhashrate": 114.079758
+      },
+      {
+        "id": "vg15",
+        "hashrate": 120.33333333333333,
+        "reportedhashrate": 114.178708
+      },
+      {
+        "id": "vg16",
+        "hashrate": 124,
+        "reportedhashrate": 113.930584
+      },
+      {
+        "id": "vg17",
+        "hashrate": 103.66666666666667,
+        "reportedhashrate": 114.09964
+      },
+      {
+        "id": "vg18",
+        "hashrate": 121.05555555555556,
+        "reportedhashrate": 114.00692
+      },
+      {
+        "id": "vg19",
+        "hashrate": 79.22222222222223,
+        "reportedhashrate": 113.938118
+      },
+      {
+        "id": "vg2",
+        "hashrate": 56.27777777777778,
+        "reportedhashrate": 68.882951
+      },
+      {
+        "id": "vg20",
+        "hashrate": 141.11111111111111,
+        "reportedhashrate": 114.103655
+      },
+      {
+        "id": "vg21",
+        "hashrate": 97.3888888888889,
+        "reportedhashrate": 114.084782
+      },
+      {
+        "id": "vg22",
+        "hashrate": 141.05555555555554,
+        "reportedhashrate": 138.94327
+      },
+      {
+        "id": "vg23",
+        "hashrate": 137.38888888888889,
+        "reportedhashrate": 138.952841
+      },
+      {
+        "id": "vg24",
+        "hashrate": 125.55555555555556,
+        "reportedhashrate": 133.341491
+      },
+      {
+        "id": "vg25",
+        "hashrate": 125.8888888888889,
+        "reportedhashrate": 142.799283
+      },
+      {
+        "id": "vg26",
+        "hashrate": 128.11111111111111,
+        "reportedhashrate": 142.791545
+      },
+      {
+        "id": "vg27",
+        "hashrate": 119.6111111111111,
+        "reportedhashrate": 142.833072
+      },
+      {
+        "id": "vg28",
+        "hashrate": 112.22222222222223,
+        "reportedhashrate": 131.925436
+      },
+      {
+        "id": "vg29",
+        "hashrate": 143.33333333333334,
+        "reportedhashrate": 142.823315
+      },
+      {
+        "id": "vg3",
+        "hashrate": 105.16666666666667,
+        "reportedhashrate": 109.180406
+      },
+      {
+        "id": "vg30",
+        "hashrate": 125.55555555555556,
+        "reportedhashrate": 138.79833
+      },
+      {
+        "id": "vg31",
+        "hashrate": 131.11111111111111,
+        "reportedhashrate": 142.455324
+      },
+      {
+        "id": "vg32",
+        "hashrate": 144.05555555555554,
+        "reportedhashrate": 139.02025
+      },
+      {
+        "id": "vg33",
+        "hashrate": 125.16666666666667,
+        "reportedhashrate": 136.669702
+      },
+      {
+        "id": "vg34",
+        "hashrate": 119.6111111111111,
+        "reportedhashrate": 138.955328
+      },
+      {
+        "id": "vg4",
+        "hashrate": 88.5,
+        "reportedhashrate": 108.776475
+      },
+      {
+        "id": "vg5",
+        "hashrate": 122.16666666666667,
+        "reportedhashrate": 108.943427
+      },
+      {
+        "id": "vg6",
+        "hashrate": 112.94444444444444,
+        "reportedhashrate": 118.308236
+      },
+      {
+        "id": "vg7",
+        "hashrate": 111.83333333333333,
+        "reportedhashrate": 118.133323
+      },
+      {
+        "id": "vg8",
+        "hashrate": 142.55555555555554,
+        "reportedhashrate": 121.707703
+      },
+      {
+        "id": "vg9",
+        "hashrate": 111.1111111111111,
+        "reportedhashrate": 119.325995
+      }
+    ]
+  },
+  {
+    "Mineraddr": "0xdfc00deb544c6bfcc2b3c7b118c53c949e43b718",
+    "Workers": [
+      {
+        "id": "pc1",
+        "hashrate": 158.88888888888889,
+        "reportedhashrate": 152.515245
+      },
+      {
+        "id": "pc2",
+        "hashrate": 154.7777777777778,
+        "reportedhashrate": 169.06387
+      },
+      {
+        "id": "pc3",
+        "hashrate": 134.7777777777778,
+        "reportedhashrate": 184.112814
+      }
+    ]
+  },
+  {
+    "Mineraddr": "0x9c9340f374c409402a5e2c2433a2e534e93904b9",
+    "Workers": []
+  },
+  {
+    "Mineraddr": "0xa044fca81e24e0f68263eae625c7dcdd33d91b32",
+    "Workers": []
+  },
+  {
+    "Mineraddr": "0xb4c13aec48dfa9a42f35045dcfe79e04046c4450",
+    "Workers": [
+      {
+        "id": "r573",
+        "hashrate": 78.1111111111111,
+        "reportedhashrate": 92.648395
+      }
+    ]
+  },
+  {
+    "Mineraddr": "0x9e81174d681e373e62a38d774a191681365037b7",
+    "Workers": []
+  },
+  {
+    "Mineraddr": "0xf93a1262dbdf3e24ef9c2b7c4d65ea392dc46f8f",
+    "Workers": []
+  },
+  {
+    "Mineraddr": "0xb382233ca772dea22363999badbf1d2a257524fb",
+    "Workers": [
+      {
+        "id": "righunter",
+        "hashrate": 100.22222222222223,
+        "reportedhashrate": 189.319757
+      }
+    ]
+  },
+  {
+    "Mineraddr": "0x112cd7a438faaad96c44b9d734d75a046026eb47",
+    "Workers": []
+  },
+  {
+    "Mineraddr": "0xc899bace1f1c18ff1f1452283495694745e28ea2",
+    "Workers": [
+      {
+        "id": "hermano01",
+        "hashrate": 164.44444444444446,
+        "reportedhashrate": 181.461106
+      },
+      {
+        "id": "hermano02",
+        "hashrate": 119.6111111111111,
+        "reportedhashrate": 118.726414
+      },
+      {
+        "id": "hermano03",
+        "hashrate": 160,
+        "reportedhashrate": 149.529256
+      },
+      {
+        "id": "hermano04-s",
+        "hashrate": 178.11111111111111,
+        "reportedhashrate": 184.676539
+      }
+    ]
+  },
+  {
+    "Mineraddr": "0x3978c9f174a046df38857a3316e3de4bec641bc1",
+    "Workers": []
+  },
+  {
+    "Mineraddr": "0x45867f004cabc7d6e2a6d5aa0aae3890efeebdc8",
+    "Workers": [
+      {
+        "id": "monkey",
+        "hashrate": 179.2222222222222,
+        "reportedhashrate": 176.568305
+      },
+      {
+        "id": "randy",
+        "hashrate": 162.55555555555554,
+        "reportedhashrate": 175.274313
+      }
+    ]
+  },
+  {
+    "Mineraddr": "0x954b024a713d2c64da161ed043cd7c37f3a52e6d",
+    "Workers": []
+  },
+  {
+    "Mineraddr": "0x089944b367dccf1ad1b6ba07ebe19ea05d9ef79e",
+    "Workers": [
+      {
+        "id": "5x-470",
+        "hashrate": 38.888888888888886,
+        "reportedhashrate": 0
+      },
+      {
+        "id": "6x1060",
+        "hashrate": 58.888888888888886,
+        "reportedhashrate": 62.096877
+      },
+      {
+        "id": "a0m1060",
+        "hashrate": 15.555555555555555,
+        "reportedhashrate": 20.418823
+      },
+      {
+        "id": "asus",
+        "hashrate": 30,
+        "reportedhashrate": 26.977925
+      }
+    ]
+  },
+  {
+    "Mineraddr": "0x8c6cca73f89c6c844a954727888953cac9ca4de1",
+    "Workers": []
+  },
+  {
+    "Mineraddr": "0xd63b84cea69f2ce9bbfba68f05a71dc2dba9a16c",
+    "Workers": [
+      {
+        "id": "miner009_gtx_1070_x1_rig",
+        "hashrate": 31.11111111111111,
+        "reportedhashrate": 26.29246
+      }
+    ]
+  },
+  {
+    "Mineraddr": "0x529d90375cce9c1af008f58f41c04748f58b9fdf",
+    "Workers": [
+      {
+        "id": "sapphirerx470",
+        "hashrate": 62.55555555555555,
+        "reportedhashrate": 48.660985
+      }
+    ]
+  },
+  {
+    "Mineraddr": "0x58a940d4963b5ac2b2caadb42e89b42d6f583919",
+    "Workers": [
+      {
+        "id": "drymmer1060ti",
+        "hashrate": 127.3888888888889,
+        "reportedhashrate": 137.615943
+      },
+      {
+        "id": "drymmer1080ti",
+        "hashrate": 290.3333333333333,
+        "reportedhashrate": 301.295405
+      },
+      {
+        "id": "drymmer51080ti",
+        "hashrate": 239.94444444444446,
+        "reportedhashrate": 255.006955
+      }
+    ]
+  },
+  {
+    "Mineraddr": "0x8d4c233fe5f173a58be4a7ef892ad57743d4932f",
+    "Workers": [
+      {
+        "id": "rig1.580560x2",
+        "hashrate": 50,
+        "reportedhashrate": 57.631591
+      }
+    ]
+  },
+  {
+    "Mineraddr": "0x6244dff380696a799eb4a2fea36f09d247605196",
+    "Workers": [
+      {
+        "id": "worker1",
+        "hashrate": 151.05555555555554,
+        "reportedhashrate": 166.686369
+      },
+      {
+        "id": "worker2",
+        "hashrate": 215.16666666666666,
+        "reportedhashrate": 220.505424
+      },
+      {
+        "id": "worker3",
+        "hashrate": 239.2222222222222,
+        "reportedhashrate": 256.187794
+      }
+    ]
+  },
+  {
+    "Mineraddr": "0xd9926db589e6b54911cf9ddda468a314ef30e1f6",
+    "Workers": []
+  },
+  {
+    "Mineraddr": "0xf03316dee2517c64348fcadc7cba9bee1d28cdb9",
+    "Workers": [
+      {
+        "id": "rig10",
+        "hashrate": 182.2222222222222,
+        "reportedhashrate": 182.465361
+      },
+      {
+        "id": "rig11",
+        "hashrate": 168.88888888888889,
+        "reportedhashrate": 182.331269
+      },
+      {
+        "id": "rig380",
+        "hashrate": 12.222222222222221,
+        "reportedhashrate": 0
+      },
+      {
+        "id": "rig4",
+        "hashrate": 84.44444444444444,
+        "reportedhashrate": 86.623376
+      },
+      {
+        "id": "rig5",
+        "hashrate": 107.3888888888889,
+        "reportedhashrate": 116.469349
+      },
+      {
+        "id": "rig6",
+        "hashrate": 70.72222222222223,
+        "reportedhashrate": 85.483702
+      },
+      {
+        "id": "rig7",
+        "hashrate": 70.72222222222223,
+        "reportedhashrate": 63.998889
+      },
+      {
+        "id": "rig8",
+        "hashrate": 195.88888888888889,
+        "reportedhashrate": 184.248779
+      },
+      {
+        "id": "rig9",
+        "hashrate": 188.11111111111111,
+        "reportedhashrate": 176.993868
+      },
+      {
+        "id": "rigkuci",
+        "hashrate": 38.888888888888886,
+        "reportedhashrate": 31.181804
+      },
+      {
+        "id": "rigstan",
+        "hashrate": 13.333333333333334,
+        "reportedhashrate": 19.670154
+      }
+    ]
+  },
+  {
+    "Mineraddr": "0x3bfb1cccbcc96c7278e59c8cea9b8e4b03c43215",
+    "Workers": [
+      {
+        "id": "miner_mcminerface",
+        "hashrate": 310.6666666666667,
+        "reportedhashrate": 316.648363
+      },
+      {
+        "id": "phoenix_2",
+        "hashrate": 287,
+        "reportedhashrate": 263.309244
+      },
+      {
+        "id": "triumphant_perserverance",
+        "hashrate": 288.5,
+        "reportedhashrate": 287.891243
+      }
+    ]
+  },
+  {
+    "Mineraddr": "0xa6501907f6ed4011cb34804058421d80037f783c",
+    "Workers": [
+      {
+        "id": "1070x11asus3",
+        "hashrate": 284.77777777777777,
+        "reportedhashrate": 298.1175
+      },
+      {
+        "id": "1070x12asus1",
+        "hashrate": 361.3888888888889,
+        "reportedhashrate": 365.304912
+      },
+      {
+        "id": "1070x12asus2",
+        "hashrate": 344.72222222222223,
+        "reportedhashrate": 347.131192
+      },
+      {
+        "id": "1070x12msi1",
+        "hashrate": 222.55555555555554,
+        "reportedhashrate": 213.883306
+      },
+      {
+        "id": "580x7",
+        "hashrate": 125.55555555555556,
+        "reportedhashrate": 128.619778
+      }
+    ]
+  },
+  {
+    "Mineraddr": "0x73f57bfac580944297b3300b8747196f81bd5964",
+    "Workers": [
+      {
+        "id": "wr1",
+        "hashrate": 57.77777777777778,
+        "reportedhashrate": 52.95811
+      }
+    ]
+  },
+  {
+    "Mineraddr": "0xcc34dddc97b36b79679375273d2836e45b4ddceb",
+    "Workers": []
+  },
+  {
+    "Mineraddr": "0xe229ec0452815073771842c73e92b4a69e59bc70",
+    "Workers": []
+  },
+  {
+    "Mineraddr": "0xc33a2e65b9bb2dc0de74d23629a1143a4b8ed126",
+    "Workers": [
+      {
+        "id": "adas1",
+        "hashrate": 1.111111111111111,
+        "reportedhashrate": 0
+      }
+    ]
+  },
+  {
+    "Mineraddr": "0xd9df0f9c9f9ea9a0beafe27d99fc5cbfaeea59d4",
+    "Workers": [
+      {
+        "id": "rig1",
+        "hashrate": 220.33333333333334,
+        "reportedhashrate": 231.257233
+      }
+    ]
+  },
+  {
+    "Mineraddr": "0x41b119facdbd3bbb7ad02e0a0736d74edae701ac",
+    "Workers": []
+  },
+  {
+    "Mineraddr": "0xef3b35e85fbc58515023a4ab1d526e6ebc41faa3",
+    "Workers": [
+      {
+        "id": "domgpu",
+        "hashrate": 110.72222222222223,
+        "reportedhashrate": 103.356608
+      }
+    ]
+  },
+  {
+    "Mineraddr": "0x60799a80f907e3444b00d09919a2973bacf130f4",
+    "Workers": [
+      {
+        "id": "default",
+        "hashrate": 28.5,
+        "reportedhashrate": 46.503445
+      }
+    ]
+  },
+  {
+    "Mineraddr": "0xbd1fc56cd2e782bb8803e69308feaac7a6c7361c",
+    "Workers": []
+  },
+  {
+    "Mineraddr": "0xeb67232b7806b83694e3203ffa3808779280f573",
+    "Workers": []
+  },
+  {
+    "Mineraddr": "0xcd1d58d211af0eac68d99fa2fba7f266b64bd3fd",
+    "Workers": [
+      {
+        "id": "scootersmhdminer1.scootersmhdminer1.1",
+        "hashrate": 50.72222222222222,
+        "reportedhashrate": 43.594023
+      }
+    ]
+  },
+  {
+    "Mineraddr": "0xa0339b32f97d515538d277654c40c1767b235fa1",
+    "Workers": [
+      {
+        "id": "rig2",
+        "hashrate": 46.666666666666664,
+        "reportedhashrate": 45.858838
+      },
+      {
+        "id": "rig5",
+        "hashrate": 78.8888888888889,
+        "reportedhashrate": 78.539005
+      }
+    ]
+  },
+  {
+    "Mineraddr": "0x44588d31efd13d1f642cf7738ac00196189b1e5a",
+    "Workers": [
+      {
+        "id": "rig01",
+        "hashrate": 182.2222222222222,
+        "reportedhashrate": 180.785974
+      },
+      {
+        "id": "rig02",
+        "hashrate": 178.83333333333334,
+        "reportedhashrate": 180.793727
+      },
+      {
+        "id": "rig03",
+        "hashrate": 201.05555555555554,
+        "reportedhashrate": 180.650824
+      }
+    ]
+  },
+  {
+    "Mineraddr": "0xa7fcc4da8fe07dd47fc7d6d7e8c3f617e3da9a9d",
+    "Workers": []
+  },
+  {
+    "Mineraddr": "0x01b5d5e53ef812715feb82f11bc21999feeab1ab",
+    "Workers": []
+  },
+  {
+    "Mineraddr": "0x460bc0afdbe4c75a37d83ff2dea80d545007966a",
+    "Workers": [
+      {
+        "id": "mak_1",
+        "hashrate": 219.2222222222222,
+        "reportedhashrate": 248.559899
+      },
+      {
+        "id": "mak_10",
+        "hashrate": 152.94444444444446,
+        "reportedhashrate": 180.186331
+      },
+      {
+        "id": "mak_11",
+        "hashrate": 312.1111111111111,
+        "reportedhashrate": 310.681494
+      },
+      {
+        "id": "mak_2",
+        "hashrate": 183.33333333333334,
+        "reportedhashrate": 200.449706
+      },
+      {
+        "id": "mak_3",
+        "hashrate": 207,
+        "reportedhashrate": 243.174933
+      },
+      {
+        "id": "mak_4",
+        "hashrate": 225.88888888888889,
+        "reportedhashrate": 243.225986
+      },
+      {
+        "id": "mak_5",
+        "hashrate": 253.66666666666666,
+        "reportedhashrate": 240.262022
+      },
+      {
+        "id": "mak_6",
+        "hashrate": 253.2777777777778,
+        "reportedhashrate": 240.756791
+      },
+      {
+        "id": "mak_7",
+        "hashrate": 249.16666666666666,
+        "reportedhashrate": 240.048423
+      },
+      {
+        "id": "mak_8",
+        "hashrate": 235.16666666666666,
+        "reportedhashrate": 242.079468
+      },
+      {
+        "id": "mak_9",
+        "hashrate": 182.94444444444446,
+        "reportedhashrate": 180.460994
+      }
+    ]
+  },
+  {
+    "Mineraddr": "0xf7f418b8b6bfc3eedc23e93aff2ba922dfa34538",
+    "Workers": [
+      {
+        "id": "hong16",
+        "hashrate": 97.77777777777777,
+        "reportedhashrate": 231.096504
+      }
+    ]
+  },
+  {
+    "Mineraddr": "0xaa0801703a2d5e597529503d00ee0ce7cca7b623",
+    "Workers": [
+      {
+        "id": "farmi1",
+        "hashrate": 16.666666666666664,
+        "reportedhashrate": 0
+      }
+    ]
+  },
+  {
+    "Mineraddr": "0x878f913a9d86017607db4782e6690d393b82c411",
+    "Workers": [
+      {
+        "id": "ergene",
+        "hashrate": 174.05555555555554,
+        "reportedhashrate": 160.109874
+      }
+    ]
+  },
+  {
+    "Mineraddr": "0x81ff273ad2537748ad381dae0700dcba120d5677",
+    "Workers": [
+      {
+        "id": "crius",
+        "hashrate": 40.72222222222222,
+        "reportedhashrate": 30.711522
+      }
+    ]
+  },
+  {
+    "Mineraddr": "0x4186acf7aca5c018b014af96728631b2257eccbd",
+    "Workers": []
+  },
+  {
+    "Mineraddr": "0x3a571033b1b02710af05d1b0e58e6100cb4bc979",
+    "Workers": []
+  },
+  {
+    "Mineraddr": "0xb8836d50ce33cb3905203a54c4ee2c25d345dd9a",
+    "Workers": [
+      {
+        "id": "may1",
+        "hashrate": 157.66666666666666,
+        "reportedhashrate": 153.352952
+      },
+      {
+        "id": "may2",
+        "hashrate": 154.7777777777778,
+        "reportedhashrate": 153.477378
+      },
+      {
+        "id": "may3",
+        "hashrate": 197.33333333333334,
+        "reportedhashrate": 185.749696
+      }
+    ]
+  },
+  {
+    "Mineraddr": "0x2577c8184ac8f436dd50bf55fd6e2e2da0259af6",
+    "Workers": [
+      {
+        "id": "kmlk",
+        "hashrate": 177.38888888888889,
+        "reportedhashrate": 186.769725
+      }
+    ]
+  },
+  {
+    "Mineraddr": "0xc60338721317bf1a98436f710cfb26cf081b84e9",
+    "Workers": [
+      {
+        "id": "ap16-570",
+        "hashrate": 242.94444444444446,
+        "reportedhashrate": 256.642434
+      },
+      {
+        "id": "pm03x8",
+        "hashrate": 268.1111111111111,
+        "reportedhashrate": 254.920193
+      },
+      {
+        "id": "v01x7",
+        "hashrate": 81.1111111111111,
+        "reportedhashrate": 63.721023
+      }
+    ]
+  },
+  {
+    "Mineraddr": "0xd72387569bc138708dbf69faba520850cadbf1a2",
+    "Workers": []
+  },
+  {
+    "Mineraddr": "0xe823cbb1b88344ddb7aab912ddd232d22fe80134",
+    "Workers": [
+      {
+        "id": "guc",
+        "hashrate": 8.888888888888888,
+        "reportedhashrate": 11.484119
+      },
+      {
+        "id": "gucul",
+        "hashrate": 6.666666666666667,
+        "reportedhashrate": 12.083211
+      },
+      {
+        "id": "osnova",
+        "hashrate": 81.83333333333333,
+        "reportedhashrate": 75.775588
+      }
+    ]
+  },
+  {
+    "Mineraddr": "0x51cda58500be560ac0aadb35cbfd2e0ba1d8bc31",
+    "Workers": [
+      {
+        "id": "vorker_1",
+        "hashrate": 229.94444444444446,
+        "reportedhashrate": 238.238974
+      },
+      {
+        "id": "vorker_10",
+        "hashrate": 318.77777777777777,
+        "reportedhashrate": 334.197644
+      },
+      {
+        "id": "vorker_11",
+        "hashrate": 186.2222222222222,
+        "reportedhashrate": 193.506403
+      },
+      {
+        "id": "vorker_13",
+        "hashrate": 314,
+        "reportedhashrate": 331.441109
+      },
+      {
+        "id": "vorker_14",
+        "hashrate": 307,
+        "reportedhashrate": 332.29267
+      },
+      {
+        "id": "vorker_15",
+        "hashrate": 144,
+        "reportedhashrate": 151.742114
+      },
+      {
+        "id": "vorker_17",
+        "hashrate": 145.88888888888889,
+        "reportedhashrate": 175.799031
+      },
+      {
+        "id": "vorker_2",
+        "hashrate": 148.7777777777778,
+        "reportedhashrate": 178.128741
+      },
+      {
+        "id": "vorker_3",
+        "hashrate": 235.11111111111111,
+        "reportedhashrate": 253.325805
+      },
+      {
+        "id": "vorker_4",
+        "hashrate": 313.27777777777777,
+        "reportedhashrate": 322.707917
+      },
+      {
+        "id": "vorker_5",
+        "hashrate": 109.94444444444444,
+        "reportedhashrate": 121.447244
+      },
+      {
+        "id": "vorker_6",
+        "hashrate": 151.44444444444446,
+        "reportedhashrate": 180.734543
+      },
+      {
+        "id": "vorker_7",
+        "hashrate": 192.88888888888889,
+        "reportedhashrate": 193.574355
+      },
+      {
+        "id": "vorker_9",
+        "hashrate": 285.5,
+        "reportedhashrate": 299.000875
+      }
+    ]
+  },
+  {
+    "Mineraddr": "0xa634b083340769aad9db9bd249ecd36785afc1ce",
+    "Workers": [
+      {
+        "id": "pu129",
+        "hashrate": 163.33333333333334,
+        "reportedhashrate": 185.230871
+      },
+      {
+        "id": "pu130",
+        "hashrate": 161.05555555555554,
+        "reportedhashrate": 185.274661
+      }
+    ]
+  },
+  {
+    "Mineraddr": "0x3c3f66cb44d8cd1b7d8890359541f9482c3a3a11",
+    "Workers": [
+      {
+        "id": "nittro",
+        "hashrate": 160,
+        "reportedhashrate": 183.817295
+      }
+    ]
+  },
+  {
+    "Mineraddr": "0xc0ca22398153512995b18f206a36d016c7aa2bfb",
+    "Workers": []
+  },
+  {
+    "Mineraddr": "0x934f0fc721f3f56bdd35bba60fe9fcdfab8c652b",
+    "Workers": [
+      {
+        "id": "1070ti02",
+        "hashrate": 143.2777777777778,
+        "reportedhashrate": 144.948786
+      },
+      {
+        "id": "rx57002",
+        "hashrate": 161.05555555555554,
+        "reportedhashrate": 182.499296
+      }
+    ]
+  },
+  {
+    "Mineraddr": "0x542e2614b6ed586351ef0803ff72c2ee22345589",
+    "Workers": [
+      {
+        "id": "2060super",
+        "hashrate": 34.44444444444445,
+        "reportedhashrate": 42.532675
+      },
+      {
+        "id": "rx",
+        "hashrate": 100.55555555555556,
+        "reportedhashrate": 124.530265
+      }
+    ]
+  },
+  {
+    "Mineraddr": "0x0924d4f9fa91ad4b0536e19503d750b0ef1bf950",
+    "Workers": []
+  },
+  {
+    "Mineraddr": "0x1e85ce45d6f28818c701fabe0331dd1e18f72141",
+    "Workers": []
+  },
+  {
+    "Mineraddr": "0x743a00a03bacb6eb6ceedc3a8fc63b530e867c1d",
+    "Workers": [
+      {
+        "id": "bedroom_mom",
+        "hashrate": 54.44444444444445,
+        "reportedhashrate": 58.497513
+      },
+      {
+        "id": "cosmos",
+        "hashrate": 10,
+        "reportedhashrate": 9.820486
+      },
+      {
+        "id": "danny-pc",
+        "hashrate": 4.444444444444444,
+        "reportedhashrate": 23.03034
+      },
+      {
+        "id": "office",
+        "hashrate": 94.3888888888889,
+        "reportedhashrate": 107.207219
+      },
+      {
+        "id": "oleg",
+        "hashrate": 64.44444444444444,
+        "reportedhashrate": 59.243112
+      },
+      {
+        "id": "svetapc",
+        "hashrate": 24.444444444444443,
+        "reportedhashrate": 29.610319
+      },
+      {
+        "id": "thermaltake",
+        "hashrate": 25.555555555555557,
+        "reportedhashrate": 28.89071
+      }
+    ]
+  },
+  {
+    "Mineraddr": "0xf9fd7a4a04fdcc4015cac90635b5e009ee4eb34d",
+    "Workers": [
+      {
+        "id": "rig1",
+        "hashrate": 172.5,
+        "reportedhashrate": 191.777316
+      },
+      {
+        "id": "rig2",
+        "hashrate": 181.44444444444446,
+        "reportedhashrate": 191.937958
+      },
+      {
+        "id": "rig3",
+        "hashrate": 184.38888888888889,
+        "reportedhashrate": 188.483621
+      }
+    ]
+  },
+  {
+    "Mineraddr": "0xbcc661adf833b1d5f633348f9b467e03a4ff758f",
+    "Workers": [
+      {
+        "id": "omega_jm",
+        "hashrate": 37.77777777777778,
+        "reportedhashrate": 0
+      }
+    ]
+  },
+  {
+    "Mineraddr": "0xc07aaff7b52565e74a6faebe2afb55ee13bcfaa0",
+    "Workers": [
+      {
+        "id": "asrosk",
+        "hashrate": 145.16666666666666,
+        "reportedhashrate": 136.119099
+      },
+      {
+        "id": "asusfarm",
+        "hashrate": 167.7777777777778,
+        "reportedhashrate": 177.775017
+      },
+      {
+        "id": "myfarm",
+        "hashrate": 144.7777777777778,
+        "reportedhashrate": 152.309671
+      }
+    ]
+  },
+  {
+    "Mineraddr": "0x1e4aa5f29b0160027ac4309a287a24508b22e484",
+    "Workers": []
+  },
+  {
+    "Mineraddr": "0x5ac6c591d2f0ec9eab173217eb2716b6cacf304f",
+    "Workers": [
+      {
+        "id": "hash",
+        "hashrate": 187.7777777777778,
+        "reportedhashrate": 184.601612
+      }
+    ]
+  },
+  {
+    "Mineraddr": "0xfd70f924f52ceba1da11776f7c913a2cee2314af",
+    "Workers": [
+      {
+        "id": "default",
+        "hashrate": 332.16666666666663,
+        "reportedhashrate": 106.841193
+      }
+    ]
+  },
+  {
+    "Mineraddr": "0x43e92e725bbf121dbd1b92e56bb2c1dd6d004622",
+    "Workers": [
+      {
+        "id": "pc-rig",
+        "hashrate": 185.55555555555554,
+        "reportedhashrate": 169.20519
+      }
+    ]
+  },
+  {
+    "Mineraddr": "0xbd056168f5e743174e99c8ae8c1486aa5bdcf774",
+    "Workers": [
+      {
+        "id": "022ddedbb25d",
+        "hashrate": 109.22222222222223,
+        "reportedhashrate": 0
+      }
+    ]
+  },
+  {
+    "Mineraddr": "0x1112bd223e4f9802c0749df9668f24b2356757db",
+    "Workers": [
+      {
+        "id": "1-1060msi",
+        "hashrate": 95.55555555555556,
+        "reportedhashrate": 99.058963
+      },
+      {
+        "id": "2-1060msi",
+        "hashrate": 128.5,
+        "reportedhashrate": 99.216386
+      },
+      {
+        "id": "3-1060msi",
+        "hashrate": 93.33333333333333,
+        "reportedhashrate": 99.267816
+      },
+      {
+        "id": "4-1060msi",
+        "hashrate": 118.1111111111111,
+        "reportedhashrate": 96.633358
+      },
+      {
+        "id": "5-1060msi",
+        "hashrate": 103.33333333333333,
+        "reportedhashrate": 100.143236
+      },
+      {
+        "id": "6-1070asus",
+        "hashrate": 70.72222222222223,
+        "reportedhashrate": 63.086672
+      },
+      {
+        "id": "7-1080ti",
+        "hashrate": 191.83333333333334,
+        "reportedhashrate": 205.365707
+      }
+    ]
+  },
+  {
+    "Mineraddr": "0x39f43a73a9847facb4693acd0dade2ab771ca374",
+    "Workers": []
+  },
+  {
+    "Mineraddr": "0x84ddc06652900ae1149bb175bd226aa3f06293ad",
+    "Workers": []
+  },
+  {
+    "Mineraddr": "0xc10ad2a53a1eeae56125dd4d74f0c70da0a3f002",
+    "Workers": [
+      {
+        "id": "gin5",
+        "hashrate": 87.77777777777777,
+        "reportedhashrate": 83.099564
+      },
+      {
+        "id": "rig3",
+        "hashrate": 107,
+        "reportedhashrate": 97.452556
+      }
+    ]
+  },
+  {
+    "Mineraddr": "0x7c5c6a8ccd9ca04ccda311d45f5e0c39fd78fb3c",
+    "Workers": [
+      {
+        "id": "default",
+        "hashrate": 111.44444444444444,
+        "reportedhashrate": 113.266831
+      },
+      {
+        "id": "toop1",
+        "hashrate": 120.72222222222223,
+        "reportedhashrate": 140.147062
+      },
+      {
+        "id": "toop2",
+        "hashrate": 111.1111111111111,
+        "reportedhashrate": 132.35574
+      },
+      {
+        "id": "toop3",
+        "hashrate": 162.55555555555554,
+        "reportedhashrate": 140.354711
+      }
+    ]
+  },
+  {
+    "Mineraddr": "0x03392f0e60e07d0e1b7a8c882bb9ea7b7fa7abca",
+    "Workers": [
+      {
+        "id": "incrediboy2",
+        "hashrate": 127.3888888888889,
+        "reportedhashrate": 147.413304
+      },
+      {
+        "id": "incrediboyz2702",
+        "hashrate": 144.7777777777778,
+        "reportedhashrate": 150.378704
+      },
+      {
+        "id": "incrediboyz2703",
+        "hashrate": 95.16666666666667,
+        "reportedhashrate": 175.121181
+      },
+      {
+        "id": "incrediboyz3701",
+        "hashrate": 114.44444444444444,
+        "reportedhashrate": 122.095066
+      },
+      {
+        "id": "incrediboyzhdd",
+        "hashrate": 123.66666666666667,
+        "reportedhashrate": 113.195925
+      }
+    ]
+  },
+  {
+    "Mineraddr": "0x2d795dd428ae1233f535524faebdb7813838ffbf",
+    "Workers": [
+      {
+        "id": "00c0d7bf70f7",
+        "hashrate": 158.11111111111111,
+        "reportedhashrate": 0
+      }
+    ]
+  },
+  {
+    "Mineraddr": "0x84077f3e92301c9efff32f1f905e2e66c6d6259e",
+    "Workers": [
+      {
+        "id": "1070ti",
+        "hashrate": 148.88888888888889,
+        "reportedhashrate": 162.450714
+      }
+    ]
+  },
+  {
+    "Mineraddr": "0x62c0fa6d7a3995d37e21826a6a6888f16b85b784",
+    "Workers": [
+      {
+        "id": "c1",
+        "hashrate": 94.44444444444444,
+        "reportedhashrate": 120.754432
+      }
+    ]
+  },
+  {
+    "Mineraddr": "0x9b6b91d75e8a26a7b974298f66b70e520d4cf190",
+    "Workers": []
+  },
+  {
+    "Mineraddr": "0xc20f22e1b2be1bd6ce29217a04b9b96727fc029f",
+    "Workers": [
+      {
+        "id": "default",
+        "hashrate": 190.33333333333334,
+        "reportedhashrate": 189.89399
+      }
+    ]
+  },
+  {
+    "Mineraddr": "0x87262b38ed4f3a9e6afae0772b1bc00e16cb23d8",
+    "Workers": [
+      {
+        "id": "yourworker",
+        "hashrate": 22.222222222222225,
+        "reportedhashrate": 0
+      }
+    ]
+  },
+  {
+    "Mineraddr": "0xb878ef05f278eef62affd3b56a4c36f2d82170f1",
+    "Workers": []
+  },
+  {
+    "Mineraddr": "0xd406e097c92afcfe4590d6231eeabbff76433da5",
+    "Workers": []
+  },
+  {
+    "Mineraddr": "0x73990c03690e3590c87fbbd8612f57277245a5f6",
+    "Workers": []
+  },
+  {
+    "Mineraddr": "0x4b52a32daf44a15ae7f53870e903b7f3aead609e",
+    "Workers": [
+      {
+        "id": "default",
+        "hashrate": 119.6111111111111,
+        "reportedhashrate": 120.643884
+      }
+    ]
+  },
+  {
+    "Mineraddr": "0x8958c22fe68abe6ddeb517e3e4060a325fc249e3",
+    "Workers": [
+      {
+        "id": "1050ti",
+        "hashrate": 91.1111111111111,
+        "reportedhashrate": 99.044103
+      },
+      {
+        "id": "1070",
+        "hashrate": 147.7777777777778,
+        "reportedhashrate": 126.884518
+      }
+    ]
+  },
+  {
+    "Mineraddr": "0x34e2b44be436754e5fa940f02739f2d2705af83b",
+    "Workers": [
+      {
+        "id": "gamerock",
+        "hashrate": 214.44444444444446,
+        "reportedhashrate": 214.89349
+      }
+    ]
+  },
+  {
+    "Mineraddr": "0x78f067b133925e145d5df69013e307305849c826",
+    "Workers": [
+      {
+        "id": "vagner",
+        "hashrate": 107.3888888888889,
+        "reportedhashrate": 97.364928
+      }
+    ]
+  },
+  {
+    "Mineraddr": "0xc1b6778586da53a8a36a4301f99eba7e7377dfe8",
+    "Workers": []
+  },
+  {
+    "Mineraddr": "0x66a348f865d76273b6294c8e0af8e679b5674188",
+    "Workers": [
+      {
+        "id": "h1",
+        "hashrate": 15.555555555555555,
+        "reportedhashrate": 16.113627
+      },
+      {
+        "id": "h2",
+        "hashrate": 183.2777777777778,
+        "reportedhashrate": 177.682606
+      },
+      {
+        "id": "h3",
+        "hashrate": 12.222222222222223,
+        "reportedhashrate": 257.506105
+      }
+    ]
+  },
+  {
+    "Mineraddr": "0xb99140b0c7b7816ff8293d5dbb2cbc20dc2beeb9",
+    "Workers": [
+      {
+        "id": "koparka_2",
+        "hashrate": 186.2777777777778,
+        "reportedhashrate": 186.098234
+      },
+      {
+        "id": "koparka_3",
+        "hashrate": 187.7222222222222,
+        "reportedhashrate": 188.168723
+      },
+      {
+        "id": "koparka_4",
+        "hashrate": 164.44444444444446,
+        "reportedhashrate": 157.446555
+      }
+    ]
+  },
+  {
+    "Mineraddr": "0x96664f5ead53e9578c4c4d99c70aaa6714f2a90b",
+    "Workers": []
+  },
+  {
+    "Mineraddr": "0x9955f393e11ef1e0a3a3e85eefbabc5073fb616b",
+    "Workers": [
+      {
+        "id": "big-pc",
+        "hashrate": 18.88888888888889,
+        "reportedhashrate": 23.268585
+      },
+      {
+        "id": "rig1",
+        "hashrate": 106.66666666666667,
+        "reportedhashrate": 114.677152
+      }
+    ]
+  },
+  {
+    "Mineraddr": "0x9d7c2f55d1e50797b59cf196871ffeaaf6591429",
+    "Workers": [
+      {
+        "id": "saphire",
+        "hashrate": 208.11111111111111,
+        "reportedhashrate": 200.584161
+      }
+    ]
+  },
+  {
+    "Mineraddr": "0x9b00b2cde12d6530cc314f84e9e186a5e9034f1a",
+    "Workers": []
+  },
+  {
+    "Mineraddr": "0x43460b842705bb1f4b417f7e2202cd5189037bc1",
+    "Workers": [
+      {
+        "id": "rig1",
+        "hashrate": 143.66666666666666,
+        "reportedhashrate": 128.173107
+      },
+      {
+        "id": "rig2",
+        "hashrate": 129.61111111111111,
+        "reportedhashrate": 149.050057
+      },
+      {
+        "id": "rig3",
+        "hashrate": 111.1111111111111,
+        "reportedhashrate": 141.546175
+      },
+      {
+        "id": "rig4",
+        "hashrate": 147.38888888888889,
+        "reportedhashrate": 131.170617
+      },
+      {
+        "id": "rig5",
+        "hashrate": 118.5,
+        "reportedhashrate": 144.070918
+      },
+      {
+        "id": "rig6",
+        "hashrate": 147.7777777777778,
+        "reportedhashrate": 161.378145
+      },
+      {
+        "id": "rig7",
+        "hashrate": 76.66666666666667,
+        "reportedhashrate": 92.739737
+      },
+      {
+        "id": "rig8",
+        "hashrate": 25.555555555555557,
+        "reportedhashrate": 0
+      },
+      {
+        "id": "rig9",
+        "hashrate": 149.94444444444446,
+        "reportedhashrate": 156.970331
+      }
+    ]
+  },
+  {
+    "Mineraddr": "0x6db6e23ffce70116ae3e98ac2852a90a2e4874b8",
+    "Workers": [
+      {
+        "id": "rig2",
+        "hashrate": 157.77777777777777,
+        "reportedhashrate": 0
+      },
+      {
+        "id": "rig4",
+        "hashrate": 121.44444444444444,
+        "reportedhashrate": 135.166215
+      },
+      {
+        "id": "rig5",
+        "hashrate": 127,
+        "reportedhashrate": 0
+      },
+      {
+        "id": "rig6",
+        "hashrate": 148.88888888888889,
+        "reportedhashrate": 141.839122
+      },
+      {
+        "id": "rig7",
+        "hashrate": 171.44444444444446,
+        "reportedhashrate": 0
+      },
+      {
+        "id": "rig8",
+        "hashrate": 114.05555555555556,
+        "reportedhashrate": 137.620099
+      },
+      {
+        "id": "rig9",
+        "hashrate": 123.33333333333334,
+        "reportedhashrate": 0
+      },
+      {
+        "id": "uwe1",
+        "hashrate": 165.16666666666669,
+        "reportedhashrate": 0
+      }
+    ]
+  },
+  {
+    "Mineraddr": "0x5dc225105153c7504583265f4abd348eda113223",
+    "Workers": [
+      {
+        "id": "worker60",
+        "hashrate": 42.22222222222222,
+        "reportedhashrate": 46.756343
+      }
+    ]
+  },
+  {
+    "Mineraddr": "0x9cd5f36e2a8be5aed1fc539e18382759d5f374bb",
+    "Workers": [
+      {
+        "id": "rig1",
+        "hashrate": 181.05555555555554,
+        "reportedhashrate": 189.897341
+      },
+      {
+        "id": "rig2",
+        "hashrate": 158.11111111111111,
+        "reportedhashrate": 184.249989
+      }
+    ]
+  },
+  {
+    "Mineraddr": "0xc674acd21fa43537a4af996ab9d2672ec72bdc52",
+    "Workers": [
+      {
+        "id": "default",
+        "hashrate": 50.72222222222222,
+        "reportedhashrate": 58.855288
+      }
+    ]
+  },
+  {
+    "Mineraddr": "0xd2dc0a1c8b40b269510b167f479300706bbd046d",
+    "Workers": [
+      {
+        "id": "num3",
+        "hashrate": 55.55555555555555,
+        "reportedhashrate": 51.508986
+      }
+    ]
+  },
+  {
+    "Mineraddr": "0xf6b29a69567d32cda2a06287fb90bc17bffac89b",
+    "Workers": [
+      {
+        "id": "rig12apostol",
+        "hashrate": 151.05555555555554,
+        "reportedhashrate": 155.628832
+      },
+      {
+        "id": "rig1pilot",
+        "hashrate": 139.61111111111111,
+        "reportedhashrate": 155.723864
+      },
+      {
+        "id": "rig2blackpearl",
+        "hashrate": 215.55555555555554,
+        "reportedhashrate": 216.875007
+      },
+      {
+        "id": "rig6uknown",
+        "hashrate": 141.05555555555554,
+        "reportedhashrate": 162.476809
+      },
+      {
+        "id": "rig7saratov",
+        "hashrate": 1.111111111111111,
+        "reportedhashrate": 0
+      },
+      {
+        "id": "rig8freedom",
+        "hashrate": 130.72222222222223,
+        "reportedhashrate": 151.222984
+      }
+    ]
+  },
+  {
+    "Mineraddr": "0xc2377f6e939a9be0b92d1ff19f496fd1355e439b",
+    "Workers": []
+  },
+  {
+    "Mineraddr": "0x900ceeb359dbc6246c088dccb31814ac74d8ab08",
+    "Workers": [
+      {
+        "id": "altelf",
+        "hashrate": 165.55555555555554,
+        "reportedhashrate": 175.597695
+      },
+      {
+        "id": "enf1t8f",
+        "hashrate": 186.2222222222222,
+        "reportedhashrate": 172.310449
+      }
+    ]
+  },
+  {
+    "Mineraddr": "0xb9907e3858f0677e9f18c8c4ffff162cc291afde",
+    "Workers": [
+      {
+        "id": "r1",
+        "hashrate": 185.55555555555554,
+        "reportedhashrate": 179.955737
+      }
+    ]
+  },
+  {
+    "Mineraddr": "0xcce9ae80a0b9f44297b114c0e95aca933cabf511",
+    "Workers": [
+      {
+        "id": "rig1",
+        "hashrate": 57.77777777777778,
+        "reportedhashrate": 68.523141
+      }
+    ]
+  },
+  {
+    "Mineraddr": "0x1f8de02f2955f2fb493a8720dca187fd1eb3d474",
+    "Workers": [
+      {
+        "id": "default",
+        "hashrate": 100.72222222222223,
+        "reportedhashrate": 100.726671
+      }
+    ]
+  },
+  {
+    "Mineraddr": "0x646d57e2d2491456bdda18bde545803f49c75cfa",
+    "Workers": [
+      {
+        "id": "rig3",
+        "hashrate": 86.27777777777777,
+        "reportedhashrate": 120.26503
+      }
+    ]
+  },
+  {
+    "Mineraddr": "0xe196542e36194f3cc5acaadd31f599ca4410f95c",
+    "Workers": [
+      {
+        "id": "11",
+        "hashrate": 170,
+        "reportedhashrate": 168.839539
+      },
+      {
+        "id": "12",
+        "hashrate": 142.2222222222222,
+        "reportedhashrate": 159.973678
+      },
+      {
+        "id": "13",
+        "hashrate": 112.94444444444444,
+        "reportedhashrate": 105.750021
+      },
+      {
+        "id": "2",
+        "hashrate": 104.44444444444444,
+        "reportedhashrate": 103.811732
+      },
+      {
+        "id": "t",
+        "hashrate": 160,
+        "reportedhashrate": 159.333381
+      }
+    ]
+  },
+  {
+    "Mineraddr": "0xe494a986128ab4b70f88054e0537e5cb91e261a5",
+    "Workers": [
+      {
+        "id": "w2",
+        "hashrate": 84.44444444444444,
+        "reportedhashrate": 84.933663
+      },
+      {
+        "id": "w3",
+        "hashrate": 58.5,
+        "reportedhashrate": 56.936326
+      }
+    ]
+  },
+  {
+    "Mineraddr": "0x1ea54d74fb5a059d75a45abda902b94947ce7143",
+    "Workers": [
+      {
+        "id": "worker01",
+        "hashrate": 202.94444444444446,
+        "reportedhashrate": 210.317357
+      },
+      {
+        "id": "worker02",
+        "hashrate": 146.2777777777778,
+        "reportedhashrate": 182.654631
+      },
+      {
+        "id": "worker03",
+        "hashrate": 94.3888888888889,
+        "reportedhashrate": 102.14594
+      },
+      {
+        "id": "worker04",
+        "hashrate": 167.7777777777778,
+        "reportedhashrate": 182.223566
+      },
+      {
+        "id": "worker05",
+        "hashrate": 84.44444444444444,
+        "reportedhashrate": 90.876901
+      },
+      {
+        "id": "worker06_d",
+        "hashrate": 27.777777777777775,
+        "reportedhashrate": 25.246898
+      },
+      {
+        "id": "worker07_i",
+        "hashrate": 30,
+        "reportedhashrate": 25.209447
+      },
+      {
+        "id": "worker08_l",
+        "hashrate": 34.05555555555555,
+        "reportedhashrate": 30.277517
+      }
+    ]
+  },
+  {
+    "Mineraddr": "0x5c0617284bd2e0b94918204d03a0ee1f01d56b9f",
+    "Workers": []
+  },
+  {
+    "Mineraddr": "0xa8a40c45d8feda50fc8fa75fa863a3522b699c32",
+    "Workers": [
+      {
+        "id": "pc02",
+        "hashrate": 159.61111111111111,
+        "reportedhashrate": 158.832523
+      }
+    ]
+  },
+  {
+    "Mineraddr": "0xc618211ecbb3722b29dea6d2b599c58e4de899f9",
+    "Workers": [
+      {
+        "id": "rig1",
+        "hashrate": 172.16666666666666,
+        "reportedhashrate": 204.188119
+      },
+      {
+        "id": "rig2",
+        "hashrate": 235.11111111111111,
+        "reportedhashrate": 240.543839
+      },
+      {
+        "id": "rig4",
+        "hashrate": 238.11111111111111,
+        "reportedhashrate": 235.244523
+      },
+      {
+        "id": "rig6",
+        "hashrate": 238.83333333333334,
+        "reportedhashrate": 219.445426
+      },
+      {
+        "id": "rig7",
+        "hashrate": 230.2777777777778,
+        "reportedhashrate": 226.617051
+      }
+    ]
+  },
+  {
+    "Mineraddr": "0x730d957a635ed5a4a72cbdaf665385f4ee5f691d",
+    "Workers": [
+      {
+        "id": "sergey_rx570x6",
+        "hashrate": 181.05555555555554,
+        "reportedhashrate": 160.847417
+      }
+    ]
+  },
+  {
+    "Mineraddr": "0xcfdf20419ec7dcd06de0de21bae418371bb41701",
+    "Workers": [
+      {
+        "id": "$fr01",
+        "hashrate": 230.7222222222222,
+        "reportedhashrate": 241.684415
+      },
+      {
+        "id": "fr02",
+        "hashrate": 318.1111111111111,
+        "reportedhashrate": 317.487229
+      },
+      {
+        "id": "fr03",
+        "hashrate": 335.1666666666667,
+        "reportedhashrate": 315.725903
+      }
+    ]
+  },
+  {
+    "Mineraddr": "0x2a00e53d7d1bd5facd20ab2db8f11c33403b12e9",
+    "Workers": [
+      {
+        "id": "default",
+        "hashrate": 245.88888888888889,
+        "reportedhashrate": 230.47175
+      }
+    ]
+  },
+  {
+    "Mineraddr": "0x6f1587d420be4f5ba8b91c1d62df126d328cdd8e",
+    "Workers": [
+      {
+        "id": "a36",
+        "hashrate": 250.7222222222222,
+        "reportedhashrate": 263.386675
+      },
+      {
+        "id": "aum14",
+        "hashrate": 178.5,
+        "reportedhashrate": 174.671367
+      },
+      {
+        "id": "ff02a26",
+        "hashrate": 167.7222222222222,
+        "reportedhashrate": 171.560585
+      },
+      {
+        "id": "ff15",
+        "hashrate": 162.2222222222222,
+        "reportedhashrate": 176.451934
+      },
+      {
+        "id": "ff16",
+        "hashrate": 184.44444444444446,
+        "reportedhashrate": 176.507865
+      },
+      {
+        "id": "ff24pp01",
+        "hashrate": 163.33333333333334,
+        "reportedhashrate": 139.376545
+      },
+      {
+        "id": "ff35",
+        "hashrate": 284.3888888888889,
+        "reportedhashrate": 241.397684
+      },
+      {
+        "id": "ff80",
+        "hashrate": 188.88888888888889,
+        "reportedhashrate": 172.65596
+      },
+      {
+        "id": "ff81",
+        "hashrate": 176.2777777777778,
+        "reportedhashrate": 175.676893
+      },
+      {
+        "id": "ff84mm04",
+        "hashrate": 167.38888888888889,
+        "reportedhashrate": 168.365976
+      },
+      {
+        "id": "ff88",
+        "hashrate": 148.88888888888889,
+        "reportedhashrate": 173.637052
+      },
+      {
+        "id": "ff90",
+        "hashrate": 130,
+        "reportedhashrate": 139.187437
+      },
+      {
+        "id": "fx01rx570",
+        "hashrate": 179.61111111111111,
+        "reportedhashrate": 168.608672
+      },
+      {
+        "id": "fx02rx570",
+        "hashrate": 180.33333333333334,
+        "reportedhashrate": 173.084621
+      },
+      {
+        "id": "fx03rx570",
+        "hashrate": 229.2222222222222,
+        "reportedhashrate": 230.747344
+      },
+      {
+        "id": "fx05rx580",
+        "hashrate": 147.7777777777778,
+        "reportedhashrate": 172.126546
+      },
+      {
+        "id": "fx06rx580",
+        "hashrate": 155.16666666666666,
+        "reportedhashrate": 172.135125
+      },
+      {
+        "id": "fx07rx570",
+        "hashrate": 178.5,
+        "reportedhashrate": 166.469965
+      },
+      {
+        "id": "fx08rx580",
+        "hashrate": 185.55555555555554,
+        "reportedhashrate": 172.131707
+      },
+      {
+        "id": "fx09rx570",
+        "hashrate": 174.38888888888889,
+        "reportedhashrate": 171.016895
+      },
+      {
+        "id": "fx10rx580",
+        "hashrate": 171.11111111111111,
+        "reportedhashrate": 165.179953
+      },
+      {
+        "id": "fx11rx570",
+        "hashrate": 234.44444444444446,
+        "reportedhashrate": 233.928044
+      },
+      {
+        "id": "fx12rx580",
+        "hashrate": 196.2777777777778,
+        "reportedhashrate": 177.923798
+      },
+      {
+        "id": "lp03f",
+        "hashrate": 232.55555555555554,
+        "reportedhashrate": 248.694095
+      },
+      {
+        "id": "lp04",
+        "hashrate": 285.8333333333333,
+        "reportedhashrate": 252.515234
+      },
+      {
+        "id": "lp08",
+        "hashrate": 277.77777777777777,
+        "reportedhashrate": 279.606821
+      },
+      {
+        "id": "lp11",
+        "hashrate": 291.4444444444444,
+        "reportedhashrate": 287.125543
+      },
+      {
+        "id": "p104_01",
+        "hashrate": 228.11111111111111,
+        "reportedhashrate": 230.817359
+      },
+      {
+        "id": "p104_02",
+        "hashrate": 206.61111111111111,
+        "reportedhashrate": 219.903266
+      },
+      {
+        "id": "p104_03",
+        "hashrate": 227.7222222222222,
+        "reportedhashrate": 259.28552
+      },
+      {
+        "id": "p104_05",
+        "hashrate": 304.0555555555556,
+        "reportedhashrate": 280.638379
+      },
+      {
+        "id": "p104_06",
+        "hashrate": 216.66666666666666,
+        "reportedhashrate": 215.206642
+      }
+    ]
+  },
+  {
+    "Mineraddr": "0xe5eabf57b99196e3a59678c442996ff4dce444d2",
+    "Workers": [
+      {
+        "id": "rig_1070",
+        "hashrate": 55.55555555555555,
+        "reportedhashrate": 65.642652
+      }
+    ]
+  },
+  {
+    "Mineraddr": "0xa04ac8450d475691614e91ef2f863b72d6b30886",
+    "Workers": [
+      {
+        "id": "rig1060",
+        "hashrate": 3.3333333333333335,
+        "reportedhashrate": 0
+      }
+    ]
+  },
+  {
+    "Mineraddr": "0xe3892f40095817f783c2f62beff622358beb327f",
+    "Workers": [
+      {
+        "id": "miner04",
+        "hashrate": 63.333333333333336,
+        "reportedhashrate": 43.988257
+      },
+      {
+        "id": "miner08",
+        "hashrate": 131.11111111111111,
+        "reportedhashrate": 134.198107
+      },
+      {
+        "id": "win-test01",
+        "hashrate": 134.05555555555554,
+        "reportedhashrate": 121.937857
+      },
+      {
+        "id": "win-test02",
+        "hashrate": 60.333333333333336,
+        "reportedhashrate": 65.581376
+      }
+    ]
+  },
+  {
+    "Mineraddr": "0x0bcd3b9bfa7ef55df7c0f3c4fbc180482239997e",
+    "Workers": []
+  },
+  {
+    "Mineraddr": "0xaf7ba48100ccf654b718da092a330884f263fbf3",
+    "Workers": []
+  },
+  {
+    "Mineraddr": "0x86e166f32e8b9e8bb8a99e1fb04a32626a00c5f1",
+    "Workers": [
+      {
+        "id": "rig1",
+        "hashrate": 161.44444444444446,
+        "reportedhashrate": 170.252438
+      }
+    ]
+  },
+  {
+    "Mineraddr": "0x4e17acc130136f7e27fb69e6a18741d53e528af8",
+    "Workers": [
+      {
+        "id": "default",
+        "hashrate": 158.5,
+        "reportedhashrate": 164.296802
+      }
+    ]
+  },
+  {
+    "Mineraddr": "0x18f145259084416f286327f63183093951d5b365",
+    "Workers": [
+      {
+        "id": "000a35000122",
+        "hashrate": 175.16666666666666,
+        "reportedhashrate": 0
+      },
+      {
+        "id": "006b891d23a6",
+        "hashrate": 170.33333333333334,
+        "reportedhashrate": 0
+      },
+      {
+        "id": "04c8c16eaa6b",
+        "hashrate": 171.44444444444446,
+        "reportedhashrate": 0
+      },
+      {
+        "id": "30e19c7ae88c",
+        "hashrate": 170,
+        "reportedhashrate": 0
+      },
+      {
+        "id": "3806555a6334",
+        "hashrate": 164.05555555555554,
+        "reportedhashrate": 0
+      },
+      {
+        "id": "5aba7748594e",
+        "hashrate": 173.66666666666666,
+        "reportedhashrate": 0
+      },
+      {
+        "id": "udarnik",
+        "hashrate": 179.61111111111111,
+        "reportedhashrate": 173.564398
+      }
+    ]
+  },
+  {
+    "Mineraddr": "0x3b72f931e76ce802584eeb402eb16b97cdc78cd9",
+    "Workers": [
+      {
+        "id": "r1-34",
+        "hashrate": 159.61111111111111,
+        "reportedhashrate": 159.602764
+      },
+      {
+        "id": "r3-34",
+        "hashrate": 166.2777777777778,
+        "reportedhashrate": 159.421842
+      },
+      {
+        "id": "r4-17",
+        "hashrate": 132.94444444444446,
+        "reportedhashrate": 185.967868
+      },
+      {
+        "id": "r5-17",
+        "hashrate": 142.2222222222222,
+        "reportedhashrate": 154.080946
+      },
+      {
+        "id": "r6-17",
+        "hashrate": 94.44444444444444,
+        "reportedhashrate": 105.896261
+      },
+      {
+        "id": "r7-79",
+        "hashrate": 176.2777777777778,
+        "reportedhashrate": 159.547366
+      },
+      {
+        "id": "r8-79",
+        "hashrate": 158.5,
+        "reportedhashrate": 156.90528
+      },
+      {
+        "id": "r9-79",
+        "hashrate": 102.94444444444444,
+        "reportedhashrate": 127.436286
+      }
+    ]
+  },
+  {
+    "Mineraddr": "0x2932b09506bf6ba3c69a625d3831c3a019e6c0a2",
+    "Workers": []
+  },
+  {
+    "Mineraddr": "0x75073008384f4dc93c87f2d3913d931ad77b93d4",
+    "Workers": [
+      {
+        "id": "huong02",
+        "hashrate": 97.3888888888889,
+        "reportedhashrate": 109.745344
+      },
+      {
+        "id": "huong03",
+        "hashrate": 77,
+        "reportedhashrate": 86.116174
+      }
+    ]
+  },
+  {
+    "Mineraddr": "0x5f20d13fea40ae346816b5c1410c6a15c0e29770",
+    "Workers": [
+      {
+        "id": "nrig1",
+        "hashrate": 145.16666666666666,
+        "reportedhashrate": 151.927286
+      },
+      {
+        "id": "nrig2",
+        "hashrate": 158.88888888888889,
+        "reportedhashrate": 149.137133
+      }
+    ]
+  },
+  {
+    "Mineraddr": "0x19f58a4e4e47e1b9754151041fd7c63a588ad396",
+    "Workers": []
+  },
+  {
+    "Mineraddr": "0x56c845fc3a6b7f1f2d407466851ba7ed1573903b",
+    "Workers": [
+      {
+        "id": "470",
+        "hashrate": 137.7777777777778,
+        "reportedhashrate": 131.309941
+      },
+      {
+        "id": "480",
+        "hashrate": 129.55555555555554,
+        "reportedhashrate": 132.459065
+      },
+      {
+        "id": "570",
+        "hashrate": 124.77777777777777,
+        "reportedhashrate": 130.93294
+      },
+      {
+        "id": "580",
+        "hashrate": 104.05555555555556,
+        "reportedhashrate": 105.945259
+      },
+      {
+        "id": "kalinin",
+        "hashrate": 111.1111111111111,
+        "reportedhashrate": 104.271843
+      },
+      {
+        "id": "office",
+        "hashrate": 27.777777777777775,
+        "reportedhashrate": 26.078354
+      }
+    ]
+  },
+  {
+    "Mineraddr": "0xb41d8047139e62d1384a28b6ecec7affe5868f39",
+    "Workers": []
+  },
+  {
+    "Mineraddr": "0x433e3cc4a04972aaa9aeaa980b72a2dcaea58ca1",
+    "Workers": [
+      {
+        "id": "w106z_072",
+        "hashrate": 7.777777777777778,
+        "reportedhashrate": 0
+      }
+    ]
+  },
+  {
+    "Mineraddr": "0x121257a145982f5ce857d30101dee618dd1e1165",
+    "Workers": [
+      {
+        "id": "rigivan",
+        "hashrate": 113.33333333333333,
+        "reportedhashrate": 120.798859
+      },
+      {
+        "id": "rig_ivan3",
+        "hashrate": 162.55555555555554,
+        "reportedhashrate": 158.780937
+      }
+    ]
+  },
+  {
+    "Mineraddr": "0xc54033585da5948fc82bc20418ab25e49d877892",
+    "Workers": []
+  },
+  {
+    "Mineraddr": "0x342a8685014f62c3b53f7de8de6dbd57def7b2a9",
+    "Workers": [
+      {
+        "id": "robert",
+        "hashrate": 31.11111111111111,
+        "reportedhashrate": 0
+      },
+      {
+        "id": "robert_rx470",
+        "hashrate": 232.11111111111111,
+        "reportedhashrate": 243.990696
+      }
+    ]
+  },
+  {
+    "Mineraddr": "0x86caf85f2b41972a3d530c78f777649823e38f4f",
+    "Workers": [
+      {
+        "id": "02548",
+        "hashrate": 417.38888888888886,
+        "reportedhashrate": 0
+      },
+      {
+        "id": "30de9",
+        "hashrate": 37.77777777777778,
+        "reportedhashrate": 0
+      },
+      {
+        "id": "60601",
+        "hashrate": 77.77777777777777,
+        "reportedhashrate": 0
+      },
+      {
+        "id": "60604",
+        "hashrate": 181.38888888888889,
+        "reportedhashrate": 0
+      },
+      {
+        "id": "60605",
+        "hashrate": 170.27777777777777,
+        "reportedhashrate": 0
+      },
+      {
+        "id": "60608",
+        "hashrate": 155.16666666666666,
+        "reportedhashrate": 0
+      },
+      {
+        "id": "60621",
+        "hashrate": 197.38888888888886,
+        "reportedhashrate": 0
+      },
+      {
+        "id": "60622",
+        "hashrate": 367.72222222222223,
+        "reportedhashrate": 0
+      },
+      {
+        "id": "60623",
+        "hashrate": 361.7777777777777,
+        "reportedhashrate": 0
+      },
+      {
+        "id": "60629",
+        "hashrate": 315.8888888888889,
+        "reportedhashrate": 0
+      },
+      {
+        "id": "60630",
+        "hashrate": 235.16666666666666,
+        "reportedhashrate": 0
+      },
+      {
+        "id": "60631",
+        "hashrate": 125.8888888888889,
+        "reportedhashrate": 0
+      },
+      {
+        "id": "60632",
+        "hashrate": 170.72222222222223,
+        "reportedhashrate": 0
+      },
+      {
+        "id": "60633",
+        "hashrate": 156.66666666666669,
+        "reportedhashrate": 0
+      },
+      {
+        "id": "60634",
+        "hashrate": 151.44444444444446,
+        "reportedhashrate": 0
+      },
+      {
+        "id": "60635",
+        "hashrate": 207.33333333333334,
+        "reportedhashrate": 0
+      },
+      {
+        "id": "60636",
+        "hashrate": 170.33333333333331,
+        "reportedhashrate": 0
+      },
+      {
+        "id": "60637",
+        "hashrate": 183.66666666666666,
+        "reportedhashrate": 0
+      },
+      {
+        "id": "60638",
+        "hashrate": 159.61111111111111,
+        "reportedhashrate": 0
+      },
+      {
+        "id": "60639",
+        "hashrate": 180.7222222222222,
+        "reportedhashrate": 0
+      },
+      {
+        "id": "60640",
+        "hashrate": 185.16666666666666,
+        "reportedhashrate": 0
+      },
+      {
+        "id": "60641",
+        "hashrate": 140.7222222222222,
+        "reportedhashrate": 0
+      },
+      {
+        "id": "60642",
+        "hashrate": 181.05555555555554,
+        "reportedhashrate": 0
+      },
+      {
+        "id": "60643",
+        "hashrate": 173.94444444444446,
+        "reportedhashrate": 0
+      },
+      {
+        "id": "60644",
+        "hashrate": 166.2777777777778,
+        "reportedhashrate": 0
+      },
+      {
+        "id": "60645",
+        "hashrate": 174.05555555555554,
+        "reportedhashrate": 0
+      },
+      {
+        "id": "60646",
+        "hashrate": 147.38888888888889,
+        "reportedhashrate": 0
+      },
+      {
+        "id": "60647",
+        "hashrate": 174.77777777777777,
+        "reportedhashrate": 0
+      },
+      {
+        "id": "60648",
+        "hashrate": 156.66666666666669,
+        "reportedhashrate": 0
+      },
+      {
+        "id": "60649",
+        "hashrate": 149.2222222222222,
+        "reportedhashrate": 0
+      },
+      {
+        "id": "60661",
+        "hashrate": 161.83333333333334,
+        "reportedhashrate": 0
+      },
+      {
+        "id": "60662",
+        "hashrate": 175.16666666666669,
+        "reportedhashrate": 0
+      },
+      {
+        "id": "60663",
+        "hashrate": 155.16666666666666,
+        "reportedhashrate": 0
+      },
+      {
+        "id": "60664",
+        "hashrate": 164.7777777777778,
+        "reportedhashrate": 0
+      },
+      {
+        "id": "60665",
+        "hashrate": 146.66666666666669,
+        "reportedhashrate": 0
+      },
+      {
+        "id": "60666",
+        "hashrate": 166.2777777777778,
+        "reportedhashrate": 0
+      },
+      {
+        "id": "60667",
+        "hashrate": 146.66666666666666,
+        "reportedhashrate": 0
+      },
+      {
+        "id": "60668",
+        "hashrate": 163.66666666666666,
+        "reportedhashrate": 0
+      },
+      {
+        "id": "60669",
+        "hashrate": 164.7777777777778,
+        "reportedhashrate": 0
+      },
+      {
+        "id": "60670",
+        "hashrate": 163.33333333333334,
+        "reportedhashrate": 0
+      },
+      {
+        "id": "60671",
+        "hashrate": 161.44444444444446,
+        "reportedhashrate": 0
+      },
+      {
+        "id": "60672",
+        "hashrate": 149.2222222222222,
+        "reportedhashrate": 0
+      },
+      {
+        "id": "60681",
+        "hashrate": 165.16666666666669,
+        "reportedhashrate": 0
+      },
+      {
+        "id": "60682",
+        "hashrate": 155.55555555555554,
+        "reportedhashrate": 0
+      },
+      {
+        "id": "60683",
+        "hashrate": 168.5,
+        "reportedhashrate": 0
+      },
+      {
+        "id": "60684",
+        "hashrate": 169.61111111111111,
+        "reportedhashrate": 0
+      },
+      {
+        "id": "60685",
+        "hashrate": 178.83333333333334,
+        "reportedhashrate": 0
+      },
+      {
+        "id": "60686",
+        "hashrate": 141.11111111111111,
+        "reportedhashrate": 0
+      },
+      {
+        "id": "60687",
+        "hashrate": 158.11111111111111,
+        "reportedhashrate": 0
+      },
+      {
+        "id": "60688",
+        "hashrate": 168.44444444444446,
+        "reportedhashrate": 0
+      },
+      {
+        "id": "60689",
+        "hashrate": 144.05555555555554,
+        "reportedhashrate": 0
+      },
+      {
+        "id": "60690",
+        "hashrate": 148.5,
+        "reportedhashrate": 0
+      },
+      {
+        "id": "60691",
+        "hashrate": 135.16666666666666,
+        "reportedhashrate": 0
+      },
+      {
+        "id": "60692",
+        "hashrate": 124.05555555555556,
+        "reportedhashrate": 0
+      },
+      {
+        "id": "61014",
+        "hashrate": 269.6111111111111,
+        "reportedhashrate": 0
+      }
+    ]
+  },
+  {
+    "Mineraddr": "0xf6ff2d9860103ea1eb3a58132b53dd68df182134",
+    "Workers": [
+      {
+        "id": "work1",
+        "hashrate": 122.94444444444444,
+        "reportedhashrate": 109.661286
+      },
+      {
+        "id": "work10",
+        "hashrate": 188.88888888888889,
+        "reportedhashrate": 203.629405
+      },
+      {
+        "id": "work11",
+        "hashrate": 227,
+        "reportedhashrate": 235.396548
+      },
+      {
+        "id": "work12",
+        "hashrate": 246.2777777777778,
+        "reportedhashrate": 239.899243
+      },
+      {
+        "id": "work12a",
+        "hashrate": 245.16666666666666,
+        "reportedhashrate": 233.498325
+      },
+      {
+        "id": "work2",
+        "hashrate": 133.27777777777777,
+        "reportedhashrate": 169.814691
+      },
+      {
+        "id": "work3",
+        "hashrate": 119.6111111111111,
+        "reportedhashrate": 128.203724
+      },
+      {
+        "id": "work4",
+        "hashrate": 155.55555555555554,
+        "reportedhashrate": 175.763958
+      },
+      {
+        "id": "work5",
+        "hashrate": 171.83333333333334,
+        "reportedhashrate": 188.177482
+      },
+      {
+        "id": "work6",
+        "hashrate": 184.7777777777778,
+        "reportedhashrate": 175.058231
+      },
+      {
+        "id": "work7",
+        "hashrate": 154.44444444444446,
+        "reportedhashrate": 169.147009
+      },
+      {
+        "id": "work8",
+        "hashrate": 207.38888888888889,
+        "reportedhashrate": 230.612518
+      },
+      {
+        "id": "work9",
+        "hashrate": 220,
+        "reportedhashrate": 227.77938
+      }
+    ]
+  },
+  {
+    "Mineraddr": "0x2407dd47623b19fe95b22267d3bcbf7ab8188f39",
+    "Workers": []
+  },
+  {
+    "Mineraddr": "0x1f50689f0743294713c9da2aea6c9b4a64e9e92c",
+    "Workers": [
+      {
+        "id": "sasa1",
+        "hashrate": 202.55555555555554,
+        "reportedhashrate": 187.040837
+      }
+    ]
+  },
+  {
+    "Mineraddr": "0x2f64fa2b893be727f529cc5576bf86c6c2b5dd59",
+    "Workers": [
+      {
+        "id": "rigven1",
+        "hashrate": 225.83333333333334,
+        "reportedhashrate": 232.958577
+      },
+      {
+        "id": "rigven2",
+        "hashrate": 104.77777777777777,
+        "reportedhashrate": 119.529954
+      }
+    ]
+  },
+  {
+    "Mineraddr": "0x609b7678ddbf5fa9fbb6ba9f38350bc63201e445",
+    "Workers": [
+      {
+        "id": "default",
+        "hashrate": 47.77777777777778,
+        "reportedhashrate": 0
+      }
+    ]
+  },
+  {
+    "Mineraddr": "0x3a7824a91c2d076c821d212803aae2777e3c96b7",
+    "Workers": [
+      {
+        "id": "donovan",
+        "hashrate": 272.4444444444444,
+        "reportedhashrate": 243.568235
+      },
+      {
+        "id": "donovan2",
+        "hashrate": 226.83333333333334,
+        "reportedhashrate": 249.000756
+      },
+      {
+        "id": "donovan3",
+        "hashrate": 249.11111111111111,
+        "reportedhashrate": 240.729384
+      },
+      {
+        "id": "donovan4",
+        "hashrate": 96.6111111111111,
+        "reportedhashrate": 86.379647
+      },
+      {
+        "id": "donovan5",
+        "hashrate": 103.55555555555556,
+        "reportedhashrate": 117.799371
+      }
+    ]
+  },
+  {
+    "Mineraddr": "0x013f0320a092e5569d8592aca0441453d223397d",
+    "Workers": [
+      {
+        "id": "sc_nvidia_06",
+        "hashrate": 252.88888888888889,
+        "reportedhashrate": 237.520552
+      },
+      {
+        "id": "sc_nvidia_07",
+        "hashrate": 206.2777777777778,
+        "reportedhashrate": 225.837017
+      }
+    ]
+  },
+  {
+    "Mineraddr": "0x02e1d12f603474fc3963ebd3060dd8ab635e7190",
+    "Workers": []
+  },
+  {
+    "Mineraddr": "0x5c1f457b450ebc489b204e82acf6b30076342afe",
+    "Workers": [
+      {
+        "id": "h141",
+        "hashrate": 296.6111111111111,
+        "reportedhashrate": 286.712392
+      },
+      {
+        "id": "h142",
+        "hashrate": 283.27777777777777,
+        "reportedhashrate": 283.375123
+      },
+      {
+        "id": "h143",
+        "hashrate": 289.8888888888889,
+        "reportedhashrate": 292.928258
+      },
+      {
+        "id": "h144",
+        "hashrate": 302.5,
+        "reportedhashrate": 286.690912
+      },
+      {
+        "id": "h151",
+        "hashrate": 315.5,
+        "reportedhashrate": 285.54834
+      },
+      {
+        "id": "h152",
+        "hashrate": 276.9444444444444,
+        "reportedhashrate": 287.034811
+      },
+      {
+        "id": "h153",
+        "hashrate": 285.4444444444444,
+        "reportedhashrate": 291.077594
+      },
+      {
+        "id": "h154",
+        "hashrate": 272.1111111111111,
+        "reportedhashrate": 287.373292
+      }
+    ]
+  },
+  {
+    "Mineraddr": "0xac01c6913ec908937568126b16a615f4aada751c",
+    "Workers": [
+      {
+        "id": "ashley",
+        "hashrate": 155.16666666666666,
+        "reportedhashrate": 163.53271
+      },
+      {
+        "id": "britney",
+        "hashrate": 97.77777777777777,
+        "reportedhashrate": 108.539833
+      },
+      {
+        "id": "courtney",
+        "hashrate": 153.33333333333334,
+        "reportedhashrate": 168.005775
+      },
+      {
+        "id": "destiny",
+        "hashrate": 160.33333333333334,
+        "reportedhashrate": 169.085664
+      },
+      {
+        "id": "ethernal",
+        "hashrate": 94,
+        "reportedhashrate": 88.158912
+      }
+    ]
+  },
+  {
+    "Mineraddr": "0x98b31ca569b5794192b0642dcfb1b0e87073cd4e",
+    "Workers": [
+      {
+        "id": "rig1",
+        "hashrate": 41.111111111111114,
+        "reportedhashrate": 59.947977
+      },
+      {
+        "id": "rig2ryzen",
+        "hashrate": 74.44444444444444,
+        "reportedhashrate": 87.304927
+      }
+    ]
+  },
+  {
+    "Mineraddr": "0x1a92a90c1601b0333d3c2e325b2eb92205f071d5",
+    "Workers": []
+  },
+  {
+    "Mineraddr": "0x656ee127a03690b95bcc4f4efce4648fbcb5a351",
+    "Workers": [
+      {
+        "id": "miner-0",
+        "hashrate": 29.61111111111111,
+        "reportedhashrate": 30.765751
+      },
+      {
+        "id": "miner-1",
+        "hashrate": 145.11111111111111,
+        "reportedhashrate": 151.990236
+      }
+    ]
+  },
+  {
+    "Mineraddr": "0x04e1b10ba7a06766f9682ace6bcbc55c9de466f9",
+    "Workers": [
+      {
+        "id": "rig1",
+        "hashrate": 109.6111111111111,
+        "reportedhashrate": 142.503182
+      }
+    ]
+  },
+  {
+    "Mineraddr": "0x34afc5cacb59c7048ffcac002acd76621254bd55",
+    "Workers": [
+      {
+        "id": "rig57",
+        "hashrate": 20,
+        "reportedhashrate": 31.304842
+      }
+    ]
+  },
+  {
+    "Mineraddr": "0xa31ba99c3dc979df0d091f4ad889451e284d5c6d",
+    "Workers": [
+      {
+        "id": "lukarig",
+        "hashrate": 168.11111111111111,
+        "reportedhashrate": 181.260165
+      },
+      {
+        "id": "mikarig3",
+        "hashrate": 158.88888888888889,
+        "reportedhashrate": 180.526747
+      },
+      {
+        "id": "mikarig5",
+        "hashrate": 163.33333333333334,
+        "reportedhashrate": 176.754848
+      }
+    ]
+  },
+  {
+    "Mineraddr": "0xa9e1d704e299f680672bcd72e9cef64fd7a6e433",
+    "Workers": [
+      {
+        "id": "rig05d",
+        "hashrate": 123.27777777777777,
+        "reportedhashrate": 122.720863
+      },
+      {
+        "id": "rig06d",
+        "hashrate": 107.72222222222223,
+        "reportedhashrate": 100.384536
+      },
+      {
+        "id": "rig07d",
+        "hashrate": 87.77777777777777,
+        "reportedhashrate": 75.860211
+      },
+      {
+        "id": "rig09d",
+        "hashrate": 112.94444444444444,
+        "reportedhashrate": 126.18589
+      },
+      {
+        "id": "rig11d",
+        "hashrate": 99.6111111111111,
+        "reportedhashrate": 124.639267
+      }
+    ]
+  },
+  {
+    "Mineraddr": "0xe3fce9697f5796ebd19a67664e4c170175e5f789",
+    "Workers": []
+  },
+  {
+    "Mineraddr": "0x473cc89f165d0d55173f7cdc0f99aebbde6e739e",
+    "Workers": []
+  },
+  {
+    "Mineraddr": "0xc519eac5340e80d8c07302f08ad59f49f4e9a9a2",
+    "Workers": [
+      {
+        "id": "marlene01",
+        "hashrate": 201.83333333333334,
+        "reportedhashrate": 171.985668
+      }
+    ]
+  },
+  {
+    "Mineraddr": "0xbb4fc3124c9b898aa617a7cfc9d843234316b36e",
+    "Workers": [
+      {
+        "id": "rig-01",
+        "hashrate": 28.88888888888889,
+        "reportedhashrate": 0
+      },
+      {
+        "id": "rig-02",
+        "hashrate": 17.777777777777775,
+        "reportedhashrate": 177.055225
+      },
+      {
+        "id": "rig-03",
+        "hashrate": 25.555555555555557,
+        "reportedhashrate": 181.638946
+      }
+    ]
+  },
+  {
+    "Mineraddr": "0x3b692d48a08a0dca87829ef6f38c4d145f619c0b",
+    "Workers": []
+  },
+  {
+    "Mineraddr": "0x04db160ad44b072adcfaf174e5beb11ad4cb70a6",
+    "Workers": [
+      {
+        "id": "3901",
+        "hashrate": 77.77777777777777,
+        "reportedhashrate": 88.669957
+      },
+      {
+        "id": "3902",
+        "hashrate": 84.77777777777777,
+        "reportedhashrate": 88.694863
+      },
+      {
+        "id": "3903",
+        "hashrate": 103.33333333333333,
+        "reportedhashrate": 115.679946
+      },
+      {
+        "id": "3904",
+        "hashrate": 77.3888888888889,
+        "reportedhashrate": 88.656646
+      },
+      {
+        "id": "3905",
+        "hashrate": 75.16666666666667,
+        "reportedhashrate": 88.388375
+      },
+      {
+        "id": "3906",
+        "hashrate": 73.66666666666667,
+        "reportedhashrate": 88.772848
+      },
+      {
+        "id": "3907",
+        "hashrate": 88.8888888888889,
+        "reportedhashrate": 88.664946
+      },
+      {
+        "id": "3908",
+        "hashrate": 84.05555555555556,
+        "reportedhashrate": 88.759404
+      },
+      {
+        "id": "3909",
+        "hashrate": 97.3888888888889,
+        "reportedhashrate": 88.642854
+      },
+      {
+        "id": "3910",
+        "hashrate": 107.3888888888889,
+        "reportedhashrate": 88.548464
+      },
+      {
+        "id": "3911",
+        "hashrate": 87,
+        "reportedhashrate": 90.201937
+      },
+      {
+        "id": "3912",
+        "hashrate": 119.6111111111111,
+        "reportedhashrate": 118.837519
+      },
+      {
+        "id": "3913",
+        "hashrate": 105.16666666666667,
+        "reportedhashrate": 117.116377
+      },
+      {
+        "id": "3914",
+        "hashrate": 162.2222222222222,
+        "reportedhashrate": 149.44011
+      },
+      {
+        "id": "3915",
+        "hashrate": 99.6111111111111,
+        "reportedhashrate": 112.886758
+      },
+      {
+        "id": "3916",
+        "hashrate": 165.16666666666666,
+        "reportedhashrate": 151.218437
+      },
+      {
+        "id": "3917",
+        "hashrate": 66.22222222222223,
+        "reportedhashrate": 85.396272
+      },
+      {
+        "id": "3918",
+        "hashrate": 67,
+        "reportedhashrate": 57.468546
+      },
+      {
+        "id": "3919",
+        "hashrate": 115.16666666666667,
+        "reportedhashrate": 109.622183
+      },
+      {
+        "id": "3920",
+        "hashrate": 151.11111111111111,
+        "reportedhashrate": 147.103948
+      },
+      {
+        "id": "3921",
+        "hashrate": 105.16666666666667,
+        "reportedhashrate": 84.04572
+      },
+      {
+        "id": "3923",
+        "hashrate": 90.72222222222223,
+        "reportedhashrate": 85.227509
+      }
+    ]
+  },
+  {
+    "Mineraddr": "0xdf1d03b0ec87986e3b8e4a86190c9ea2030c68e5",
+    "Workers": []
+  },
+  {
+    "Mineraddr": "0x0bdc63b7687df43d5ba7c237e26ba0ef70565cdf",
+    "Workers": []
+  },
+  {
+    "Mineraddr": "0x0b1d68b1e50a9899e76989b7cdb9f13a6ca0c703",
+    "Workers": [
+      {
+        "id": "hd01",
+        "hashrate": 50.72222222222222,
+        "reportedhashrate": 49.014673
+      }
+    ]
+  },
+  {
+    "Mineraddr": "0x97c69bb7c811b4a53096afd11b4b42a3adff3f78",
+    "Workers": [
+      {
+        "id": "ethpc3",
+        "hashrate": 34.44444444444445,
+        "reportedhashrate": 30.633533
+      }
+    ]
+  },
+  {
+    "Mineraddr": "0x844b52290c18d4494a052e3b6adcfb989564e235",
+    "Workers": []
+  },
+  {
+    "Mineraddr": "0x5b72a63860c3a69f376623ee3ae027e74fa7f383",
+    "Workers": [
+      {
+        "id": "default",
+        "hashrate": 50,
+        "reportedhashrate": 50.122965
+      }
+    ]
+  },
+  {
+    "Mineraddr": "0x1a4c6e3ca0c7a8fbd7193af75c7bc7aee5aeba64",
+    "Workers": [
+      {
+        "id": "rig03",
+        "hashrate": 164.05555555555554,
+        "reportedhashrate": 0
+      }
+    ]
+  },
+  {
+    "Mineraddr": "0x26d287a4a52a0e845e9e27cb1a7403335850e8ce",
+    "Workers": [
+      {
+        "id": "a498ff",
+        "hashrate": 95.16666666666667,
+        "reportedhashrate": 129.886872
+      }
+    ]
+  },
+  {
+    "Mineraddr": "0xc370e15755ad174d87012328b1ef7105655d4282",
+    "Workers": [
+      {
+        "id": "3x580",
+        "hashrate": 24.444444444444443,
+        "reportedhashrate": 21.584411
+      }
+    ]
+  },
+  {
+    "Mineraddr": "0xb042c7af9bea3816a0ae6a954972ef444b057275",
+    "Workers": []
+  },
+  {
+    "Mineraddr": "0x38ad8c128352c6a948805169aea85ba2d2709b5c",
+    "Workers": [
+      {
+        "id": "miner1",
+        "hashrate": 155.11111111111111,
+        "reportedhashrate": 158.318658
+      }
+    ]
+  },
+  {
+    "Mineraddr": "0xa973e211cc2340c1d22a3137243d2aaea8fde094",
+    "Workers": [
+      {
+        "id": "25e032",
+        "hashrate": 129.94444444444446,
+        "reportedhashrate": 0
+      }
+    ]
+  },
+  {
+    "Mineraddr": "0xe4af665e0cd1a0b51280e3b61a03c803e613e8bf",
+    "Workers": []
+  },
+  {
+    "Mineraddr": "0xd71e6d71f1a424f0ab8751c115b2c06fa2de6907",
+    "Workers": [
+      {
+        "id": "rig1",
+        "hashrate": 144.44444444444446,
+        "reportedhashrate": 154.268021
+      }
+    ]
+  },
+  {
+    "Mineraddr": "0xedfac2c6821aa0bf573a8cd62b71ab8e90fbfae9",
+    "Workers": [
+      {
+        "id": "rigjl02",
+        "hashrate": 315.27777777777777,
+        "reportedhashrate": 115.665139
+      }
+    ]
+  },
+  {
+    "Mineraddr": "0x2bf59211c443f6188423dbede009239c0aaffbf9",
+    "Workers": [
+      {
+        "id": "rog-strix",
+        "hashrate": 223.66666666666666,
+        "reportedhashrate": 264.448904
+      }
+    ]
+  },
+  {
+    "Mineraddr": "0x95fefbd66254edc4ca308ddbc5740a48c6bfa0f1",
+    "Workers": [
+      {
+        "id": "default",
+        "hashrate": 4.444444444444444,
+        "reportedhashrate": 0
+      }
+    ]
+  },
+  {
+    "Mineraddr": "0x84b6920a234a9f608a85acf39a42d6e6a8f30f44",
+    "Workers": []
+  },
+  {
+    "Mineraddr": "0xa2851be394823a5388c943b31152145c47d28fa8",
+    "Workers": [
+      {
+        "id": "worker",
+        "hashrate": 138.88888888888889,
+        "reportedhashrate": 144.701669
+      }
+    ]
+  },
+  {
+    "Mineraddr": "0x841cf2da45ea5483e763d10ee01b5b32e169bca2",
+    "Workers": []
+  },
+  {
+    "Mineraddr": "0xe0898ebaf2dc8828978192c25745fab23f1d45eb",
+    "Workers": []
+  },
+  {
+    "Mineraddr": "0xe474b8896b0f8fcb139074b63ccb12330b1e53b0",
+    "Workers": []
+  },
+  {
+    "Mineraddr": "0x0c57267d017654e1d600d6ff3a526760dca12792",
+    "Workers": [
+      {
+        "id": "vegadesk",
+        "hashrate": 72.22222222222223,
+        "reportedhashrate": 77.973423
+      }
+    ]
+  },
+  {
+    "Mineraddr": "0x662992f310f26acd63fa9424b8d7ce6a1033842a",
+    "Workers": [
+      {
+        "id": "1060",
+        "hashrate": 25.555555555555557,
+        "reportedhashrate": 22.483469
+      }
+    ]
+  },
+  {
+    "Mineraddr": "0x3306033e74f3b82c5b890fc748fa7c82b3271fc5",
+    "Workers": []
+  }
+]

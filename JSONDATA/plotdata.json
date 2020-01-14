@@ -1,0 +1,918 @@
+[
+    {
+        "date": "12/18/2019",
+        "BreakEvenEfficiency": 6.970123093163787
+    },
+    {
+        "date": "12/10/2019",
+        "BreakEvenEfficiency": 8.34120901194759
+    },
+    {
+        "date": "12/3/2019",
+        "BreakEvenEfficiency": 8.651276735936518
+    },
+    {
+        "date": "11/26/2019",
+        "BreakEvenEfficiency": 9.328895855317635
+    },
+    {
+        "date": "11/19/2019",
+        "BreakEvenEfficiency": 11.115414868465534
+    },
+    {
+        "date": "11/13/2019",
+        "BreakEvenEfficiency": 11.013261214384661
+    },
+    {
+        "date": "11/6/2019",
+        "BreakEvenEfficiency": 11.618037252612208
+    },
+    {
+        "date": "10/31/2019",
+        "BreakEvenEfficiency": 11.19112946718237
+    },
+    {
+        "date": "10/24/2019",
+        "BreakEvenEfficiency": 9.933662031936022
+    },
+    {
+        "date": "10/18/2019",
+        "BreakEvenEfficiency": 10.98619948439377
+    },
+    {
+        "date": "10/12/2019",
+        "BreakEvenEfficiency": 10.970095180743222
+    },
+    {
+        "date": "10/5/2019",
+        "BreakEvenEfficiency": 11.238595228846163
+    },
+    {
+        "date": "9/29/2019",
+        "BreakEvenEfficiency": 10.549864932817789
+    },
+    {
+        "date": "9/23/2019",
+        "BreakEvenEfficiency": 12.483624294957108
+    },
+    {
+        "date": "9/16/2019",
+        "BreakEvenEfficiency": 12.254647769080025
+    },
+    {
+        "date": "9/10/2019",
+        "BreakEvenEfficiency": 12.032192071238665
+    },
+    {
+        "date": "9/4/2019",
+        "BreakEvenEfficiency": 11.694566053137716
+    },
+    {
+        "date": "8/29/2019",
+        "BreakEvenEfficiency": 11.621484815190495
+    },
+    {
+        "date": "8/23/2019",
+        "BreakEvenEfficiency": 13.614922640571171
+    },
+    {
+        "date": "8/16/2019",
+        "BreakEvenEfficiency": 11.998979705567184
+    },
+    {
+        "date": "8/10/2019",
+        "BreakEvenEfficiency": 13.344750318092009
+    },
+    {
+        "date": "8/4/2019",
+        "BreakEvenEfficiency": 14.774481231970357
+    },
+    {
+        "date": "7/29/2019",
+        "BreakEvenEfficiency": 14.203003403230964
+    },
+    {
+        "date": "7/23/2019",
+        "BreakEvenEfficiency": 14.600584963129037
+    },
+    {
+        "date": "7/16/2019",
+        "BreakEvenEfficiency": 13.524743993644268
+    },
+    {
+        "date": "7/10/2019",
+        "BreakEvenEfficiency": 19.575539949738342
+    },
+    {
+        "date": "7/4/2019",
+        "BreakEvenEfficiency": 20.358227304308237
+    },
+    {
+        "date": "6/28/2019",
+        "BreakEvenEfficiency": 21.714177353912575
+    },
+    {
+        "date": "6/21/2019",
+        "BreakEvenEfficiency": 22.28938233342635
+    },
+    {
+        "date": "6/15/2019",
+        "BreakEvenEfficiency": 20.208831018708107
+    },
+    {
+        "date": "6/9/2019",
+        "BreakEvenEfficiency": 16.732939472190694
+    },
+    {
+        "date": "6/3/2019",
+        "BreakEvenEfficiency": 17.746848737051494
+    },
+    {
+        "date": "5/27/2019",
+        "BreakEvenEfficiency": 19.8044914320379
+    },
+    {
+        "date": "5/21/2019",
+        "BreakEvenEfficiency": 18.5784863865673
+    },
+    {
+        "date": "5/15/2019",
+        "BreakEvenEfficiency": 18.16668549304285
+    },
+    {
+        "date": "5/9/2019",
+        "BreakEvenEfficiency": 13.052736474765334
+    },
+    {
+        "date": "5/2/2019",
+        "BreakEvenEfficiency": 12.713351027640996
+    },
+    {
+        "date": "4/26/2019",
+        "BreakEvenEfficiency": 12.738803314667114
+    },
+    {
+        "date": "4/20/2019",
+        "BreakEvenEfficiency": 13.418267425801943
+    },
+    {
+        "date": "4/14/2019",
+        "BreakEvenEfficiency": 12.869058329029919
+    },
+    {
+        "date": "4/7/2019",
+        "BreakEvenEfficiency": 14.489893809969894
+    },
+    {
+        "date": "4/1/2019",
+        "BreakEvenEfficiency": 11.94071219251323
+    },
+    {
+        "date": "3/26/2019",
+        "BreakEvenEfficiency": 11.106880949055212
+    },
+    {
+        "date": "3/20/2019",
+        "BreakEvenEfficiency": 11.403774373091458
+    },
+    {
+        "date": "3/13/2019",
+        "BreakEvenEfficiency": 10.705478234895313
+    },
+    {
+        "date": "3/7/2019",
+        "BreakEvenEfficiency": 10.906058344945501
+    },
+    {
+        "date": "3/1/2019",
+        "BreakEvenEfficiency": 10.225511289525874
+    },
+    {
+        "date": "2/20/2019",
+        "BreakEvenEfficiency": 11.365041887803214
+    },
+    {
+        "date": "2/10/2019",
+        "BreakEvenEfficiency": 9.832667309087876
+    },
+    {
+        "date": "2/2/2019",
+        "BreakEvenEfficiency": 10.714321950539409
+    },
+    {
+        "date": "1/25/2019",
+        "BreakEvenEfficiency": 9.288191713368635
+    },
+    {
+        "date": "1/17/2019",
+        "BreakEvenEfficiency": 10.61531205469175
+    },
+    {
+        "date": "1/10/2019",
+        "BreakEvenEfficiency": 10.833681531022211
+    },
+    {
+        "date": "1/3/2019",
+        "BreakEvenEfficiency": 13.010023674561248
+    },
+    {
+        "date": "12/27/2018",
+        "BreakEvenEfficiency": 10.590469651981422
+    },
+    {
+        "date": "12/21/2018",
+        "BreakEvenEfficiency": 10.818875294678513
+    },
+    {
+        "date": "12/14/2018",
+        "BreakEvenEfficiency": 8.523178701311812
+    },
+    {
+        "date": "12/7/2018",
+        "BreakEvenEfficiency": 9.071338540367613
+    },
+    {
+        "date": "12/1/2018",
+        "BreakEvenEfficiency": 10.764225249624282
+    },
+    {
+        "date": "11/24/2018",
+        "BreakEvenEfficiency": 9.244824238417841
+    },
+    {
+        "date": "11/17/2018",
+        "BreakEvenEfficiency": 13.295826228643353
+    },
+    {
+        "date": "11/11/2018",
+        "BreakEvenEfficiency": 15.465958477309828
+    },
+    {
+        "date": "11/4/2018",
+        "BreakEvenEfficiency": 16.133228137264727
+    },
+    {
+        "date": "10/29/2018",
+        "BreakEvenEfficiency": 14.552741655318213
+    },
+    {
+        "date": "10/22/2018",
+        "BreakEvenEfficiency": 14.886480202113603
+    },
+    {
+        "date": "10/16/2018",
+        "BreakEvenEfficiency": 14.634387434988323
+    },
+    {
+        "date": "10/9/2018",
+        "BreakEvenEfficiency": 15.521123052345848
+    },
+    {
+        "date": "10/3/2018",
+        "BreakEvenEfficiency": 15.272763002905647
+    },
+    {
+        "date": "9/26/2018",
+        "BreakEvenEfficiency": 14.489411337959174
+    },
+    {
+        "date": "9/20/2018",
+        "BreakEvenEfficiency": 16.026839636346008
+    },
+    {
+        "date": "9/13/2018",
+        "BreakEvenEfficiency": 15.65500102332821
+    },
+    {
+        "date": "9/6/2018",
+        "BreakEvenEfficiency": 15.091154134472694
+    },
+    {
+        "date": "8/31/2018",
+        "BreakEvenEfficiency": 18.51782735874003
+    },
+    {
+        "date": "8/24/2018",
+        "BreakEvenEfficiency": 18.895772446614952
+    },
+    {
+        "date": "8/17/2018",
+        "BreakEvenEfficiency": 20.704634294445817
+    },
+    {
+        "date": "8/10/2018",
+        "BreakEvenEfficiency": 20.985255206321327
+    },
+    {
+        "date": "8/3/2018",
+        "BreakEvenEfficiency": 27.64957527033394
+    },
+    {
+        "date": "7/28/2018",
+        "BreakEvenEfficiency": 29.671405040694953
+    },
+    {
+        "date": "7/21/2018",
+        "BreakEvenEfficiency": 32.88311407846913
+    },
+    {
+        "date": "7/14/2018",
+        "BreakEvenEfficiency": 28.244770927157823
+    },
+    {
+        "date": "7/7/2018",
+        "BreakEvenEfficiency": 31.195135834650916
+    },
+    {
+        "date": "7/1/2018",
+        "BreakEvenEfficiency": 29.38424640555219
+    },
+    {
+        "date": "6/24/2018",
+        "BreakEvenEfficiency": 29.26867000992229
+    },
+    {
+        "date": "6/17/2018",
+        "BreakEvenEfficiency": 34.552574645573756
+    },
+    {
+        "date": "6/10/2018",
+        "BreakEvenEfficiency": 35.90063280698163
+    },
+    {
+        "date": "6/3/2018",
+        "BreakEvenEfficiency": 43.637694081739674
+    },
+    {
+        "date": "5/27/2018",
+        "BreakEvenEfficiency": 39.01460272367927
+    },
+    {
+        "date": "5/20/2018",
+        "BreakEvenEfficiency": 49.26140093726937
+    },
+    {
+        "date": "5/13/2018",
+        "BreakEvenEfficiency": 48.10679913367031
+    },
+    {
+        "date": "5/6/2018",
+        "BreakEvenEfficiency": 54.021539231637014
+    },
+    {
+        "date": "4/29/2018",
+        "BreakEvenEfficiency": 51.16618101458965
+    },
+    {
+        "date": "4/22/2018",
+        "BreakEvenEfficiency": 44.333374738257525
+    },
+    {
+        "date": "4/15/2018",
+        "BreakEvenEfficiency": 38.37931276987317
+    },
+    {
+        "date": "4/8/2018",
+        "BreakEvenEfficiency": 28.55975740715077
+    },
+    {
+        "date": "4/1/2018",
+        "BreakEvenEfficiency": 26.369950797529462
+    },
+    {
+        "date": "3/26/2018",
+        "BreakEvenEfficiency": 33.24365043689926
+    },
+    {
+        "date": "3/19/2018",
+        "BreakEvenEfficiency": 38.32730466623886
+    },
+    {
+        "date": "3/12/2018",
+        "BreakEvenEfficiency": 48.87637444497699
+    },
+    {
+        "date": "3/5/2018",
+        "BreakEvenEfficiency": 61.52785349491278
+    },
+    {
+        "date": "2/27/2018",
+        "BreakEvenEfficiency": 65.10676075092887
+    },
+    {
+        "date": "2/20/2018",
+        "BreakEvenEfficiency": 68.3902004730014
+    },
+    {
+        "date": "2/13/2018",
+        "BreakEvenEfficiency": 64.96988725472984
+    },
+    {
+        "date": "2/6/2018",
+        "BreakEvenEfficiency": 62.690394369918664
+    },
+    {
+        "date": "1/31/2018",
+        "BreakEvenEfficiency": 96.22071496170432
+    },
+    {
+        "date": "1/24/2018",
+        "BreakEvenEfficiency": 98.27952213547584
+    },
+    {
+        "date": "1/17/2018",
+        "BreakEvenEfficiency": 104.71636723317764
+    },
+    {
+        "date": "1/10/2018",
+        "BreakEvenEfficiency": 143.04237688383282
+    },
+    {
+        "date": "1/2/2018",
+        "BreakEvenEfficiency": 100.63242882076564
+    },
+    {
+        "date": "12/27/2017",
+        "BreakEvenEfficiency": 89.81102558979758
+    },
+    {
+        "date": "12/20/2017",
+        "BreakEvenEfficiency": 106.28981236316703
+    },
+    {
+        "date": "12/13/2017",
+        "BreakEvenEfficiency": 96.76525728657684
+    },
+    {
+        "date": "12/6/2017",
+        "BreakEvenEfficiency": 64.76934883024799
+    },
+    {
+        "date": "11/29/2017",
+        "BreakEvenEfficiency": 63.45722766737052
+    },
+    {
+        "date": "11/22/2017",
+        "BreakEvenEfficiency": 57.494865280769034
+    },
+    {
+        "date": "11/16/2017",
+        "BreakEvenEfficiency": 53.64357483878684
+    },
+    {
+        "date": "11/10/2017",
+        "BreakEvenEfficiency": 47.22601186897912
+    },
+    {
+        "date": "11/3/2017",
+        "BreakEvenEfficiency": 48.84310161477098
+    },
+    {
+        "date": "10/28/2017",
+        "BreakEvenEfficiency": 44.385273246535505
+    },
+    {
+        "date": "10/21/2017",
+        "BreakEvenEfficiency": 46.74783897536697
+    },
+    {
+        "date": "10/14/2017",
+        "BreakEvenEfficiency": 43.55115234879573
+    },
+    {
+        "date": "9/30/2017",
+        "BreakEvenEfficiency": 40.62863673484453
+    },
+    {
+        "date": "9/17/2017",
+        "BreakEvenEfficiency": 40.26554127373718
+    },
+    {
+        "date": "9/6/2017",
+        "BreakEvenEfficiency": 56.922416156776066
+    },
+    {
+        "date": "8/25/2017",
+        "BreakEvenEfficiency": 57.62751937342782
+    },
+    {
+        "date": "8/16/2017",
+        "BreakEvenEfficiency": 68.84842360914031
+    },
+    {
+        "date": "8/6/2017",
+        "BreakEvenEfficiency": 63.47152743060618
+    },
+    {
+        "date": "7/28/2017",
+        "BreakEvenEfficiency": 53.74483239298212
+    },
+    {
+        "date": "7/19/2017",
+        "BreakEvenEfficiency": 60.758920083779095
+    },
+    {
+        "date": "7/10/2017",
+        "BreakEvenEfficiency": 64.5301268428756
+    },
+    {
+        "date": "7/2/2017",
+        "BreakEvenEfficiency": 102.39573757316113
+    },
+    {
+        "date": "6/24/2017",
+        "BreakEvenEfficiency": 129.44552990007898
+    },
+    {
+        "date": "6/16/2017",
+        "BreakEvenEfficiency": 176.8864188939058
+    },
+    {
+        "date": "6/9/2017",
+        "BreakEvenEfficiency": 162.85390457426
+    },
+    {
+        "date": "6/1/2017",
+        "BreakEvenEfficiency": 150.13235888636828
+    },
+    {
+        "date": "5/25/2017",
+        "BreakEvenEfficiency": 146.3595845372578
+    },
+    {
+        "date": "5/17/2017",
+        "BreakEvenEfficiency": 80.36111757126568
+    },
+    {
+        "date": "5/10/2017",
+        "BreakEvenEfficiency": 93.08990118789801
+    },
+    {
+        "date": "5/3/2017",
+        "BreakEvenEfficiency": 89.07514730876457
+    },
+    {
+        "date": "4/26/2017",
+        "BreakEvenEfficiency": 64.4338700221596
+    },
+    {
+        "date": "4/19/2017",
+        "BreakEvenEfficiency": 61.83221220244404
+    },
+    {
+        "date": "4/12/2017",
+        "BreakEvenEfficiency": 66.22188477482551
+    },
+    {
+        "date": "4/5/2017",
+        "BreakEvenEfficiency": 67.76122570995548
+    },
+    {
+        "date": "3/30/2017",
+        "BreakEvenEfficiency": 82.57737668906212
+    },
+    {
+        "date": "3/23/2017",
+        "BreakEvenEfficiency": 77.10194957573634
+    },
+    {
+        "date": "3/16/2017",
+        "BreakEvenEfficiency": 92.22647829089364
+    },
+    {
+        "date": "3/10/2017",
+        "BreakEvenEfficiency": 41.191308851747245
+    },
+    {
+        "date": "3/3/2017",
+        "BreakEvenEfficiency": 46.458816585837965
+    },
+    {
+        "date": "2/24/2017",
+        "BreakEvenEfficiency": 34.046496006658366
+    },
+    {
+        "date": "2/18/2017",
+        "BreakEvenEfficiency": 35.55881129541102
+    },
+    {
+        "date": "2/11/2017",
+        "BreakEvenEfficiency": 34.45256938216394
+    },
+    {
+        "date": "2/4/2017",
+        "BreakEvenEfficiency": 37.42010912694683
+    },
+    {
+        "date": "1/29/2017",
+        "BreakEvenEfficiency": 34.71463408841837
+    },
+    {
+        "date": "1/22/2017",
+        "BreakEvenEfficiency": 37.27936542463983
+    },
+    {
+        "date": "1/16/2017",
+        "BreakEvenEfficiency": 33.91664712954308
+    },
+    {
+        "date": "1/9/2017",
+        "BreakEvenEfficiency": 39.72922884296486
+    },
+    {
+        "date": "1/2/2017",
+        "BreakEvenEfficiency": 39.114005557194275
+    },
+    {
+        "date": "12/27/2016",
+        "BreakEvenEfficiency": 32.86591202266638
+    },
+    {
+        "date": "12/20/2016",
+        "BreakEvenEfficiency": 30.910382927075407
+    },
+    {
+        "date": "12/14/2016",
+        "BreakEvenEfficiency": 37.763851163213786
+    },
+    {
+        "date": "12/7/2016",
+        "BreakEvenEfficiency": 43.5651415698384
+    },
+    {
+        "date": "11/30/2016",
+        "BreakEvenEfficiency": 45.845305931547394
+    },
+    {
+        "date": "11/24/2016",
+        "BreakEvenEfficiency": 51.19312855449592
+    },
+    {
+        "date": "11/17/2016",
+        "BreakEvenEfficiency": 54.09742795482824
+    },
+    {
+        "date": "11/10/2016",
+        "BreakEvenEfficiency": 64.00663186881822
+    },
+    {
+        "date": "11/4/2016",
+        "BreakEvenEfficiency": 72.86574181449488
+    },
+    {
+        "date": "10/28/2016",
+        "BreakEvenEfficiency": 40.81234584683205
+    },
+    {
+        "date": "10/21/2016",
+        "BreakEvenEfficiency": 43.73991520625196
+    },
+    {
+        "date": "10/15/2016",
+        "BreakEvenEfficiency": 46.65504433897666
+    },
+    {
+        "date": "10/8/2016",
+        "BreakEvenEfficiency": 58.7524939506912
+    },
+    {
+        "date": "10/2/2016",
+        "BreakEvenEfficiency": 68.7535637057603
+    },
+    {
+        "date": "9/25/2016",
+        "BreakEvenEfficiency": 67.93903903137334
+    },
+    {
+        "date": "9/18/2016",
+        "BreakEvenEfficiency": 64.76506060580871
+    },
+    {
+        "date": "9/12/2016",
+        "BreakEvenEfficiency": 63.35694784287081
+    },
+    {
+        "date": "9/5/2016",
+        "BreakEvenEfficiency": 64.30221425575381
+    },
+    {
+        "date": "8/29/2016",
+        "BreakEvenEfficiency": 61.15887659050711
+    },
+    {
+        "date": "8/23/2016",
+        "BreakEvenEfficiency": 64.18323842047886
+    },
+    {
+        "date": "8/16/2016",
+        "BreakEvenEfficiency": 69.61256680315078
+    },
+    {
+        "date": "8/10/2016",
+        "BreakEvenEfficiency": 77.84144323057573
+    },
+    {
+        "date": "8/3/2016",
+        "BreakEvenEfficiency": 79.93325535781942
+    },
+    {
+        "date": "7/27/2016",
+        "BreakEvenEfficiency": 91.9719028118698
+    },
+    {
+        "date": "7/21/2016",
+        "BreakEvenEfficiency": 81.68868470132333
+    },
+    {
+        "date": "7/14/2016",
+        "BreakEvenEfficiency": 73.15372955381451
+    },
+    {
+        "date": "7/7/2016",
+        "BreakEvenEfficiency": 63.95997375694792
+    },
+    {
+        "date": "7/1/2016",
+        "BreakEvenEfficiency": 85.01250730403406
+    },
+    {
+        "date": "6/24/2016",
+        "BreakEvenEfficiency": 100.85966836051357
+    },
+    {
+        "date": "6/18/2016",
+        "BreakEvenEfficiency": 91.82829840661843
+    },
+    {
+        "date": "6/11/2016",
+        "BreakEvenEfficiency": 114.89317348921125
+    },
+    {
+        "date": "6/4/2016",
+        "BreakEvenEfficiency": 113.74056142158804
+    },
+    {
+        "date": "5/29/2016",
+        "BreakEvenEfficiency": 106.03663266465558
+    },
+    {
+        "date": "5/22/2016",
+        "BreakEvenEfficiency": 134.31672616120645
+    },
+    {
+        "date": "5/15/2016",
+        "BreakEvenEfficiency": 98.28510736941935
+    },
+    {
+        "date": "5/9/2016",
+        "BreakEvenEfficiency": 101.55276483112469
+    },
+    {
+        "date": "5/2/2016",
+        "BreakEvenEfficiency": 119.69861696686797
+    },
+    {
+        "date": "4/25/2016",
+        "BreakEvenEfficiency": 86.56621832704234
+    },
+    {
+        "date": "4/19/2016",
+        "BreakEvenEfficiency": 106.39433941617806
+    },
+    {
+        "date": "4/12/2016",
+        "BreakEvenEfficiency": 107.31870712957499
+    },
+    {
+        "date": "4/5/2016",
+        "BreakEvenEfficiency": 150.52383071353557
+    },
+    {
+        "date": "3/30/2016",
+        "BreakEvenEfficiency": 195.62962195536733
+    },
+    {
+        "date": "3/23/2016",
+        "BreakEvenEfficiency": 248.48996661378726
+    },
+    {
+        "date": "3/17/2016",
+        "BreakEvenEfficiency": 229.4132310732307
+    },
+    {
+        "date": "3/9/2016",
+        "BreakEvenEfficiency": 239.37571289971228
+    },
+    {
+        "date": "3/1/2016",
+        "BreakEvenEfficiency": 196.86799383932674
+    },
+    {
+        "date": "2/22/2016",
+        "BreakEvenEfficiency": 155.38982526747597
+    },
+    {
+        "date": "2/14/2016",
+        "BreakEvenEfficiency": 157.8563220311414
+    },
+    {
+        "date": "2/6/2016",
+        "BreakEvenEfficiency": 88.69601725370329
+    },
+    {
+        "date": "1/29/2016",
+        "BreakEvenEfficiency": 81.78276934754727
+    },
+    {
+        "date": "1/21/2016",
+        "BreakEvenEfficiency": 60.20094663050102
+    },
+    {
+        "date": "1/13/2016",
+        "BreakEvenEfficiency": 50.11848178254769
+    },
+    {
+        "date": "1/5/2016",
+        "BreakEvenEfficiency": 42.244803528336575
+    },
+    {
+        "date": "12/29/2015",
+        "BreakEvenEfficiency": 37.41550319406207
+    },
+    {
+        "date": "12/21/2015",
+        "BreakEvenEfficiency": 38.923436039356076
+    },
+    {
+        "date": "12/13/2015",
+        "BreakEvenEfficiency": 43.37965950808384
+    },
+    {
+        "date": "12/5/2015",
+        "BreakEvenEfficiency": 38.73423776421128
+    },
+    {
+        "date": "11/27/2015",
+        "BreakEvenEfficiency": 44.10056980239427
+    },
+    {
+        "date": "11/19/2015",
+        "BreakEvenEfficiency": 40.63595992989613
+    },
+    {
+        "date": "11/11/2015",
+        "BreakEvenEfficiency": 38.457331987664055
+    },
+    {
+        "date": "11/3/2015",
+        "BreakEvenEfficiency": 52.14115050314888
+    },
+    {
+        "date": "10/26/2015",
+        "BreakEvenEfficiency": 42.6243521012725
+    },
+    {
+        "date": "10/18/2015",
+        "BreakEvenEfficiency": 32.91667982684443
+    },
+    {
+        "date": "10/10/2015",
+        "BreakEvenEfficiency": 39.79541248146486
+    },
+    {
+        "date": "10/2/2015",
+        "BreakEvenEfficiency": 42.39800871829659
+    },
+    {
+        "date": "9/24/2015",
+        "BreakEvenEfficiency": 43.334832400419025
+    },
+    {
+        "date": "9/16/2015",
+        "BreakEvenEfficiency": 54.737907252890956
+    },
+    {
+        "date": "9/8/2015",
+        "BreakEvenEfficiency": 77.16029645687858
+    },
+    {
+        "date": "8/30/2015",
+        "BreakEvenEfficiency": 74.29253163402672
+    },
+    {
+        "date": "8/22/2015",
+        "BreakEvenEfficiency": 116.06194378432659
+    },
+    {
+        "date": "8/14/2015",
+        "BreakEvenEfficiency": 279.7353990132974
+    },
+    {
+        "date": "8/6/2015",
+        "BreakEvenEfficiency": 0.0
+    },
+    {
+        "date": "7/30/2015",
+        "BreakEvenEfficiency": 0.0
+    }
+]

@@ -1,0 +1,92 @@
+[
+    {
+        "amountOfBlocks": 5,
+        "averagedifficulty": 2508559696182671.0,
+        "averageblocktime": 13.0,
+        "averagehashrate": 192966130475590.06
+    },
+    {
+        "amountOfBlocks": 10,
+        "averagedifficulty": 2522958019687387.0,
+        "averageblocktime": 11.11111111111111,
+        "averagehashrate": 227066221771864.84
+    },
+    {
+        "amountOfBlocks": 50,
+        "averagedifficulty": 2519458885778645.0,
+        "averageblocktime": 15.73469387755102,
+        "averagehashrate": 160121252144168.1
+    },
+    {
+        "amountOfBlocks": 100,
+        "averagedifficulty": 2511420955540665.5,
+        "averageblocktime": 15.282828282828282,
+        "averagehashrate": 164329593257452.7
+    },
+    {
+        "amountOfBlocks": 200,
+        "averagedifficulty": 2495095212656742.5,
+        "averageblocktime": 15.100502512562814,
+        "averagehashrate": 165232594781594.6
+    },
+    {
+        "amountOfBlocks": 300,
+        "averagedifficulty": 2495758059259711.0,
+        "averageblocktime": 15.40133779264214,
+        "averagehashrate": 162048134575169.06
+    },
+    {
+        "amountOfBlocks": 400,
+        "averagedifficulty": 2492790148390179.0,
+        "averageblocktime": 14.997493734335839,
+        "averagehashrate": 166213781618930.72
+    },
+    {
+        "amountOfBlocks": 500,
+        "averagedifficulty": 2490713173446591.5,
+        "averageblocktime": 15.076152304609218,
+        "averagehashrate": 165208809457643.12
+    },
+    {
+        "amountOfBlocks": 1000,
+        "averagedifficulty": 2503255377564277.5,
+        "averageblocktime": 15.543543543543544,
+        "averagehashrate": 161047921315476.12
+    },
+    {
+        "amountOfBlocks": 1500,
+        "averagedifficulty": 2514645913254254.0,
+        "averageblocktime": 15.831220813875918,
+        "averagehashrate": 158840934809663.6
+    },
+    {
+        "amountOfBlocks": 2000,
+        "averagedifficulty": 2526273348799684.5,
+        "averageblocktime": 15.595297648824411,
+        "averagehashrate": 161989428203707.12
+    },
+    {
+        "amountOfBlocks": 2500,
+        "averagedifficulty": 2539165438801386.5,
+        "averageblocktime": 15.443777511004402,
+        "averagehashrate": 164413495143407.38
+    },
+    {
+        "amountOfBlocks": 3000,
+        "averagedifficulty": 2546862041235133.5,
+        "averageblocktime": 15.527842614204735,
+        "averagehashrate": 164019053033502.94
+    },
+    {
+        "amountOfBlocks": 5000,
+        "averagedifficulty": 2815137516857239.5,
+        "averageblocktime": 16.83236647329466,
+        "averagehashrate": 167245498208679.53
+    },
+    {
+        "amountOfBlocks": 5000,
+        "averagedifficulty": 2813426650423452.5,
+        "averageblocktime": 16.927985597119424,
+        "averagehashrate": 166199730870647.94
+    }
+]
