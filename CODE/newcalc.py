@@ -362,7 +362,9 @@ def plotBreakEvenEff():
     BreakEvenEfficiencySet = reversed(BreakEvenEfficiencySet)
     BreakEvenEfficiencySetDataFrame = pd.DataFrame(BreakEvenEfficiencySet)
 
-    df.plot(x='date', y='BreakEvenEfficiency')
+
+
+    BreakEvenEfficiencySetDataFrame.plot(x='date', y='BreakEvenEfficiency')
 
     mpl.show()
 
