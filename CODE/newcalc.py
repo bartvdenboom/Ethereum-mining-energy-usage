@@ -368,14 +368,31 @@ def plotBreakEvenEff():
 
     mpl.show()
 
+def adjustForUncles():
+    with open('../JSONDATA/BlockData0.json') as r:
+        blockdata = json.load(r)
+    blocks = list()
+    for data in blockdata:
+        correctedhashrate  = (data['averagedifficulty']*(1+data['unclerate']))/data['averageblocktime']
+        data['correctedhashrate'] = correctedhashrate
+        blocks.append(data)
+    with open('../JSONDATA/CrawlerBlockDataAdjustedUncles.json', 'w') as w:
+        json.dump(blocks, w, indent=4)
+
 def main():
-    BLOCKNR = 163600
+    BLOCKNR = 9123600
     INTERVAL = 40000
-    file = '../JSONDATA/BlockData.json'
+    file = '../JSONDATA/BlockDataDaily.json'
+    begintime = time.time()
     while(1):
-        processBlockInfo(500, BLOCKNR,file)
+        processBlockInfo(5700, BLOCKNR,file)
+        interval = time.time()
+        print("It took %f seconds." % (interval-begintime))
+        begintime = interval
         BLOCKNR-=INTERVAL
 
+
 #main()
-calcBreakEvenEffSet()
-plotBreakEvenEff()
+adjustForUncles()
+#calcBreakEvenEffSet()
+#plotBreakEvenEff()

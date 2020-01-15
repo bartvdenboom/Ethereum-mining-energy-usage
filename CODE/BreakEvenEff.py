@@ -1,8 +1,9 @@
 import json
 from datetime import datetime
-import matplotlib.pyplot as mpl
+import matplotlib.pyplot as plt
 import pandas as pd
 import sys
+import csv, json
 
 #BreakEvenEfficiency by date
 with open('../JSONDATA/plotdata.json') as f:
@@ -11,6 +12,26 @@ with open('../JSONDATA/plotdata.json') as f:
 #Blockdata from etherscan API
 with open('../JSONDATA/BlockData.json', 'r') as r:
     blockdata = json.load(r)
+
+with open('../JSONDATA/GPUdata/GPUDATA.json') as r:
+    gpudata = json.load(r)
+
+def csvtojson(input, output):
+    csvfile = open(input, 'r')
+    jsonfile= open(output, 'w')
+    reader = csv.reader(csvfile)
+    rownames = next(reader)
+    reader  = csv.DictReader(csvfile, rownames)
+    out = json.dumps([row for row in reader],indent=4)
+    jsonfile.write(out)
+
+def getMatchingHardware(efficiency):
+    scores = list()
+    for i in range (0, len(gpudata)):
+        scores[i] = (i, abs(efficiency-float(gpudata[i]['Efficiency in J/Mh'])))
+    sorted(scores, key=lambda x: x[1])
+    for i in range (0,4):
+        print(scores[i])
 
 def getBlockReward(blocknr):
     #Blockreward was originally 5 ETH (untill blocknr 4369999), this changed to 3 ETH with EIP-649 (blocknr 7,280,000) and to 2 ETH with EIP-1234
@@ -51,11 +72,7 @@ def calcBreakEvenEffSet(PriceperKWh, blockdata):
     with open('../JSONDATA/plotdata.json', 'w') as w:
         json.dump(dps, w, indent = 4)
 
-#plot of BreakEvenEfficiency over time
-def plot():
-    BreakEvenEfficiencySetDataFrame = pd.DataFrame(BreakEvenEfficiencySet)
-    BreakEvenEfficiencySetDataFrame.plot(x='date', y='BreakEvenEfficiency')
-    mpl.show()
-
-calcBreakEvenEffSet(0.10, blockdata)
-plot()
+getMatchingHardware(10)
+#calcBreakEvenEffSet(0.10, blockdata)
+#csvtojson("transactions.csv", "transactions.json")
+# plot()

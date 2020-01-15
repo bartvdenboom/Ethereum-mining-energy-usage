@@ -82,8 +82,12 @@ def workers_miners():
                 workers.append(worker)
             miner['Workers'] = workers
             results.append(miner)
-            with open('../miner_workers_ethermine_final.json', 'w') as fid:
-                json.dump(results, fid, indent = 4)
+            if(i%2==0):
+                with open('../miner_workers_ethermine_final.json', 'w') as fid:
+                    json.dump(results, fid, indent = 4)
+            else:
+                with open('../miner_workers_ethermine_final_uneven.json', 'w') as fid:
+                    json.dump(results, fid, indent = 4)
         else:
             print("Miner not found.")
     print("Done.")
