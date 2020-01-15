@@ -25,13 +25,26 @@ def csvtojson(input, output):
     out = json.dumps([row for row in reader],indent=4)
     jsonfile.write(out)
 
-def getMatchingHardware(efficiency):
+def getMatchingHardware(efficiency, begindate, enddate):
+    gpulist = getDateSet(begindate, enddate)
     scores = list()
-    for i in range (0, len(gpudata)):
-        scores[i] = (i, abs(efficiency-float(gpudata[i]['Efficiency in J/Mh'])))
-    sorted(scores, key=lambda x: x[1])
-    for i in range (0,4):
-        print(scores[i])
+    for i in range (0, (len(gpulist)-1)):
+        score = (i, abs(efficiency-float(gpulist[i]['Efficiency in J/Mh'])))
+        scores.append(score)
+    scores = sorted(scores, key=lambda x:x[1])
+    for i in range (0,5):
+        print(gpulist[scores[i][0]]['Product'] + "Efficiency = " +gpulist[scores[i][0]]['Efficiency in J/Mh'] + " J/Mh\n")
+
+def getDateSet(begindate, enddate):
+    begindateobj = datetime.strptime(begindate,"%m/%d/%Y")
+    enddateobj = datetime.strptime(enddate, "%m/%d/%Y")
+    gpulist = list()
+    for gpu in gpudata:
+        date = datetime.strptime(gpu['Release date'], "%m/%d/%Y")
+        if date > begindateobj and date <= enddateobj:
+            gpulist.append(gpu)
+    return gpulist
+
 
 def getBlockReward(blocknr):
     #Blockreward was originally 5 ETH (untill blocknr 4369999), this changed to 3 ETH with EIP-649 (blocknr 7,280,000) and to 2 ETH with EIP-1234
@@ -72,7 +85,8 @@ def calcBreakEvenEffSet(PriceperKWh, blockdata):
     with open('../JSONDATA/plotdata.json', 'w') as w:
         json.dump(dps, w, indent = 4)
 
-getMatchingHardware(10)
+#getMatchingHardware(3)
 #calcBreakEvenEffSet(0.10, blockdata)
 #csvtojson("transactions.csv", "transactions.json")
 # plot()
+#csvtojson('../JSONDATA/GPUDATA/CSV/GPUDATA.csv', '../JSONDATA/GPUDATA/GPUDATA.json')
