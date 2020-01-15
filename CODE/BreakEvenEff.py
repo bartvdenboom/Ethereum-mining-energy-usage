@@ -32,7 +32,7 @@ def getMatchingHardware(efficiency, begindate, enddate):
         score = (i, abs(efficiency-float(gpulist[i]['Efficiency in J/Mh'])))
         scores.append(score)
     scores = sorted(scores, key=lambda x:x[1])
-    for i in range (0,5):
+    for i in range (0, len(scores)-1):
         print(gpulist[scores[i][0]]['Product'] + "Efficiency = " +gpulist[scores[i][0]]['Efficiency in J/Mh'] + " J/Mh\n")
 
 def getDateSet(begindate, enddate):
@@ -85,7 +85,7 @@ def calcBreakEvenEffSet(PriceperKWh, blockdata):
     with open('../JSONDATA/plotdata.json', 'w') as w:
         json.dump(dps, w, indent = 4)
 
-#getMatchingHardware(3)
+getMatchingHardware(5, "7/8/2019", "12/1/2019")
 #calcBreakEvenEffSet(0.10, blockdata)
 #csvtojson("transactions.csv", "transactions.json")
 # plot()
