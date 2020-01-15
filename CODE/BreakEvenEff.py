@@ -56,6 +56,19 @@ def getBlockReward(blocknr):
         reward = 2
     return reward
 
+def getblockReward(date):
+    dateobj = datetime.strptime(date, "%m/%d/%Y")
+    EIP649 = datetime.strptime("10/16/2017", "%m/%d/%Y")
+    EIP1234 = datetime.strptime("3/1/2019", "%m/%d/%Y")
+    if dateobj <= EIP649:
+        reward = 5
+    elif dateobj > EIP649 and dateobj < EIP1234:
+        reward = 3
+    else:
+        reward = 2
+    return reward
+
+
 def getUncleReward(blocknr):
     return (getBlockReward(blocknr) * (7/8))
 
@@ -85,8 +98,9 @@ def calcBreakEvenEffSet(PriceperKWh, blockdata):
     with open('../JSONDATA/plotdata.json', 'w') as w:
         json.dump(dps, w, indent = 4)
 
-getMatchingHardware(5, "7/8/2019", "12/1/2019")
+#getMatchingHardware(5, "7/8/2019", "12/1/2019")
 #calcBreakEvenEffSet(0.10, blockdata)
 #csvtojson("transactions.csv", "transactions.json")
 # plot()
 #csvtojson('../JSONDATA/GPUDATA/CSV/GPUDATA.csv', '../JSONDATA/GPUDATA/GPUDATA.json')
+print(getblockReward("3/1/2019"))
