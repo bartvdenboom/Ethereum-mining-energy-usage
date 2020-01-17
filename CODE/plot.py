@@ -3,12 +3,16 @@ from datetime import datetime
 import matplotlib.pyplot as plt
 import pandas as pd
 import sys
-import csv, json
+import csv
+from matplotlib.ticker import FuncFormatter
+import numpy as np
 
-with open('../JSONDATA/CrawlerBlockDataAdjustedUncles.json') as r:
+with open('../JSONDATA/EtherscanCrawler/CrawlerBlockDataAdjustedUncles.json') as r:
     crawlerdata = reversed(json.load(r))
 with open('../JSONDATA/Etherscan/DailyData.json') as r:
-    etherscandata = json.load(r)
+    blockdata = json.load(r)
+with open('../JSONDATA/GPUdata/GPUDATA.json') as r:
+    gpudata = json.load(r)
 
 def plottwoaxis():
     BreakEvenEfficiencySetDataFrame = pd.DataFrame(BreakEvenEfficiencySet)
@@ -39,12 +43,65 @@ def plottwoaxis():
     # #plt.figure(BreakEvenEfficiencySetDataFrame, (200,100))
     plt.show()
 
-def plot():
+def scatterPlotGpuEfficiencies():
 
+    df = pd.DataFrame(gpudata,columns=['Release date', 'Efficiency in J/Mh', 'Product'])
+
+    df["Release date"] = pd.to_datetime(df["Release date"])
+
+    df = df.sort_values(by="Release date")
+
+    for i in range(0, len(df)-1):
+        plt.scatter(df['Release date'][i], float(df['Efficiency in J/Mh'][i]))
+        plt.text(df['Release date'][i],float(df['Efficiency in J/Mh'][i]),df['Product'][i])
+    plt.gca().xaxis.set_major_locator(plt.MaxNLocator(20))
+    #plt.gca().yaxis.set_major_locator(plt.MaxNLocator(20))
+    #plt.ylim(1, 20)
+    plt.xticks(rotation=45)
+    plt.show()
+
+def Gigahashformatter(x, pos):
+    'The two args are the value and tick position'
+    return '%1ik' % (x*1e-12)
+
+
+def plothashrates():
+    formatter = FuncFormatter(Gigahashformatter)
     crawlerdataframe = pd.DataFrame(crawlerdata,columns=['date', 'averagehashrate', 'correctedhashrate'])
 
-    etherscandataframe = pd.DataFrame(etherscandata,columns=['date', 'averagehashrate', 'calculatedhashrate', 'correctedhashrate'])
-    crawlerdataframe.plot(kind='line', x='date', y=['averagehashrate', 'correctedhashrate'])
-    etherscandataframe.plot(kind='line', x='date', y=['averagehashrate', 'calculatedhashrate', 'correctedhashrate'])
+    etherscandataframe = pd.DataFrame(blockdata,columns=['date', 'averagehashrate', 'calculatedhashrate', 'correctedhashrate'])
+    #ax1 = crawlerdataframe.plot(kind='line', x='date', y=['averagehashrate', 'correctedhashrate'])
+    ax2 = etherscandataframe.plot(kind='line', x='date', y=['correctedhashrate'])
+    # ax1.set_xlabel("Date")
+    # ax1.set_ylabel("Hashrate GH/s")
+    # ax1.yaxis.set_major_formatter(formatter)
+    ax2.set_xlabel("Date")
+    ax2.set_ylabel("Hashrate GH/s")
+    ax2.yaxis.set_major_formatter(formatter)
+    ax2.axvline(x=200,color='red')
+    ax2.axvline(x=454,color='red')
+    ax2.axvline(x=598,color='red')
+    ax2.axvline(x=778,color='red')
+    ax2.axvline(x=970,color='red')
+    ax2.axvline(x=1106,color='red')
+    ax2.axvline(x=1141, color='red')
+    ax2.axvline(x=1237,color='red')
+    ax2.axvline(x=1275,color='red')
+    ax2.axvline(x=1479,color='red')
+    ax2.axvline(x=1538,color='red')
+
+
+    plt.xticks(rotation=45)
     plt.show()
-plot()
+
+
+def plotHashRategradient():
+    etherscandataframe = pd.DataFrame(blockdata,columns=['date', 'correctedhashrate'])
+    etherscanhashrate = pd.DataFrame(etherscandataframe, columns=['correctedhashrate']).to_numpy().flatten()
+    gradient = np.gradient(etherscanhashrate)
+    plt.plot(gradient, label="Gradient of hashrate")
+    plt.show()
+
+#scatterPlotGpuEfficiencies()
+#plotHashRategradient()
+plothashrates()

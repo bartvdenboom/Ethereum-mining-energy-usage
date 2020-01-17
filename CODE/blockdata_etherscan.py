@@ -58,6 +58,7 @@ def buildBlockData():
         unclerate = unclecount/blockcount
         day['date'] = pricedata[i]['Date(UTC)']
         day['ethprice'] = float(pricedata[i]['Value'])
+        day['timespan'] = blockcount*averageblocktime
         day['averagedifficulty'] = averagedifficulty
         day['averageblocktime'] = averageblocktime
         day['averagehashrate'] = averagehashrate

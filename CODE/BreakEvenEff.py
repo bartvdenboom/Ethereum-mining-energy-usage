@@ -4,15 +4,18 @@ import matplotlib.pyplot as plt
 import pandas as pd
 import sys
 import csv, json
+import statistics
 
 #BreakEvenEfficiency by date
 with open('../JSONDATA/plotdata.json') as f:
-    BreakEvenEfficiencySet = reversed(json.load(f))
-
-#Blockdata from etherscan API
-with open('../JSONDATA/BlockData.json', 'r') as r:
+    plotdata = reversed(json.load(f))
+#Blockdata from etherscan API (crawler)
+with open('../JSONDATA/EtherscanCrawler/CrawlerBlockDataAdjustedUncles.json', 'r') as r:
+    crawlerblockdata = json.load(r)
+#Blockdata from etherscan graphs
+with open('../JSONDATA/Etherscan/DailyData.json') as r:
     blockdata = json.load(r)
-
+#Gpudata from multiple sources
 with open('../JSONDATA/GPUdata/GPUDATA.json') as r:
     gpudata = json.load(r)
 
@@ -25,23 +28,25 @@ def csvtojson(input, output):
     out = json.dumps([row for row in reader],indent=4)
     jsonfile.write(out)
 
-def getMatchingHardware(efficiency, begindate, enddate):
-    gpulist = getDateSet(begindate, enddate)
+def getMatchingHardwareEfficiency(efficiency, datetuple):
+    gpulist = getDateSet(datetuple)
     scores = list()
     for i in range (0, (len(gpulist)-1)):
         score = (i, abs(efficiency-float(gpulist[i]['Efficiency in J/Mh'])))
         scores.append(score)
     scores = sorted(scores, key=lambda x:x[1])
-    for i in range (0, len(scores)-1):
-        print(gpulist[scores[i][0]]['Product'] + "Efficiency = " +gpulist[scores[i][0]]['Efficiency in J/Mh'] + " J/Mh\n")
+    #Testprint
+    # for i in range (0, len(scores)-1):
+    #     print(gpulist[scores[i][0]]['Product'] + "Efficiency = " +gpulist[scores[i][0]]['Efficiency in J/Mh'] + " J/Mh\n")
+    return float(gpulist[scores[0][0]]['Efficiency in J/Mh'])
 
-def getDateSet(begindate, enddate):
-    begindateobj = datetime.strptime(begindate,"%m/%d/%Y")
-    enddateobj = datetime.strptime(enddate, "%m/%d/%Y")
+#Takes begindate and enddate as tuple of datetime obj and returns a list of hardware that has been released in that timeframe
+def getDateSet(datetuple):
+    begindate, enddate = datetuple
     gpulist = list()
     for gpu in gpudata:
         date = datetime.strptime(gpu['Release date'], "%m/%d/%Y")
-        if date > begindateobj and date <= enddateobj:
+        if date > begindate and date <= enddate:
             gpulist.append(gpu)
     return gpulist
 
@@ -72,20 +77,59 @@ def getblockReward(date):
 def getUncleReward(blocknr):
     return (getBlockReward(blocknr) * (7/8))
 
-def calcBreakEvenEff(hashrate,blocktime,ETHPrice,timespan, nrOfBlocks, blockReward, uncleReward, unclerate, PriceperKWh):
+def calcBreakEvenEffCrawler(hashrate, blocktime, ETHPrice, timespan, nrOfBlocks, blockReward, uncleReward, unclerate, PriceperKWh):
     #Profitable efficiency
     ETHProfitGenerated = (nrOfBlocks*blockReward+(unclerate*nrOfBlocks*uncleReward))*ETHPrice
     BreakEvenEfficiency = ((ETHProfitGenerated/PriceperKWh)*3600000)/(timespan*hashrate)
     return BreakEvenEfficiency
 
+def calcBreakEvenEff(dailyETHreward, ethprice, PriceperKWh, timespan, hashrate):
+    ETHProfitGenerated = dailyETHreward * ethprice
+    BreakEvenEfficiency = ((ETHProfitGenerated/PriceperKWh)*3600000)/(timespan*hashrate)
+    return BreakEvenEfficiency
+
 #Outputs BreakEvenEfficiency from blockdata averages JSON to JSON
 def calcBreakEvenEffSet(PriceperKWh, blockdata):
-
     dps = list()
     for i in range (0, len(blockdata)):
         dp = {}
         dp['date'] = blockdata[i]['date']
-        dp['BreakEvenEfficiency'] = calcBreakEvenEff(float(blockdata[i]['averagehashrate'])/1000000,
+        dp['BreakEvenEfficiency'] = calcBreakEvenEff(float(blockdata[i]['dailyETHreward']),
+                                                     float(blockdata[i]['ethprice']),
+                                                     PriceperKWh,
+                                                     float(blockdata[i]['timespan']),
+                                                     float(blockdata[i]['calculatedhashrate']/1000000)
+                                                     )
+        dp['BreakEvenEfficiencyUncles'] = calcBreakEvenEff(float(blockdata[i]['dailyETHreward']),
+                                                     float(blockdata[i]['ethprice']),
+                                                     PriceperKWh,
+                                                     float(blockdata[i]['timespan']),
+                                                     float(blockdata[i]['correctedhashrate']/1000000)
+                                                     )
+        dp['BreakEvenEfficiencyActual'] = calcBreakEvenEff(float(blockdata[i]['dailyETHreward']),
+                                                     float(blockdata[i]['ethprice']),
+                                                     PriceperKWh,
+                                                     float(blockdata[i]['timespan']),
+                                                     float(blockdata[i]['averagehashrate']/1000000)
+                                                     )
+        dps.append(dp)
+    return dps
+
+def calcBreakEvenEffSetCrawler(PriceperKWh, blockdata):
+    dps = list()
+    for i in range (0, len(blockdata)):
+        dp = {}
+        dp['date'] = blockdata[i]['date']
+        dp['BreakEvenEfficiency'] = calcBreakEvenEffCrawler(float(blockdata[i]['averagehashrate'])/1000000,
+                                                     float(blockdata[i]['averageblocktime']),
+                                                     float(blockdata[i]['ethprice']),
+                                                     float(blockdata[i]['timespan']),
+                                                     float(blockdata[i]['amountOfBlocks']),
+                                                     getBlockReward(blockdata[i]['blocknr']),
+                                                     getUncleReward(blockdata[i]['blocknr']),
+                                                     float(blockdata[i]['unclerate']),
+                                                     PriceperKWh)
+        dp['BreakEvenEfficiencyUncles'] = calcBreakEvenEffCrawler(float(blockdata[i]['correctedhashrate'])/1000000,
                                                      float(blockdata[i]['averageblocktime']),
                                                      float(blockdata[i]['ethprice']),
                                                      float(blockdata[i]['timespan']),
@@ -95,12 +139,89 @@ def calcBreakEvenEffSet(PriceperKWh, blockdata):
                                                      float(blockdata[i]['unclerate']),
                                                      PriceperKWh)
         dps.append(dp)
-    with open('../JSONDATA/plotdata.json', 'w') as w:
-        json.dump(dps, w, indent = 4)
+    return reversed(dps)
+
+def calcEnergyUsage():
+    phases = [(0, 200),(201, 454), (455, 598), (599,778), (779, 970), (971, 1106), (1107, 1141), (1142, 1237), (1238, 1275), (1276, 1479), (1480, 1538), (1539, 1629)]
+    datephases = []
+    for i in range(0,(len(phases)-1)):
+        datephases.append(
+                            (
+                            datetime.strptime(blockdata[phases[i][0]]['date'],"%m/%d/%Y"),
+                            datetime.strptime(blockdata[phases[i][1]]['date'],"%m/%d/%Y")
+                            )
+                        )
+    breakevenset = calcBreakEvenEffSet(0.10, blockdata)
+    EnergyUsageSum = 0
+    for phase,datephase in zip(phases,datephases):
+        breakEvenSlice = breakevenset[phase[0]:phase[1]]
+        hashRateSlice = blockdata[phase[0]:phase[1]]
+
+        df_eff = pd.DataFrame(breakEvenSlice)
+        meanBreakEvenEff = df_eff.mean(axis=0)
+        efficiency = getMatchingHardwareEfficiency(meanBreakEvenEff,datephase)
+
+        df_hr = pd.DataFrame(hashRateSlice)
+        meanHashRate = df_hr.mean(axis=0)
+        avghashrate = meanHashRate['correctedhashrate']
+
+
+
+
+
+
+
+def plotBreakEvenEff(BreakEvenEfficiencySet):
+    df = pd.DataFrame(BreakEvenEfficiencySet)
+    df.plot(kind='line', x='date', y=['BreakEvenEfficiency','BreakEvenEfficiencyUncles', 'BreakEvenEfficiencyActual'])
+    plt.show()
+
+def compareplots(d1, d2):
+    df1 = pd.DataFrame(d1)
+    df2 = pd.DataFrame(d2)
+    df1.plot(kind='line', x='date', y=['BreakEvenEfficiency', 'BreakEvenEfficiencyUncles'])
+    df2.plot(kind='line', x='date', y=['BreakEvenEfficiency', 'BreakEvenEfficiencyUncles', 'BreakEvenEfficiencyActual'])
+    plt.locator_params(axis='x', nbins=20)
+    plt.show()
+
+def plottwoaxis(BreakEvenEfficiencySet):
+    BreakEvenEfficiencySetDataFrame = pd.DataFrame(BreakEvenEfficiencySet)
+    data = pd.DataFrame(reversed(blockdata))
+    fig, ax1 = plt.subplots()
+
+    color = 'tab:red'
+    ax1.set_xlabel('Date')
+    ax1.set_ylabel('BreakEvenEfficiency (J/MH)', color=color)
+    ax1.plot(BreakEvenEfficiencySetDataFrame['date'], BreakEvenEfficiencySetDataFrame['BreakEvenEfficiency'], color=color)
+    ax1.tick_params(axis='y', labelcolor=color)
+
+    plt.xticks(rotation=90)
+
+    ax2 = ax1.twinx()  # instantiate a second axes that shares the same x-axis
+
+    color = 'tab:blue'
+    ax2.set_ylabel('Average Hashrate (GH/s)', color=color)  # we already handled the x-label with ax1
+    ax2.plot(data['date'], (data['averagehashrate']/1000000000), color=color)
+    ax2.tick_params(axis='y', labelcolor=color)
+    ax1.xaxis.set_major_locator(plt.MaxNLocator(20))
+
+    fig.tight_layout()  # otherwise the right y-label is slightly clipped
+    #
+    # data.plot(kind='line', x='date', y='averagehashrate', figsize = (16,9), ax=ax)
+    # BreakEvenEfficiencySetDataFrame.plot(kind='line', x='date', y='BreakEvenEfficiency', figsize = (16,9), ax=ax)
+    # BreakEvenEfficiencySetDataFrame.plot(x='date', y='BreakEvenEfficiency', figsize=(16,9))
+    # #plt.figure(BreakEvenEfficiencySetDataFrame, (200,100))
+    plt.show()
+
 
 #getMatchingHardware(5, "7/8/2019", "12/1/2019")
-#calcBreakEvenEffSet(0.10, blockdata)
 #csvtojson("transactions.csv", "transactions.json")
-# plot()
 #csvtojson('../JSONDATA/GPUDATA/CSV/GPUDATA.csv', '../JSONDATA/GPUDATA/GPUDATA.json')
-print(getblockReward("3/1/2019"))
+breakevenset = calcBreakEvenEffSet(0.10, blockdata)
+breakevensetcrawler = calcBreakEvenEffSetCrawler(0.10, crawlerblockdata)
+#compareplots(breakevensetcrawler,breakevenset)
+#plottwoaxis(breakevenset)
+calcEnergyUsage()
+
+#plotBreakEvenEff(plotdata)
+#calcBreakEvenEffSetCrawler(0.10, crawlerblockdata, '../JSONDATA/plotdata.json')
