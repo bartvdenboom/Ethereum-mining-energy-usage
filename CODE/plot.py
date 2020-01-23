@@ -104,4 +104,4 @@ def plotHashRategradient():
 
 #scatterPlotGpuEfficiencies()
 #plotHashRategradient()
-plothashrates()
+#plothashrates()

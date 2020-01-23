@@ -1,0 +1,93 @@
+Number,Type,Release date,Source,Accessed on,Manufacturer,Product,Hash rate in Mh/s,Power in W,Efficiency in Mh/J,Efficiency in J/Mh
+1,GPU,3/19/2012,https://www.cryptocompare.com/mining/amd/radeon-hd-7870-ethereum-mining/,5/7/2018,AMD,Radeon HD 7870,10,175,0.06,17.15686275
+2,GPU,3/22/2012,https://en.wikipedia.org/wiki/GeForce_600_series,5/7/2018,NVIDIA,GeForce GTX 680,15,195,0.08,13
+3,GPU,8/16/2012,https://en.wikipedia.org/wiki/GeForce_600_series,5/7/2018,NVIDIA,GeForce GTX 660 Ti,12,150,0.08,12.76595745
+4,GPU,10/9/2012,https://en.wikipedia.org/wiki/GeForce_600_series,5/7/2018,NVIDIA,GeForce GTX 650 Ti,10,110,0.09,10.64859632
+5,GPU,4/1/2013,https://www.cryptocompare.com/mining/amd/radeon-r9-hd-7990-ethereum-mining/,5/7/2018,AMD,Radeon R9 HD 7990,36,375,0.10,10.41666667
+6,GPU,5/23/2013,,5/7/2018,NVIDIA ,GeForce GTX 780,20,250,0.08,12.5
+7,GPU,5/30/2013,https://en.wikipedia.org/wiki/GeForce_700_series,5/7/2018,NVIDIA,GeForce GTX 770,15,230,0.07,15.33333333
+8,GPU,6/25/2013,https://en.wikipedia.org/wiki/GeForce_700_series,5/7/2018,NVIDIA,GeForce GTX 760,15,170,0.09,11.33333333
+9,GPU,10/24/2013,http://www.sapphiretech.com/page.asp?IDno=5371&lang=eng,5/7/2018,AMD,Sapphire R9 290X,31,290,0.11,9.508196721
+10,GPU,11/7/2013,https://en.wikipedia.org/wiki/GeForce_700_series,5/7/2018,NVIDIA,GeForce GTX 780 Ti,22,250,0.09,11.36363636
+11,GPU,12/19/2013,https://www.cryptocompare.com/mining/amd/radeon-r9-290x-tri-x-ethereum-mining/,5/7/2018,AMD,Radeon R9 290x Tri-X,22,290,0.08,13.18181818
+12,GPU,2/18/2014,https://www.cryptocompare.com/mining/nvidia/nvidia-geforce-gtx-750-ti-ethereum-mining/,5/7/2018,NVIDIA,GeForce GTX 750 Ti ,6,40,0.15,6.666666667
+13,GPU,2/18/2014,https://en.wikipedia.org/wiki/GeForce_700_series,5/7/2018,NVIDIA,GeForce GTX Titan Black,21,250,0.08,12.19512195
+14,GPU,4/8/2014,https://www.cryptocompare.com/mining/amd/radeon-r9-295x2-ethereum-mining/,5/7/2018,AMD,Radeon R9 295x2,46,500,0.09,10.86956522
+15,GPU,9/18/2014,https://en.wikipedia.org/wiki/GeForce_900_series,5/7/2018,NVIDIA,GeForce GTX 980,20,165,0.12,8.25
+16,GPU,9/18/2014,https://www.cryptocompare.com/mining/nvidia/nvidia-geforce-gtx-970-ethereum-mining/,5/7/2018,NVIDIA,GeForce GTX 970,16,145,0.11,9.119496855
+17,GPU,1/22/2015,https://en.wikipedia.org/wiki/GeForce_900_series,5/7/2018,NVIDIA,GeForce GTX 960,11,120,0.09,11.00917431
+18,GPU,3/17/2015,https://en.wikipedia.org/wiki/GeForce_900_series,5/7/2018,NVIDIA,GeForce GTX Titan X,40,250,0.16,6.25
+19,GPU,6/1/2015,https://en.wikipedia.org/wiki/AMD_Radeon_Rx_300_series,5/7/2018,AMD,Radeon R9 390,32,275,0.12,8.59375
+20,GPU,6/1/2015,https://en.wikipedia.org/wiki/AMD_Radeon_Rx_300_series,5/7/2018,AMD,Radeon R9 390X,34,275,0.12,8.208955224
+21,GPU,6/1/2015,https://www.cryptocompare.com/mining/amd/strix-radeon-r7-370-ethereum-mining/,5/7/2018,AMD,Radeon Strix R7 370,12,110,0.11,9.166666667
+22,GPU,6/1/2015,https://www.cryptocompare.com/mining/amd/radeon-r9-380-ethereum-mining/,5/7/2018,AMD,Radeon R9 380,17,190,0.09,11.17647059
+23,GPU,6/1/2015,https://www.cryptocompare.com/mining/amd/radeon-r9-fury-x-ethereum-mining/,5/7/2018,AMD,Radeon R9 Fury X,24,275,0.09,11.70212766
+24,GPU,6/2/2015,https://en.wikipedia.org/wiki/GeForce_900_series,5/7/2018,NVIDIA,GeForce GTX 980 Ti,24,250,0.09,10.63829787
+25,GPU,8/1/2015,https://www.cryptocompare.com/mining/amd/radeon-r9-nano-ethereum-mining/,5/7/2018,AMD,Radeon R9 Nano,23,175,0.13,7.608695652
+26,GPU,11/1/2015,https://www.cryptocompare.com/mining/amd/radeon-r9-380x-ethereum-mining/,5/7/2018,AMD,Radeon R9 380x,18,200,0.09,11.11111111
+27,GPU,5/27/2016,https://www.buriedone.com/hashrates.html,5/7/2018,NVIDIA,GeForce GTX 1080  ,27,180,0.15,6.666666667
+28,GPU,6/1/2016,https://www.cryptocompare.com/mining/amd/radeon-rx-480-ethereum-mining/,5/7/2018,AMD,Radeon Rx 480,25,150,0.17,6
+29,GPU,6/10/2016,https://www.techradar.com/news/best-mining-gpu,5/7/2018,NVIDIA,GeForce GTX 1070,30,150,0.20,5
+30,GPU,8/1/2016,https://www.buriedone.com/hashrates.html,5/7/2018,AMD,Radeon RX 460,13,75,0.17,5.769230769
+31,GPU,8/1/2016,https://www.cryptocompare.com/mining/amd/radeon-rx-470-ethereum-mining/,5/7/2018,AMD,Radeon RX 470 ,24,150,0.16,6.25
+32,GPU,8/18/2016,https://www.buriedone.com/hashrates.html,5/7/2018,NVIDIA,GeForce GTX 1060,24,120,0.20,5
+33,GPU,10/25/2016,https://www.buriedone.com/hashrates.html,5/7/2018,NVIDIA,Radeon GTX 1050 Ti,15,75,0.20,5
+34,GPU,3/10/2017,https://www.buriedone.com/hashrates.html,5/7/2018,NVIDIA,GeForce GTX 1080 Ti,37,250,0.15,6.756756757
+35,GPU,4/6/2017,https://www.techspot.com/article/1438-ethereum-mining-gpu-benchmark/%20&%20,5/7/2018,NVIDIA,GeForce Titan Xp,31,250,0.12,8.116883117
+36,GPU,4/18/2017,https://www.cryptocompare.com/mining/amd/asus-rog-strix-radeon-rx-570-o4g/,5/7/2018,AMD,Radeon RX 570,22,115,0.19,5.227272727
+37,GPU,4/18/2017,https://www.buriedone.com/hashrates.html,5/7/2018,AMD,Radeon RX 580,30,185,0.16,6.166666667
+38,GPU,4/20/2017,https://www.buriedone.com/hashrates.html,5/7/2018,AMD,Radeon RX 550,11,50,0.22,4.545454545
+39,GPU,7/1/2017,https://www.buriedone.com/hashrates.html,5/7/2018,AMD,Radeon RX Vega Frontier Edition,37,300,0.12,8.108108108
+40,GPU,8/14/2017,https://www.buriedone.com/hashrates.html,5/7/2018,AMD,Radeon RX Vega 64,40,295,0.14,7.375
+41,GPU,8/14/2017,https://www.buriedone.com/hashrates.html,5/7/2018,AMD,Radeon RX Vega 64 Liquid,44,345,0.13,7.840909091
+42,GPU,8/28/2017,https://www.buriedone.com/hashrates.html,5/7/2018,AMD,Radeon RX Vega 56,37,210,0.18,5.675675676
+43,GPU,11/2/2017,https://www.buriedone.com/hashrates.html,5/7/2018,NVIDIA,GeForce GTX 1070 Ti,32,150,0.21,4.6875
+44,GPU,12/13/2017,https://www.techradar.com/news/nvidias-titan-v-is-a-massively-powerful-gpu-for-cryptocurrency-mining,5/7/2018,NVIDIA,GTX Titan V,77,237,0.32,3.077922078
+45,GPU,7/9/2019,https://tweakers.net/nieuws/154656/nvidia-brengt-geforce-rtx-2070-en-2060-super-op-9-juli-uit.html ; https://www.buriedone.com/gpu-hashrates,12/20/2019,NVIDIA,RTX 2070 SUPER,42,215,0.20,5.119047619
+46,GPU,7/9/2019,https://tweakers.net/nieuws/154656/nvidia-brengt-geforce-rtx-2070-en-2060-super-op-9-juli-uit.html ; https://www.buriedone.com/gpu-hashrates,12/20/2019,NVIDIA,RTX 2060 SUPER,42,175,0.24,4.166666667
+47,GPU,4/23/2019,https://en.wikipedia.org/wiki/GeForce_16_series ; https://www.buriedone.com/gpu-hashrates,12/20/2019,NVIDIA,GTX 1650 4GB,15,75,0.20,5
+48,GPU,12/18/2018,https://en.wikipedia.org/wiki/GeForce_20_series ; https://www.buriedone.com/gpu-hashrates,12/20/2019,NVIDIA,TITAN RTX,63,280,0.23,4.444444444
+49,GPU,2/7/2019,https://en.wikipedia.org/wiki/Radeon_RX_Vega_series ; https://www.buriedone.com/gpu-hashrates,12/20/2019,AMD,Radeon VII,91,300,0.30,3.296703297
+50,GPU,6/21/2017,https://en.wikipedia.org/wiki/Nvidia_Tesla ; https://www.buriedone.com/gpu-hashrates,12/20/2019,NVIDIA,V100 16GB,95,250,0.38,2.631578947
+51,GPU,9/27/2018,https://en.wikipedia.org/wiki/GeForce_20_series ; https://www.buriedone.com/gpu-hashrates,12/20/2019,NVIDIA,RTX 2080 Ti 11GB,52,250,0.21,4.807692308
+52,GPU,11/15/2018,https://en.wikipedia.org/wiki/Radeon_RX_500_series ; https://www.buriedone.com/hashrates.html,12/20/2019,AMD,RX 590 8GB,32,225,0.14,7.03125
+53,GPU,7/7/2019,https://en.wikipedia.org/wiki/Radeon_RX_5000_series; https://www.hashrates.com/algorithms/ethash/,1/7/2020,NVIDIA,RX 5700,43.6,225,0.19,5.160550459
+54,GPU,7/7/2019,https://en.wikipedia.org/wiki/Radeon_RX_5000_series; https://www.hashrates.com/algorithms/ethash/,1/7/2020,NVIDIA,RX 5700 XT,43.8,235,0.19,5.365296804
+55,GPU,7/23/2019,https://tweakers.net/nieuws/154656/nvidia-brengt-geforce-rtx-2070-en-2060-super-op-9-juli-uit.html; https://www.hashrates.com/algorithms/ethash/,1/7/2020,NVIDIA,RTX 2080 SUPER,43.8,250,0.18,5.707762557
+56,GPU,7/20/2016,https://en.wikipedia.org/wiki/Nvidia_Tesla; https://www.hashrates.com/algorithms/ethash/,7/1/2020,NVIDIA,Tesla P100-SXM2-16GB,48.4,250,0.19,5.165289256
+57,GPU,9/20/2018,https://en.wikipedia.org/wiki/GeForce_20_series ; https://www.buriedone.com/gpu-hashrates,7/1/2020,NVIDIA,RTX 2080,40.3,215,0.19,5.334987593
+58,GPU,1/15/2019,https://en.wikipedia.org/wiki/GeForce_20_series; https://www.hashrates.com/gpus/nvidia-geforce-rtx-2060-6-gb/,7/1/2020,NVIDIA,RTX 2060,28.2,160,0.18,5.673758865
+59,GPU,10/17/2018,https://en.wikipedia.org/wiki/GeForce_20_series; https://www.hashrates.com/gpus/nvidia-geforce-rtx-2070-8-gb/,7/1/2020,NVIDIA,RTX 2070,37.2,175,0.21,4.704301075
+60,GPU,3/14/2019,https://en.wikipedia.org/wiki/GeForce_16_series; https://www.hashrates.com/gpus/nvidia-geforce-gtx-1660-6-gb/,7/1/2020,NVIDIA,GTX 1660,17.6,120,0.15,6.818181818
+61,GPU,2/22/2019,https://www.hashrates.com/gpus/nvidia-geforce-gtx-1660-ti-6-gb/; https://en.wikipedia.org/wiki/GeForce_16_series,7/1/2020,NVIDIA,GTX 1660 Ti,26.1,120,0.22,4.597701149
+62,GPU,1/10/2017,https://en.wikipedia.org/wiki/Radeon_RX_500_series; https://www.hashrates.com/gpus/amd-radeon-rx-560-series-4-gb/,7/1/2020,AMD,RX 560,7.6,70,0.11,9.210526316
+63,ASIC,7/1/2018,https://www.asicminervalue.com/miners/bitmain/antminer-e3-180mh,7/1/2020,Bitmain,Antminer E3 180 Mh,180,800,0.23,4.444444444
+64,ASIC,9/1/2018,https://www.asicminervalue.com/miners/innosilicon/a10-ethmaster-365mh,7/1/2020,Innosilicon,A10 ETHMaster (365Mh),365,650,0.56,1.780821918
+65,ASIC,9/1/2018,https://www.asicminervalue.com/miners/innosilicon/a10-ethmaster-432mh,7/1/2020,Innosilicon,A10 ETHMaster (432Mh),432,740,0.58,1.712962963
+66,ASIC,9/1/2018,https://www.asicminervalue.com/miners/innosilicon/a10-ethmaster-485mh,7/1/2020,Innosilicon,A10 ETHMaster (485Mh),485,850,0.57,1.75257732
+67,ASIC,9/1/2019,https://www.asicminervalue.com/miners/innosilicon/a10-ethmaster-500mh,7/1/2020,Innosilicon,A10 ETHMaster (500Mh),500,750,0.67,1.5
+68,GPU,12/1/2017,https://www.bitnand.com/nvidia-p104-100-gpu-mining-review,7/1/2020,NVIDIA,P104-100 (optimized),40,135,0.30,3.375
+69,GPU,7/1/2017,https://www.bitnand.com/nvidia-p106-100-gpu-mining-review,7/1/2020,NVIDIA,P106-100 (optimized),26,85,0.31,3.269230769
+70,RIG,3/10/2017,https://arxiv.org/pdf/1907.02434.pdf,7/1/2020,Shark,Extreme 2 (8 x GTX1080Ti),420,2200,0.19,5.238095238
+71,RIG,3/10/2017,https://arxiv.org/pdf/1907.02434.pdf,7/1/2020,Shark,Extreme 2 (6 x GTX1080Ti),300,1200,0.25,4
+72,RIG,8/28/2017,https://arxiv.org/pdf/1907.02434.pdf,7/1/2020,Shark,Extreme 2 (8 x VEGA 56),290,1700,0.17,5.862068966
+73,RIG,11/2/2017,https://arxiv.org/pdf/1907.02434.pdf,7/1/2020,Shark,Extreme 2 (8 x GTX1070Ti),245,1400,0.18,5.714285714
+74,RIG,4/18/2017,https://arxiv.org/pdf/1907.02434.pdf,7/1/2020,Shark,Extreme 2 (8 x RX580),240,1100,0.22,4.583333333
+75,RIG,8/28/2017,https://arxiv.org/pdf/1907.02434.pdf,7/1/2020,Shark,Extreme 2 (6 x VEGA 56),220,1275,0.17,5.795454545
+76,RIG,11/2/2017,https://arxiv.org/pdf/1907.02434.pdf,7/1/2020,Shark,Extreme 2 (6 x GTX1070Ti),185,1050,0.18,5.675675676
+77,RIG,4/18/2017,https://arxiv.org/pdf/1907.02434.pdf,7/1/2020,Shark,Extreme 2 (6 x RX580),180,825,0.22,4.583333333
+78,RIG,11/2/2017,https://arxiv.org/pdf/1907.02434.pdf,7/1/2020,Shark,Extreme 2 (4 x GTX1070Ti),122,600,0.20,4.918032787
+79,RIG,4/18/2017,https://arxiv.org/pdf/1907.02434.pdf,7/1/2020,Shark,Extreme 2 (4 x RX580),120,550,0.22,4.583333333
+80,RIG,3/10/2017,https://arxiv.org/pdf/1907.02434.pdf,7/1/2020,Maximus,"""+"" (8 x GTX 1080Ti)",370,2200,0.17,5.945945946
+81,RIG,4/18/2017,https://arxiv.org/pdf/1907.02434.pdf,7/1/2020,Ethereum,Mining rig (12 x RX570),360,1600,0.23,4.444444444
+82,RIG,4/18/2017,https://arxiv.org/pdf/1907.02434.pdf,7/1/2020,Ethereum,Mining rig (8 x RX580),240,1000,0.24,4.166666667
+83,RIG,4/18/2017,https://arxiv.org/pdf/1907.02434.pdf,7/1/2020,Ethereum,Mining rig (8 x RX570),220,950,0.23,4.318181818
+84,RIG,4/18/2017,https://arxiv.org/pdf/1907.02434.pdf,7/1/2020,Ethereum,Mining rig (6 x RX580),180,900,0.20,5
+85,RIG,1/10/2017,https://arxiv.org/pdf/1907.02434.pdf,7/1/2020,Ethereum,Mining rig (6 x RX560),80,370,0.22,4.625
+86,RIG,5/27/2016,https://arxiv.org/pdf/1907.02434.pdf,7/1/2020,Ethereum,Mining rig ( 8 x GTX1080),310,1100,0.28,3.548387097
+87,RIG,12/1/2017,https://arxiv.org/pdf/1907.02434.pdf,7/1/2020,UlTRON,8 x P104,320,1700,0.19,5.3125
+88,RIG,4/18/2017,https://arxiv.org/pdf/1907.02434.pdf,7/1/2020,IMPERIUM,"""+"" (8 x RX570/580)",230,1300,0.18,5.652173913
+89,ASIC,12/1/2017,https://arxiv.org/pdf/1907.02434.pdf,7/1/2020,Bitmain,Antminer G2,220,1200,0.18,5.454545455
+90,RIG,4/18/2017,https://arxiv.org/pdf/1907.02434.pdf,,Thorium,6580,160.2,700,0.23,4.369538077
+91,RIG,4/18/2017,https://arxiv.org/pdf/1907.02434.pdf,,Thorium,5670,144,750,0.19,5.208333333
+92,RIG,8/18/2016,https://arxiv.org/pdf/1907.02434.pdf,,Zodiac,6-1060,120.78,750,0.16,6.209637357

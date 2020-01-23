@@ -160,15 +160,12 @@ def calcEnergyUsage():
         df_eff = pd.DataFrame(breakEvenSlice)
         meanBreakEvenEff = df_eff.mean(axis=0)
         efficiency = getMatchingHardwareEfficiency(meanBreakEvenEff,datephase)
-
+        print(efficiency)
         df_hr = pd.DataFrame(hashRateSlice)
         meanHashRate = df_hr.mean(axis=0)
         avghashrate = meanHashRate['correctedhashrate']
 
-
-
-
-
+        phaseEnergyUsage = 0
 
 
 def plotBreakEvenEff(BreakEvenEfficiencySet):
@@ -219,9 +216,9 @@ def plottwoaxis(BreakEvenEfficiencySet):
 #csvtojson('../JSONDATA/GPUDATA/CSV/GPUDATA.csv', '../JSONDATA/GPUDATA/GPUDATA.json')
 breakevenset = calcBreakEvenEffSet(0.10, blockdata)
 breakevensetcrawler = calcBreakEvenEffSetCrawler(0.10, crawlerblockdata)
-#compareplots(breakevensetcrawler,breakevenset)
+compareplots(breakevensetcrawler,breakevenset)
 #plottwoaxis(breakevenset)
-calcEnergyUsage()
+#calcEnergyUsage()
 
 #plotBreakEvenEff(plotdata)
 #calcBreakEvenEffSetCrawler(0.10, crawlerblockdata, '../JSONDATA/plotdata.json')
