@@ -29,16 +29,23 @@ def csvtojson(input, output):
     jsonfile.write(out)
 
 def getMatchingHardwareEfficiency(efficiency, datetuple):
-    gpulist = getDateSet(datetuple)
+    gpulist = getDateSet(datetuple) # Get a list of all hardware realeased in a given timeperiod 'datetuple'
     scores = list()
-    for i in range (0, (len(gpulist)-1)):
-        score = (i, abs(efficiency-float(gpulist[i]['Efficiency in J/Mh'])))
-        scores.append(score)
-    scores = sorted(scores, key=lambda x:x[1])
-    #Testprint
+    if gpulist:
+        for i in range (0, (len(gpulist))):
+            if(float(gpulist[i]['Efficiency in J/Mh']) < efficiency):
+                score = (i, efficiency-float(gpulist[i]['Efficiency in J/Mh']))
+                scores.append(score)
+            if scores:
+                scores = sorted(scores, key=lambda x:x[1]) #Sort scores such that the closest match is the first element
+                return float(gpulist[scores[0][0]]['Efficiency in J/Mh'])
+            else:
+                return -1
+    else:
+        return -1
+    # # Testprint
     # for i in range (0, len(scores)-1):
     #     print(gpulist[scores[i][0]]['Product'] + "Efficiency = " +gpulist[scores[i][0]]['Efficiency in J/Mh'] + " J/Mh\n")
-    return float(gpulist[scores[0][0]]['Efficiency in J/Mh'])
 
 #Takes begindate and enddate as tuple of datetime obj and returns a list of hardware that has been released in that timeframe
 def getDateSet(datetuple):
@@ -141,31 +148,43 @@ def calcBreakEvenEffSetCrawler(PriceperKWh, blockdata):
         dps.append(dp)
     return reversed(dps)
 
-def calcEnergyUsage():
+def calcEnergyUsage(PriceperKWh):
     phases = [(0, 200),(201, 454), (455, 598), (599,778), (779, 970), (971, 1106), (1107, 1141), (1142, 1237), (1238, 1275), (1276, 1479), (1480, 1538), (1539, 1629)]
     datephases = []
-    for i in range(0,(len(phases)-1)):
+    for i in range(0,(len(phases))):
         datephases.append(
                             (
                             datetime.strptime(blockdata[phases[i][0]]['date'],"%m/%d/%Y"),
                             datetime.strptime(blockdata[phases[i][1]]['date'],"%m/%d/%Y")
                             )
                         )
-    breakevenset = calcBreakEvenEffSet(0.10, blockdata)
+    breakevenset = calcBreakEvenEffSet(PriceperKWh, blockdata)
     EnergyUsageSum = 0
-    for phase,datephase in zip(phases,datephases):
-        breakEvenSlice = breakevenset[phase[0]:phase[1]]
-        hashRateSlice = blockdata[phase[0]:phase[1]]
+    for i in range(0, len(phases)):
+        breakEvenSlice = breakevenset[phases[i][0]:phases[i][1]]
+        hashRateSlice = blockdata[phases[i][0]:phases[i][1]]
 
         df_eff = pd.DataFrame(breakEvenSlice)
-        meanBreakEvenEff = df_eff.mean(axis=0)
-        efficiency = getMatchingHardwareEfficiency(meanBreakEvenEff,datephase)
-        print(efficiency)
-        df_hr = pd.DataFrame(hashRateSlice)
-        meanHashRate = df_hr.mean(axis=0)
-        avghashrate = meanHashRate['correctedhashrate']
+        meanBreakEvenEff = df_eff.mean(axis=0)["BreakEvenEfficiencyUncles"]
+        periodHardWareEfficiency = getMatchingHardwareEfficiency(meanBreakEvenEff,datephases[i])
+        if(periodHardWareEfficiency == -1):
+            periodHardWareEfficiency = getMatchingHardwareEfficiency(meanBreakEvenEff,datephases[i-1])
+            #If no matching hardware was found in given timeperiod, look for the hardware in the previous timeperiod
+            print("Period= " + datephases[i][0].strftime("%m/%d/%Y") + "  -  " + datephases[i][1].strftime("%m/%d/%Y"))
+            print("NO HARDWARE FOUND IN THIS PERIOD")
+            print("Mean eff in period: %i " % meanBreakEvenEff)
+            print("Looking in period " + datephases[i-1][0].strftime("%m/%d/%Y") + "  -  " + datephases[i-1][1].strftime("%m/%d/%Y"))
+            print("Corresponding efficiency: " + str(periodHardWareEfficiency))
+        else:
+            print("Period= " + datephases[i][0].strftime("%m/%d/%Y") + "  -  " + datephases[i][1].strftime("%m/%d/%Y"))
+            print("Mean eff in period: %i " % meanBreakEvenEff)
+            print("Corresponding efficiency: " + str(periodHardWareEfficiency))
 
-        phaseEnergyUsage = 0
+        # df_hr = pd.DataFrame(hashRateSlice)
+        # meanHashRate = df_hr.mean(axis=0)
+        # avghashrate = meanHashRate['correctedhashrate']
+        #
+        # phaseEnergyUsage = 0
 
 
 def plotBreakEvenEff(BreakEvenEfficiencySet):
@@ -214,11 +233,12 @@ def plottwoaxis(BreakEvenEfficiencySet):
 #getMatchingHardware(5, "7/8/2019", "12/1/2019")
 #csvtojson("transactions.csv", "transactions.json")
 #csvtojson('../JSONDATA/GPUDATA/CSV/GPUDATA.csv', '../JSONDATA/GPUDATA/GPUDATA.json')
-breakevenset = calcBreakEvenEffSet(0.10, blockdata)
-breakevensetcrawler = calcBreakEvenEffSetCrawler(0.10, crawlerblockdata)
-compareplots(breakevensetcrawler,breakevenset)
+# breakevenset = calcBreakEvenEffSet(0.10, blockdata)
+# breakevensetcrawler = calcBreakEvenEffSetCrawler(0.10, crawlerblockdata)
+# compareplots(breakevensetcrawler,breakevenset)
 #plottwoaxis(breakevenset)
-#calcEnergyUsage()
+calcEnergyUsage(0.10)
 
+#getMatchingHardwareEfficiency(11, (datetime.strptime("4/7/2014", "%m/%d/%Y"), datetime.strptime("4/15/2015", "%m/%d/%Y")))
 #plotBreakEvenEff(plotdata)
 #calcBreakEvenEffSetCrawler(0.10, crawlerblockdata, '../JSONDATA/plotdata.json')
