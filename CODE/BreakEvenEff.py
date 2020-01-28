@@ -148,8 +148,7 @@ def calcBreakEvenEffSetCrawler(PriceperKWh, blockdata):
         dps.append(dp)
     return reversed(dps)
 
-def calcEnergyUsage(PriceperKWh):
-    phases = [(0, 200),(201, 454), (455, 598), (599,778), (779, 970), (971, 1106), (1107, 1141), (1142, 1237), (1238, 1275), (1276, 1479), (1480, 1538), (1539, 1629)]
+def calcTotalEnergyUsage(PriceperKWh, phases):
     datephases = []
     for i in range(0,(len(phases))):
         datephases.append(
@@ -161,12 +160,12 @@ def calcEnergyUsage(PriceperKWh):
     breakevenset = calcBreakEvenEffSet(PriceperKWh, blockdata)
     EnergyUsageSum = 0
     for i in range(0, len(phases)):
-        breakEvenSlice = breakevenset[phases[i][0]:phases[i][1]]
-        hashRateSlice = blockdata[phases[i][0]:phases[i][1]]
-
+        breakEvenSlice = breakevenset[phases[i][0]:phases[i][1]+1]
+        hashRateSlice = blockdata[phases[i][0]:phases[i][1]+1]
         df_eff = pd.DataFrame(breakEvenSlice)
         meanBreakEvenEff = df_eff.mean(axis=0)["BreakEvenEfficiencyUncles"]
         phaseHardwareEfficiencyJMh = getMatchingHardwareEfficiency(meanBreakEvenEff,datephases[i])
+        print("--------------------------------------------")
         if(phaseHardwareEfficiencyJMh == -1):
             phaseHardwareEfficiencyJMh = getMatchingHardwareEfficiency(meanBreakEvenEff,datephases[i-1])
             #If no matching hardware was found in given timeperiod, look for the hardware in the previous timeperiod
@@ -177,11 +176,14 @@ def calcEnergyUsage(PriceperKWh):
             print("Corresponding efficiency: " + str(phaseHardwareEfficiencyJMh))
         else:
             print("Period= " + datephases[i][0].strftime("%m/%d/%Y") + "  -  " + datephases[i][1].strftime("%m/%d/%Y"))
+            print("SlicePeriod = " + hashRateSlice[0]['date'] + "  -  " + hashRateSlice[len(hashRateSlice)-1]['date'])
             print("Mean eff in period: %i " % meanBreakEvenEff)
             print("Corresponding efficiency: " + str(phaseHardwareEfficiencyJMh))
 
         df_hr = pd.DataFrame(hashRateSlice)
         phaseHashRateMhs = df_hr.mean(axis=0)['correctedhashrate']/1e6
+        phaseHashRateMhsIncrease = (hashRateSlice[len(hashRateSlice)-1]['correctedhashrate'] - hashRateSlice[0]['correctedhashrate'] )/1e6
+        print("Hashrate increase in period is %i MH/s" % phaseHashRateMhsIncrease)
         phaseTimespan = df_hr.sum(axis=0)['timespan']
         phaseEnergyUsage = phaseTimespan*(phaseHashRateMhs*phaseHardwareEfficiencyJMh)
         EnergyUsageSum+=phaseEnergyUsage
@@ -239,7 +241,10 @@ def plottwoaxis(BreakEvenEfficiencySet):
 # breakevensetcrawler = calcBreakEvenEffSetCrawler(0.10, crawlerblockdata)
 # compareplots(breakevensetcrawler,breakevenset)
 #plottwoaxis(breakevenset)
-calcEnergyUsage(0.10)
+
+phasesManual = [(0, 200),(201, 454), (455, 598), (599,778), (779, 970), (971, 1106), (1107, 1141), (1142, 1237), (1238, 1275), (1276, 1479), (1480, 1538), (1539, 1629)]
+phases_80_intervals = [(0, 79),(80, 159), (160, 239), (240,319), (320, 399), (400, 479), (480, 559), (560, 639), (640, 719), (720, 799), (800, 879), (880, 959),(880, 959),(880, 959),(960, 1039),(880, 959),(960, 1039),(1040, 1119),(1120, 1199),(1200, 1279),(1280, 1359),(1360, 1439),(1440, 1519),(1520, 1599),(1600, 1629)]
+calcTotalEnergyUsage(0.10,phases_80_intervals)
 
 #getMatchingHardwareEfficiency(11, (datetime.strptime("4/7/2014", "%m/%d/%Y"), datetime.strptime("4/15/2015", "%m/%d/%Y")))
 #plotBreakEvenEff(plotdata)
