@@ -1,6 +1,7 @@
 import json
 from datetime import datetime
 import matplotlib.pyplot as plt
+import numpy as np
 import pandas as pd
 import sys
 import csv, json
@@ -281,11 +282,38 @@ def plottwoaxis(BreakEvenEfficiencySet):
 # breakevensetcrawler = calcBreakEvenEffSetCrawler(0.10, crawlerblockdata)
 # compareplots(breakevensetcrawler,breakevenset)
 #plottwoaxis(breakevenset)
-
-phasesManual = [(0, 200),(201, 454), (455, 598), (599,778), (779, 970), (971, 1106), (1107, 1141), (1142, 1237), (1238, 1275), (1276, 1479), (1480, 1538), (1539, 1629)]
-phases_80_intervals = [(0, 79),(80, 159), (160, 239), (240,319), (320, 399), (400, 479), (480, 559), (560, 639), (640, 719), (720, 799), (800, 879), (880, 959),(960, 1039),(1040, 1119),(1120, 1199), (1200, 1279),(1280, 1359),(1360, 1439),(1440, 1519),(1520, 1599),(1600, 1629)]
-calcTotalEnergyUsage(0.10,phases_80_intervals)
-
 #getMatchingHardwareEfficiency(11, (datetime.strptime("4/7/2014", "%m/%d/%Y"), datetime.strptime("4/15/2015", "%m/%d/%Y")))
 #plotBreakEvenEff(plotdata)
 #calcBreakEvenEffSetCrawler(0.10, crawlerblockdata, '../JSONDATA/plotdata.json')
+def ceiling_division(n, d):
+    return -(n // -d)
+
+def generatePhases(interval):
+    phases = list()
+    for i in range(ceiling_division(1630,interval)):
+        if i==0:
+            begin = 0
+            end = interval-1
+            if(end>=1630):
+                end = 1629
+        else:
+            begin = i*interval
+            end = (i*interval)+interval-1
+            if(end>=1630):
+                end = 1629
+        phases.append(
+                        (
+                        begin,
+                        end
+                        )
+        )
+        i+=interval
+        print(phases)
+    return phases
+
+def main():
+    phasesManual = [(0, 200),(201, 454), (455, 598), (599,778), (779, 970), (971, 1106), (1107, 1141), (1142, 1237), (1238, 1275), (1276, 1479), (1480, 1538), (1539, 1629)]
+    phases = generatePhases(10)
+
+    calcTotalEnergyUsage(0.10,phases)
+main()
