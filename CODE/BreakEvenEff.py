@@ -154,8 +154,9 @@ totalHashRateIncrease = 1
 
 def calcAvgEfficiency(phaseHardwareEfficiency, hashrateIncrease):
     global cumulativeHardwareEfficiency, totalHashRateIncrease
-    cumulativeHardwareEfficiency += (phaseHardwareEfficiency*hashrateIncrease)
-    totalHashRateIncrease += hashrateIncrease
+    if(hashrateIncrease>0):
+        cumulativeHardwareEfficiency += (phaseHardwareEfficiency*hashrateIncrease)
+        totalHashRateIncrease += hashrateIncrease
 
 def getAvgWeighedHardwareEfficiency():
     global cumulativeHardwareEfficiency, totalHashRateIncrease
@@ -182,7 +183,9 @@ def calcTotalEnergyUsage(PriceperKWh, phases):
         df_hr = pd.DataFrame(hashRateSlice)
         meanBreakEvenEff = df_eff.mean(axis=0)["BreakEvenEfficiencyUncles"]
         phaseHashRateMhs = df_hr.mean(axis=0)['correctedhashrate']/1e6
-        phaseHashRateMhsIncrease = (hashRateSlice[len(hashRateSlice)-1]['correctedhashrate'] - hashRateSlice[0]['correctedhashrate'] )/1e6
+        phaseBeginHashRateMhs = hashRateSlice[0]['correctedhashrate']/1e6
+        phaseEndHashRateMhs   = hashRateSlice[len(hashRateSlice)-1]['correctedhashrate']/1e6
+        phaseHashRateMhsIncrease = (phaseEndHashRateMhs - phaseBeginHashRateMhs)
         phaseTimespan = df_hr.sum(axis=0)['timespan']
 
         if(phaseHashRateMhsIncrease>0):
@@ -192,24 +195,39 @@ def calcTotalEnergyUsage(PriceperKWh, phases):
                 j+=1
                 phaseHardwareEfficiencyJMh = getMatchingHardwareEfficiency(meanBreakEvenEff,datePhases[i-j])
             selectedHardwareEfficiency = phaseHardwareEfficiencyJMh
+            phaseAddedWattage = (phaseHashRateMhsIncrease*selectedHardwareEfficiency)
+
+            #phaseAddedEnergyUsage = phaseTimespan*(phaseHashRateMhsIncrease*selectedHardwareEfficiency)
         else:
             selectedHardwareEfficiency = getAvgWeighedHardwareEfficiency()
+            phaseAddedWattage = 0
+
+        avgWeighedHardwareEfficiency = getAvgWeighedHardwareEfficiency()
+        if(avgWeighedHardwareEfficiency==0):
+            phaseBeginWattage = phaseBeginHashRateMhs*selectedHardwareEfficiency
+            #Accounting for the first period, where there is no weighed average of efficiency, so just use the known hardware efficiency
+        else:
+            phaseBeginWattage = phaseBeginHashRateMhs*avgWeighedHardwareEfficiency
+
         calcAvgEfficiency(selectedHardwareEfficiency, phaseHashRateMhsIncrease)
-        print("avgWeighedHardwareEfficiency = %f" % getAvgWeighedHardwareEfficiency())
-        phaseEnergyUsage = phaseTimespan*(phaseHashRateMhsIncrease*selectedHardwareEfficiency)
+
+        #print("avgWeighedHardwareEfficiency = %f" % avgWeighedHardwareEfficiency)
+
         phaseData = {}
         phaseData['Period'] = datetime.strftime(datePhases[i][0], "%m/%d/%Y") + "  -  " + datetime.strftime(datePhases[i][1], "%m/%d/%Y")
         phaseData['EfficiencyPeriod'] = datetime.strftime(datePhases[i-j][0], "%m/%d/%Y") + "  -  " + datetime.strftime(datePhases[i-j][1], "%m/%d/%Y")
         phaseData['meanBreakEvenEff'] = float(meanBreakEvenEff)
         phaseData['phaseHashRateMhsIncrease'] = float(phaseHashRateMhsIncrease)
         phaseData['selectedHardwareEfficiencyJMh'] = float(selectedHardwareEfficiency)
-        phaseData['phaseEnergyUsage'] = float(phaseEnergyUsage)
+        phaseData['phaseBeginEnergyWattage'] = float(phaseBeginWattage)
+        phaseData['phaseAddedEnergyWattage'] = float(phaseAddedWattage)
         efficiencyData.append(phaseData)
-        with open('../JSONDATA/Etherscan/phaseData.json', 'w') as w:
-            json.dump(efficiencyData, w, indent=4)
 
-        energyUsageSum+=phaseEnergyUsage
+
+        energyUsageSum+=(phaseBeginWattage+phaseAddedWattage)*phaseTimespan
         EnergyUsageTWh = energyUsageSum/3.6e15
+    with open('../JSONDATA/Etherscan/phaseData.json', 'w') as w:
+        json.dump(efficiencyData, w, indent=4)
     print("The total energy usage of Ethereum is %i Joule or %i TWh"% (energyUsageSum, EnergyUsageTWh))
 
 
