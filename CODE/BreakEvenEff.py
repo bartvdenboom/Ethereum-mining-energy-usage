@@ -148,47 +148,68 @@ def calcBreakEvenEffSetCrawler(PriceperKWh, blockdata):
         dps.append(dp)
     return reversed(dps)
 
+
+
+cumulativeHardwareEfficiency = 0
+totalHashRateIncrease = 1
+avgWeighedHardwareEfficiency = cumulativeHardwareEfficiency/totalHashRateIncrease
+
+
+def calcAvgEfficiency(phaseHardwareEfficiency, hashrateIncrease):
+    global avgWeighedHardwareEfficiency, cumulativeHardwareEfficiency, totalHashRateIncrease
+    cumulativeHardwareEfficiency += (phaseHardwareEfficiency*hashrateIncrease)
+    totalHashRateIncrease += hashrateIncrease
+
+
+
 def calcTotalEnergyUsage(PriceperKWh, phases):
-    datephases = []
+    global avgWeighedHardwareEfficiency
+    datePhases = []
     for i in range(0,(len(phases))):
-        datephases.append(
+        datePhases.append(
                             (
                             datetime.strptime(blockdata[phases[i][0]]['date'],"%m/%d/%Y"),
                             datetime.strptime(blockdata[phases[i][1]]['date'],"%m/%d/%Y")
                             )
                         )
-    breakevenset = calcBreakEvenEffSet(PriceperKWh, blockdata)
-    EnergyUsageSum = 0
+    breakEvenSet = calcBreakEvenEffSet(PriceperKWh, blockdata)
+    energyUsageSum = 0
     for i in range(0, len(phases)):
-        breakEvenSlice = breakevenset[phases[i][0]:phases[i][1]+1]
+        breakEvenSlice = breakEvenSet[phases[i][0]:phases[i][1]+1]
         hashRateSlice = blockdata[phases[i][0]:phases[i][1]+1]
         df_eff = pd.DataFrame(breakEvenSlice)
+        df_hr = pd.DataFrame(hashRateSlice)
         meanBreakEvenEff = df_eff.mean(axis=0)["BreakEvenEfficiencyUncles"]
-        phaseHardwareEfficiencyJMh = getMatchingHardwareEfficiency(meanBreakEvenEff,datephases[i])
+        phaseHardwareEfficiencyJMh = getMatchingHardwareEfficiency(meanBreakEvenEff,datePhases[i])
+        
+
+
         print("--------------------------------------------")
         if(phaseHardwareEfficiencyJMh == -1):
-            phaseHardwareEfficiencyJMh = getMatchingHardwareEfficiency(meanBreakEvenEff,datephases[i-1])
+            phaseHardwareEfficiencyJMh = getMatchingHardwareEfficiency(meanBreakEvenEff,datePhases[i-1])
             #If no matching hardware was found in given timeperiod, look for the hardware in the previous timeperiod
-            print("Period= " + datephases[i][0].strftime("%m/%d/%Y") + "  -  " + datephases[i][1].strftime("%m/%d/%Y"))
+            print("Period= " + datePhases[i][0].strftime("%m/%d/%Y") + "  -  " + datePhases[i][1].strftime("%m/%d/%Y"))
             print("NO HARDWARE FOUND IN THIS PERIOD")
             print("Mean eff in period: %i " % meanBreakEvenEff)
-            print("Looking in period " + datephases[i-1][0].strftime("%m/%d/%Y") + "  -  " + datephases[i-1][1].strftime("%m/%d/%Y"))
+            print("Looking in period " + datePhases[i-1][0].strftime("%m/%d/%Y") + "  -  " + datePhases[i-1][1].strftime("%m/%d/%Y"))
             print("Corresponding efficiency: " + str(phaseHardwareEfficiencyJMh))
         else:
-            print("Period= " + datephases[i][0].strftime("%m/%d/%Y") + "  -  " + datephases[i][1].strftime("%m/%d/%Y"))
-            print("SlicePeriod = " + hashRateSlice[0]['date'] + "  -  " + hashRateSlice[len(hashRateSlice)-1]['date'])
+            print("Period= " + datePhases[i][0].strftime("%m/%d/%Y") + "  -  " + datePhases[i][1].strftime("%m/%d/%Y"))
             print("Mean eff in period: %i " % meanBreakEvenEff)
             print("Corresponding efficiency: " + str(phaseHardwareEfficiencyJMh))
 
-        df_hr = pd.DataFrame(hashRateSlice)
+
         phaseHashRateMhs = df_hr.mean(axis=0)['correctedhashrate']/1e6
         phaseHashRateMhsIncrease = (hashRateSlice[len(hashRateSlice)-1]['correctedhashrate'] - hashRateSlice[0]['correctedhashrate'] )/1e6
-        print("Hashrate increase in period is %i MH/s" % phaseHashRateMhsIncrease)
         phaseTimespan = df_hr.sum(axis=0)['timespan']
-        phaseEnergyUsage = phaseTimespan*(phaseHashRateMhs*phaseHardwareEfficiencyJMh)
-        EnergyUsageSum+=phaseEnergyUsage
-        EnergyUsageTWh = EnergyUsageSum/3.6e15
-    print("The total energy usage of Ethereum is %i Joule or %i TWh"% (EnergyUsageSum, EnergyUsageTWh))
+        if(phaseHashRateMhsIncrease>0):
+            phaseEnergyUsage = phaseTimespan*(phaseHashRateMhsIncrease*phaseHardwareEfficiencyJMh)
+            calcAvgEfficiency(phaseHardwareEfficiencyJMh, phaseHashRateMhsIncrease)
+        elif(phaseHashRateMhsIncrease<0):
+            phaseEnergyUsage = phaseTimespan*(phaseHashRateMhsIncrease*avgWeighedHardwareEfficiency)
+        energyUsageSum+=phaseEnergyUsage
+        EnergyUsageTWh = energyUsageSum/3.6e15
+    print("The total energy usage of Ethereum is %i Joule or %i TWh"% (energyUsageSum, EnergyUsageTWh))
 
 
 def plotBreakEvenEff(BreakEvenEfficiencySet):
