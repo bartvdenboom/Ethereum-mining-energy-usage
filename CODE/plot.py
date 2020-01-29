@@ -6,6 +6,7 @@ import sys
 import csv
 from matplotlib.ticker import FuncFormatter
 import numpy as np
+import matplotlib.dates as mdates
 
 with open('../JSONDATA/EtherscanCrawler/CrawlerBlockDataAdjustedUncles.json') as r:
     crawlerdata = reversed(json.load(r))
@@ -13,9 +14,13 @@ with open('../JSONDATA/Etherscan/DailyData.json') as r:
     blockdata = json.load(r)
 with open('../JSONDATA/GPUdata/GPUDATA.json') as r:
     gpudata = json.load(r)
-#Data about energy consumption per phase
+#Data regarding energy consumption per phase
 with open('../JSONDATA/Etherscan/phaseData.json') as f:
-    phaseData = reversed(json.load(f))
+    phaseData = json.load(f)
+#Data regarding BreakevenEfficiency per day
+with open('../JSONDATA/Etherscan/BreakEvenPlotData.json') as f:
+    breakEvenPlotData = json.load(f)
+
 
 def plottwoaxis():
     BreakEvenEfficiencySetDataFrame = pd.DataFrame(BreakEvenEfficiencySet)
@@ -111,6 +116,38 @@ def plotBreakEvenEff(BreakEvenEfficiencySet):
     plt.xticks(rotation=45)
     plt.show()
 
+def plotBreakEvenEffAgainstSelectedEfficiency():
+    BreakEvenEfficiencySetDataFrame = pd.DataFrame(breakEvenPlotData)
+    phaseDataFrame = pd.DataFrame(phaseData)
+    fig, ax1 = plt.subplots()
+
+    color = 'tab:red'
+    ax1.set_xlabel('Date')
+    ax1.set_ylabel('BreakEvenEfficiency (J/Mh)', color=color)
+    ax1.plot(BreakEvenEfficiencySetDataFrame['date'], BreakEvenEfficiencySetDataFrame['BreakEvenEfficiencyUncles'], phaseDataFrame['selectedHardwareEfficiencyJMh'], color=color)
+    ax1.fmt_xdata = mdates.DateFormatter("%m/%d/%Y")
+    ax1.tick_params(axis='y', labelcolor=color)
+
+    plt.xticks(rotation=90)
+
+    # ax2 = ax1.twinx()  # instantiate a second axes that shares the same x-axis
+    #
+    # color = 'tab:blue'
+    # ax2.set_ylabel('Estimated Hardware Efficiency (J/Mh)', color=color)  # we already handled the x-label with ax1
+    # ax2.plot(phaseDataFrame['Date'], (phaseDataFrame['selectedHardwareEfficiencyJMh']), color=color)
+    # ax2.fmt_xdata = mdates.DateFormatter("%m/%d/%Y")
+    # ax2.tick_params(axis='y', labelcolor=color)
+    ax1.xaxis.set_major_locator(plt.MaxNLocator(20))
+
+    fig.tight_layout()  # otherwise the right y-label is slightly clipped
+    #
+    # data.plot(kind='line', x='date', y='averagehashrate', figsize = (16,9), ax=ax)
+    # BreakEvenEfficiencySetDataFrame.plot(kind='line', x='date', y='BreakEvenEfficiency', figsize = (16,9), ax=ax)
+    # BreakEvenEfficiencySetDataFrame.plot(x='date', y='BreakEvenEfficiency', figsize=(16,9))
+    # #plt.figure(BreakEvenEfficiencySetDataFrame, (200,100))
+    plt.show()
+
+#plotBreakEvenEffAgainstSelectedEfficiency()
 plotBreakEvenEff(phaseData)
 #scatterPlotGpuEfficiencies()
 #plotHashRategradient()

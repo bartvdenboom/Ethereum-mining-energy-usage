@@ -120,6 +120,9 @@ def calcBreakEvenEffSet(PriceperKWh, blockdata):
                                                      float(blockdata[i]['averagehashrate']/1000000)
                                                      )
         dps.append(dp)
+    with open('../JSONDATA/Etherscan/BreakEvenPlotData.json', 'w') as w:
+        json.dump(dps, w, indent=4)
+
     return dps
 
 def calcBreakEvenEffSetCrawler(PriceperKWh, blockdata):
@@ -148,21 +151,23 @@ def calcBreakEvenEffSetCrawler(PriceperKWh, blockdata):
         dps.append(dp)
     return reversed(dps)
 
-
-
-cumulativeHardwareEfficiency = 0
-totalHashRateIncrease = 1
+hashratedata = list()
 
 def calcAvgEfficiency(phaseHardwareEfficiency, hashrateIncrease):
-    global cumulativeHardwareEfficiency, totalHashRateIncrease
+    global cumulativeHardwareEfficiency, totalHashRateIncrease, hashratedata
     if(hashrateIncrease>0):
-        cumulativeHardwareEfficiency += (phaseHardwareEfficiency*hashrateIncrease)
-        totalHashRateIncrease += hashrateIncrease
+        hashratedata.append((phaseHardwareEfficiency, hashrateIncrease))
+    else:
+        maxEfficiency = np.max(np.array(hashratedata), axis=0)[0]
+        print("Removing %f Mh/s of hashing power with efficiency of %f J/Mh" % (-hashrateIncrease, maxEfficiency))
+        hashratedata.append((maxEfficiency, hashrateIncrease))
 
 def getAvgWeighedHardwareEfficiency():
-    global cumulativeHardwareEfficiency, totalHashRateIncrease
-    return (cumulativeHardwareEfficiency/totalHashRateIncrease)
-
+    if not hashratedata:
+        return 0
+    cumulativeHardwareEfficiency = np.sum(np.prod(np.array(hashratedata), axis=1),axis=0)
+    cumulativeWeight = np.sum(np.array(hashratedata),axis=0)[1]
+    return cumulativeHardwareEfficiency/cumulativeWeight
 
 def calcTotalEnergyUsage(PriceperKWh, phases):
     datePhases = []
@@ -216,6 +221,7 @@ def calcTotalEnergyUsage(PriceperKWh, phases):
 
         phaseData = {}
         phaseData['Period'] = datetime.strftime(datePhases[i][0], "%m/%d/%Y") + "  -  " + datetime.strftime(datePhases[i][1], "%m/%d/%Y")
+        phaseData['Date'] = datetime.strftime(datePhases[i][0], "%m/%d/%Y")
         phaseData['EfficiencyPeriod'] = datetime.strftime(datePhases[i-j][0], "%m/%d/%Y") + "  -  " + datetime.strftime(datePhases[i-j][1], "%m/%d/%Y")
         phaseData['meanBreakEvenEff'] = float(meanBreakEvenEff)
         phaseData['phaseHashRateMhsIncrease'] = float(phaseHashRateMhsIncrease)
@@ -313,6 +319,5 @@ def generatePhases(interval):
 def main():
     phasesManual = [(0, 200),(201, 454), (455, 598), (599,778), (779, 970), (971, 1106), (1107, 1141), (1142, 1237), (1238, 1275), (1276, 1479), (1480, 1538), (1539, 1629)]
     phases = generatePhases(14)
-
-    calcTotalEnergyUsage(0.05,phasesManual)
+    calcTotalEnergyUsage(0.05,phases)
 main()
