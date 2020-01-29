@@ -308,12 +308,11 @@ def generatePhases(interval):
                         )
         )
         i+=interval
-        print(phases)
     return phases
 
 def main():
     phasesManual = [(0, 200),(201, 454), (455, 598), (599,778), (779, 970), (971, 1106), (1107, 1141), (1142, 1237), (1238, 1275), (1276, 1479), (1480, 1538), (1539, 1629)]
-    phases = generatePhases(10)
+    phases = generatePhases(14)
 
-    calcTotalEnergyUsage(0.10,phases)
+    calcTotalEnergyUsage(0.05,phasesManual)
 main()

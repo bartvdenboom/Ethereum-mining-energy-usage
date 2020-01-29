@@ -13,6 +13,9 @@ with open('../JSONDATA/Etherscan/DailyData.json') as r:
     blockdata = json.load(r)
 with open('../JSONDATA/GPUdata/GPUDATA.json') as r:
     gpudata = json.load(r)
+#Data about energy consumption per phase
+with open('../JSONDATA/Etherscan/phaseData.json') as f:
+    phaseData = reversed(json.load(f))
 
 def plottwoaxis():
     BreakEvenEfficiencySetDataFrame = pd.DataFrame(BreakEvenEfficiencySet)
@@ -102,6 +105,13 @@ def plotHashRategradient():
     plt.plot(gradient, label="Gradient of hashrate")
     plt.show()
 
+def plotBreakEvenEff(BreakEvenEfficiencySet):
+    df = pd.DataFrame(BreakEvenEfficiencySet)
+    df.plot(kind='line', x='Period', y=['meanBreakEvenEff','selectedHardwareEfficiencyJMh'])
+    plt.xticks(rotation=45)
+    plt.show()
+
+plotBreakEvenEff(phaseData)
 #scatterPlotGpuEfficiencies()
 #plotHashRategradient()
 #plothashrates()
