@@ -218,17 +218,17 @@ def calcTotalEnergyUsage(PriceperKWh, phases):
         calcAvgEfficiency(selectedHardwareEfficiency, phaseHashRateMhsIncrease)
 
         #print("avgWeighedHardwareEfficiency = %f" % avgWeighedHardwareEfficiency)
-
-        phaseData = {}
-        phaseData['Period'] = datetime.strftime(datePhases[i][0], "%m/%d/%Y") + "  -  " + datetime.strftime(datePhases[i][1], "%m/%d/%Y")
-        phaseData['Date'] = datetime.strftime(datePhases[i][0], "%m/%d/%Y")
-        phaseData['EfficiencyPeriod'] = datetime.strftime(datePhases[i-j][0], "%m/%d/%Y") + "  -  " + datetime.strftime(datePhases[i-j][1], "%m/%d/%Y")
-        phaseData['meanBreakEvenEff'] = float(meanBreakEvenEff)
-        phaseData['phaseHashRateMhsIncrease'] = float(phaseHashRateMhsIncrease)
-        phaseData['selectedHardwareEfficiencyJMh'] = float(selectedHardwareEfficiency)
-        phaseData['phaseBeginEnergyWattage'] = float(phaseBeginWattage)
-        phaseData['phaseAddedEnergyWattage'] = float(phaseAddedWattage)
-        efficiencyData.append(phaseData)
+        for k in range(len(breakEvenSlice)):
+            phaseData = {}
+            phaseData['Period'] = datetime.strftime(datePhases[i][0], "%m/%d/%Y") + "  -  " + datetime.strftime(datePhases[i][1], "%m/%d/%Y")
+            phaseData['Date'] = breakEvenSlice[k]['date']
+            phaseData['EfficiencyPeriod'] = datetime.strftime(datePhases[i-j][0], "%m/%d/%Y") + "  -  " + datetime.strftime(datePhases[i-j][1], "%m/%d/%Y")
+            phaseData['BreakEvenEfficiency'] = breakEvenSlice[k]['BreakEvenEfficiencyUncles']
+            phaseData['phaseHashRateMhsIncrease'] = float(phaseHashRateMhsIncrease)
+            phaseData['selectedHardwareEfficiencyJMh'] = float(selectedHardwareEfficiency)
+            phaseData['phaseBeginEnergyWattage'] = float(phaseBeginWattage)
+            phaseData['phaseAddedEnergyWattage'] = float(phaseAddedWattage)
+            efficiencyData.append(phaseData)
 
 
         energyUsageSum+=(phaseBeginWattage+phaseAddedWattage)*phaseTimespan

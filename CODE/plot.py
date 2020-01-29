@@ -112,31 +112,32 @@ def plotHashRategradient():
 
 def plotBreakEvenEff(BreakEvenEfficiencySet):
     df = pd.DataFrame(BreakEvenEfficiencySet)
-    df.plot(kind='line', x='Period', y=['meanBreakEvenEff','selectedHardwareEfficiencyJMh'])
+    df.plot(kind='line', x='Period', y=['BreakEvenEfficiency','selectedHardwareEfficiencyJMh'])
     plt.xticks(rotation=45)
     plt.show()
 
 def plotBreakEvenEffAgainstSelectedEfficiency():
-    BreakEvenEfficiencySetDataFrame = pd.DataFrame(breakEvenPlotData)
-    phaseDataFrame = pd.DataFrame(phaseData)
+    BreakEvenEfficiencySetDataFrame = pd.DataFrame(phaseData)
+    data = pd.DataFrame(blockdata)
     fig, ax1 = plt.subplots()
 
     color = 'tab:red'
     ax1.set_xlabel('Date')
-    ax1.set_ylabel('BreakEvenEfficiency (J/Mh)', color=color)
-    ax1.plot(BreakEvenEfficiencySetDataFrame['date'], BreakEvenEfficiencySetDataFrame['BreakEvenEfficiencyUncles'], phaseDataFrame['selectedHardwareEfficiencyJMh'], color=color)
-    ax1.fmt_xdata = mdates.DateFormatter("%m/%d/%Y")
+    ax1.set_ylabel('BreakEvenEfficiency (J/MH)', color=color)
+    ax1.plot(BreakEvenEfficiencySetDataFrame['Date'], BreakEvenEfficiencySetDataFrame['BreakEvenEfficiency'], color=color)
+    color = 'tab:green'
+    ax1.plot(BreakEvenEfficiencySetDataFrame['Date'], BreakEvenEfficiencySetDataFrame['selectedHardwareEfficiencyJMh'], color=color)
+    BreakEvenEfficiencySetDataFrame['selectedHardwareEfficiencyJMh']
     ax1.tick_params(axis='y', labelcolor=color)
 
     plt.xticks(rotation=90)
 
-    # ax2 = ax1.twinx()  # instantiate a second axes that shares the same x-axis
-    #
-    # color = 'tab:blue'
-    # ax2.set_ylabel('Estimated Hardware Efficiency (J/Mh)', color=color)  # we already handled the x-label with ax1
-    # ax2.plot(phaseDataFrame['Date'], (phaseDataFrame['selectedHardwareEfficiencyJMh']), color=color)
-    # ax2.fmt_xdata = mdates.DateFormatter("%m/%d/%Y")
-    # ax2.tick_params(axis='y', labelcolor=color)
+    ax2 = ax1.twinx()  # instantiate a second axes that shares the same x-axis
+
+    color = 'tab:blue'
+    ax2.set_ylabel('Hashrate Gh/s', color=color)  # we already handled the x-label with ax1
+    ax2.plot(data['date'], (data['correctedhashrate']/1000000000), color=color)
+    ax2.tick_params(axis='y', labelcolor=color)
     ax1.xaxis.set_major_locator(plt.MaxNLocator(20))
 
     fig.tight_layout()  # otherwise the right y-label is slightly clipped
@@ -147,8 +148,8 @@ def plotBreakEvenEffAgainstSelectedEfficiency():
     # #plt.figure(BreakEvenEfficiencySetDataFrame, (200,100))
     plt.show()
 
-#plotBreakEvenEffAgainstSelectedEfficiency()
-plotBreakEvenEff(phaseData)
+plotBreakEvenEffAgainstSelectedEfficiency()
+#plotBreakEvenEff(phaseData)
 #scatterPlotGpuEfficiencies()
 #plotHashRategradient()
 #plothashrates()
