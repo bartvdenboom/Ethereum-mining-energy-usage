@@ -155,7 +155,7 @@ def calcBreakEvenEffSetCrawler(PriceperKWh, blockdata):
 hashratedata = list()
 
 def calcAvgEfficiency(phaseHardwareEfficiency, hashrateIncrease):
-    global cumulativeHardwareEfficiency, totalHashRateIncrease, hashratedata
+    global hashratedata
     if(hashrateIncrease>0):
         hashratedata.append((phaseHardwareEfficiency, hashrateIncrease))
     else:
@@ -164,16 +164,22 @@ def calcAvgEfficiency(phaseHardwareEfficiency, hashrateIncrease):
         hashratedata.append((maxEfficiency, hashrateIncrease))
 
 def getAvgWeighedHardwareEfficiency():
+    global hashratedata
     if not hashratedata:
         return 0
     cumulativeHardwareEfficiency = np.sum(np.prod(np.array(hashratedata), axis=1),axis=0)
     cumulativeWeight = np.sum(np.array(hashratedata),axis=0)[1]
     return cumulativeHardwareEfficiency/cumulativeWeight
 
+def replaceHardware(hardwareEfficiency):
+    global hashratedata
+    maxEfficiency = np.max(np.array(hashratedata), axis=0)[0]
+    hashratedata.sort(key=lambda x:x[0], reverse = True)
+    hashratedata[0] = (hardwareEfficiency,hashratedata[0][1])
+
 def calcTotalEnergyUsage(PriceperKWh, phases):
     datePhases = []
     efficiencyData = []
-    lol= 10
     for i in range(0,(len(phases))):
         datePhases.append(
                             (
@@ -206,6 +212,10 @@ def calcTotalEnergyUsage(PriceperKWh, phases):
 
             #phaseAddedEnergyUsage = phaseTimespan*(phaseHashRateMhsIncrease*selectedHardwareEfficiency)
         else:
+            phaseHardwareEfficiencyJMh = getMatchingHardwareEfficiency(meanBreakEvenEff,datePhases[i])
+            while(getAvgWeighedHardwareEfficiency() >= meanBreakEvenEff):
+                print("replace hardware")
+                replaceHardware(phaseHardwareEfficiencyJMh)
             selectedHardwareEfficiency = getAvgWeighedHardwareEfficiency()
             phaseAddedWattage = 0
 
@@ -319,7 +329,8 @@ def generatePhases(blockdata, interval):
 
 def main():
     phasesManual = [(0, 200),(201, 454), (455, 598), (599,778), (779, 970), (971, 1106), (1107, 1141), (1142, 1237), (1238, 1275), (1276, 1479), (1480, 1538), (1539, 1621)]
-    phases = generatePhases(blockdata, 14)
-    calcTotalEnergyUsage(0.05,phasesManual)
+    phases = generatePhases(blockdata, 2)
+    calcTotalEnergyUsage(0.05,phases)
     plot.plotBreakEvenEffAgainstSelectedEfficiency()
+
 main()
