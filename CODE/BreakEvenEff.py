@@ -6,6 +6,7 @@ import pandas as pd
 import sys
 import csv, json
 import statistics
+import plot
 
 #BreakEvenEfficiency by date
 with open('../JSONDATA/plotdata.json') as f:
@@ -294,19 +295,19 @@ def plottwoaxis(BreakEvenEfficiencySet):
 def ceiling_division(n, d):
     return -(n // -d)
 
-def generatePhases(interval):
+def generatePhases(blockdata, interval):
     phases = list()
-    for i in range(ceiling_division(1630,interval)):
+    for i in range(ceiling_division(len(blockdata),interval)):
         if i==0:
             begin = 0
             end = interval-1
-            if(end>=1630):
-                end = 1629
+            if(end>=len(blockdata)):
+                end = len(blockdata)-1
         else:
             begin = i*interval
             end = (i*interval)+interval-1
-            if(end>=1630):
-                end = 1629
+            if(end>=len(blockdata)):
+                end = len(blockdata)-1
         phases.append(
                         (
                         begin,
@@ -317,7 +318,8 @@ def generatePhases(interval):
     return phases
 
 def main():
-    phasesManual = [(0, 200),(201, 454), (455, 598), (599,778), (779, 970), (971, 1106), (1107, 1141), (1142, 1237), (1238, 1275), (1276, 1479), (1480, 1538), (1539, 1629)]
-    phases = generatePhases(14)
-    calcTotalEnergyUsage(0.05,phases)
+    phasesManual = [(0, 200),(201, 454), (455, 598), (599,778), (779, 970), (971, 1106), (1107, 1141), (1142, 1237), (1238, 1275), (1276, 1479), (1480, 1538), (1539, 1621)]
+    phases = generatePhases(blockdata, 14)
+    calcTotalEnergyUsage(0.05,phasesManual)
+    plot.plotBreakEvenEffAgainstSelectedEfficiency()
 main()

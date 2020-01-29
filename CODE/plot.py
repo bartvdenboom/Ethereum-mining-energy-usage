@@ -148,7 +148,7 @@ def plotBreakEvenEffAgainstSelectedEfficiency():
     # #plt.figure(BreakEvenEfficiencySetDataFrame, (200,100))
     plt.show()
 
-plotBreakEvenEffAgainstSelectedEfficiency()
+#plotBreakEvenEffAgainstSelectedEfficiency()
 #plotBreakEvenEff(phaseData)
 #scatterPlotGpuEfficiencies()
 #plotHashRategradient()
