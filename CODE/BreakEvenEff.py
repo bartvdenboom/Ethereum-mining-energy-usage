@@ -265,9 +265,11 @@ def calcTotalEnergyUsage(PriceperKWh, phases):
 
         energyUsageSum+=(phaseBeginWattage+phaseAddedWattage)*phaseTimespan
         EnergyUsageTWh = energyUsageSum/3.6e15
-    with open('../JSONDATA/Etherscan/phaseData.json', 'w') as w:
-        json.dump(efficiencyData, w, indent=4)
+
+    # with open('../JSONDATA/Etherscan/phaseData.json', 'w') as w:
+    #     json.dump(efficiencyData, w, indent=4)
     print("The total energy usage of Ethereum is %i Joule or %i TWh"% (energyUsageSum, EnergyUsageTWh))
+    return efficiencyData
 
 
 def plotBreakEvenEff(BreakEvenEfficiencySet):
@@ -350,8 +352,8 @@ def generatePhases(blockdata, interval):
 
 def main():
     phasesManual = [(0, 200),(201, 454), (455, 598), (599,778), (779, 970), (971, 1106), (1107, 1141), (1142, 1237), (1238, 1275), (1276, 1479), (1480, 1538), (1539, 1621)]
-    phases = generatePhases(blockdata,2)
-    #calcTotalEnergyUsage(0.05,phases)
-    plot.plotBreakEvenEffAgainstSelectedEfficiency()
+    phases = generatePhases(blockdata,14)
+    efficiencyData = calcTotalEnergyUsage(0.05,phases)
+    plot.plotBreakEvenEffAgainstSelectedEfficiency(efficiencyData, blockdata)
 
 main()

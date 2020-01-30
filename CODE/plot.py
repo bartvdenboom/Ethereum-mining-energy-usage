@@ -116,28 +116,32 @@ def plotBreakEvenEff(BreakEvenEfficiencySet):
     plt.xticks(rotation=45)
     plt.show()
 
-def plotBreakEvenEffAgainstSelectedEfficiency():
-    BreakEvenEfficiencySetDataFrame = pd.DataFrame(phaseData)
-    data = pd.DataFrame(blockdata)
+def plotBreakEvenEffAgainstSelectedEfficiency(efficiencyData, DailyData ):
+    BreakEvenEfficiencySetDataFrame = pd.DataFrame(efficiencyData)
+    data = pd.DataFrame(DailyData)
     fig, ax1 = plt.subplots()
 
     color = 'tab:red'
     ax1.set_xlabel('Date')
     ax1.set_ylabel('BreakEvenEfficiency (J/MH)', color=color)
-    ax1.plot(BreakEvenEfficiencySetDataFrame['Date'], BreakEvenEfficiencySetDataFrame['BreakEvenEfficiency'], color=color)
-    color = 'tab:green'
-    ax1.plot(BreakEvenEfficiencySetDataFrame['Date'], BreakEvenEfficiencySetDataFrame['selectedHardwareEfficiencyJMh'], color=color)
-    BreakEvenEfficiencySetDataFrame['selectedHardwareEfficiencyJMh']
     ax1.tick_params(axis='y', labelcolor=color)
 
+    line1 = ax1.plot(BreakEvenEfficiencySetDataFrame['Date'], BreakEvenEfficiencySetDataFrame['BreakEvenEfficiency'], color=color, label='Break even Efficciency (J/Mh)')
+    color = 'tab:green'
+    line2 = ax1.plot(BreakEvenEfficiencySetDataFrame['Date'], BreakEvenEfficiencySetDataFrame['selectedHardwareEfficiencyJMh'], color=color, label='Used hardware Efficciency (J/Mh)')
+    #ax1.legend(handles = [line1, line2])
     plt.xticks(rotation=90)
 
     ax2 = ax1.twinx()  # instantiate a second axes that shares the same x-axis
 
     color = 'tab:blue'
-    ax2.set_ylabel('Hashrate Gh/s', color=color)  # we already handled the x-label with ax1
-    ax2.plot(data['date'], (data['correctedhashrate']/1000000000), color=color)
+    ax2.set_ylabel('', color=color)  # we already handled the x-label with ax1
+    #ax2.plot(data['date'], (data['correctedhashrate']/1e9), color=color)
+    #line3 = ax2.plot(data['date'], (data['averagedifficulty']/1e6), color=color, label='Average Difficulty')
     ax2.tick_params(axis='y', labelcolor=color)
+    color = 'tab:pink'
+    line4 = ax2.plot(data['date'], (data['ethprice']), color=color, label='Price of ETH/USD')
+
     ax1.xaxis.set_major_locator(plt.MaxNLocator(20))
 
     fig.tight_layout()  # otherwise the right y-label is slightly clipped
@@ -146,6 +150,11 @@ def plotBreakEvenEffAgainstSelectedEfficiency():
     # BreakEvenEfficiencySetDataFrame.plot(kind='line', x='date', y='BreakEvenEfficiency', figsize = (16,9), ax=ax)
     # BreakEvenEfficiencySetDataFrame.plot(x='date', y='BreakEvenEfficiency', figsize=(16,9))
     # #plt.figure(BreakEvenEfficiencySetDataFrame, (200,100))
+    #ax2.legend(handles = [line3,line4])
+    first_legend = ax1.legend(handles = [line1[0],line2[0]] , loc = 'upper left')
+    second_legend = ax2.legend(handles = line4, loc = 'upper right')
+    ax1.add_artist(first_legend)
+    ax2.add_artist(second_legend)
     plt.show()
 
 #plotBreakEvenEffAgainstSelectedEfficiency()
