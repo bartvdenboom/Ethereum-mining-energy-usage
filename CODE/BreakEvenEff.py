@@ -34,19 +34,24 @@ def csvtojson(input, output):
 def ceiling_division(n, d):
     return -(n // -d)
 
-def generatePhases(blockdata, interval):
+def generatePhases(blockdata, interval, endDate):
+    for i in range(len(blockdata)):
+        if(blockdata[i]['date'] == endDate):
+            index = i+1
+            break
+
     phases = list()
-    for i in range(ceiling_division(len(blockdata),interval)):
+    for i in range(ceiling_division(index,interval)):
         if i==0:
             begin = 0
             end = interval-1
-            if(end>=len(blockdata)):
-                end = len(blockdata)-1
+            if(end>=index):
+                end = index-1
         else:
             begin = i*interval
             end = (i*interval)+interval-1
-            if(end>=len(blockdata)):
-                end = len(blockdata)-1
+            if(end>=index):
+                end = index-1
         phases.append(
                         (
                         begin,
@@ -219,6 +224,7 @@ def calcTotalEnergyUsage(PriceperKWh, phases, upperBound):
                         )
     breakEvenSet = calcBreakEvenEffSet(PriceperKWh, blockdata)
     energyUsageSum = 0
+    energyDrawWatts = 0
     for i in range(0, len(phases)):
         breakEvenSlice = breakEvenSet[phases[i][0]:phases[i][1]+1]
         hashRateSlice = blockdata[phases[i][0]:phases[i][1]+1]
@@ -251,6 +257,7 @@ def calcTotalEnergyUsage(PriceperKWh, phases, upperBound):
         phaseAddedWattage = (phaseHashRateMhsIncrease*selectedHardwareEfficiency)
         if(getAvgWeighedHardwareEfficiency(hashratedata)==0):
             phaseBeginWattage = phaseBeginHashRateMhs*selectedHardwareEfficiency
+            energyDrawWatts += phaseBeginWattage
             #Accounting for the first period, where there is no weighed average of efficiency, so just use the known hardware efficiency
         else:
             phaseBeginWattage = phaseBeginHashRateMhs*getAvgWeighedHardwareEfficiency(hashratedata)
@@ -268,11 +275,13 @@ def calcTotalEnergyUsage(PriceperKWh, phases, upperBound):
             efficiencyData.append(phaseData)
 
         energyUsageSum+=(phaseBeginWattage+phaseAddedWattage)*phaseTimespan
+        energyDrawWatts += phaseAddedWattage
         EnergyUsageTWh = energyUsageSum/3.6e15
 
     with open('../JSONDATA/Etherscan/phaseData.json', 'w') as w:
         json.dump(efficiencyData, w, indent=4)
     print("The total energy usage of Ethereum is %f Joule or %f TWh"% (energyUsageSum, EnergyUsageTWh))
+    print("At " + datetime.strftime(datePhases[len(datePhases)-1][1],"%m/%d/%Y") + " the power draw was " + str(energyDrawWatts/1e6) + " MW." )
     return efficiencyData
 
 
@@ -333,8 +342,12 @@ def plottwoaxis(BreakEvenEfficiencySet):
 
 def main():
     phasesManual = [(0, 200),(201, 454), (455, 598), (599,778), (779, 970), (971, 1106), (1107, 1141), (1142, 1237), (1238, 1275), (1276, 1479), (1480, 1538), (1539, 1621)]
-    phases = generatePhases(blockdata,5)
-    efficiencyData = calcTotalEnergyUsage(0.05, phases, True)
+    interval = 5
+    upperBound = True
+    endOfData = "1/14/2020"
+    endDate = "6/30/2018"
+    PriceperKWh = 0.05
+    phases = generatePhases(blockdata,interval,endOfData)
+    efficiencyData = calcTotalEnergyUsage(PriceperKWh, phases, upperBound)
     plot.plotBreakEvenEffAgainstSelectedEfficiency(efficiencyData, blockdata)
-
 main()
