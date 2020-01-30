@@ -97,11 +97,8 @@ def plothashrates():
     ax2.axvline(x=1275,color='red')
     ax2.axvline(x=1479,color='red')
     ax2.axvline(x=1538,color='red')
-
-
     plt.xticks(rotation=45)
     plt.show()
-
 
 def plotHashRategradient():
     etherscandataframe = pd.DataFrame(blockdata,columns=['date', 'correctedhashrate'])
