@@ -91,6 +91,9 @@ def getMatchingHardwareEfficiency(efficiency, datetuple, upperbound):
     else:
         return -1
 
+
+
+
 def getBlockReward(blocknr):
     #Blockreward was originally 5 ETH (untill blocknr 4369999), this changed to 3 ETH with EIP-649 (blocknr 7,280,000) and to 2 ETH with EIP-1234
     if blocknr <= 4369999:
@@ -223,8 +226,11 @@ def calcTotalEnergyUsage(PriceperKWh, phases, upperBound):
                             )
                         )
     breakEvenSet = calcBreakEvenEffSet(PriceperKWh, blockdata)
+    minHardwareEfficiency = getMatchingHardwareEfficiency(15,datePhases[len(datePhases)-1], False)
+    print(minHardwareEfficiency)
     energyUsageSum = 0
     energyDrawWatts = 0
+    totalHashrate = 0
     for i in range(0, len(phases)):
         breakEvenSlice = breakEvenSet[phases[i][0]:phases[i][1]+1]
         hashRateSlice = blockdata[phases[i][0]:phases[i][1]+1]
@@ -242,7 +248,11 @@ def calcTotalEnergyUsage(PriceperKWh, phases, upperBound):
             while(getMatchingHardwareEfficiency(meanBreakEvenEff,datePhases[i-j],upperBound) == -1):
                 j+=1
                 phaseHardwareEfficiencyJMh = getMatchingHardwareEfficiency(meanBreakEvenEff,datePhases[i-j],upperBound)
-            selectedHardwareEfficiency = phaseHardwareEfficiencyJMh
+            if(upperBound):
+                selectedHardwareEfficiency = phaseHardwareEfficiencyJMh
+            else:
+                selectedHardwareEfficiency = minHardwareEfficiency
+
             calcAvgEfficiency(selectedHardwareEfficiency, phaseHashRateMhsIncrease)
         else:
             phaseHardwareEfficiencyJMh = getMatchingHardwareEfficiency(meanBreakEvenEff,datePhases[i],upperBound)
@@ -253,6 +263,11 @@ def calcTotalEnergyUsage(PriceperKWh, phases, upperBound):
                 selectedHardwareEfficiency = getAvgWeighedHardwareEfficiency(hashratedata)
             else:
                 selectedHardwareEfficiency = phaseHardwareEfficiencyJMh
+
+        if(upperBound):
+            selectedHardwareEfficiency = phaseHardwareEfficiencyJMh
+        else:
+            selectedHardwareEfficiency = minHardwareEfficiency
 
         phaseAddedWattage = (phaseHashRateMhsIncrease*selectedHardwareEfficiency)
         if(getAvgWeighedHardwareEfficiency(hashratedata)==0):
@@ -273,10 +288,21 @@ def calcTotalEnergyUsage(PriceperKWh, phases, upperBound):
             phaseData['phaseBeginEnergyWattage'] = float(phaseBeginWattage)
             phaseData['phaseAddedEnergyWattage'] = float(phaseAddedWattage)
             efficiencyData.append(phaseData)
+        if upperBound:
+            energyUsageSum+=(phaseBeginWattage+phaseAddedWattage)*phaseTimespan
+            energyDrawWatts += phaseAddedWattage
+            EnergyUsageTWh = energyUsageSum/3.6e15
+        else:
+            if(i==0):
+                totalHashrate+=(phaseBeginHashRateMhs+phaseHashRateMhsIncrease)
+            else:
+                totalHashrate+=phaseHashRateMhsIncrease
+                phaseWattage = (totalHashrate*getMatchingHardwareEfficiency(15,datePhases[len(datePhases)-1], False))
+                energyUsageSum+=phaseWattage*phaseTimespan
+                energyDrawWatts+=phaseWattage
+                EnergyUsageTWh = energyUsageSum/3.6e15
 
-        energyUsageSum+=(phaseBeginWattage+phaseAddedWattage)*phaseTimespan
-        energyDrawWatts += phaseAddedWattage
-        EnergyUsageTWh = energyUsageSum/3.6e15
+
 
     with open('../JSONDATA/Etherscan/phaseData.json', 'w') as w:
         json.dump(efficiencyData, w, indent=4)
@@ -339,15 +365,15 @@ def plottwoaxis(BreakEvenEfficiencySet):
 #plotBreakEvenEff(plotdata)
 #calcBreakEvenEffSetCrawler(0.10, crawlerblockdata, '../JSONDATA/plotdata.json')
 
-
 def main():
     phasesManual = [(0, 200),(201, 454), (455, 598), (599,778), (779, 970), (971, 1106), (1107, 1141), (1142, 1237), (1238, 1275), (1276, 1479), (1480, 1538), (1539, 1621)]
     interval = 5
-    upperBound = True
+    upperBound = False
     endOfData = "1/14/2020"
-    endDate = "6/30/2018"
+    endDate = "12/31/2016"
     PriceperKWh = 0.05
     phases = generatePhases(blockdata,interval,endOfData)
     efficiencyData = calcTotalEnergyUsage(PriceperKWh, phases, upperBound)
+    print(getAvgWeighedHardwareEfficiency(hashratedata))
     plot.plotBreakEvenEffAgainstSelectedEfficiency(efficiencyData, blockdata)
 main()
