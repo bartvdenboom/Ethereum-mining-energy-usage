@@ -320,60 +320,6 @@ def calcTotalEnergyUsage(PriceperKWh, phases, upperBound):
     print("This equals %f TWh per year." % ((totalWattage*8765.81277)/1e12))
     return efficiencyData
 
-
-def plotBreakEvenEff(BreakEvenEfficiencySet):
-    df = pd.DataFrame(BreakEvenEfficiencySet)
-    df.plot(kind='line', x='date', y=['BreakEvenEfficiency', 'BreakEvenEfficiencyActual'])
-    plt.show()
-
-def compareplots(d1, d2):
-    df1 = pd.DataFrame(d1)
-    df2 = pd.DataFrame(d2)
-    df1.plot(kind='line', x='date', y=['BreakEvenEfficiency', 'BreakEvenEfficiencyUncles'])
-    df2.plot(kind='line', x='date', y=['BreakEvenEfficiency', 'BreakEvenEfficiencyActual'])
-    plt.locator_params(axis='x', nbins=20)
-    plt.show()
-
-def plottwoaxis(BreakEvenEfficiencySet):
-    BreakEvenEfficiencySetDataFrame = pd.DataFrame(BreakEvenEfficiencySet)
-    data = pd.DataFrame(reversed(blockdata))
-    fig, ax1 = plt.subplots()
-
-    color = 'tab:red'
-    ax1.set_xlabel('Date')
-    ax1.set_ylabel('BreakEvenEfficiency (J/MH)', color=color)
-    ax1.plot(BreakEvenEfficiencySetDataFrame['date'], BreakEvenEfficiencySetDataFrame['BreakEvenEfficiency'], color=color)
-    ax1.tick_params(axis='y', labelcolor=color)
-
-    plt.xticks(rotation=90)
-
-    ax2 = ax1.twinx()  # instantiate a second axes that shares the same x-axis
-
-    color = 'tab:blue'
-    ax2.set_ylabel('Average Hashrate (GH/s)', color=color)  # we already handled the x-label with ax1
-    ax2.plot(data['date'], (data['averagehashrate']/1000000000), color=color)
-    ax2.tick_params(axis='y', labelcolor=color)
-    ax1.xaxis.set_major_locator(plt.MaxNLocator(20))
-
-    fig.tight_layout()  # otherwise the right y-label is slightly clipped
-    #
-    # data.plot(kind='line', x='date', y='averagehashrate', figsize = (16,9), ax=ax)
-    # BreakEvenEfficiencySetDataFrame.plot(kind='line', x='date', y='BreakEvenEfficiency', figsize = (16,9), ax=ax)
-    # BreakEvenEfficiencySetDataFrame.plot(x='date', y='BreakEvenEfficiency', figsize=(16,9))
-    # #plt.figure(BreakEvenEfficiencySetDataFrame, (200,100))
-    plt.show()
-
-#getMatchingHardware(5, "7/8/2019", "12/1/2019")
-#csvtojson("transactions.csv", "transactions.json")
-#csvtojson('../JSONDATA/GPUDATA/CSV/GPUDATA.csv', '../JSONDATA/GPUDATA/GPUDATA.json')
-# breakevenset = calcBreakEvenEffSet(0.10, blockdata)
-# breakevensetcrawler = calcBreakEvenEffSetCrawler(0.10, crawlerblockdata)
-# compareplots(breakevensetcrawler,breakevenset)
-#plottwoaxis(breakevenset)
-#getMatchingHardwareEfficiency(11, (datetime.strptime("4/7/2014", "%m/%d/%Y"), datetime.strptime("4/15/2015", "%m/%d/%Y")))
-#plotBreakEvenEff(plotdata)
-#calcBreakEvenEffSetCrawler(0.10, crawlerblockdata, '../JSONDATA/plotdata.json')
-
 def main():
     phasesManual = [(0, 200),(201, 454), (455, 598), (599,778),
     (779, 970), (971, 1106), (1107, 1141), (1142, 1237), (1238, 1275),
@@ -386,7 +332,4 @@ def main():
     phases = generatePhases(blockdata,interval,endOfData)
     efficiencyData = calcTotalEnergyUsage(PriceperKWh, phases, upperBound)
     plot.plotBreakEvenEffAgainstSelectedEfficiency(efficiencyData, blockdata)
-
-
-
 main()
