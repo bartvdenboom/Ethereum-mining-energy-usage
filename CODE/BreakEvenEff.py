@@ -213,7 +213,6 @@ def replaceHardware(hardwareEfficiency, meanBreakEvenEff):
     if hashratedata:
         cumulativeHardwareEfficiency = np.sum(np.prod(np.array(hashratedata), axis=1),axis=0)
         cumulativeWeight = np.sum(np.array(hashratedata),axis=0)[1]
-        #maxEfficiency = np.max(np.array(hashratedata), axis=0)[0]
         hashratedata.sort(key=lambda x:x[0], reverse = True)
         for i in range(len(hashratedata)):
             if(hashratedata[i][1] > 0 and hashratedata[i][0] != hardwareEfficiency):

@@ -1,20 +1,12 @@
 import json
 import matplotlib.pyplot as mpl
 import pandas as pd
-import Levenshtein as lev
+
 
 with open("../JSONDATA/Nanopool/miner_workers_nanopool_final0.json") as r:
     miner_workers_nanopool = json.load(r)
-
-with open("../JSONDATA/Nanopool/miner_workers_matches.json") as r:
-    miner_workers_nanopool_matched = json.load(r)
-
-with open("../JSONDATA/Nanopool/miner_workers_matches_pruned.json") as r:
-    workernames_nanopool_matched_pruned = json.load(r)
-
-with open("../JSONDATA/Nanopool/miner_workers_matches_pruned_noduplicatematches.json") as r:
-    workerdata_nanopool = json.load(r)
-
+with open("../JSONDATA/Ethermine/miner_workers_ethermine_final0.json") as r:
+    miner_workers_ethermine = json.load(r)
 
 
 specificHardwareNames  = ["7870", "7990", "770", "R9", "750", "TITAN", "295X2", "970", "960", "390", "370", "380", "FURY",
@@ -25,27 +17,6 @@ specificHardwareNames  = ["7870", "7990", "770", "R9", "750", "TITAN", "295X2", 
 HardwareVariations = ["780TI", "980TI", "1050TI", "1080TI", "1070TI", "2080TI", "380X", "5700XT", "1660TI", "290X", "2070TI", "2060TI", "1650TI"]
 generalHardwareNames = ["780", "980", "290","1080", "1050", "1060", "1070", "2070", "2060", "1650", "2080", "1660","5700"]
 hardwareRigs = ["SHARK", "MAMIMUS", "ULTRON", "IMPERIUM", "THORIUM", "ZODIAC"]
-
-def getMostSimilarWorkers(rdata):
-    scores = list()
-    distance = 0
-    testword = rdata[0]
-    for string1 in rdata:
-        for string2 in rdata:
-            distance += lev.distance(string1, string2)
-        scores.append(distance)
-        distance = 0
-    with open('../JSONDATA/scores.json', 'w') as w:
-            json.dump(scores, w, indent = 4)
-
-def getFuzzyMatches(workernames, keywords):
-        results = list()
-        for i in range (0,100):
-            result = (workernames[i], process.extract(workernames[i], keywords, limit=2))
-            results.append(result)
-        with open('../JSONDATA/fuzzymatching.json', 'w') as w:
-                json.dump(results, w, indent = 4)
-
 
 def getSubstringMatches(workernames, keywords):
     out = list()
@@ -92,16 +63,18 @@ def matchWorkersByName(minerworkerdata):
                 matches = matchBySubstrings(worker.get('id'), specificHardwareNames)
             worker['Matches'] = matches
         out.append(miner)
-    with open('../JSONDATA/Nanopool/miner_workers_matches.json', 'w') as w:
-        json.dump(out, w, indent = 4)
+    return out
+    # with open('../JSONDATA/Nanopool/miner_workers_matches.json', 'w') as w:
+    #     json.dump(out, w, indent = 4)
 
 def pruneEmptyWorkerset(minerworkerdata):
     out = list()
     for miner in minerworkerdata:
         if miner['Workers']:
             out.append(miner)
-    with open('../JSONDATA/Nanopool/miner_workers_matches_pruned.json', 'w') as w:
-        json.dump(out, w, indent = 4)
+    return out
+    # with open('../JSONDATA/Nanopool/miner_workers_matches_pruned.json', 'w') as w:
+        # json.dump(out, w, indent = 4)
 
 def resolveMultipleMatches(minerworkerdata):
     out = list()
@@ -113,7 +86,7 @@ def resolveMultipleMatches(minerworkerdata):
                 print("\n")
                 print("Index %i of %i" % (i, len(minerworkerdata)))
                 print("id= " + worker.get('id'))
-                print("hashrate= " + worker.get('hashrate'))
+                print("hashrate= " + str(worker.get('hashrate')))
                 print("--------------------------")
                 count = 0
                 for word in matches:
@@ -128,8 +101,7 @@ def resolveMultipleMatches(minerworkerdata):
                     newmatches = matches[choice]
                 worker['Matches'] = newmatches
         out.append(minerworkerdata[i])
-    with open('../JSONDATA/Nanopool/miner_workers_matches_pruned_noduplicatematches.json', 'w') as w:
-        json.dump(out, w, indent = 4)
+    return out
 
 def getMatchRatioAndWorkerCount(minerworkerdata):
     workercount = 0
@@ -164,10 +136,24 @@ def matchResults():
     for name in generalHardwareNames:
         showMatches(name, workerdata_nanopool)
 
-matchResults()
 
-for name in hardwareRigs:
-    showMatches(name, workerdata_nanopool)
+def main():
+    # pruned = pruneEmptyWorkerset(miner_workers_ethermine)
+    # matches = matchWorkersByName(pruned)
+    # with open('../JSONDATA/Ethermine/miner_workers_matches.json', 'w') as w:
+    #     json.dump(matches, w, indent = 4)
+    # resolvedMatches = resolveMultipleMatches(matches)
+    # with open('../JSONDATA/Ethermine/miner_workers_matches_resolved.json', 'w') as w:
+    #     json.dump(resolvedMatches, w, indent = 4)
+
+
+
+
+
+
+
+main()
+
 #matchWorkersByName(miner_workers_nanopool)
 #pruneEmptyWorkerset(miner_workers_nanopool_matched)
 #resolveMultipleMatches(workernames_nanopool_matched_pruned)
