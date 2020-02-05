@@ -137,7 +137,7 @@ def plotBreakEvenEffAgainstSelectedEfficiency(efficiencyData, DailyData ):
     #line3 = ax2.plot(data['date'], (data['averagedifficulty']/1e6), color=color, label='Average Difficulty')
     ax2.tick_params(axis='y', labelcolor=color)
     color = 'tab:pink'
-    line4 = ax2.plot(data['date'], (data['ethprice']), color=color, label='Price of ETH/USD')
+    line4 = ax2.plot(data['date'], (data['computedhashrate']), color=color, label='Hashrate')
 
     ax1.xaxis.set_major_locator(plt.MaxNLocator(20))
 
@@ -153,6 +153,7 @@ def plotBreakEvenEffAgainstSelectedEfficiency(efficiencyData, DailyData ):
     ax1.add_artist(first_legend)
     ax2.add_artist(second_legend)
     plt.show()
+
 
 #plotBreakEvenEffAgainstSelectedEfficiency()
 #plotBreakEvenEff(phaseData)
