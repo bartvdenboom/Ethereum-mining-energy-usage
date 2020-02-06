@@ -8,10 +8,9 @@ with open("../JSONDATA/Nanopool/miner_workers_nanopool_final0.json") as r:
 with open("../JSONDATA/Ethermine/miner_workers_ethermine_final0.json") as r:
     miner_workers_ethermine = json.load(r)
 
-
+asicHardwareNames = ["E3", "ANTMINER", "ETHMASTER", "A10", "BITMAIN", "INNOSILICON", "G2"]
 specificHardwareNames  = ["7870", "7990", "770", "R9", "750", "TITAN", "295X2", "970", "960", "390", "370", "380", "FURY",
-                           "480", "460", "470", "570", "580", "550", "VEGA", "VII", "V100",
-                          "590",  "P100", "560", "E3", "ANTMINER", "ETHMASTER", "A10", "P104",
+                           "480", "460", "470", "570", "580", "550", "VEGA", "VII", "V100", "590",  "P100", "560",  "P104",
                           "P106", "680", "660", "650"]
 
 HardwareVariations = ["780TI", "980TI", "1050TI", "1080TI", "1070TI", "2080TI", "380X", "5700XT", "1660TI", "290X", "2070TI", "2060TI", "1650TI"]
@@ -61,6 +60,8 @@ def matchWorkersByName(minerworkerdata):
                 matches = matchBySubstrings(worker.get('id'), generalHardwareNames)
             if len(matches)==0:
                 matches = matchBySubstrings(worker.get('id'), specificHardwareNames)
+            if len(matches)==0:
+                matches = matchBySubstrings(worker.get('id'), asicHardwareNames)
             worker['Matches'] = matches
         out.append(miner)
     return out
@@ -121,36 +122,51 @@ def showMatches(keyword, minerworkerdata):
         for worker in miner['Workers']:
             for match in worker['Matches']:
                 if match == keyword:
-                    #print(worker['id'] + " hashrate: " + worker['hashrate'])
+                    print(worker['id'] + " hashrate: " + str(worker['reportedhashrate']))
 
                     count += 1
     ratio, workercount = getMatchRatioAndWorkerCount(minerworkerdata)
     print(keyword + " has %i matches found out of %i workers (Matching coverage=%f)." % (count, workercount, ratio))
 
+def resolveASICMiners(minerworkerdata):
+    E3_hashrate = 180
+    A10_hashate_min = 365
+    A10_hashrate_max = 500
+    G2_hashrate = 220
+    margin = 10
+    m = list()
+    for miner in minerworkerdata:
+        for worker in miner['Workers']:
+            for match in worker['Matches']:
+                if match == "E3" and (worker.get('hashrate') + margin < E3_hashrate or worker.get('hashrate') - margin > E3_hashrate or worker.get('hashrate')<=0.0) :
+                    worker['Matches'].remove(match)
+                    print("Removed E3")
+                elif match == "A10" and (worker.get('hashrate') + margin < A10_hashate_min or worker.get('hashrate') - margin > A10_hashrate_max or worker.get('hashrate')<=0.0):
+                    worker['Matches'].remove(match)
+                    print("Removed A10")
+                elif match == "G2" and (worker.get('hashrate') + margin < G2_hashrate or worker.get('hashrate') - margin > G2_hashrate or worker.get('hashrate')<=0.0):
+                    worker['Matches'].remove(match)
+                    print("Removed G2")
+        m.append(miner)
+    return m
 
-def matchResults():
-    for name in specificHardwareNames:
-        showMatches(name, workerdata_nanopool)
-    for name in HardwareVariations:
-        showMatches(name, workerdata_nanopool)
-    for name in generalHardwareNames:
-        showMatches(name, workerdata_nanopool)
 
 
 def main():
     # pruned = pruneEmptyWorkerset(miner_workers_ethermine)
-    # matches = matchWorkersByName(pruned)
+    #matches = matchWorkersByName(pruned)
+
     # with open('../JSONDATA/Ethermine/miner_workers_matches.json', 'w') as w:
     #     json.dump(matches, w, indent = 4)
     # resolvedMatches = resolveMultipleMatches(matches)
     # with open('../JSONDATA/Ethermine/miner_workers_matches_resolved.json', 'w') as w:
     #     json.dump(resolvedMatches, w, indent = 4)
-
-
-
-
-
-
+    with open('../JSONDATA/Ethermine/miner_workers_matches_resolved_asiccheck.json') as r:
+         data = json.load(r)
+    showMatches("E3", data)
+    # m = resolveASICMiners(data)
+    # with open('../JSONDATA/Ethermine/miner_workers_matches_resolved_asiccheck.json', 'w') as w:
+    #     json.dump(m, w, indent = 4)
 
 main()
 
