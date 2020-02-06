@@ -138,13 +138,13 @@ def resolveASICMiners(minerworkerdata):
     for miner in minerworkerdata:
         for worker in miner['Workers']:
             for match in worker['Matches']:
-                if match == "E3" and (worker.get('hashrate') + margin < E3_hashrate or worker.get('hashrate') - margin > E3_hashrate or worker.get('hashrate')<=0.0) :
+                if match == "E3" and (float(worker.get('hashrate')) + margin < E3_hashrate or float(worker.get('hashrate')) - margin > E3_hashrate or float(worker.get('hashrate'))<=0.0) :
                     worker['Matches'].remove(match)
                     print("Removed E3")
-                elif match == "A10" and (worker.get('hashrate') + margin < A10_hashate_min or worker.get('hashrate') - margin > A10_hashrate_max or worker.get('hashrate')<=0.0):
+                elif match == "A10" and (float(worker.get('hashrate')) + margin < A10_hashate_min or float(worker.get('hashrate')) - margin > A10_hashrate_max or float(worker.get('hashrate'))<=0.0):
                     worker['Matches'].remove(match)
                     print("Removed A10")
-                elif match == "G2" and (worker.get('hashrate') + margin < G2_hashrate or worker.get('hashrate') - margin > G2_hashrate or worker.get('hashrate')<=0.0):
+                elif match == "G2" and (float(worker.get('hashrate')) + margin < G2_hashrate or float(worker.get('hashrate')) - margin > G2_hashrate or float(worker.get('hashrate'))<=0.0):
                     worker['Matches'].remove(match)
                     print("Removed G2")
         m.append(miner)
@@ -153,20 +153,16 @@ def resolveASICMiners(minerworkerdata):
 
 
 def main():
-    # pruned = pruneEmptyWorkerset(miner_workers_ethermine)
-    #matches = matchWorkersByName(pruned)
-
-    # with open('../JSONDATA/Ethermine/miner_workers_matches.json', 'w') as w:
-    #     json.dump(matches, w, indent = 4)
+    # pruned = pruneEmptyWorkerset(miner_workers_nanopool)
+    # matches = matchWorkersByName(pruned)
     # resolvedMatches = resolveMultipleMatches(matches)
-    # with open('../JSONDATA/Ethermine/miner_workers_matches_resolved.json', 'w') as w:
+    # with open('../JSONDATA/Nanopool/miner_workers_matches_resolved.json', 'w') as w:
     #     json.dump(resolvedMatches, w, indent = 4)
-    with open('../JSONDATA/Ethermine/miner_workers_matches_resolved_asiccheck.json') as r:
+    with open('../JSONDATA/Nanopool/miner_workers_matches_resolved.json') as r:
          data = json.load(r)
-    showMatches("E3", data)
-    # m = resolveASICMiners(data)
-    # with open('../JSONDATA/Ethermine/miner_workers_matches_resolved_asiccheck.json', 'w') as w:
-    #     json.dump(m, w, indent = 4)
+    m = resolveASICMiners(data)
+    with open('../JSONDATA/Nanopool/miner_workers_matches_resolved_asiccheck.json', 'w') as w:
+        json.dump(m, w, indent = 4)
 
 main()
 
