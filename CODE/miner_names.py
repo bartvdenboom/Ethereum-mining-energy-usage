@@ -7,6 +7,11 @@ with open("../JSONDATA/Nanopool/miner_workers_nanopool_final0.json") as r:
     miner_workers_nanopool = json.load(r)
 with open("../JSONDATA/Ethermine/miner_workers_ethermine_final0.json") as r:
     miner_workers_ethermine = json.load(r)
+with open("../JSONDATA/Nanopool/miner_workers_matches_final.json") as r:
+    matches_nanopool = json.load(r)
+with open("../JSONDATA/Ethermine/miner_workers_matches_final.json") as r:
+    matches_ethermine = json.load(r)
+
 
 asicHardwareNames = ["E3", "ANTMINER", "ETHMASTER", "A10", "BITMAIN", "INNOSILICON", "G2"]
 specificHardwareNames  = ["7870", "7990", "770", "R9", "750", "TITAN", "295X2", "970", "960", "390", "370", "380", "FURY",
@@ -153,19 +158,20 @@ def resolveASICMiners(minerworkerdata):
 
 
 def main():
-    # pruned = pruneEmptyWorkerset(miner_workers_nanopool)
-    # matches = matchWorkersByName(pruned)
-    # resolvedMatches = resolveMultipleMatches(matches)
-    # with open('../JSONDATA/Nanopool/miner_workers_matches_resolved.json', 'w') as w:
-    #     json.dump(resolvedMatches, w, indent = 4)
-    with open('../JSONDATA/Nanopool/miner_workers_matches_resolved.json') as r:
-         data = json.load(r)
-    m = resolveASICMiners(data)
-    with open('../JSONDATA/Nanopool/miner_workers_matches_resolved_asiccheck.json', 'w') as w:
-        json.dump(m, w, indent = 4)
+    # #Nanopool
+    # pruned_nano = pruneEmptyWorkerset(miner_workers_nanopool)
+    # matches_nano = matchWorkersByName(pruned_nano)
+    # resolvedMatches_nano = resolveMultipleMatches(matches_nano)
+    # out_nano = resolveASICMiners(resolvedMatches_nano)
+    # with open('../JSONDATA/Nanopool/miner_workers_matches_final.json', 'w') as w:
+    #     json.dump(out_nano, w, indent = 4)
+    #
+    # #Ethermine
+    # pruned_ether = pruneEmptyWorkerset(miner_workers_ethermine)
+    # matches_ether = matchWorkersByName(pruned_ether)
+    # resolvedMatches_ether = resolveMultipleMatches(matches_ether)
+    # out_ether = resolveASICMiners(resolvedMatches_ether)
+    # with open('../JSONDATA/Ethermine/miner_workers_matches_final.json', 'w') as w:
+    #     json.dump(out_ether, w, indent = 4)
 
 main()
-
-#matchWorkersByName(miner_workers_nanopool)
-#pruneEmptyWorkerset(miner_workers_nanopool_matched)
-#resolveMultipleMatches(workernames_nanopool_matched_pruned)
