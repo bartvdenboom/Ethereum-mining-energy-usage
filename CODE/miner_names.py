@@ -58,14 +58,14 @@ def matchWorkersByName(minerworkerdata):
     out = list()
     for miner in minerworkerdata:
         for worker in miner['Workers']:
-            matches = matchBySubstrings(worker.get('id'), hardwareRigs)
-            if len(matches)==0:
-                matches = matchBySubstrings(worker.get('id'), HardwareVariations)
-            if len(matches)==0:
-                matches = matchBySubstrings(worker.get('id'), generalHardwareNames)
-            if len(matches)==0:
-                matches = matchBySubstrings(worker.get('id'), specificHardwareNames)
-            if len(matches)==0:
+            # matches = matchBySubstrings(worker.get('id'), hardwareRigs)
+            # if len(matches)==0:
+            #     matches = matchBySubstrings(worker.get('id'), HardwareVariations)
+            # if len(matches)==0:
+            #     matches = matchBySubstrings(worker.get('id'), generalHardwareNames)
+            # if len(matches)==0:
+            #     matches = matchBySubstrings(worker.get('id'), specificHardwareNames)
+            if len(worker.get('Matches'))==0:
                 matches = matchBySubstrings(worker.get('id'), asicHardwareNames)
             worker['Matches'] = matches
         out.append(miner)
@@ -127,14 +127,15 @@ def showMatches(keyword, minerworkerdata):
         for worker in miner['Workers']:
             for match in worker['Matches']:
                 if match == keyword:
-                    print(worker['id'] + " hashrate: " + str(worker['reportedhashrate']))
+                    print(worker['id'] + " hashrate: " + str(worker['hashrate']))
 
                     count += 1
     ratio, workercount = getMatchRatioAndWorkerCount(minerworkerdata)
     print(keyword + " has %i matches found out of %i workers (Matching coverage=%f)." % (count, workercount, ratio))
 
 def resolveASICMiners(minerworkerdata):
-    E3_hashrate = 180
+    E3_hashrate_min = 180
+    E3_hashrate_max = 220
     A10_hashate_min = 365
     A10_hashrate_max = 500
     G2_hashrate = 220
@@ -143,7 +144,7 @@ def resolveASICMiners(minerworkerdata):
     for miner in minerworkerdata:
         for worker in miner['Workers']:
             for match in worker['Matches']:
-                if match == "E3" and (float(worker.get('hashrate')) + margin < E3_hashrate or float(worker.get('hashrate')) - margin > E3_hashrate or float(worker.get('hashrate'))<=0.0) :
+                if match == "E3" and (float(worker.get('hashrate')) + margin < E3_hashrate_min or float(worker.get('hashrate')) - margin > E3_hashrate_max or float(worker.get('hashrate'))<=0.0) :
                     worker['Matches'].remove(match)
                     print("Removed E3")
                 elif match == "A10" and (float(worker.get('hashrate')) + margin < A10_hashate_min or float(worker.get('hashrate')) - margin > A10_hashrate_max or float(worker.get('hashrate'))<=0.0):
@@ -173,5 +174,15 @@ def main():
     # out_ether = resolveASICMiners(resolvedMatches_ether)
     # with open('../JSONDATA/Ethermine/miner_workers_matches_final.json', 'w') as w:
     #     json.dump(out_ether, w, indent = 4)
+    showMatches("E3",matches_nanopool )
+    matchWorkersByName(matches_nanopool)
+
+    out= resolveASICMiners(matches_nanopool)
+    with open('../JSONDATA/Nanopool/miner_workers_matches_final.json', 'w') as w:
+         json.dump(out, w, indent = 4)
+    showMatches("E3",matches_nanopool )
+    # showMatches("BITMAIN", matches_nanopool)
+    # showMatches("BITMAIN", matches_ethermine)
+
 
 main()
