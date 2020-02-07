@@ -7,10 +7,10 @@ with open("../JSONDATA/Nanopool/miner_workers_nanopool_final0.json") as r:
     miner_workers_nanopool = json.load(r)
 with open("../JSONDATA/Ethermine/miner_workers_ethermine_final0.json") as r:
     miner_workers_ethermine = json.load(r)
-with open("../JSONDATA/Nanopool/miner_workers_matches_final.json") as r:
-    matches_nanopool = json.load(r)
-with open("../JSONDATA/Ethermine/miner_workers_matches_final.json") as r:
-    matches_ethermine = json.load(r)
+# with open("../JSONDATA/Nanopool/miner_workers_matches_final.json") as r:
+#     matches_nanopool = json.load(r)
+# with open("../JSONDATA/Ethermine/miner_workers_matches_final.json") as r:
+#     matches_ethermine = json.load(r)
 
 
 asicHardwareNames = ["E3", "ANTMINER", "ETHMASTER", "A10", "BITMAIN", "INNOSILICON", "G2"]
@@ -58,14 +58,14 @@ def matchWorkersByName(minerworkerdata):
     out = list()
     for miner in minerworkerdata:
         for worker in miner['Workers']:
-            # matches = matchBySubstrings(worker.get('id'), hardwareRigs)
-            # if len(matches)==0:
-            #     matches = matchBySubstrings(worker.get('id'), HardwareVariations)
-            # if len(matches)==0:
-            #     matches = matchBySubstrings(worker.get('id'), generalHardwareNames)
-            # if len(matches)==0:
-            #     matches = matchBySubstrings(worker.get('id'), specificHardwareNames)
-            if len(worker.get('Matches'))==0:
+            matches = matchBySubstrings(worker.get('id'), hardwareRigs)
+            if len(matches)==0:
+                matches = matchBySubstrings(worker.get('id'), HardwareVariations)
+            if len(matches)==0:
+                matches = matchBySubstrings(worker.get('id'), generalHardwareNames)
+            if len(matches)==0:
+                matches = matchBySubstrings(worker.get('id'), specificHardwareNames)
+            if len(matches)==0:
                 matches = matchBySubstrings(worker.get('id'), asicHardwareNames)
             worker['Matches'] = matches
         out.append(miner)
@@ -159,28 +159,26 @@ def resolveASICMiners(minerworkerdata):
 
 
 def main():
-    # #Nanopool
-    # pruned_nano = pruneEmptyWorkerset(miner_workers_nanopool)
-    # matches_nano = matchWorkersByName(pruned_nano)
-    # resolvedMatches_nano = resolveMultipleMatches(matches_nano)
-    # out_nano = resolveASICMiners(resolvedMatches_nano)
-    # with open('../JSONDATA/Nanopool/miner_workers_matches_final.json', 'w') as w:
-    #     json.dump(out_nano, w, indent = 4)
-    #
-    # #Ethermine
-    # pruned_ether = pruneEmptyWorkerset(miner_workers_ethermine)
-    # matches_ether = matchWorkersByName(pruned_ether)
-    # resolvedMatches_ether = resolveMultipleMatches(matches_ether)
-    # out_ether = resolveASICMiners(resolvedMatches_ether)
-    # with open('../JSONDATA/Ethermine/miner_workers_matches_final.json', 'w') as w:
-    #     json.dump(out_ether, w, indent = 4)
-    showMatches("E3",matches_nanopool )
-    matchWorkersByName(matches_nanopool)
-
-    out= resolveASICMiners(matches_nanopool)
+    #Nanopool
+    pruned_nano = pruneEmptyWorkerset(miner_workers_nanopool)
+    matches_nano = matchWorkersByName(pruned_nano)
+    matches_nano = resolveASICMiners(matches_nano)
+    resolvedMatches_nano = resolveMultipleMatches(matches_nano)
     with open('../JSONDATA/Nanopool/miner_workers_matches_final.json', 'w') as w:
-         json.dump(out, w, indent = 4)
-    showMatches("E3",matches_nanopool )
+        json.dump(resolvedMatches_nano, w, indent = 4)
+
+    #Ethermine
+    pruned_ether = pruneEmptyWorkerset(miner_workers_ethermine)
+    matches_ether = matchWorkersByName(pruned_ether)
+    matches_ether = resolveASICMiners(matches_ether)
+    resolvedMatches_ether = resolveMultipleMatches(matches_ether)
+    with open('../JSONDATA/Ethermine/miner_workers_matches_final.json', 'w') as w:
+        json.dump(resolvedMatches_ether, w, indent = 4)
+
+
+
+    # showMatches("ETHMASTER",matches_ethermine)
+    # showMatches("ETHMASTER",matches_nanopool )
     # showMatches("BITMAIN", matches_nanopool)
     # showMatches("BITMAIN", matches_ethermine)
 
