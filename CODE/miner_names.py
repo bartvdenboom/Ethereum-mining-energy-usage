@@ -19,7 +19,7 @@ specificHardwareNames  = ["7870", "7990", "770", "R9", "750", "TITAN", "295X2", 
                           "P106", "680", "660", "650"]
 
 HardwareVariations = ["780TI", "980TI", "1050TI", "1080TI", "1070TI", "2080TI", "380X", "5700XT", "1660TI", "290X", "2070TI", "2060TI", "1650TI"]
-generalHardwareNames = ["780", "980", "290","1080", "1050", "1060", "1070", "2070", "2060", "1650", "2080", "1660","5700"]
+generalHardwareNames = ["780", "980", "290", "1080", "1050", "1060", "1070", "2070", "2060", "1650", "2080", "1660","5700"]
 hardwareRigs = ["SHARK", "MAMIMUS", "ULTRON", "IMPERIUM", "THORIUM", "ZODIAC", "G2", "G1"]
 
 def getSubstringMatches(workernames, keywords):
@@ -71,15 +71,12 @@ def matchWorkersByName(minerworkerdata):
         out.append(miner)
     return out
 
-
-
 def pruneEmptyWorkerset(minerworkerdata):
     out = list()
     for miner in minerworkerdata:
         if miner['Workers']:
             out.append(miner)
     return out
-
 
 def resolveMultipleMatches(minerworkerdata):
     out = list()
@@ -118,8 +115,6 @@ def getMatchRatioAndWorkerCount(minerworkerdata):
                 matchcount += 1
     return ((matchcount/workercount), workercount)
 
-
-
 def showMatches(keyword, minerworkerdata):
     count = 0
     for miner in minerworkerdata:
@@ -155,6 +150,33 @@ def resolveASICMiners(minerworkerdata):
         m.append(miner)
     return m
 
+def groupResults(minerworkerdata):
+
+    # E3_ANTMINER = 0         #Tags "E3" or "ANTMINER"
+    # ETHMASTERA10 = 0        #Tags "ETHMASTER", "A10", "INNOSILICON"
+    # BITMAIN = 0             #Tags "BITMAIN"
+    allHardwareNames = [*hardwareRigs, *generalHardwareNames, *HardwareVariations, *specificHardwareNames, *asicHardwareNames]
+
+    out = list()
+    for name in allHardwareNames:
+        result = {}
+        result['id'] = name
+        c = 0
+        for miner in minerworkerdata:
+            for worker in miner['Workers']:
+                for matches in worker['Matches']:
+                    if name in matches:
+                        c+=1
+        result['count'] = c
+        out.append(result)
+    return out
+
+
+
+
+    # with open('../JSONDATA/matchResults.json', 'w') as w:
+    #     json.dump(resolvedMatches_ether, w, indent = 4)
+
 def main():
     # #Nanopool
     # pruned_nano = pruneEmptyWorkerset(miner_workers_nanopool)
@@ -171,10 +193,9 @@ def main():
     # resolvedMatches_ether = resolveMultipleMatches(matches_ether)
     # with open('../JSONDATA/Ethermine/miner_workers_matches_final.json', 'w') as w:
     #     json.dump(resolvedMatches_ether, w, indent = 4)
-
-
-    # showMatches("G2", matches_nanopool)
-    # showMatches("G2", matches_ethermine)
+    out = groupResults(matches_ethermine)
+    with open('../JSONDATA/Ethermine/miner_worker_count.json', 'w') as w:
+        json.dump(out, w, indent = 4)
 
 
 main()
