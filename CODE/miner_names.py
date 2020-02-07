@@ -13,14 +13,14 @@ with open("../JSONDATA/Ethermine/miner_workers_matches_final.json") as r:
     matches_ethermine = json.load(r)
 
 
-asicHardwareNames = ["E3", "ANTMINER", "ETHMASTER", "A10", "BITMAIN", "INNOSILICON", "G2"]
+asicHardwareNames = ["E3", "ANTMINER", "ETHMASTER", "A10", "BITMAIN", "INNOSILICON"]
 specificHardwareNames  = ["7870", "7990", "770", "R9", "750", "TITAN", "295X2", "970", "960", "390", "370", "380", "FURY",
                            "480", "460", "470", "570", "580", "550", "VEGA", "VII", "V100", "590",  "P100", "560",  "P104",
                           "P106", "680", "660", "650"]
 
 HardwareVariations = ["780TI", "980TI", "1050TI", "1080TI", "1070TI", "2080TI", "380X", "5700XT", "1660TI", "290X", "2070TI", "2060TI", "1650TI"]
 generalHardwareNames = ["780", "980", "290","1080", "1050", "1060", "1070", "2070", "2060", "1650", "2080", "1660","5700"]
-hardwareRigs = ["SHARK", "MAMIMUS", "ULTRON", "IMPERIUM", "THORIUM", "ZODIAC"]
+hardwareRigs = ["SHARK", "MAMIMUS", "ULTRON", "IMPERIUM", "THORIUM", "ZODIAC", "G2"]
 
 def getSubstringMatches(workernames, keywords):
     out = list()
@@ -177,10 +177,9 @@ def main():
 
 
 
-    showMatches("ETHMASTER",matches_ethermine)
-    showMatches("ETHMASTER",matches_nanopool )
-    showMatches("BITMAIN", matches_nanopool)
-    showMatches("BITMAIN", matches_ethermine)
+
+    showMatches("G2", matches_nanopool)
+    showMatches("G2", matches_ethermine)
 
 
 main()
