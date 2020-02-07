@@ -20,7 +20,7 @@ specificHardwareNames  = ["7870", "7990", "770", "R9", "750", "TITAN", "295X2", 
 
 HardwareVariations = ["780TI", "980TI", "1050TI", "1080TI", "1070TI", "2080TI", "380X", "5700XT", "1660TI", "290X", "2070TI", "2060TI", "1650TI"]
 generalHardwareNames = ["780", "980", "290","1080", "1050", "1060", "1070", "2070", "2060", "1650", "2080", "1660","5700"]
-hardwareRigs = ["SHARK", "MAMIMUS", "ULTRON", "IMPERIUM", "THORIUM", "ZODIAC", "G2"]
+hardwareRigs = ["SHARK", "MAMIMUS", "ULTRON", "IMPERIUM", "THORIUM", "ZODIAC", "G2", "G1"]
 
 def getSubstringMatches(workernames, keywords):
     out = list()
@@ -70,8 +70,8 @@ def matchWorkersByName(minerworkerdata):
             worker['Matches'] = matches
         out.append(miner)
     return out
-    # with open('../JSONDATA/Nanopool/miner_workers_matches.json', 'w') as w:
-    #     json.dump(out, w, indent = 4)
+
+
 
 def pruneEmptyWorkerset(minerworkerdata):
     out = list()
@@ -79,8 +79,7 @@ def pruneEmptyWorkerset(minerworkerdata):
         if miner['Workers']:
             out.append(miner)
     return out
-    # with open('../JSONDATA/Nanopool/miner_workers_matches_pruned.json', 'w') as w:
-        # json.dump(out, w, indent = 4)
+
 
 def resolveMultipleMatches(minerworkerdata):
     out = list()
@@ -156,8 +155,6 @@ def resolveASICMiners(minerworkerdata):
         m.append(miner)
     return m
 
-
-
 def main():
     # #Nanopool
     # pruned_nano = pruneEmptyWorkerset(miner_workers_nanopool)
@@ -176,10 +173,8 @@ def main():
     #     json.dump(resolvedMatches_ether, w, indent = 4)
 
 
-
-
-    showMatches("G2", matches_nanopool)
-    showMatches("G2", matches_ethermine)
+    # showMatches("G2", matches_nanopool)
+    # showMatches("G2", matches_ethermine)
 
 
 main()
