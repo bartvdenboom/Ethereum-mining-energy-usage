@@ -1,6 +1,7 @@
 import json
-import matplotlib.pyplot as mpl
+import matplotlib.pyplot as plt
 import pandas as pd
+import plot
 
 
 with open("../JSONDATA/Nanopool/miner_workers_nanopool_final0.json") as r:
@@ -158,20 +159,58 @@ def groupResults(minerworkerdata):
     allHardwareNames = [*hardwareRigs, *generalHardwareNames, *HardwareVariations, *specificHardwareNames, *asicHardwareNames]
 
     out = list()
+    mixed = 0
+    total = 0
     for name in allHardwareNames:
         result = {}
         result['id'] = name
         c = 0
+        h = 0
         for miner in minerworkerdata:
             for worker in miner['Workers']:
                 for matches in worker['Matches']:
                     if name in matches:
                         c+=1
+                        total+=float(worker['hashrate'])
+                        if(len(worker['Matches'])==1):
+                            h+=float(worker['hashrate'])
+                        else:
+                            mixed+=float(worker['hashrate'])
+
         result['count'] = c
+        result['hashrate'] = h
         out.append(result)
+    result = {}
+    result['id'] = "Mixed"
+    result['hashrate'] = mixed
+    out.append(result)
     return out
 
+def plotHardwareCount(minerworkerdata):
+    number_of_other_gpus = 20
+    a = pd.DataFrame(minerworkerdata)
+    a = a.drop(a[a['count'] == 0].index)
+    a = a.sort_values(by='hashrate')
+    print(a)
+    for i in range(number_of_other_gpus):
+        if a.iloc[i]['id'] not in [*asicHardwareNames, *hardwareRigs]:
+            print(a.iloc[i]['id'])
+            a = a.drop(a[i+1])
+    print(a)
 
+    #print(a[:number_of_other_gpus:]['hashrate'].sum())
+    # other_gpus=pd.DataFrame(
+    #     data={
+    #     "id" : "Other GPU's", "count" :
+    #     }
+    # )
+    # print(a)
+    # labels = a['id'].values
+    # sizes = a['hashrate'].values
+    # fig,ax=plt.subplots()
+    # ax.pie(sizes,labels=labels)
+    # ax.axis('equal')
+    # plt.show()
 
 
     # with open('../JSONDATA/matchResults.json', 'w') as w:
@@ -193,9 +232,18 @@ def main():
     # resolvedMatches_ether = resolveMultipleMatches(matches_ether)
     # with open('../JSONDATA/Ethermine/miner_workers_matches_final.json', 'w') as w:
     #     json.dump(resolvedMatches_ether, w, indent = 4)
-    out = groupResults(matches_ethermine)
-    with open('../JSONDATA/Ethermine/miner_worker_count.json', 'w') as w:
-        json.dump(out, w, indent = 4)
+
+    #Group results
+    out = groupResults(matches_nanopool)
+    #with open('../JSONDATA/Nanopool/miner_worker_count.json', 'w') as w:
+    #    json.dump(out, w, indent = 4)
+    # out = groupResults(matches_ethermine)
+    # with open('../JSONDATA/Ethermine/miner_worker_count.json', 'w') as w:
+    #     json.dump(out, w, indent = 4)
+
+    # with open('../JSONDATA/Ethermine/miner_worker_count.json') as r :
+    #     data = json.load(r)
+    plotHardwareCount(out)
 
 
 main()

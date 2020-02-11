@@ -155,6 +155,12 @@ def plotBreakEvenEffAgainstSelectedEfficiency(efficiencyData, DailyData ):
     plt.show()
 
 
+
+
+
+    #hist=a.hist()
+    #plt.show()
+
 #plotBreakEvenEffAgainstSelectedEfficiency()
 #plotBreakEvenEff(phaseData)
 #scatterPlotGpuEfficiencies()
