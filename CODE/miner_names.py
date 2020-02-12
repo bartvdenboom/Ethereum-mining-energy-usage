@@ -181,36 +181,43 @@ def groupResults(minerworkerdata):
         result['hashrate'] = h
         out.append(result)
     result = {}
-    result['id'] = "Mixed"
+    result['id'] = "Combined Machines"
     result['hashrate'] = mixed
     out.append(result)
+    out = list(filter(lambda x:x['hashrate']>0, out))
+    out = sorted(out, key = lambda x:x['hashrate'])
+    groupedhashrate = sum(hardware['hashrate'] for hardware in out)/20
+    c=0
+    sum_lowest_5percent = 0
+    grouped_names = ""
+    while (sum_lowest_5percent < groupedhashrate):
+        if out[c]['id'] not in [*asicHardwareNames, *hardwareRigs]:
+            grouped_names += out[c]['id'] + ", "
+            sum_lowest_5percent+= float(out[c]['hashrate'])
+            out[c]['hashrate'] = -1
+
+        c+=1
+        if c%5==0:
+            grouped_names+="\n"
+
+    grouped_names=grouped_names[:-3]
+    out = list(filter(lambda x:x['hashrate']>0, out))
+    result = {}
+    result['id'] = grouped_names
+    result['hashrate'] = sum_lowest_5percent
+    out.append(result)
+    out = sorted(out, key = lambda x:x['hashrate'])
     return out
 
 def plotHardwareCount(minerworkerdata):
-    number_of_other_gpus = 20
     a = pd.DataFrame(minerworkerdata)
-    a = a.drop(a[a['count'] == 0].index)
-    a = a.sort_values(by='hashrate')
-    print(a)
-    for i in range(number_of_other_gpus):
-        if a.iloc[i]['id'] not in [*asicHardwareNames, *hardwareRigs]:
-            print(a.iloc[i]['id'])
-            a = a.drop(a[i+1])
-    print(a)
-
-    #print(a[:number_of_other_gpus:]['hashrate'].sum())
-    # other_gpus=pd.DataFrame(
-    #     data={
-    #     "id" : "Other GPU's", "count" :
-    #     }
-    # )
-    # print(a)
-    # labels = a['id'].values
-    # sizes = a['hashrate'].values
-    # fig,ax=plt.subplots()
-    # ax.pie(sizes,labels=labels)
-    # ax.axis('equal')
-    # plt.show()
+    labels = a['id'].values
+    sizes = a['hashrate'].values
+    fig,ax=plt.subplots()
+    ax.pie(sizes,labels=labels)
+    ax.axis('equal')
+    plt.legend()
+    plt.show()
 
 
     # with open('../JSONDATA/matchResults.json', 'w') as w:
@@ -234,7 +241,7 @@ def main():
     #     json.dump(resolvedMatches_ether, w, indent = 4)
 
     #Group results
-    out = groupResults(matches_nanopool)
+    out = groupResults(matches_ethermine)
     #with open('../JSONDATA/Nanopool/miner_worker_count.json', 'w') as w:
     #    json.dump(out, w, indent = 4)
     # out = groupResults(matches_ethermine)
