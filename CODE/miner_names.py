@@ -1,6 +1,7 @@
 import json
 import matplotlib.pyplot as plt
 import pandas as pd
+import numpy as np
 import plot
 
 
@@ -12,6 +13,9 @@ with open("../JSONDATA/Nanopool/miner_workers_matches_final.json") as r:
     matches_nanopool = json.load(r)
 with open("../JSONDATA/Ethermine/miner_workers_matches_final.json") as r:
     matches_ethermine = json.load(r)
+with open('../JSONDATA/GPUdata/GPUDATA.json') as r:
+    gpudata = json.load(r)
+
 
 
 asicHardwareNames = ["E3", "ANTMINER", "ETHMASTER", "A10", "BITMAIN", "INNOSILICON"]
@@ -21,7 +25,7 @@ specificHardwareNames  = ["7870", "7990", "770", "R9", "750", "TITAN", "295X2", 
 
 HardwareVariations = ["780TI", "980TI", "1050TI", "1080TI", "1070TI", "2080TI", "380X", "5700XT", "1660TI", "290X", "2070TI", "2060TI", "1650TI"]
 generalHardwareNames = ["780", "980", "290", "1080", "1050", "1060", "1070", "2070", "2060", "1650", "2080", "1660","5700"]
-hardwareRigs = ["SHARK", "MAMIMUS", "ULTRON", "IMPERIUM", "THORIUM", "ZODIAC", "G2", "G1"]
+hardwareRigs = ["SHARK", "MAXIMUS", "ULTRON", "IMPERIUM", "THORIUM", "ZODIAC", "G2", "G1"]
 
 def getSubstringMatches(workernames, keywords):
     out = list()
@@ -151,7 +155,7 @@ def resolveASICMiners(minerworkerdata):
         m.append(miner)
     return m
 
-def groupResults(minerworkerdata):
+def groupResults(minerworkerdata, group):
 
     # E3_ANTMINER = 0         #Tags "E3" or "ANTMINER"
     # ETHMASTERA10 = 0        #Tags "ETHMASTER", "A10", "INNOSILICON"
@@ -186,42 +190,90 @@ def groupResults(minerworkerdata):
     out.append(result)
     out = list(filter(lambda x:x['hashrate']>0, out))
     out = sorted(out, key = lambda x:x['hashrate'])
-    groupedhashrate = sum(hardware['hashrate'] for hardware in out)/20
-    c=0
-    sum_lowest_5percent = 0
-    grouped_names = ""
-    while (sum_lowest_5percent < groupedhashrate):
-        if out[c]['id'] not in [*asicHardwareNames, *hardwareRigs]:
-            grouped_names += out[c]['id'] + ", "
-            sum_lowest_5percent+= float(out[c]['hashrate'])
-            out[c]['hashrate'] = -1
+    if group:
+        groupedhashrate = sum(hardware['hashrate'] for hardware in out)/20
+        c=0
+        sum_lowest_5percent = 0
+        grouped_names = ""
+        while (sum_lowest_5percent < groupedhashrate):
+            if out[c]['id'] not in [*asicHardwareNames, *hardwareRigs]:
+                grouped_names += out[c]['id'] + ", "
+                sum_lowest_5percent+= float(out[c]['hashrate'])
+                out[c]['hashrate'] = -1
 
-        c+=1
-        if c%5==0:
-            grouped_names+="\n"
+            c+=1
+            if c%5==0:
+                grouped_names+="\n"
 
-    grouped_names=grouped_names[:-3]
-    out = list(filter(lambda x:x['hashrate']>0, out))
-    result = {}
-    result['id'] = grouped_names
-    result['hashrate'] = sum_lowest_5percent
-    out.append(result)
-    out = sorted(out, key = lambda x:x['hashrate'])
+        grouped_names=grouped_names[:-3]
+        out = list(filter(lambda x:x['hashrate']>0, out))
+        result = {}
+        result['id'] = grouped_names
+        result['hashrate'] = sum_lowest_5percent
+        out.append(result)
+        out = sorted(out, key = lambda x:x['hashrate'])
     return out
 
 def plotHardwareCount(minerworkerdata):
     a = pd.DataFrame(minerworkerdata)
     labels = a['id'].values
     sizes = a['hashrate'].values
+    percent = 100.*sizes/sizes.sum()
+    labels = ['{0} - {1:1.2f} %'.format(i,j) for i,j in zip(labels, percent)]
     fig,ax=plt.subplots()
-    ax.pie(sizes,labels=labels)
+    ax.pie(sizes)
     ax.axis('equal')
-    plt.legend()
+    #patches, texts = pie = plt.pie(sizes)
+
+    # bbox_props = dict(boxstyle="square,pad=0.3", fc="w", ec="k", lw=0.72)
+    # arrowprops=dict(arrowstyle="-",connectionstyle="angle,angleA=0,angleB=90")
+    # kw = dict(xycoords='data',textcoords='data',arrowprops=arrowprops,
+    #           bbox=bbox_props, zorder=0, va="center")
+    #
+    # for i, p in enumerate(patches):
+    #     ang = (p.theta2 - p.theta1)/2.+p.theta1
+    #     y = np.sin(ang/180.*np.pi)
+    #     x = 1.35*np.sign(np.cos(ang/180.*np.pi))
+    #     plt.gca().annotate(str(1+i), xy=(0, 0), xytext=( x, y), **kw )
+    #
+    #fig.set_size_inches(8, 8)
+    plt.legend(labels, loc="upper right", bbox_to_anchor=(0.2,1.0), fontsize='x-small')
     plt.show()
+
+    # plt.tight_layout()
+    # plt.show()
 
 
     # with open('../JSONDATA/matchResults.json', 'w') as w:
     #     json.dump(resolvedMatches_ether, w, indent = 4)
+
+def calcWeighedPoolAverage(match_data):
+    allHardwareNames = [*hardwareRigs, *generalHardwareNames, *HardwareVariations, *specificHardwareNames, *asicHardwareNames]
+    combinedEfficienciesByID = dict({'290X':11.3450074505, 'R9':10.2178544841, 'TITAN':6.8166899024,'390':8.401352612,'VEGA':7.2499232188 ,'A10':1.6865905503, 'SHARK':5.0953612925, 'THORIUM':4.788935705})
+    cumulativeHashrate = 0
+    product = 0
+    for match in match_data:
+        print(match['id'])
+        efficiency = 0
+        if match['id'] in combinedEfficienciesByID:
+            efficiency = combinedEfficienciesByID[match['id']]
+        elif match['id'] == "Combined Machines":
+            effieciency = 0
+        else:
+            efficiency = float(list(filter(lambda gpu: match['id'] in gpu['Short'] , gpudata))[0]['Efficiency in J/Mh'])
+        print(efficiency)
+        print("from: " + str(list(filter(lambda gpu: match['id'] in gpu['Short'] , gpudata))))
+        product+=(efficiency*float(match['hashrate']))
+        cumulativeHashrate+=float(match['hashrate'])
+    Hardwaremix = product/cumulativeHashrate
+    print(Hardwaremix)
+
+    # for id in allHardwareNames:
+    #     if id in
+    #         print(id)
+
+
+
 
 def main():
     # #Nanopool
@@ -241,7 +293,7 @@ def main():
     #     json.dump(resolvedMatches_ether, w, indent = 4)
 
     #Group results
-    out = groupResults(matches_ethermine)
+    out = groupResults(matches_nanopool,False)
     #with open('../JSONDATA/Nanopool/miner_worker_count.json', 'w') as w:
     #    json.dump(out, w, indent = 4)
     # out = groupResults(matches_ethermine)
@@ -250,7 +302,7 @@ def main():
 
     # with open('../JSONDATA/Ethermine/miner_worker_count.json') as r :
     #     data = json.load(r)
-    plotHardwareCount(out)
-
+    #plotHardwareCount(out)
+    calcWeighedPoolAverage(out)
 
 main()
