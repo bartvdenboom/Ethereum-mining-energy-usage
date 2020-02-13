@@ -249,7 +249,74 @@ def plotHardwareCount(minerworkerdata):
 
 def calcWeighedPoolAverage(match_data):
     allHardwareNames = [*hardwareRigs, *generalHardwareNames, *HardwareVariations, *specificHardwareNames, *asicHardwareNames]
-    combinedEfficienciesByID = dict({'290X':11.3450074505, 'R9':10.2178544841, 'TITAN':6.8166899024,'390':8.401352612,'VEGA':7.2499232188 ,'A10':1.6865905503, 'SHARK':5.0953612925, 'THORIUM':4.788935705})
+    combinedEfficienciesByID = dict({
+    '290X':11.3450074505,
+    'R9':10.2178544841,
+    'TITAN':6.8166899024,
+    '390':8.401352612,
+    'VEGA':7.2499232188 ,
+    '2070':4.911674347,
+    '2060':4.920212766,
+    '2080':5.521375075,
+    'A10':1.6865905503,
+    'ETHMASTER':1.6865905503,
+    'INNOSILICON':1.6865905503,
+    'SHARK':5.0953612925,
+    'THORIUM':4.788935705,
+    '7870':17.15686275 ,
+    '680':13 ,
+    '660':12.76595745 ,
+    '650': 10.64859632,
+    '7990': 10.41666667,
+    '780': 12.5,
+    '770': 15.33333333,
+    '760': 11.33333333,
+    '780TI':11.36363636 ,
+    '750': 6.666666667,
+    '295X2': 10.86956522,
+    '980': 8.25,
+    '970': 9.119496855,
+    '960': 11.00917431,
+    '370': 9.166666667,
+    '380': 11.17647059,
+    'FURY': 11.70212766,
+    '980TI': 10.63829787,
+    '380X': 11.11111111,
+    '1080': 6.666666667,
+    '480': 6,
+    '1070': 5,
+    '460': 5.769230769,
+    '470': 6.25,
+    '1060': 5,
+    '1050TI': 5,
+    '1080TI': 6.756756757,
+    '570': 5.227272727,
+    '580': 6.166666667,
+    '550': 4.545454545,
+    '1070TI': 4.6875,
+    '1650': 5,
+    'VII': 3.296703297,
+    'V100':2.631578947 ,
+    '2080TI': 4.807692308,
+    '590': 7.03125,
+    '5700': 5.160550459,
+    '5700XT':5.365296804 ,
+    'P100': 5.165289256,
+    '1660': 6.818181818,
+    '1660TI': 4.597701149,
+    '560': 9.210526316,
+    'E3': 4.444444444,
+    'ANTMINER': 4.444444444,
+    'BITMAIN':4.444444444 ,
+    'P104': 3.375,
+    'P106': 3.269230769,
+    'MAXIMUS': 5.945945946,
+    'ULTRON': 5.3125,
+    'IMPERIUM':5.652173913 ,
+    'BITMAIN': 5.454545455,
+    'G2': 5.454545455,
+    'ZODIAC':6.209637357
+    })
     cumulativeHashrate = 0
     product = 0
     for match in match_data:
@@ -259,10 +326,7 @@ def calcWeighedPoolAverage(match_data):
             efficiency = combinedEfficienciesByID[match['id']]
         elif match['id'] == "Combined Machines":
             effieciency = 0
-        else:
-            efficiency = float(list(filter(lambda gpu: match['id'] in gpu['Short'] , gpudata))[0]['Efficiency in J/Mh'])
         print(efficiency)
-        print("from: " + str(list(filter(lambda gpu: match['id'] in gpu['Short'] , gpudata))))
         product+=(efficiency*float(match['hashrate']))
         cumulativeHashrate+=float(match['hashrate'])
     Hardwaremix = product/cumulativeHashrate
