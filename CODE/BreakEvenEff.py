@@ -241,6 +241,7 @@ def calcTotalEnergyUsage(PriceperKWh, phases, upperBound):
                             )
                         )
     breakEvenSet = calcBreakEvenEffSet(PriceperKWh, blockdata)
+    print(breakEvenSet)
     minHardwareEfficiency = getMatchingHardwareEfficiency(15,datePhases[len(datePhases)-1], False)
     totalWattage = 0
     energyUsageJoule = 0
@@ -378,16 +379,18 @@ def bestGuessEstimate(PriceperKWh, phases):
     return efficiencyData
 
 def main():
-    # phasesManual = [(0, 200),(201, 454), (455, 598), (599,778),
-    # (779, 970), (971, 1106), (1107, 1141), (1142, 1237), (1238, 1275),
-    # (1276, 1479), (1480, 1538), (1539, 1621)]
-    # interval = 14
-    # upperBound = True
-    # endOfData = "1/14/2020"
-    # endDate = "6/30/2018"
-    # PriceperKWh = 0.10
-    # phases = generatePhases(blockdata,interval,endOfData)
-    # efficiencyData = calcTotalEnergyUsage(PriceperKWh, phases, upperBound)
-    # plot.plotBreakEvenEffAgainstSelectedEfficiency(efficiencyData, blockdata)
-    csvtojson('../JSONDATA/GPUdata/CSV/GPUDATA.csv', '../JSONDATA/GPUdata/GPUDATA.json')
+    phasesManual = [(0, 200),(201, 454), (455, 598), (599,778),
+    (779, 970), (971, 1106), (1107, 1141), (1142, 1237), (1238, 1275),
+    (1276, 1479), (1480, 1538), (1539, 1621)]
+    interval = 14
+    upperBound = True
+    endOfData = "1/14/2020"
+    endDate = "6/30/2018"
+    PriceperKWh = 0.10
+    phases = generatePhases(blockdata,interval,endOfData)
+    efficiencyData = calcTotalEnergyUsage(PriceperKWh, phases, upperBound)
+    #plot.plotBreakEvenEffAgainstSelectedEfficiency(efficiencyData, blockdata)
+
+
+    #csvtojson('../JSONDATA/GPUdata/CSV/GPUDATA.csv', '../JSONDATA/GPUdata/GPUDATA.json')
 main()

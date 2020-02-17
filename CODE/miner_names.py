@@ -338,6 +338,15 @@ def calcWeighedPoolAverage(match_data):
 
 
 
+def plotHardwareDistribution(minerdata):
+    workers = [w for l in [l['Workers'] for l in minerdata] for w in l]
+    data = np.array([float(l['hashrate']) for l in [w for l in [l['Workers'] for l in minerdata] for w in l]])
+
+    number_of_bins = 100
+    binwidth = (data.max() - data.min()) / number_of_bins
+    plt.hist(data, bins=np.arange(min(data), max(data) + binwidth, binwidth), density=True)
+    plt.show()
+
 
 def main():
     # #Nanopool
@@ -357,16 +366,19 @@ def main():
     #     json.dump(resolvedMatches_ether, w, indent = 4)
 
     #Group results
-    out = groupResults(matches_nanopool,False)
+    #out = groupResults(matches_nanopool,False)
     #with open('../JSONDATA/Nanopool/miner_worker_count.json', 'w') as w:
     #    json.dump(out, w, indent = 4)
-    # out = groupResults(matches_ethermine)
+
+    #out = groupResults(matches_ethermine)
     # with open('../JSONDATA/Ethermine/miner_worker_count.json', 'w') as w:
     #     json.dump(out, w, indent = 4)
 
     # with open('../JSONDATA/Ethermine/miner_worker_count.json') as r :
     #     data = json.load(r)
     #plotHardwareCount(out)
-    calcWeighedPoolAverage(out)
+    #calcWeighedPoolAverage(out)
+
+    plotHardwareDistribution(matches_nanopool)
 
 main()
