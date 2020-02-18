@@ -344,7 +344,11 @@ def plotHardwareDistribution(minerdata):
 
     number_of_bins = 100
     binwidth = (data.max() - data.min()) / number_of_bins
-    plt.hist(data, bins=np.arange(min(data), max(data) + binwidth, binwidth), density=True)
+    #plt.boxplot(data)
+    bins=[0,5,10,20,30,50,100,200,500,1000,5000,10000,20000,100000]
+    plt.hist(data,range(int(data.min()), int(data.max()), 10), density=False)
+    plt.xscale('log')
+    #plt.xticks([0,5,10,20,30,50,100,200,500,1000,5000,10000,20000,100000])
     plt.show()
 
 
