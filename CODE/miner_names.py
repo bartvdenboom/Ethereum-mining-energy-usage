@@ -339,16 +339,16 @@ def calcWeighedPoolAverage(match_data):
 
 
 def plotHardwareDistribution(minerdata):
-    workers = [w for l in [l['Workers'] for l in minerdata] for w in l]
-    data = np.array([float(l['hashrate']) for l in [w for l in [l['Workers'] for l in minerdata] for w in l]])
-
-    number_of_bins = 100
-    binwidth = (data.max() - data.min()) / number_of_bins
-    #plt.boxplot(data)
+    hashratePerWorker = np.array([float(l['hashrate']) for l in [w for l in [l['Workers'] for l in minerdata] for w in l]])
+    workersPerMiners = [l['Workers'] for l in minerdata]
+    hashratePerMiner = []
+    for i in range(len(workersPerMiners)):
+        hashratePerMiner.append(sum([float(worker['hashrate']) for worker in workersPerMiners[i]]))
+    hashratePerMiner = np.array(hashratePerMiner)
+    data=hashratePerMiner
     bins=[0,5,10,20,30,50,100,200,500,1000,5000,10000,20000,100000]
     plt.hist(data,range(int(data.min()), int(data.max()), 10), density=False)
     plt.xscale('log')
-    #plt.xticks([0,5,10,20,30,50,100,200,500,1000,5000,10000,20000,100000])
     plt.show()
 
 
