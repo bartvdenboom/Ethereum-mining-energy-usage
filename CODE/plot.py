@@ -52,16 +52,23 @@ def plottwoaxis():
     plt.show()
 
 def scatterPlotGpuEfficiencies():
-
-    df = pd.DataFrame(gpudata,columns=['Release date', 'Efficiency in J/Mh', 'Product'])
-
+    df = pd.DataFrame(gpudata,columns=['Release date', 'Efficiency in J/Mh', 'Product', 'Type'])
     df["Release date"] = pd.to_datetime(df["Release date"])
-
-    df = df.sort_values(by="Release date")
-
+    groups=df.groupby('Type')
+    # plt.rcParams.update(pd.tools.plotting.mpl_stylesheet)
+    # colors = pd.tools.plotting._get_standard_colors(len(groups), color_type='random')
+    #
+    # fig, ax = plt.subplots()
+    # ax.set_color_cycle(colors)
+    # ax.margins(0.05)
+    # for name, group in groups:
+    #     ax.plot(group.x, group.y, marker='o', linestyle='', ms=12, label=name)
+    # ax.legend(numpoints=1, loc='upper left')
+    #
+    # plt.show()
     for i in range(0, len(df)-1):
         plt.scatter(df['Release date'][i], float(df['Efficiency in J/Mh'][i]))
-        plt.text(df['Release date'][i],float(df['Efficiency in J/Mh'][i]),df['Product'][i])
+        #plt.text(df['Release date'][i],float(df['Efficiency in J/Mh'][i]),df['Product'][i])
     plt.gca().xaxis.set_major_locator(plt.MaxNLocator(20))
     #plt.gca().yaxis.set_major_locator(plt.MaxNLocator(20))
     #plt.ylim(1, 20)
@@ -125,7 +132,7 @@ def plotBreakEvenEffAgainstSelectedEfficiency(efficiencyData, DailyData ):
 
     line1 = ax1.plot(BreakEvenEfficiencySetDataFrame['Date'], BreakEvenEfficiencySetDataFrame['BreakEvenEfficiency'], color=color, label='Break even Efficciency (J/Mh)')
     color = 'tab:green'
-    line2 = ax1.plot(BreakEvenEfficiencySetDataFrame['Date'], BreakEvenEfficiencySetDataFrame['selectedHardwareEfficiencyJMh'], color=color, label='Used hardware Efficciency (J/Mh)')
+    line2 = ax1.plot(BreakEvenEfficiencySetDataFrame['Date'], BreakEvenEfficiencySetDataFrame['cumulativeHardwareEfficiency'], color=color, label='Used hardware Efficciency (J/Mh)')
     #ax1.legend(handles = [line1, line2])
     plt.xticks(rotation=90)
 
@@ -153,16 +160,3 @@ def plotBreakEvenEffAgainstSelectedEfficiency(efficiencyData, DailyData ):
     ax1.add_artist(first_legend)
     ax2.add_artist(second_legend)
     plt.show()
-
-
-
-
-
-    #hist=a.hist()
-    #plt.show()
-
-#plotBreakEvenEffAgainstSelectedEfficiency()
-#plotBreakEvenEff(phaseData)
-#scatterPlotGpuEfficiencies()
-#plotHashRategradient()
-#plothashrates()
