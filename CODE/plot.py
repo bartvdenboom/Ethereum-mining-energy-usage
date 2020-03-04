@@ -32,7 +32,7 @@ def plottwoaxis():
     ax1.set_ylabel('BreakEvenEfficiency (J/MH)', color=color)
     ax1.plot(BreakEvenEfficiencySetDataFrame['date'], BreakEvenEfficiencySetDataFrame['BreakEvenEfficiency'], color=color)
     ax1.tick_params(axis='y', labelcolor=color)
- 
+
     plt.xticks(rotation=90)
 
     ax2 = ax1.twinx()  # instantiate a second axes that shares the same x-axis

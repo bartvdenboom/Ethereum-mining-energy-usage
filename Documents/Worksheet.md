@@ -61,6 +61,8 @@ For each data point the value of 1 ETH in USD $ETHPrice$ will be added to the da
 Source: Krause & Tolalymat (2018)
 The set of Ethereum mining hardware from Krause & Tolalymat (2018) will be used and supplemented with later developments in Ethereum mining hardware since the dataset contains data until Q4 2017.
 
+
+
 ###Lower bound
 
 To calculate the lower bound of the energy usage of Ethereum, the most common (accepted) method, also used by Stoll etc is to assume the network hardware is made up of the most state-of-the-art efficient hardware currently available (CBECI, Bevand, Digiconomist). 
@@ -181,7 +183,24 @@ Using the naive method of Bevand and the current profitability threshold (17/12/
 Using the above profitability threshold for historical time periods of Ethereum, we calculate the upper bound by selecting the least efficient but still profitable hardware of that time period and assume that hardware is never upgraded until hardware is no longer profitable and upgrades must be made to the next least efficient but profitable hardware. 
 We thus need a set of mining hardware with corresponding efficiencies for the lifetime of Ethereum. For a given moment $t$ we specify a function $\text{MiningHardware}(t, \text{HardwareEfficiency})$ which returns the efficiency of known hardware which meets the above aforementioned requirements. The dataset from Krause & Tolalymat(2018) contains efficiencies of common hardware used to mine Ethereum for the years 2012-2017. We extend this dataset with hardware from 2018-present to include the very important ASIC-developments of the last years to construct $\text{MiningHardware}(t, \text{HardwareEfficiency})$
 
+####Results compared to other literature
 
+|Source 				|Date			  |Power consumption (MW)| This research (lower bound - upper bound|
+|-------------------|--------------|-----------------------|-----|
+|Digiconomist:		|30 jun 2018	  |2,382       |658 - 4105    |
+|Digiconomist:		|14 jan 2020	  |898         |262 - 654    |
+|Krause(2019)			|2016			  |24          |22 - 100     |
+|Krause(2019)       |2017	         |299	         | 370 - 2755   |
+|Krause(2019)	       |30 jun 2018   |1165        | 658 - 4105 |
+
+
+#####Krause(2019): 
+PE 2016: 6.3 J/Mh
+PE 2017 & 2018 :4.7 J/Mh  (RX 480. "It produces ~29 MH/s at 135W) (least estimate by de vries)
+
+#####Cleancoins:
+For the power consumption, it is assumed that all miners use the eight most efficient GPUs
+currently on the market (Radeon RX Vega 56, Radeon RX 480 and 580, GeForce GTX 1060 and 1070, NVIDIA GTX 1070, and Sapphire Radeon RX 470 and 480). The average efficiency, 5.4 W/Mh, from these eight miners are used to calculate energy consumption
 
 
 ###Best guess
@@ -194,6 +213,10 @@ Miner data such as workers (hardware devices actually doing the mining) and corr
 
 
 ####Mining pools
+
+method: Kappos et al. and Biryukov et al. [5], [6] (from portrait of a miner in a landscape)
+
+
 Getting a reward for mining a block is rare when mining using a rig which usually represents a fraction of the total hashrate of the network. Mining pools bundle the hashing power of rigs across the world to win the race of finding a block and getting the reward. The mining pool acts as one Ethereum address/miner for the Ethereum network. The chances of a mining pool finding the correct nonce of a block is thus much greater than mining on your own. The rewards of a mined block is then distributed amongst participants in the mining pool, proportional to their computing effort. Mining pools dominate the Ethereum landscape as rewards are somewhat guaranteed as opposed to mining on your own. The largest share of Ethereum hashing power comes from only a handful mining pools [^5]. These are sparkpool (32%), ethermine (22%), f2pool (11 %), nanopool (9%).
 Ethermine and nanopool provide useful API's from which we can deduce alot of information about the miners. A miner can allocate his mining rig(s) effort to the pool and use the information from these API's to monitor his equipment. Equipment like ASICs or general purpose computers, outfitted with (alot of) GPU's are assigned to 'workers' by the mining software such that they can be monitored independently. 
 

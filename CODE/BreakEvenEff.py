@@ -404,9 +404,9 @@ def main():
     interval = 14
     upperBound = True
     endOfData = "1/14/2020"
-    endDate = "6/30/2018"
+    endDate = "12/31/2017"
     PriceperKWh = 0.10
-    phases = generatePhases(blockdata,interval,endOfData)
+    phases = generatePhases(blockdata,interval,endDate)
     efficiencyData = calcTotalEnergyUsage(PriceperKWh, phases, upperBound)
     #efficiencyData = bestGuessEstimate(PriceperKWh, phases)
     plot.plotBreakEvenEffAgainstSelectedEfficiency(efficiencyData, blockdata)
