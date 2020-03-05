@@ -1,12 +1,23 @@
-import json
+import json,csv
 
-def getETHPriceByDate(date):
-    with open('../JSONDATA/etherprice.json', 'r') as r:
-        data = json.load(r)
-    for i in range(0, len(data)):
-        if data[i]['Date(UTC)'] == date:
-            ethprice = data[i]['Value']
-            return ethprice
+
+def csvtojson(input, output):
+    csvfile = open(input, "r")
+    jsonfile= open(output, "w")
+    reader = csv.reader(csvfile)
+    rownames = next(reader)
+    reader  = csv.DictReader(csvfile, rownames)
+    out = json.dumps([row for row in reader],indent=4)
+    jsonfile.write(out)
+
+csvtojson('../JSONDATA/Etherscan/export-BlockDifficulty.csv', '../JSONDATA/Etherscan/BlockDifficulty.json')
+csvtojson('../JSONDATA/Etherscan/export-BlockReward.csv', '../JSONDATA/Etherscan/BlockReward.json')
+csvtojson('../JSONDATA/Etherscan/export-BlockTime.csv', '../JSONDATA/Etherscan/BlockTime.json')
+csvtojson('../JSONDATA/Etherscan/export-EtherPrice.csv', '../JSONDATA/Etherscan/EtherPrice.json')
+csvtojson('../JSONDATA/Etherscan/export-NetworkHash.csv', '../JSONDATA/Etherscan/NetworkHash.json')
+csvtojson('../JSONDATA/Etherscan/export-BlockCountRewards.csv', '../JSONDATA/Etherscan/BlockCountRewards.json')
+csvtojson('../JSONDATA/Etherscan/export-Uncles.csv', '../JSONDATA/Etherscan/Uncles.json')
+
 
 def buildBlockData():
     with open('../JSONDATA/Etherscan/BlockDifficulty.json') as r:

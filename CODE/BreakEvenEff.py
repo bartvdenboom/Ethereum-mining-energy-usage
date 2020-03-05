@@ -31,6 +31,7 @@ def csvtojson(input, output):
     out = json.dumps([row for row in reader],indent=4)
     jsonfile.write(out)
 
+
 def ceiling_division(n, d):
     return -(n // -d)
 
@@ -201,6 +202,7 @@ def getMatchingHardwareEfficiency(efficiency, datetuple, upperbound):
                 return float(gpulist[scores[0][0]]['Efficiency in J/Mh'])
             else:
                 scores = sorted(scores, key=lambda x:x[1], reverse = True) #Sort scores such that the closest match is the first element
+                print(gpulist[scores[0][0]]['Product'])
                 return float(gpulist[scores[0][0]]['Efficiency in J/Mh'])
         else:
             return -1
@@ -246,6 +248,7 @@ def calcTotalEnergyUsage(PriceperKWh, phases, upperBound):
     totalWattage = 0
     energyUsageJoule = 0
     totalHashRate = 0
+    yearlyTWh = 0
     for i in range(0, len(phases)):
         breakEvenSlice = breakEvenSet[phases[i][0]:phases[i][1]+1]
         hashRateSlice = blockdata[phases[i][0]:phases[i][1]+1]
@@ -262,7 +265,7 @@ def calcTotalEnergyUsage(PriceperKWh, phases, upperBound):
                 selectedHardwareEfficiency = getMatchingHardwareEfficiency(meanBreakEvenEff,datePhases[i], upperBound)
                 addToHardwareMix(selectedHardwareEfficiency, phaseBeginHashRateMhs)
             else:
-                selectedHardwareEfficiency = minHardwareEfficiency
+                selectedHardwareEfficiency = getMatchingHardwareEfficiency(meanBreakEvenEff,datePhases[i], upperBound)#minHardwareEfficiency
                 addToHardwareMix(selectedHardwareEfficiency, phaseBeginHashRateMhs)
             totalWattage+=(phaseBeginHashRateMhs*selectedHardwareEfficiency)
         else:
@@ -271,7 +274,7 @@ def calcTotalEnergyUsage(PriceperKWh, phases, upperBound):
                 if upperBound:
                     selectedHardwareEfficiency = phaseHardwareEfficiencyJMh
                 else:
-                    selectedHardwareEfficiency = minHardwareEfficiency
+                    selectedHardwareEfficiency = getMatchingHardwareEfficiency(meanBreakEvenEff,datePhases[i], upperBound)#minHardwareEfficiency
 
                 addToHardwareMix(selectedHardwareEfficiency, phaseHashRateMhsIncrease)
             else:
@@ -291,6 +294,7 @@ def calcTotalEnergyUsage(PriceperKWh, phases, upperBound):
         totalHashRate = phaseEndHashRateMhs
         totalWattage = totalHashRate * getHardwareMixEfficiency()
         energyUsageJoule += totalWattage * phaseTimespan
+        yearlyTWh = ((totalWattage*8765.81277)/1e12)
 
         for k in range(len(breakEvenSlice)):
             phaseData = {}
@@ -299,10 +303,13 @@ def calcTotalEnergyUsage(PriceperKWh, phases, upperBound):
             phaseData['BreakEvenEfficiency'] = breakEvenSlice[k]['BreakEvenEfficiency']
             phaseData['phaseHashRateMhsIncrease'] = float(phaseHashRateMhsIncrease)
             phaseData['cumulativeHardwareEfficiency'] = float(getHardwareMixEfficiency())
+            phaseData['yearlyTWh'] = float(yearlyTWh)
             # phaseData['phaseBeginEnergyWattage'] = float(phaseBeginWattage)
             # phaseData['phaseAddedEnergyWattage'] = float(phaseAddedWattage)
             efficiencyData.append(phaseData)
-    with open('../JSONDATA/Etherscan/phaseData.json', 'w') as w:
+    # with open('../JSONDATA/Etherscan/phaseData.json', 'w') as w:
+    #     json.dump(efficiencyData, w, indent=4)
+    with open('../JSONDATA/LowerBoundEstimate.json', 'w') as w:
         json.dump(efficiencyData, w, indent=4)
     EnergyUsageTWh = energyUsageJoule/3.6e15
 
@@ -398,19 +405,22 @@ def bestGuessEstimate(PriceperKWh, phases):
     return efficiencyData
 
 def main():
-    phasesManual = [(0, 200),(201, 454), (455, 598), (599,778),
-    (779, 970), (971, 1106), (1107, 1141), (1142, 1237), (1238, 1275),
-    (1276, 1479), (1480, 1538), (1539, 1621)]
-    interval = 14
-    upperBound = True
-    endOfData = "1/14/2020"
-    endDate = "12/31/2017"
-    PriceperKWh = 0.10
-    phases = generatePhases(blockdata,interval,endDate)
-    efficiencyData = calcTotalEnergyUsage(PriceperKWh, phases, upperBound)
-    #efficiencyData = bestGuessEstimate(PriceperKWh, phases)
-    plot.plotBreakEvenEffAgainstSelectedEfficiency(efficiencyData, blockdata)
-    #plot.scatterPlotGpuEfficiencies()
+    # phasesManual = [(0, 200),(201, 454), (455, 598), (599,778),
+    # (779, 970), (971, 1106), (1107, 1141), (1142, 1237), (1238, 1275),
+    # (1276, 1479), (1480, 1538), (1539, 1679)]
+    # interval = 14
+    # upperBound = False
+    # endOfData = "3/3/2020"
+    # endDate = "12/31/2017"
+    # PriceperKWh = 0.10
+    # phases = generatePhases(blockdata,interval,endOfData)
+    # efficiencyData = calcTotalEnergyUsage(PriceperKWh, phases, upperBound)
+
+
+    # efficiencyData = bestGuessEstimate(PriceperKWh, phases)
+    # plot.plotBreakEvenEffAgainstSelectedEfficiency(efficiencyData, blockdata)
+    # plot.scatterPlotGpuEfficiencies()
 
     #csvtojson('../JSONDATA/GPUdata/CSV/GPUDATA.csv', '../JSONDATA/GPUdata/GPUDATA.json')
+    plot.compareOtherResults()
 main()

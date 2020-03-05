@@ -20,8 +20,26 @@ with open('../JSONDATA/Etherscan/phaseData.json') as f:
 #Data regarding BreakevenEfficiency per day
 with open('../JSONDATA/Etherscan/BreakEvenPlotData.json') as f:
     breakEvenPlotData = json.load(f)
+#Ethereum Energy Consumption Index (beta) at https://digiconomist.net/
+with open('../JSONDATA/Digiconomist/data.json') as f:
+    DigiconomistData = json.load(f)
+#This study: upperbound and lowerbound data
+with open('../JSONDATA/UpperBoundEstimate.json') as f:
+    upperBoundData = json.load(f)
+with open('../JSONDATA/LowerBoundEstimate.json') as f:
+    lowerBoundData = json.load(f)
 
 
+def csvtojson(input, output):
+    csvfile = open(input, 'r')
+    jsonfile= open(output, 'w')
+    reader = csv.reader(csvfile)
+    rownames = next(reader)
+    reader  = csv.DictReader(csvfile, rownames)
+    out = json.dumps([row for row in reader],indent=4)
+    jsonfile.write(out)
+
+csvtojson('../JSONDATA/Digiconomist/data.csv','../JSONDATA/Digiconomist/data.json' )
 def plottwoaxis():
     BreakEvenEfficiencySetDataFrame = pd.DataFrame(BreakEvenEfficiencySet)
     data = pd.DataFrame(reversed(blockdata))
@@ -159,4 +177,62 @@ def plotBreakEvenEffAgainstSelectedEfficiency(efficiencyData, DailyData ):
     second_legend = ax2.legend(handles = line4, loc = 'upper right')
     ax1.add_artist(first_legend)
     ax2.add_artist(second_legend)
+    plt.show()
+
+def compareOtherResults():
+
+    # geb_b30_x = pd.date_range(start="20080101", end="20180101", freq="A")
+    # geb_b30_y = [11, 10, 12, 14, 16, 19, 17, 14, 18, 17]
+    # geb_b30 = pd.Series(data=geb_b30_y, index=geb_b30_x)
+    #
+    # geb_a30_x = pd.date_range(start="20100101", end="20180101", freq="A")
+    # geb_a30_y = [12, 10, 13, 14, 12, 13, 18, 16]
+    # geb_a30 = pd.Series(data=geb_a30_y, index=geb_a30_x)
+    #
+    # fig, ax = plt.subplots()
+    # ax.plot(geb_b30, label='Prices 2008-2018', color='blue')
+    # ax.plot(geb_a30, label='Prices 2010-2018', color = 'red')
+    # legend = ax.legend(loc='center right', fontsize='x-large')
+    # plt.xlabel('years')
+    # plt.ylabel('prices')
+    # plt.title('Comparison of the different prices')
+    # plt.show()
+    #This study
+    upperbound_x = pd.to_datetime(pd.DataFrame(upperBoundData)['Date'])
+    upperbound_y = [date['yearlyTWh'] for date in upperBoundData]
+    upperboundLine = pd.Series(data=upperbound_y, index=upperbound_x)
+
+    lowerbound_x = pd.to_datetime(pd.DataFrame(lowerBoundData)['Date'])
+    lowerbound_y = [date['yearlyTWh'] for date in lowerBoundData]
+    lowerboundLine = pd.Series(data=lowerbound_y, index=lowerbound_x)
+
+    #Digiconomist estimate
+    digiconomist_x = pd.to_datetime(pd.DataFrame(DigiconomistData)['Date'])
+    digiconomist_y = [float(date['EECI']) for date in DigiconomistData]
+    digiconomistLine = pd.Series(data=digiconomist_y, index=digiconomist_x)
+
+    #Cleancoins initiative estimate
+    cleancoins_x = pd.to_datetime(pd.DataFrame(["3/5/2020"])[0])
+    cleancoins_y = float(5.65)
+    cleancoinsLine = pd.Series(data=cleancoins_y, index=cleancoins_x)
+
+    #Krause (2019)
+    krause_x = pd.to_datetime(pd.DataFrame(["12/31/2016","12/31/2017","6/30/2018"])[0])
+    krause_y = [((wattage*8765.81277)/1e6) for wattage in [24,299,1165]]
+
+    fig, ax = plt.subplots()
+
+    ax.plot(digiconomistLine, label='Digiconomist Estimate', color='red')
+    ax.plot(upperboundLine, label='Upper bound (This study)', color='green')
+    ax.plot(lowerboundLine, label='Lower bound (This study)', color='blue')
+    ax.scatter(cleancoins_x,cleancoins_y, c='black', label='Cleancoin', marker="s")
+    for x,y in zip(krause_x,krause_y):
+        ax.scatter(x,y, c='red', label='Krause & Tolalymat (2018)', marker="v")
+
+    ax.set_xlabel('Date')
+    ax.set_ylabel('Estimated TWh per year')
+    #ax.tick_params(axis='y', labelcolor=color)
+    plt.title('Comparison of energy usage estimates in Literature')
+
+    plt.xticks(rotation=90)
     plt.show()
