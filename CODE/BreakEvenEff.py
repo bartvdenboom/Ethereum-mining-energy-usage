@@ -422,5 +422,6 @@ def main():
     # plot.scatterPlotGpuEfficiencies()
 
     #csvtojson('../JSONDATA/GPUdata/CSV/GPUDATA.csv', '../JSONDATA/GPUdata/GPUDATA.json')
-    plot.compareOtherResults()
+    #plot.compareOtherResults()
+    plot.scatterPlotGpuEfficiencies()
 main()

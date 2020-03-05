@@ -73,19 +73,16 @@ def scatterPlotGpuEfficiencies():
     df = pd.DataFrame(gpudata,columns=['Release date', 'Efficiency in J/Mh', 'Product', 'Type'])
     df["Release date"] = pd.to_datetime(df["Release date"])
     groups=df.groupby('Type')
-    # plt.rcParams.update(pd.tools.plotting.mpl_stylesheet)
-    # colors = pd.tools.plotting._get_standard_colors(len(groups), color_type='random')
-    #
-    # fig, ax = plt.subplots()
-    # ax.set_color_cycle(colors)
-    # ax.margins(0.05)
-    # for name, group in groups:
-    #     ax.plot(group.x, group.y, marker='o', linestyle='', ms=12, label=name)
-    # ax.legend(numpoints=1, loc='upper left')
-    #
-    # plt.show()
+
+    colors = {"GPU": 'red',
+            "RIG": 'blue',
+            "ASIC": 'green'
+            }
     for i in range(0, len(df)-1):
-        plt.scatter(df['Release date'][i], float(df['Efficiency in J/Mh'][i]))
+
+        plt.scatter(df['Release date'][i], float(df['Efficiency in J/Mh'][i]), label=df['Type'][i], color=colors[df['Type'][i]])
+
+
         #plt.text(df['Release date'][i],float(df['Efficiency in J/Mh'][i]),df['Product'][i])
     plt.gca().xaxis.set_major_locator(plt.MaxNLocator(20))
     #plt.gca().yaxis.set_major_locator(plt.MaxNLocator(20))
@@ -181,22 +178,6 @@ def plotBreakEvenEffAgainstSelectedEfficiency(efficiencyData, DailyData ):
 
 def compareOtherResults():
 
-    # geb_b30_x = pd.date_range(start="20080101", end="20180101", freq="A")
-    # geb_b30_y = [11, 10, 12, 14, 16, 19, 17, 14, 18, 17]
-    # geb_b30 = pd.Series(data=geb_b30_y, index=geb_b30_x)
-    #
-    # geb_a30_x = pd.date_range(start="20100101", end="20180101", freq="A")
-    # geb_a30_y = [12, 10, 13, 14, 12, 13, 18, 16]
-    # geb_a30 = pd.Series(data=geb_a30_y, index=geb_a30_x)
-    #
-    # fig, ax = plt.subplots()
-    # ax.plot(geb_b30, label='Prices 2008-2018', color='blue')
-    # ax.plot(geb_a30, label='Prices 2010-2018', color = 'red')
-    # legend = ax.legend(loc='center right', fontsize='x-large')
-    # plt.xlabel('years')
-    # plt.ylabel('prices')
-    # plt.title('Comparison of the different prices')
-    # plt.show()
     #This study
     upperbound_x = pd.to_datetime(pd.DataFrame(upperBoundData)['Date'])
     upperbound_y = [date['yearlyTWh'] for date in upperBoundData]
