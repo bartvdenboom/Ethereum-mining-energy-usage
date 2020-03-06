@@ -71,23 +71,27 @@ def plottwoaxis():
 
 def scatterPlotGpuEfficiencies():
     df = pd.DataFrame(gpudata,columns=['Release date', 'Efficiency in J/Mh', 'Product', 'Type'])
-    df["Release date"] = pd.to_datetime(df["Release date"])
-    groups=df.groupby('Type')
-
-    colors = {"GPU": 'red',
-            "RIG": 'blue',
-            "ASIC": 'green'
-            }
-    for i in range(0, len(df)-1):
-
-        plt.scatter(df['Release date'][i], float(df['Efficiency in J/Mh'][i]), label=df['Type'][i], color=colors[df['Type'][i]])
+    data_x = pd.to_datetime(df["Release date"])
+    data_y = [float(d) for d in df["Efficiency in J/Mh"]]
+    types = df['Type']
+    fig, ax = plt.subplots()
+    colors = {"GPU": 'red',"RIG": 'blue',"ASIC": 'green'}
+    for x,y,type in zip(data_x,data_y,types):
+        ax.scatter(x,y,label=type, c=colors[type])
+    ax.xaxis.set_major_locator(plt.MaxNLocator(20))
 
 
-        #plt.text(df['Release date'][i],float(df['Efficiency in J/Mh'][i]),df['Product'][i])
-    plt.gca().xaxis.set_major_locator(plt.MaxNLocator(20))
-    #plt.gca().yaxis.set_major_locator(plt.MaxNLocator(20))
-    #plt.ylim(1, 20)
+
+    legend_elements = [plt.scatter(data_x[0], data_y[0], label = 'General purpose graphics cards', c=colors[types[0]]),
+                        plt.scatter(data_x[69], data_y[69], label = 'Mining Rigs', c=colors[types[69]]),
+                        plt.scatter(data_x[62], data_y[62], label = 'Ethereum specific ASIC', c=colors[types[62]])]
+
+    # Create the figure
     plt.xticks(rotation=45)
+    plt.legend(handles=legend_elements)
+    ax.set_xlabel('Date')
+    ax.set_ylabel('Efficiency in J/Mh')
+    plt.title('Mining hardware efficiencies over time')
     plt.show()
 
 def Gigahashformatter(x, pos):
