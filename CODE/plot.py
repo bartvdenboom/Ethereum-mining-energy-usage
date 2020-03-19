@@ -78,7 +78,7 @@ def scatterPlotGpuEfficiencies():
     colors = {"GPU": 'red',"RIG": 'blue',"ASIC": 'green'}
     for x,y,type in zip(data_x,data_y,types):
         ax.scatter(x,y,label=type, c=colors[type])
-    ax.xaxis.set_major_locator(plt.MaxNLocator(20))
+    #ax.xaxis.set_major_locator(plt.MaxNLocator(20))
 
 
 
@@ -87,7 +87,7 @@ def scatterPlotGpuEfficiencies():
                         plt.scatter(data_x[62], data_y[62], label = 'Ethereum specific ASIC', c=colors[types[62]])]
 
     # Create the figure
-    plt.xticks(rotation=45)
+    #plt.xticks(rotation=45)
     plt.legend(handles=legend_elements)
     ax.set_xlabel('Date')
     ax.set_ylabel('Efficiency in J/Mh')
@@ -201,23 +201,51 @@ def compareOtherResults():
     cleancoins_y = float(5.65)
     cleancoinsLine = pd.Series(data=cleancoins_y, index=cleancoins_x)
 
+    #Zade (2018)
+    zade_x2015 = pd.to_datetime(pd.DataFrame(["1/1/2015","12/31/2015"])[0])
+    zade_y2015 = [((wattage*8765.81277)/1e6) for wattage in [3.0,3.0]]
+    zade2015Line = pd.Series(data=zade_y2015, index=zade_x2015)
+    zade_x2016 = pd.to_datetime(pd.DataFrame(["1/1/2016","12/31/2016"])[0])
+    zade_y2016 = [((wattage*8765.81277)/1e6) for wattage in [19.0,19.0]]
+    zade2016Line = pd.Series(data=zade_y2016, index=zade_x2016)
+    zade_x2017 = pd.to_datetime(pd.DataFrame(["1/1/2017","12/31/2017"])[0])
+    zade_y2017 = [((wattage*8765.81277)/1e6) for wattage in [367.0,367.0]]
+    zade2017Line = pd.Series(data=zade_y2017, index=zade_x2017)
+    zade_x2018 = pd.to_datetime(pd.DataFrame(["1/1/2018","10/31/2018"])[0])
+    zade_y2018 = [((wattage*8765.81277)/1e6) for wattage in [991.0,991.0]]
+    zade2018Line = pd.Series(data=zade_y2018, index=zade_x2018)
+
     #Krause (2019)
-    krause_x = pd.to_datetime(pd.DataFrame(["12/31/2016","12/31/2017","6/30/2018"])[0])
-    krause_y = [((wattage*8765.81277)/1e6) for wattage in [24,299,1165]]
+    krause_x2016 = pd.to_datetime(pd.DataFrame(["1/1/2016","12/31/2016"])[0])
+    krause_y2016 = [((wattage*8765.81277)/1e6) for wattage in [24.0,24.0]]
+    krause2016Line = pd.Series(data=krause_y2016, index=krause_x2016)
+    krause_x2017 = pd.to_datetime(pd.DataFrame(["1/1/2017","12/31/2017"])[0])
+    krause_y2017 = [((wattage*8765.81277)/1e6) for wattage in [299.9,299.0]]
+    krause2017Line = pd.Series(data=krause_y2017, index=krause_x2017)
+    krause_x2018 = pd.to_datetime(pd.DataFrame(["1/1/2018","6/30/2018"])[0])
+    krause_y2018 = [((wattage*8765.81277)/1e6) for wattage in [1165.0,1165.0]]
+    krause2018Line = pd.Series(data=krause_y2018, index=krause_x2018)
+
 
     fig, ax = plt.subplots()
 
     ax.plot(digiconomistLine, label='Digiconomist Estimate', color='red')
     ax.plot(upperboundLine, label='Upper bound (This study)', color='green')
     ax.plot(lowerboundLine, label='Lower bound (This study)', color='blue')
+    ax.plot(zade2015Line, label = 'Zade (2018)',linestyle='-.', color='black')
+    ax.plot(zade2016Line, linestyle='-.', color='black')
+    ax.plot(zade2017Line, linestyle='-.', color='black')
+    ax.plot(zade2018Line, linestyle='-.', color='black')
+    ax.plot(krause2016Line, label = 'Krause & Tolalymat (2018)', linestyle=':', color='orange')
+    ax.plot(krause2017Line, linestyle=':', color='orange')
+    ax.plot(krause2018Line, linestyle=':', color='orange')
     ax.scatter(cleancoins_x,cleancoins_y, c='black', label='Cleancoin', marker="s")
-    for x,y in zip(krause_x,krause_y):
-        ax.scatter(x,y, c='red', label='Krause & Tolalymat (2018)', marker="v")
+
 
     ax.set_xlabel('Date')
     ax.set_ylabel('Estimated TWh per year')
-    #ax.tick_params(axis='y', labelcolor=color)
-    plt.title('Comparison of energy usage estimates in Literature')
+    plt.title('Comparison of Ethereum energy usage estimates in other studies.')
+    plt.legend()
 
-    plt.xticks(rotation=90)
+    #plt.xticks(rotation=45)
     plt.show()
