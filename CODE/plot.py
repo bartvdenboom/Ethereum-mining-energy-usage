@@ -70,13 +70,14 @@ def plottwoaxis():
     plt.show()
 
 def scatterPlotGpuEfficiencies():
-    df = pd.DataFrame(gpudata,columns=['Release date', 'Efficiency in J/Mh', 'Product', 'Type'])
+    df = pd.DataFrame(gpudata,columns=['Release date', 'Efficiency in J/Mh', 'Hash rate in Mh/s', 'Product', 'Type'])
     data_x = pd.to_datetime(df["Release date"])
     data_y = [float(d) for d in df["Efficiency in J/Mh"]]
+    data_yh = [float(d) for d in df["Hash rate in Mh/s"]]
     types = df['Type']
     fig, ax = plt.subplots()
     colors = {"GPU": 'red',"RIG": 'blue',"ASIC": 'green'}
-    for x,y,type in zip(data_x,data_y,types):
+    for x,y,type in zip(data_x,data_yh,types):
         ax.scatter(x,y,label=type, c=colors[type])
     #ax.xaxis.set_major_locator(plt.MaxNLocator(20))
 
@@ -90,8 +91,10 @@ def scatterPlotGpuEfficiencies():
     #plt.xticks(rotation=45)
     plt.legend(handles=legend_elements)
     ax.set_xlabel('Date')
-    ax.set_ylabel('Efficiency in J/Mh')
-    plt.title('Mining hardware efficiencies over time')
+    # ax.set_ylabel('Efficiency in J/Mh')
+    ax.set_ylabel('Hash rate in Mh/s')
+    #plt.title('Mining hardware efficiencies over time')
+    plt.title('Mining hardware hashrate over time')
     plt.show()
 
 def Gigahashformatter(x, pos):
@@ -236,9 +239,9 @@ def compareOtherResults():
     ax.plot(zade2016Line, linestyle='-.', color='black')
     ax.plot(zade2017Line, linestyle='-.', color='black')
     ax.plot(zade2018Line, linestyle='-.', color='black')
-    ax.plot(krause2016Line, label = 'Krause & Tolalymat (2018)', linestyle=':', color='orange')
-    ax.plot(krause2017Line, linestyle=':', color='orange')
-    ax.plot(krause2018Line, linestyle=':', color='orange')
+    ax.plot(krause2016Line, label = 'Krause & Tolalymat (2018)', linestyle=':', color='red')
+    ax.plot(krause2017Line, linestyle=':', color='red')
+    ax.plot(krause2018Line, linestyle=':', color='red')
     ax.scatter(cleancoins_x,cleancoins_y, c='black', label='Cleancoin', marker="s")
 
 
