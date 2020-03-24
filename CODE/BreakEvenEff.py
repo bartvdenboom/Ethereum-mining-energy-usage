@@ -309,7 +309,7 @@ def calcTotalEnergyUsage(PriceperKWh, phases, upperBound):
             efficiencyData.append(phaseData)
     # with open('../JSONDATA/Etherscan/phaseData.json', 'w') as w:
     #     json.dump(efficiencyData, w, indent=4)
-    with open('../JSONDATA/LowerBoundEstimate.json', 'w') as w:
+    with open('../JSONDATA/UpperBoundEstimate.json', 'w') as w:
         json.dump(efficiencyData, w, indent=4)
     EnergyUsageTWh = energyUsageJoule/3.6e15
 
@@ -399,7 +399,7 @@ def bestGuessEstimate(PriceperKWh, phases):
         json.dump(efficiencyData, w, indent=4)
     EnergyUsageTWh = energyUsageJoule/3.6e15
 
-    print("The total energy usage of Ethereum is %f Joule or %f TWh"% (energyUsageJoule, EnergyUsageTWh))
+    print("The total energy usage of Ethereum is %f Joule or %f TWh"% (energyUsageJoule, EnergyUsageTWh)
     print("At " + datetime.strftime(datePhases[len(datePhases)-1][1],"%m/%d/%Y") + " the power draw was " + str(totalWattage/1e6) + " MW." )
     print("This equals %f TWh per year." % ((totalWattage*8765.81277)/1e12))
     return efficiencyData
@@ -409,10 +409,10 @@ def main():
     # (779, 970), (971, 1106), (1107, 1141), (1142, 1237), (1238, 1275),
     # (1276, 1479), (1480, 1538), (1539, 1679)]
     # interval = 14
-    # upperBound = False
+    # upperBound = True
     # endOfData = "3/3/2020"
     # endDate = "12/31/2017"
-    # PriceperKWh = 0.10
+    # PriceperKWh = 0.05
     # phases = generatePhases(blockdata,interval,endOfData)
     # efficiencyData = calcTotalEnergyUsage(PriceperKWh, phases, upperBound)
 
@@ -423,5 +423,5 @@ def main():
 
     #csvtojson('../JSONDATA/GPUdata/CSV/GPUDATA.csv', '../JSONDATA/GPUdata/GPUDATA.json')
     #plot.compareOtherResults()
-    plot.scatterPlotGpuEfficiencies()
+    # plot.scatterPlotGpuEfficiencies()
 main()
