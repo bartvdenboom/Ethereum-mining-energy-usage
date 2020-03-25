@@ -1,0 +1,19 @@
+[
+    {
+        "date": "07/30/2015 23:59:52",
+        "averagedifficulty": 252522833608.42856,
+        "unclerate": 0,
+        "averageblocktime": 6.285714285714286,
+        "timespan": 44.0
+    },
+    {
+        "ethprice": 0.0,
+        "date": "07/30/2015 23:59:52",
+        "averagedifficulty": 252522833608.42856,
+        "unclerate": 0,
+        "averageblocktime": 6.285714285714286,
+        "timespan": 44.0,
+        "computedhashrate": 40174087164.97727,
+        "dailyETHreward": 35.0
+    }
+]

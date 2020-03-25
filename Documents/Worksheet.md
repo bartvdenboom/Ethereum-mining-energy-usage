@@ -257,12 +257,154 @@ A few studies have been conducted on the energy usage of opcodes [^1] [^2] [^3] 
 [^4]: Aldweesh, A., Alharby, M., Solaiman, E., & van Moorsel, A. (2018, September). Performance benchmarking of smart contracts to assess miner incentives in Ethereum. In 2018 14th European Dependable Computing Conference (EDCC) (pp. 144-149). IEEE.
 	 
 	 
-##Currently working on:
-- Waiting to gather enough data, this takes a long time since the limited API throughput
-	- This data is used to make a better estimate of the **lower bound** and will be used to compute the **upper bound** and **best guess** numbers.
-- Constructing the hardware set (almost done)
-	- Can be found in working directory/DATA/GPUDATA.xlsx 
-- Methods for calculating the Best-guess
-- Assumptions in Ethereum which might be different from Bitcoin (energy price, realistic profitability threshold), 
-- Energy usage of EVM
-	- Using GasUsed to make estimates?
+#HArd forks
+`0.1 #200,000 Ice Age`
+Source: u/accape's statement "There is also the very first HF shortly after genesis which introduced the ice age (which went into effect at block 200,000)."
+
+And from Ethereum Protocol Update 1, dated Aug 4 2015, "starting from block 200,000 (very roughly 17 days from now), the difficulty will undergo an exponential increase which will only become noticeable in about a year".
+
+> new Date(eth.getBlock(200000).timestamp * 1000).toUTCString()
+"Mon, 07 Sep 2015 21:33:09 UTC"
+
+
+1. #1,150,000 Homestead
+Source What was the first block mined with Homestead?
+
+> new Date(eth.getBlock(1150000).timestamp * 1000).toUTCString()
+"Mon, 14 Mar 2016 18:49:53 UTC"
+Note that https://etherchain.org/block/1150000 reports 2016-03-14 19:49:53 and https://etherscan.io/block/1150000 reports Mar-14-2016 06:49:53 PM +UTC
+
+See also EIP 606: Hardfork Meta: Homestead
+
+
+
+2. #1,920,000 DAO
+Source Give a summary of the fork state changes in block 1920000.
+
+> new Date(eth.getBlock(1920000).timestamp * 1000).toUTCString()
+"Wed, 20 Jul 2016 13:20:40 UTC"
+Note that this hard fork produced the Ethereum Classic chain which is the original un-forked chain while the forked chain is the main Ethereum chain. If you owned ethers (ETH) prior to this fork, you will own the same number of Classic ethers (ETC) as well as regular ethers (ETH).
+
+See also EIP 779: Hardfork Meta: DAO Fork
+
+
+
+3. #2,463,000 Tangerine Whistle
+Source FAQ: Upcoming Ethereum Hard Fork, dated Oct 18 2016.
+
+> new Date(eth.getBlock(2463000).timestamp * 1000).toUTCString()
+"Tue, 18 Oct 2016 13:19:31 UTC"
+The main changes to the protocol were:
+
+EIP 150-1c - Long-term gas cost changes for IO-heavy operations to mitigate transaction spam attacks
+EIP 158 - State clearing
+See also EIP 608: Hardfork Meta: Tangerine Whistle
+
+The software versions were:
+
+Ethereum Wallet/Mist 0.8.6
+geth 1.4.18
+Parity 1.3.8
+EthereumJ 1.3.6
+
+
+4. #2,675,000 Spurious Dragon
+Source Hard Fork No. 4: Spurious Dragon, dated Nov 18 2016.
+
+> new Date(eth.getBlock(2675000).timestamp * 1000).toUTCString()
+"Tue, 22 Nov 2016 16:15:44 UTC"
+The main changes to the protocol were:
+
+EIP 155: Replay attack protection - to prevent transactions from the main Ethereum chain being replayed on the Classic chain.
+EIP 160: EXP cost increase - "making it more difficult to slow down the network via computationally expensive contract operations"
+EIP 161: State trie clearing - "enabling 'debloat' of the blockchain state" to clean up the 20 million empty accounts created in the Sep and Oct 2016 Ethereum network attack.
+EIP 170: Contract code size limit - "changes the maximum code size that a contract on the blockchain can have"
+See also EIP 607: Hardfork Meta: Spurious Dragon
+
+The software versions were:
+
+Ethereum Wallet/Mist 0.8.7
+geth 1.5.2
+Parity 1.4.4
+
+
+5. #4,370,000 Byzantium
+Source Byzantium HF Announcement, dated Oct 12 2017.
+
+> new Date(eth.getBlock(4370000).timestamp * 1000).toUTCString()
+"Mon, 16 Oct 2017 05:22:11 UTC"
+The main changes to the protocol were:
+
+EIP 140: Addition of ‘REVERT’ opcode - which permits error handling without consuming all gas.
+EIP 658: Embedding transaction return data in receipts - to indicate success or failure.
+EIP 196: Elliptic curve addition and scalar multiplication on alt_bn128 - permitting ZK-Snarks and other cryptographic mathemagic™.
+EIP 197: Pairing checks - permitting ZK-Snarks and other cryptographic mathemagic™.
+EIP 198: Big integer modular exponentiation - enabling RSA signature verification and other cryptographic applications.
+EIP 211: Support for variable length return values.
+EIP 214: Addition of the ‘STATICCALL’ opcode - permitting non-state-changing calls to other contracts.
+EIP 100: Difficulty adjustment formula change - to take uncles into account.
+EIP 649: Delay of the ice age / difficulty bomb by 1 year, and reduction of block reward from 5 to 3 ether.
+See also EIP 609: Hardfork Meta: Byzantium
+
+The software versions were:
+
+Ethereum Wallet/Mist 0.9.1
+geth 1.7.2
+Parity 1.7.6 (to be released)
+Ethereum Harmony 2.1.56
+
+
+6. #7,280,000 Constantinople/St. Petersburg
+Source:
+
+First attempt targeting #7,080,000 - Ethereum Constantinople Upgrade Announcement, dated Jan 11 2019. This was postponed due to a vulnerability in EIP 1283
+Second attempt targeting #7,280,000 - Ethereum Constantinople/St. Petersburg Upgrade Announcement, dated Feb 22 2019
+> new Date(eth.getBlock(7080000).timestamp * 1000).toUTCString()
+"Thu, 17 Jan 2019 05:57:13 UTC"
+The main changes to the protocol are:
+
+EIP 145 - Native bitwise shifting with cost on par with other arithmetic operations
+
+EIP 1014 - New CREATE2 opcode for state-channel use cases that involve counterfactual interactions with contracts
+
+EIP 1052 - New EXTCODEHASH opcode that returns the keccak256 hash of a contract's code
+
+EIP 1283 - Net gas metering changes for SSTORE opcode - Removed in second attempt due to vulnerability
+
+EIP 1234 - Delay difficulty bomb for ~12m and reduce block reward from 3 ETH to 2 ETH
+
+The software versions are:
+
+geth 1.8.23
+Parity v2.2.10-stable
+Harmony v2.3 Build 74
+Pantheon v0.9.1
+EthereumJS v2.6.0
+Ethereum Wallet/Mist v0.11.1
+
+
+7. #9,069,000 Istanbul
+Source Ethereum Istanbul Upgrade Announcement, dated Nov 20 2019
+
+> new Date(eth.getBlock(9069000).timestamp * 1000).toUTCString()
+"Sun, 08 Dec 2019 00:25:09 UTC"
+The main changes to the protocol as listed in EIP 1679: Hardfork Meta: Istanbul were:
+
+EIP-152: Add Blake2 compression function F precompile
+EIP-1108: Reduce alt_bn128 precompile gas costs
+EIP-1344: Add ChainID opcode
+EIP-1884: Repricing for trie-size-dependent opcodes
+EIP-2028: Calldata gas cost reduction
+EIP-2200: Rebalance net-metered SSTORE gas cost with consideration of SLOAD gas cost change
+The software versions are:
+
+geth v1.9.9
+Parity v2.5.11-stable
+Besu v1.3.6
+Nethermind v1.2.3
+ethereumJS v4.0.2
+Trinity v0.1.0-alpha.31
+Aleth v1.7.1
+
+
+https://ethereum.stackexchange.com/questions/13014/please-provide-a-summary-of-the-ethereum-hard-forks

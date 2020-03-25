@@ -8148,5 +8148,250 @@
         "Date(UTC)": "1/14/2020",
         "UnixTimeStamp": "1578960000",
         "Value": "2073.117"
+    },
+    {
+        "Date(UTC)": "1/15/2020",
+        "UnixTimeStamp": "1579046400",
+        "Value": "2119.493"
+    },
+    {
+        "Date(UTC)": "1/16/2020",
+        "UnixTimeStamp": "1579132800",
+        "Value": "2084.330"
+    },
+    {
+        "Date(UTC)": "1/17/2020",
+        "UnixTimeStamp": "1579219200",
+        "Value": "2081.315"
+    },
+    {
+        "Date(UTC)": "1/18/2020",
+        "UnixTimeStamp": "1579305600",
+        "Value": "2074.516"
+    },
+    {
+        "Date(UTC)": "1/19/2020",
+        "UnixTimeStamp": "1579392000",
+        "Value": "2068.051"
+    },
+    {
+        "Date(UTC)": "1/20/2020",
+        "UnixTimeStamp": "1579478400",
+        "Value": "2096.662"
+    },
+    {
+        "Date(UTC)": "1/21/2020",
+        "UnixTimeStamp": "1579564800",
+        "Value": "2096.824"
+    },
+    {
+        "Date(UTC)": "1/22/2020",
+        "UnixTimeStamp": "1579651200",
+        "Value": "2091.256"
+    },
+    {
+        "Date(UTC)": "1/23/2020",
+        "UnixTimeStamp": "1579737600",
+        "Value": "2076.161"
+    },
+    {
+        "Date(UTC)": "1/24/2020",
+        "UnixTimeStamp": "1579824000",
+        "Value": "2127.292"
+    },
+    {
+        "Date(UTC)": "1/25/2020",
+        "UnixTimeStamp": "1579910400",
+        "Value": "2093.260"
+    },
+    {
+        "Date(UTC)": "1/26/2020",
+        "UnixTimeStamp": "1579996800",
+        "Value": "2072.444"
+    },
+    {
+        "Date(UTC)": "1/27/2020",
+        "UnixTimeStamp": "1580083200",
+        "Value": "2076.663"
+    },
+    {
+        "Date(UTC)": "1/28/2020",
+        "UnixTimeStamp": "1580169600",
+        "Value": "2053.845"
+    },
+    {
+        "Date(UTC)": "1/29/2020",
+        "UnixTimeStamp": "1580256000",
+        "Value": "2083.501"
+    },
+    {
+        "Date(UTC)": "1/30/2020",
+        "UnixTimeStamp": "1580342400",
+        "Value": "2057.671"
+    },
+    {
+        "Date(UTC)": "1/31/2020",
+        "UnixTimeStamp": "1580428800",
+        "Value": "2057.787"
+    },
+    {
+        "Date(UTC)": "2/1/2020",
+        "UnixTimeStamp": "1580515200",
+        "Value": "2046.568"
+    },
+    {
+        "Date(UTC)": "2/2/2020",
+        "UnixTimeStamp": "1580601600",
+        "Value": "2092.379"
+    },
+    {
+        "Date(UTC)": "2/3/2020",
+        "UnixTimeStamp": "1580688000",
+        "Value": "2083.431"
+    },
+    {
+        "Date(UTC)": "2/4/2020",
+        "UnixTimeStamp": "1580774400",
+        "Value": "2103.273"
+    },
+    {
+        "Date(UTC)": "2/5/2020",
+        "UnixTimeStamp": "1580860800",
+        "Value": "2100.043"
+    },
+    {
+        "Date(UTC)": "2/6/2020",
+        "UnixTimeStamp": "1580947200",
+        "Value": "2094.087"
+    },
+    {
+        "Date(UTC)": "2/7/2020",
+        "UnixTimeStamp": "1581033600",
+        "Value": "2089.933"
+    },
+    {
+        "Date(UTC)": "2/8/2020",
+        "UnixTimeStamp": "1581120000",
+        "Value": "2142.113"
+    },
+    {
+        "Date(UTC)": "2/9/2020",
+        "UnixTimeStamp": "1581206400",
+        "Value": "2114.045"
+    },
+    {
+        "Date(UTC)": "2/10/2020",
+        "UnixTimeStamp": "1581292800",
+        "Value": "2115.394"
+    },
+    {
+        "Date(UTC)": "2/11/2020",
+        "UnixTimeStamp": "1581379200",
+        "Value": "2144.844"
+    },
+    {
+        "Date(UTC)": "2/12/2020",
+        "UnixTimeStamp": "1581465600",
+        "Value": "2164.395"
+    },
+    {
+        "Date(UTC)": "2/13/2020",
+        "UnixTimeStamp": "1581552000",
+        "Value": "2195.763"
+    },
+    {
+        "Date(UTC)": "2/14/2020",
+        "UnixTimeStamp": "1581638400",
+        "Value": "2201.248"
+    },
+    {
+        "Date(UTC)": "2/15/2020",
+        "UnixTimeStamp": "1581724800",
+        "Value": "2215.860"
+    },
+    {
+        "Date(UTC)": "2/16/2020",
+        "UnixTimeStamp": "1581811200",
+        "Value": "2217.224"
+    },
+    {
+        "Date(UTC)": "2/17/2020",
+        "UnixTimeStamp": "1581897600",
+        "Value": "2233.264"
+    },
+    {
+        "Date(UTC)": "2/18/2020",
+        "UnixTimeStamp": "1581984000",
+        "Value": "2242.189"
+    },
+    {
+        "Date(UTC)": "2/19/2020",
+        "UnixTimeStamp": "1582070400",
+        "Value": "2314.349"
+    },
+    {
+        "Date(UTC)": "2/20/2020",
+        "UnixTimeStamp": "1582156800",
+        "Value": "2269.276"
+    },
+    {
+        "Date(UTC)": "2/21/2020",
+        "UnixTimeStamp": "1582243200",
+        "Value": "2236.947"
+    },
+    {
+        "Date(UTC)": "2/22/2020",
+        "UnixTimeStamp": "1582329600",
+        "Value": "2278.218"
+    },
+    {
+        "Date(UTC)": "2/23/2020",
+        "UnixTimeStamp": "1582416000",
+        "Value": "2265.292"
+    },
+    {
+        "Date(UTC)": "2/24/2020",
+        "UnixTimeStamp": "1582502400",
+        "Value": "2312.524"
+    },
+    {
+        "Date(UTC)": "2/25/2020",
+        "UnixTimeStamp": "1582588800",
+        "Value": "2250.328"
+    },
+    {
+        "Date(UTC)": "2/26/2020",
+        "UnixTimeStamp": "1582675200",
+        "Value": "2253.688"
+    },
+    {
+        "Date(UTC)": "2/27/2020",
+        "UnixTimeStamp": "1582761600",
+        "Value": "2341.556"
+    },
+    {
+        "Date(UTC)": "2/28/2020",
+        "UnixTimeStamp": "1582848000",
+        "Value": "2286.565"
+    },
+    {
+        "Date(UTC)": "2/29/2020",
+        "UnixTimeStamp": "1582934400",
+        "Value": "2296.407"
+    },
+    {
+        "Date(UTC)": "3/1/2020",
+        "UnixTimeStamp": "1583020800",
+        "Value": "2276.238"
+    },
+    {
+        "Date(UTC)": "3/2/2020",
+        "UnixTimeStamp": "1583107200",
+        "Value": "2242.800"
+    },
+    {
+        "Date(UTC)": "3/3/2020",
+        "UnixTimeStamp": "1583193600",
+        "Value": "2260.148"
     }
 ]
