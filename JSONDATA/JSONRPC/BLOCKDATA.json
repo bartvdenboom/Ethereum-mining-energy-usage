@@ -1,19 +1,62 @@
 [
     {
         "date": "07/30/2015 23:59:52",
-        "averagedifficulty": 252522833608.42856,
-        "unclerate": 0,
-        "averageblocktime": 6.285714285714286,
-        "timespan": 44.0
+        "ethprice": 0.0,
+        "timespan": 23604.0,
+        "averagedifficulty": 94754384467.00784,
+        "averageblocktime": 3.9399098647971957,
+        "computedhashrate": 24049886347.307404,
+        "dailyETHreward": 29955.0,
+        "unclerate": 0.0
     },
     {
+        "date": "07/31/2015 23:58:49",
         "ethprice": 0.0,
-        "date": "07/30/2015 23:59:52",
-        "averagedifficulty": 252522833608.42856,
-        "unclerate": 0,
-        "averageblocktime": 6.285714285714286,
-        "timespan": 44.0,
-        "computedhashrate": 40174087164.97727,
-        "dailyETHreward": 35.0
+        "timespan": 86337.0,
+        "averagedifficulty": 550103044103.578,
+        "averageblocktime": 11.844834682398135,
+        "computedhashrate": 46442441693.259895,
+        "dailyETHreward": 36445.0,
+        "unclerate": 0.0
+    },
+    {
+        "date": "08/01/2015 23:59:48",
+        "ethprice": 0.0,
+        "timespan": 86459.0,
+        "averagedifficulty": 874467895467.2626,
+        "averageblocktime": 16.100372439478583,
+        "computedhashrate": 54313519687.47268,
+        "dailyETHreward": 26850.0,
+        "unclerate": 0.0
+    },
+    {
+        "date": "08/02/2015 23:59:48",
+        "ethprice": 0.0,
+        "timespan": 86400.00000000001,
+        "averagedifficulty": 1009528973805.6385,
+        "averageblocktime": 16.274251271425882,
+        "computedhashrate": 62032283818.68211,
+        "dailyETHreward": 26545.0,
+        "unclerate": 0.0
+    },
+    {
+        "date": "08/03/2015 23:59:52",
+        "ethprice": 0.0,
+        "timespan": 86404.0,
+        "averagedifficulty": 1119502611511.648,
+        "averageblocktime": 16.22001126337526,
+        "computedhashrate": 69019841807.35323,
+        "dailyETHreward": 26635.0,
+        "unclerate": 0.0
+    },
+    {
+        "date": "08/04/2015 23:59:46",
+        "ethprice": 0.0,
+        "timespan": 86394.0,
+        "averagedifficulty": 1206336117222.157,
+        "averageblocktime": 16.124300111982084,
+        "computedhashrate": 74814789407.55511,
+        "dailyETHreward": 26790.0,
+        "unclerate": 0.0
     }
 ]

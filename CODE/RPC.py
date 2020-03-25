@@ -1,13 +1,18 @@
 import requests
 import json
 import datetime
+from web3 import Web3
+
+w3 = Web3(Web3.IPCProvider("~/Library/Ethereum/geth.ipc"))
 
 RPC_ENDPOINT = "http://127.0.0.1:8545"
 IPC_ENDPOINT = "/Users/bartboom/Library/Ethereum/geth.ipc"
 
+
+# echo '{"jsonrpc": '2.0', "method": "eth_getBlockByNumber", "params": ["0x9380e0", true], "id": 1}' | nc -U /Users/bartboom/Library/Ethereum/geth.ipc
+
 with open('../JSONDATA/Etherscan/EtherPrice.json') as r:
     pricedata = json.load(r)
-
 
 def eth_getBlockByNumber(blocknr):
     blockhex = str(hex(blocknr))
@@ -24,7 +29,12 @@ def eth_getBlockByNumber(blocknr):
     return difficulty,timestamp,unclelen
 
 def eth_getBlockByNumberIPC(blocknr):
-    return 0
+    response = w3.eth.getBlock(block_identifier=blocknr,full_transactions=False)
+    difficulty = response['difficulty']
+    timestamp = datetime.datetime.fromtimestamp(response['timestamp'])
+    unclelen = len(response['uncles'])
+    return difficulty,timestamp,unclelen
+
 
 def getBlockReward(blocknr):
     #Blockreward was originally 5 ETH (untill blocknr 4369999), this changed to 3 ETH with EIP-649 (blocknr 7,280,000) and to 2 ETH with EIP-1234
@@ -48,7 +58,8 @@ def runIPC(start_blocknr, stop_blocknr):
     nr_of_blocks = 1
     day_since_genesis = 0
     for i in range(start_blocknr+1,stop_blocknr):
-        difficulty, timestamp, unclelen = eth_getBlockByNumber(i)
+        difficulty, timestamp, unclelen = eth_getBlockByNumberIPC(i)
+        print("Block %i" % i)
         if prevtimestamp:
             blocktime = (timestamp - prevtimestamp).total_seconds()
         else:
@@ -93,7 +104,8 @@ def runIPC(start_blocknr, stop_blocknr):
         prevtimestamp = timestamp
 
 def main():
-    runIPC(1,15000)
+    runIPC(1,9000000)
+
 
 if __name__ == "__main__":
     main()
