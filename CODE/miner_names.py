@@ -223,29 +223,9 @@ def plotHardwareCount(minerworkerdata):
     fig,ax=plt.subplots()
     ax.pie(sizes)
     ax.axis('equal')
-    #patches, texts = pie = plt.pie(sizes)
 
-    # bbox_props = dict(boxstyle="square,pad=0.3", fc="w", ec="k", lw=0.72)
-    # arrowprops=dict(arrowstyle="-",connectionstyle="angle,angleA=0,angleB=90")
-    # kw = dict(xycoords='data',textcoords='data',arrowprops=arrowprops,
-    #           bbox=bbox_props, zorder=0, va="center")
-    #
-    # for i, p in enumerate(patches):
-    #     ang = (p.theta2 - p.theta1)/2.+p.theta1
-    #     y = np.sin(ang/180.*np.pi)
-    #     x = 1.35*np.sign(np.cos(ang/180.*np.pi))
-    #     plt.gca().annotate(str(1+i), xy=(0, 0), xytext=( x, y), **kw )
-    #
-    #fig.set_size_inches(8, 8)
     plt.legend(labels, loc="upper right", bbox_to_anchor=(0.2,1.0), fontsize='x-small')
     plt.show()
-
-    # plt.tight_layout()
-    # plt.show()
-
-
-    # with open('../JSONDATA/matchResults.json', 'w') as w:
-    #     json.dump(resolvedMatches_ether, w, indent = 4)
 
 def calcWeighedPoolAverage(match_data):
     allHardwareNames = [*hardwareRigs, *generalHardwareNames, *HardwareVariations, *specificHardwareNames, *asicHardwareNames]
@@ -318,24 +298,15 @@ def calcWeighedPoolAverage(match_data):
     'ZODIAC':6.209637357
     })
     cumulativeHashrate = 0
-    product = 0
+    weightedProduct = 0
     for match in match_data:
-        print(match['id'])
         efficiency = 0
         if match['id'] in combinedEfficienciesByID:
             efficiency = combinedEfficienciesByID[match['id']]
-        elif match['id'] == "Combined Machines":
-            effieciency = 0
-        print(efficiency)
-        product+=(efficiency*float(match['hashrate']))
-        cumulativeHashrate+=float(match['hashrate'])
-    Hardwaremix = product/cumulativeHashrate
+            weightedProduct+=(efficiency*float(match['hashrate']))
+            cumulativeHashrate+=float(match['hashrate'])
+    Hardwaremix = weightedProduct/cumulativeHashrate
     print(Hardwaremix)
-
-    # for id in allHardwareNames:
-    #     if id in
-    #         print(id)
-
 
 
 def plotHardwareDistribution(minerdata):
@@ -353,15 +324,27 @@ def plotHardwareDistribution(minerdata):
 
 
 def main():
-    # #Nanopool
+    # Nanopool
     # pruned_nano = pruneEmptyWorkerset(miner_workers_nanopool)
     # matches_nano = matchWorkersByName(pruned_nano)
     # matches_nano = resolveASICMiners(matches_nano)
     # resolvedMatches_nano = resolveMultipleMatches(matches_nano)
     # with open('../JSONDATA/Nanopool/miner_workers_matches_final.json', 'w') as w:
     #     json.dump(resolvedMatches_nano, w, indent = 4)
+
+    # Weighted average of mining efficiency of identified mining hardware
+    # calcWeighedPoolAverage(groupResults(matches_nanopool, False))
+    # Evaluates to 5.8693368304852855
+
+    # Plot histogram of distribution of hashrate per miner
+    # plotHardwareDistribution(matches_nanopool)
+
+    # Plot pie chart of mining hardware distribution according to reported hashrate
+    # plotHardwareCount(groupResults(matches_nanopool, True))
+
     # #----------------------------------------------------------------------------
-    # #Ethermine
+
+    # Ethermine
     # pruned_ether = pruneEmptyWorkerset(miner_workers_ethermine)
     # matches_ether = matchWorkersByName(pruned_ether)
     # matches_ether = resolveASICMiners(matches_ether)
@@ -369,20 +352,15 @@ def main():
     # with open('../JSONDATA/Ethermine/miner_workers_matches_final.json', 'w') as w:
     #     json.dump(resolvedMatches_ether, w, indent = 4)
 
-    #Group results
-    #out = groupResults(matches_nanopool,False)
-    #with open('../JSONDATA/Nanopool/miner_worker_count.json', 'w') as w:
-    #    json.dump(out, w, indent = 4)
+    # Weighted average of mining efficiency of identified mining hardware
+    # calcWeighedPoolAverage(groupResults(matches_ethermine, False))
+    # Evaluates to 5.851414739775516
 
-    #out = groupResults(matches_ethermine)
-    # with open('../JSONDATA/Ethermine/miner_worker_count.json', 'w') as w:
-    #     json.dump(out, w, indent = 4)
+    # Plot histogram of distribution of hashrate per miner
+    # plotHardwareDistribution(matches_ethermine)
 
-    # with open('../JSONDATA/Ethermine/miner_worker_count.json') as r :
-    #     data = json.load(r)
-    #plotHardwareCount(out)
-    #calcWeighedPoolAverage(out)
+    # Plot pie chart of mining hardware distribution according to reported hashrate
+    # plotHardwareCount(groupResults(matches_ethermine, True))
 
-    plotHardwareDistribution(matches_nanopool)
-
-main()
+if __name__ == "__main__":
+    main()
