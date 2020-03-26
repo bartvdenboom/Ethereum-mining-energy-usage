@@ -104,28 +104,54 @@ def Gigahashformatter(x, pos):
 
 def plothashrates():
     formatter = FuncFormatter(Gigahashformatter)
-    crawlerdataframe = pd.DataFrame(crawlerdata,columns=['date', 'averagehashrate', 'correctedhashrate'])
+    #crawlerdataframe = pd.DataFrame(crawlerdata,columns=['date', 'averagehashrate', 'correctedhashrate'])
 
-    etherscandataframe = pd.DataFrame(blockdata,columns=['date', 'averagehashrate', 'calculatedhashrate', 'correctedhashrate'])
+    #etherscandataframe = pd.DataFrame(blockdata,columns=['date', 'averagehashrate', 'computedhashrate', 'reportedhashrate'])
     #ax1 = crawlerdataframe.plot(kind='line', x='date', y=['averagehashrate', 'correctedhashrate'])
-    ax2 = etherscandataframe.plot(kind='line', x='date', y=['correctedhashrate'])
+    fig, ax = plt.subplots()
+
+    data_x = pd.to_datetime(pd.DataFrame(blockdata)['date'])
+    etherscan_y = [date['reportedhashrate'] for date in blockdata]
+    etherscanReportedHashrate = pd.Series(data=etherscan_y, index=data_x)
+
+    #This study
+    data_y = [date['computedhashrate'] for date in blockdata]
+    computedHashrate = pd.Series(data=data_y, index=data_x)
+    ax.plot(etherscanReportedHashrate, linestyle = '-.', label = 'Etherscan.io hashrate', color='red')
+    ax.plot(computedHashrate, label = 'This study', color='blue')
+
+    ax.yaxis.set_major_formatter(formatter)
+    ax.set_xlabel('Date')
+    ax.set_ylabel('Hashrate in GH/s')
+    plt.title('Ethereum hashrate Etherscan.io vs this study.')
+    plt.legend()
+
+    # upperbound_x = pd.to_datetime(pd.DataFrame(upperBoundData)['Date'])
+    # upperbound_y = [date['yearlyTWh'] for date in upperBoundData]
+    # upperboundLine = pd.Series(data=upperbound_y, index=upperbound_x)
+    # ax2 = etherscandataframe.plot(kind='line', x='date', y=['computedhashrate'])
+    # ax1 = etherscandataframe.plot(kind='line', x='date', y=['reportedhashrate'])
+
+
+
+
     # ax1.set_xlabel("Date")
     # ax1.set_ylabel("Hashrate GH/s")
     # ax1.yaxis.set_major_formatter(formatter)
-    ax2.set_xlabel("Date")
-    ax2.set_ylabel("Hashrate GH/s")
-    ax2.yaxis.set_major_formatter(formatter)
-    ax2.axvline(x=200,color='red')
-    ax2.axvline(x=454,color='red')
-    ax2.axvline(x=598,color='red')
-    ax2.axvline(x=778,color='red')
-    ax2.axvline(x=970,color='red')
-    ax2.axvline(x=1106,color='red')
-    ax2.axvline(x=1141, color='red')
-    ax2.axvline(x=1237,color='red')
-    ax2.axvline(x=1275,color='red')
-    ax2.axvline(x=1479,color='red')
-    ax2.axvline(x=1538,color='red')
+    # ax2.set_xlabel("Date")
+    # ax2.set_ylabel("Hashrate GH/s")
+    # ax2.yaxis.set_major_formatter(formatter)
+    # ax2.axvline(x=200,color='red')
+    # ax2.axvline(x=454,color='red')
+    # ax2.axvline(x=598,color='red')
+    # ax2.axvline(x=778,color='red')
+    # ax2.axvline(x=970,color='red')
+    # ax2.axvline(x=1106,color='red')
+    # ax2.axvline(x=1141, color='red')
+    # ax2.axvline(x=1237,color='red')
+    # ax2.axvline(x=1275,color='red')
+    # ax2.axvline(x=1479,color='red')
+    # ax2.axvline(x=1538,color='red')
     plt.xticks(rotation=45)
     plt.show()
 
