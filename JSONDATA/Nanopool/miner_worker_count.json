@@ -1,13 +1,8 @@
 [
     {
-        "id": "SHARK",
-        "count": 4,
-        "hashrate": 680.0
-    },
-    {
-        "id": "MAMIMUS",
-        "count": 0,
-        "hashrate": 0
+        "id": "7990",
+        "count": 3,
+        "hashrate": 34.0
     },
     {
         "id": "ULTRON",
@@ -15,74 +10,44 @@
         "hashrate": 68.0
     },
     {
-        "id": "IMPERIUM",
-        "count": 0,
-        "hashrate": 0
+        "id": "780TI",
+        "count": 1,
+        "hashrate": 102.0
     },
     {
-        "id": "THORIUM",
-        "count": 0,
-        "hashrate": 0
+        "id": "ANTMINER",
+        "count": 1,
+        "hashrate": 119.0
     },
     {
-        "id": "ZODIAC",
-        "count": 0,
-        "hashrate": 0
+        "id": "380X",
+        "count": 4,
+        "hashrate": 170.0
     },
     {
-        "id": "G2",
-        "count": 0,
-        "hashrate": 0
-    },
-    {
-        "id": "G1",
-        "count": 0,
-        "hashrate": 0
-    },
-    {
-        "id": "780",
-        "count": 6,
-        "hashrate": 1275.0
-    },
-    {
-        "id": "980",
-        "count": 8,
-        "hashrate": 1360.0
-    },
-    {
-        "id": "290",
-        "count": 21,
-        "hashrate": 2720.0
-    },
-    {
-        "id": "1080",
-        "count": 301,
-        "hashrate": 56627.0
-    },
-    {
-        "id": "1050",
-        "count": 147,
-        "hashrate": 11373.0
-    },
-    {
-        "id": "1060",
-        "count": 476,
-        "hashrate": 51136.0
-    },
-    {
-        "id": "1070",
-        "count": 715,
-        "hashrate": 108171.0
-    },
-    {
-        "id": "2070",
-        "count": 17,
-        "hashrate": 2363.0
+        "id": "P100",
+        "count": 4,
+        "hashrate": 170.0
     },
     {
         "id": "2060",
         "count": 4,
         "hashrate": 323.0
+    },
+    {
+        "id": "290X",
+        "count": 4,
+        "hashrate": 323.0
+    },
+    {
+        "id": "1660TI",
+        "count": 3,
+        "hashrate": 340.0
+    },
+    {
+        "id": "5700XT",
+        "count": 4,
+        "hashrate": 425.0
     },
     {
         "id": "1650",
@@ -95,89 +60,14 @@
         "hashrate": 629.0
     },
     {
+        "id": "SHARK",
+        "count": 4,
+        "hashrate": 680.0
+    },
+    {
         "id": "1660",
         "count": 10,
         "hashrate": 697.0
-    },
-    {
-        "id": "5700",
-        "count": 36,
-        "hashrate": 8415.0
-    },
-    {
-        "id": "780TI",
-        "count": 1,
-        "hashrate": 102.0
-    },
-    {
-        "id": "980TI",
-        "count": 0,
-        "hashrate": 0
-    },
-    {
-        "id": "1050TI",
-        "count": 80,
-        "hashrate": 6222.0
-    },
-    {
-        "id": "1080TI",
-        "count": 150,
-        "hashrate": 29835.0
-    },
-    {
-        "id": "1070TI",
-        "count": 82,
-        "hashrate": 14297.0
-    },
-    {
-        "id": "2080TI",
-        "count": 0,
-        "hashrate": 0
-    },
-    {
-        "id": "380X",
-        "count": 4,
-        "hashrate": 170.0
-    },
-    {
-        "id": "5700XT",
-        "count": 4,
-        "hashrate": 425.0
-    },
-    {
-        "id": "1660TI",
-        "count": 3,
-        "hashrate": 340.0
-    },
-    {
-        "id": "290X",
-        "count": 4,
-        "hashrate": 323.0
-    },
-    {
-        "id": "2070TI",
-        "count": 0,
-        "hashrate": 0
-    },
-    {
-        "id": "2060TI",
-        "count": 0,
-        "hashrate": 0
-    },
-    {
-        "id": "1650TI",
-        "count": 0,
-        "hashrate": 0
-    },
-    {
-        "id": "7870",
-        "count": 0,
-        "hashrate": 0
-    },
-    {
-        "id": "7990",
-        "count": 3,
-        "hashrate": 34.0
     },
     {
         "id": "770",
@@ -185,14 +75,9 @@
         "hashrate": 1020.0
     },
     {
-        "id": "R9",
-        "count": 100,
-        "hashrate": 12699.0
-    },
-    {
-        "id": "750",
-        "count": 17,
-        "hashrate": 2329.0
+        "id": "960",
+        "count": 5,
+        "hashrate": 1071.0
     },
     {
         "id": "TITAN",
@@ -200,29 +85,14 @@
         "hashrate": 1088.0
     },
     {
-        "id": "295X2",
-        "count": 0,
-        "hashrate": 0
+        "id": "780",
+        "count": 6,
+        "hashrate": 1275.0
     },
     {
-        "id": "970",
-        "count": 10,
-        "hashrate": 1683.0
-    },
-    {
-        "id": "960",
-        "count": 5,
-        "hashrate": 1071.0
-    },
-    {
-        "id": "390",
-        "count": 31,
-        "hashrate": 3145.0
-    },
-    {
-        "id": "370",
-        "count": 447,
-        "hashrate": 2567.0
+        "id": "980",
+        "count": 8,
+        "hashrate": 1360.0
     },
     {
         "id": "380",
@@ -230,14 +100,59 @@
         "hashrate": 1462.0
     },
     {
+        "id": "680",
+        "count": 15,
+        "hashrate": 1598.0
+    },
+    {
+        "id": "650",
+        "count": 16,
+        "hashrate": 1598.0
+    },
+    {
+        "id": "970",
+        "count": 10,
+        "hashrate": 1683.0
+    },
+    {
+        "id": "590",
+        "count": 13,
+        "hashrate": 1887.0
+    },
+    {
+        "id": "550",
+        "count": 27,
+        "hashrate": 2125.0
+    },
+    {
+        "id": "750",
+        "count": 17,
+        "hashrate": 2329.0
+    },
+    {
+        "id": "660",
+        "count": 18,
+        "hashrate": 2346.0
+    },
+    {
+        "id": "2070",
+        "count": 17,
+        "hashrate": 2363.0
+    },
+    {
+        "id": "370",
+        "count": 447,
+        "hashrate": 2567.0
+    },
+    {
+        "id": "290",
+        "count": 21,
+        "hashrate": 2720.0
+    },
+    {
         "id": "FURY",
         "count": 17,
         "hashrate": 2737.0
-    },
-    {
-        "id": "480",
-        "count": 270,
-        "hashrate": 34017.0
     },
     {
         "id": "460",
@@ -245,9 +160,98 @@
         "hashrate": 2856.0
     },
     {
+        "id": "390",
+        "count": 31,
+        "hashrate": 3145.0
+    },
+    {
+        "id": "560",
+        "count": 69,
+        "hashrate": 5304.0
+    },
+    {
+        "id": "1050TI",
+        "count": 80,
+        "hashrate": 6222.0
+    },
+    {
+        "id": "VII",
+        "count": 25,
+        "hashrate": 6596.0
+    },
+    {
+        "id": "E3",
+        "count": 39,
+        "hashrate": 7650.0
+    },
+    {
+        "id": "5700",
+        "count": 36,
+        "hashrate": 8415.0
+    },
+    {
+        "id": "P104",
+        "count": 50,
+        "hashrate": 10727.0
+    },
+    {
+        "id": "1050",
+        "count": 147,
+        "hashrate": 11373.0
+    },
+    {
+        "id": "R9",
+        "count": 100,
+        "hashrate": 12699.0
+    },
+    {
+        "id": "1070TI",
+        "count": 82,
+        "hashrate": 14297.0
+    },
+    {
+        "id": "Combined Machines",
+        "hashrate": 27183.0
+    },
+    {
+        "id": "P106",
+        "count": 205,
+        "hashrate": 29478.0
+    },
+    {
+        "id": "1080TI",
+        "count": 150,
+        "hashrate": 29835.0
+    },
+    {
+        "id": "480",
+        "count": 270,
+        "hashrate": 34017.0
+    },
+    {
+        "id": "VEGA",
+        "count": 552,
+        "hashrate": 45390.0
+    },
+    {
+        "id": "1060",
+        "count": 476,
+        "hashrate": 51136.0
+    },
+    {
+        "id": "1080",
+        "count": 301,
+        "hashrate": 56627.0
+    },
+    {
         "id": "470",
         "count": 726,
         "hashrate": 96747.0
+    },
+    {
+        "id": "1070",
+        "count": 715,
+        "hashrate": 108171.0
     },
     {
         "id": "570",
@@ -258,99 +262,5 @@
         "id": "580",
         "count": 1254,
         "hashrate": 186150.0
-    },
-    {
-        "id": "550",
-        "count": 27,
-        "hashrate": 2125.0
-    },
-    {
-        "id": "VEGA",
-        "count": 552,
-        "hashrate": 45390.0
-    },
-    {
-        "id": "VII",
-        "count": 25,
-        "hashrate": 6596.0
-    },
-    {
-        "id": "V100",
-        "count": 0,
-        "hashrate": 0
-    },
-    {
-        "id": "590",
-        "count": 13,
-        "hashrate": 1887.0
-    },
-    {
-        "id": "P100",
-        "count": 4,
-        "hashrate": 170.0
-    },
-    {
-        "id": "560",
-        "count": 69,
-        "hashrate": 5304.0
-    },
-    {
-        "id": "P104",
-        "count": 50,
-        "hashrate": 10727.0
-    },
-    {
-        "id": "P106",
-        "count": 205,
-        "hashrate": 29478.0
-    },
-    {
-        "id": "680",
-        "count": 15,
-        "hashrate": 1598.0
-    },
-    {
-        "id": "660",
-        "count": 18,
-        "hashrate": 2346.0
-    },
-    {
-        "id": "650",
-        "count": 16,
-        "hashrate": 1598.0
-    },
-    {
-        "id": "E3",
-        "count": 39,
-        "hashrate": 7650.0
-    },
-    {
-        "id": "ANTMINER",
-        "count": 1,
-        "hashrate": 119.0
-    },
-    {
-        "id": "ETHMASTER",
-        "count": 0,
-        "hashrate": 0
-    },
-    {
-        "id": "A10",
-        "count": 0,
-        "hashrate": 0
-    },
-    {
-        "id": "BITMAIN",
-        "count": 0,
-        "hashrate": 0
-    },
-    {
-        "id": "INNOSILICON",
-        "count": 0,
-        "hashrate": 0
-    },
-    {
-        "id": "Mixed",
-        "hashrate": 27183.0
     }
 ]

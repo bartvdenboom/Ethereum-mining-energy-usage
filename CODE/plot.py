@@ -78,13 +78,14 @@ def scatterPlotGpuEfficiencies():
     fig, ax = plt.subplots()
     colors = {"GPU": 'red',"RIG": 'blue',"ASIC": 'green'}
     for x,y,type in zip(data_x,data_yh,types):
-        ax.scatter(x,y,label=type, c=colors[type])
+        if not type == "RIG" or type == "ASIC":
+            ax.scatter(x,y,label=type, c=colors[type])
     #ax.xaxis.set_major_locator(plt.MaxNLocator(20))
 
 
 
     legend_elements = [plt.scatter(data_x[0], data_y[0], label = 'General purpose graphics cards', c=colors[types[0]]),
-                        plt.scatter(data_x[69], data_y[69], label = 'Mining Rigs', c=colors[types[69]]),
+                        # plt.scatter(data_x[69], data_y[69], label = 'Mining Rigs', c=colors[types[69]]),
                         plt.scatter(data_x[62], data_y[62], label = 'Ethereum specific ASIC', c=colors[types[62]])]
 
     # Create the figure

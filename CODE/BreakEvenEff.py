@@ -198,11 +198,11 @@ def getMatchingHardwareEfficiency(efficiency, datetuple, upperbound):
         if scores:
             if upperbound:
                 scores = sorted(scores, key=lambda x:x[1]) #Sort scores such that the closest match is the first element
-                print(gpulist[scores[0][0]]['Product'])
+                #print(gpulist[scores[0][0]]['Product'])
                 return float(gpulist[scores[0][0]]['Efficiency in J/Mh'])
             else:
                 scores = sorted(scores, key=lambda x:x[1], reverse = True) #Sort scores such that the closest match is the first element
-                print(gpulist[scores[0][0]]['Product'])
+                #print(gpulist[scores[0][0]]['Product'])
                 return float(gpulist[scores[0][0]]['Efficiency in J/Mh'])
         else:
             return -1
@@ -423,6 +423,6 @@ def main():
 
     #csvtojson('../JSONDATA/GPUdata/CSV/GPUDATA.csv', '../JSONDATA/GPUdata/GPUDATA.json')
     #plot.compareOtherResults()
-    # plot.scatterPlotGpuEfficiencies()
-    plot.plothashrates()
+    plot.scatterPlotGpuEfficiencies()
+    #plot.plothashrates()
 main()
