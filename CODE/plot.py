@@ -28,7 +28,8 @@ with open('../JSONDATA/UpperBoundEstimate.json') as f:
     upperBoundData = json.load(f)
 with open('../JSONDATA/LowerBoundEstimate.json') as f:
     lowerBoundData = json.load(f)
-
+with open('../JSONDATA/BestGuessEstimate.json') as f:
+    bestGuessData = json.load(f)
 
 def csvtojson(input, output):
     csvfile = open(input, 'r')
@@ -221,6 +222,10 @@ def compareOtherResults():
     lowerbound_y = [date['yearlyTWh'] for date in lowerBoundData]
     lowerboundLine = pd.Series(data=lowerbound_y, index=lowerbound_x)
 
+    bestguess_x = pd.to_datetime(pd.DataFrame(bestGuessData)['Date'])
+    bestguess_y = [date['yearlyTWh'] for date in bestGuessData]
+    bestGuessLine = pd.Series(data=bestguess_y, index=bestguess_x)
+
     #Digiconomist estimate
     digiconomist_x = pd.to_datetime(pd.DataFrame(DigiconomistData)['Date'])
     digiconomist_y = [float(date['EECI']) for date in DigiconomistData]
@@ -260,8 +265,9 @@ def compareOtherResults():
     fig, ax = plt.subplots()
 
     ax.plot(digiconomistLine, label='Digiconomist Estimate', color='red')
-    ax.plot(upperboundLine, label='Upper bound (This study)', color='green')
-    ax.plot(lowerboundLine, label='Lower bound (This study)', color='blue')
+    ax.plot(upperboundLine, label='Upper bound (this study)', color='green')
+    ax.plot(lowerboundLine, label='Lower bound (this study)', color='blue')
+    ax.plot(bestGuessLine, label='Best guess (this study)', color='magenta')
     ax.plot(zade2015Line, label = 'Zade (2018)',linestyle='-.', color='black')
     ax.plot(zade2016Line, linestyle='-.', color='black')
     ax.plot(zade2017Line, linestyle='-.', color='black')

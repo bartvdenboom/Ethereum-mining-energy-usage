@@ -227,13 +227,16 @@ def getBestGuessHardwareEfficiency(efficiency, datetuple):
         avg = avg/len(gpulist)+1
         if scores:
             scores = sorted(scores, key=lambda x:x[1], reverse = True) #Sort scores such that the closest match is the first element
-            # print("Min: %f" % float(gpulist[scores[0][0]]['Efficiency in J/Mh']))
-            # print("Max: %f" % float(gpulist[scores[len(scores)-1][0]]['Efficiency in J/Mh']))
-            # print("Avg: %f" % avg)
-            # print("Median: %f" % float(gpulist[scores[int(len(scores)/2)][0]]['Efficiency in J/Mh']))
-            # print('Median hardware: %s' % gpulist[scores[int(len(scores)/2)][0]]['Product'])
-            # print("==============================")
-            #return float(gpulist[scores[0][0]]['Efficiency in J/Mh'])
+            print("Hardware")
+            for i in range(len(gpulist)):
+                print("%s @ %s" % (gpulist[scores[i][0]]['Product'],gpulist[scores[i][0]]['Efficiency in J/Mh']) )
+            print("Min: %f" % float(gpulist[scores[0][0]]['Efficiency in J/Mh']))
+            print("Max: %f" % float(gpulist[scores[len(scores)-1][0]]['Efficiency in J/Mh']))
+            print("Avg: %f" % avg)
+            print("Median: %f" % float(gpulist[scores[int(len(scores)/2)][0]]['Efficiency in J/Mh']))
+            print('Median hardware: %s' % gpulist[scores[int(len(scores)/2)][0]]['Product'])
+            print("==============================")
+            return float(gpulist[scores[0][0]]['Efficiency in J/Mh'])
             return float(gpulist[scores[int(len(scores)/2)][0]]['Efficiency in J/Mh'])
         else:
             return -1
@@ -488,10 +491,10 @@ def main():
     endDate = "12/31/2017"
     PriceperKWh = 0.05
     phases = generatePhases(blockdata,interval,endOfData)
-    #efficiencyData = calcTotalEnergyUsage(PriceperKWh, phases, upperBound)
+    # efficiencyData = calcTotalEnergyUsage(PriceperKWh, phases, upperBound)
 
 
-    #efficiencyData = newBestGuessEstimate(PriceperKWh, phases)
+    efficiencyData = newBestGuessEstimate(PriceperKWh, phases)
 
 
     # plot.plotBreakEvenEffAgainstSelectedEfficiency(efficiencyData, blockdata)

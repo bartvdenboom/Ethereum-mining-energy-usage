@@ -324,6 +324,20 @@ def plotHardwareDistribution(minerdata):
     plt.xscale('log')
     plt.show()
 
+def ASICshare(match_data):
+    totalhashrate = 0
+    totalASIChashrate = 0
+    for miner in match_data:
+        for worker in miner['Workers']:
+            if worker['Matches']:
+                for match in worker['Matches']:
+                    if match in asicHardwareNames:
+                        totalASIChashrate+=float(worker['hashrate'])
+                    else:
+                        totalhashrate+=float(worker['hashrate'])
+
+    return (totalASIChashrate/totalhashrate*100)
+
 
 def main():
     # Nanopool
@@ -363,18 +377,14 @@ def main():
 
     # Plot pie chart of mining hardware distribution according to reported hashrate
     # plotHardwareCount(groupResults(matches_ethermine, True))
-    out = groupResults(matches_ethermine, True)
-    threshold = 4.714682
-    totalhashrate = 0
-    underprofit = 0
-    for i in out:
-        totalhashrate+=i['hashrate']
-        if i['id'] in combinedEfficienciesByID:
-            if (combinedEfficienciesByID[i['id']] > threshold):
-                underprofit+=i['hashrate']
-    print(underprofit)
-    print(totalhashrate)
-    print(underprofit/totalhashrate*100)
+    # print((ASICshare(matches_nanopool)+ASICshare(matches_ethermine))/2)
+    hashrate = 100
+    eff = 5
+    share = 1
+    asiceff = 1.5
+    W = (hashrate-share)*eff+share*asiceff
+
+    print(W)
 
 if __name__ == "__main__":
     main()
