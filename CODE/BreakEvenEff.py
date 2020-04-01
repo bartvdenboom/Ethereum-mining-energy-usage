@@ -232,14 +232,15 @@ def calcTotalEnergyUsage(PriceperKWh, phases, upperBound):
         EnergyUsageTWh = energyUsageJoule/3.6e15
         yearlyTWh = ((totalWattage*8765.81277)/1e12)
 
-        for k in range(len(breakEvenSlice)):
-            phaseData = {}
-            phaseData['Period'] = datetime.strftime(datePhases[i][0], "%m/%d/%Y") + "  -  " + datetime.strftime(datePhases[i][1], "%m/%d/%Y")
-            phaseData['Date'] = breakEvenSlice[k]['date']
-            phaseData['BreakEvenEfficiency'] = breakEvenSlice[k]['BreakEvenEfficiency']
-            phaseData['HardwareEfficiency'] = float(getHardwareMixEfficiency())
-            phaseData['yearlyTWh'] = float(yearlyTWh)
-            efficiencyData.append(phaseData)
+        # for k in range(len(breakEvenSlice)):
+        k=0
+        phaseData = {}
+        phaseData['Period'] = datetime.strftime(datePhases[i][0], "%m/%d/%Y") + "  -  " + datetime.strftime(datePhases[i][1], "%m/%d/%Y")
+        phaseData['Date'] = breakEvenSlice[k]['date']
+        phaseData['BreakEvenEfficiency'] = breakEvenSlice[k]['BreakEvenEfficiency']
+        phaseData['HardwareEfficiency'] = float(getHardwareMixEfficiency())
+        phaseData['yearlyTWh'] = float(yearlyTWh)
+        efficiencyData.append(phaseData)
     if upperBound:
         with open('../JSONDATA/UpperBoundEstimate.json', 'w') as w:
             json.dump(efficiencyData, w, indent=4)
@@ -332,14 +333,15 @@ def bestGuessEstimate(PriceperKWh, phases):
         energyUsageJoule += totalWattage * phaseTimespan
         EnergyUsageTWh = energyUsageJoule/3.6e15
         yearlyTWh = ((totalWattage*8765.81277)/1e12)
-        for k in range(len(breakEvenSlice)):
-            phaseData = {}
-            phaseData['Period'] = datetime.strftime(datePhases[i][0], "%m/%d/%Y") + "  -  " + datetime.strftime(datePhases[i][1], "%m/%d/%Y")
-            phaseData['Date'] = breakEvenSlice[k]['date']
-            phaseData['BreakEvenEfficiency'] = breakEvenSlice[k]['BreakEvenEfficiency']
-            phaseData['HardwareEfficiency'] = float(getHardwareMixEfficiency())
-            phaseData['yearlyTWh'] = float(yearlyTWh)
-            efficiencyData.append(phaseData)
+        # for k in range(len(breakEvenSlice)):
+        k=0
+        phaseData = {}
+        phaseData['Period'] = datetime.strftime(datePhases[i][0], "%m/%d/%Y") + "  -  " + datetime.strftime(datePhases[i][1], "%m/%d/%Y")
+        phaseData['Date'] = breakEvenSlice[k]['date']
+        phaseData['BreakEvenEfficiency'] = breakEvenSlice[k]['BreakEvenEfficiency']
+        phaseData['HardwareEfficiency'] = float(getHardwareMixEfficiency())
+        phaseData['yearlyTWh'] = float(yearlyTWh)
+        efficiencyData.append(phaseData)
 
     with open('../JSONDATA/BestGuessEstimate.json', 'w') as w:
         json.dump(efficiencyData, w, indent=4)
@@ -359,17 +361,17 @@ def run(mode, showplot, interval, priceperKWh, endDate):
         efficiencyData = bestGuessEstimate(priceperKWh, phases)
     else:
         print("Error: Wrong mode.")
-    if plot:
+    if showplot:
         plot.plotResults(efficiencyData)
 
 def main():
     interval = 14
-    mode = "B"
+    mode = "L"
     endOfData = "3/3/2020"
     endDate = "12/31/2017"
     priceperKWh = 0.05
     showplot = False
-    # run(mode,plot,interval,priceperKWh, endOfData)
+    # run(mode,showplot,interval,priceperKWh, endOfData)
     plot.compareOtherResults()
     # plot.scatterPlotGpuEfficiencies()
     # plot.scatterPlotGpuEfficiencies()
