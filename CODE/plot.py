@@ -170,6 +170,34 @@ def plotBreakEvenEff(BreakEvenEfficiencySet):
     plt.xticks(rotation=45)
     plt.show()
 
+def plotResults(efficiencyData):
+    BreakEvenEfficiencySetDataFrame = pd.DataFrame(efficiencyData)
+    fig, ax1 = plt.subplots()
+
+    color = 'tab:red'
+    ax1.set_xlabel('Date')
+    ax1.set_ylabel('BreakEvenEfficiency (J/MH)', color=color)
+    ax1.tick_params(axis='y', labelcolor=color)
+
+    line1 = ax1.plot(BreakEvenEfficiencySetDataFrame['Date'], BreakEvenEfficiencySetDataFrame['BreakEvenEfficiency'], color=color, label='Break even Efficciency (J/Mh)')
+    color = 'tab:green'
+    line2 = ax1.plot(BreakEvenEfficiencySetDataFrame['Date'], BreakEvenEfficiencySetDataFrame['HardwareEfficiency'], color=color, label='Used hardware Efficciency (J/Mh)')
+    ax1.legend()
+    plt.xticks(rotation=90)
+
+    ax1.xaxis.set_major_locator(plt.MaxNLocator(20))
+
+    fig.tight_layout()  # otherwise the right y-label is slightly clipped
+    #
+    # data.plot(kind='line', x='date', y='averagehashrate', figsize = (16,9), ax=ax)
+    # BreakEvenEfficiencySetDataFrame.plot(kind='line', x='date', y='BreakEvenEfficiency', figsize = (16,9), ax=ax)
+    # BreakEvenEfficiencySetDataFrame.plot(x='date', y='BreakEvenEfficiency', figsize=(16,9))
+    # #plt.figure(BreakEvenEfficiencySetDataFrame, (200,100))
+    #ax2.legend(handles = [line3,line4])
+    # first_legend = ax1.legend(handles = [line1[0],line2[0]] , loc = 'upper left')
+    # ax1.add_artist(first_legend)
+    plt.show()
+
 def plotBreakEvenEffAgainstSelectedEfficiency(efficiencyData, DailyData ):
     BreakEvenEfficiencySetDataFrame = pd.DataFrame(efficiencyData)
     data = pd.DataFrame(DailyData)
@@ -182,7 +210,7 @@ def plotBreakEvenEffAgainstSelectedEfficiency(efficiencyData, DailyData ):
 
     line1 = ax1.plot(BreakEvenEfficiencySetDataFrame['Date'], BreakEvenEfficiencySetDataFrame['BreakEvenEfficiency'], color=color, label='Break even Efficciency (J/Mh)')
     color = 'tab:green'
-    line2 = ax1.plot(BreakEvenEfficiencySetDataFrame['Date'], BreakEvenEfficiencySetDataFrame['cumulativeHardwareEfficiency'], color=color, label='Used hardware Efficciency (J/Mh)')
+    line2 = ax1.plot(BreakEvenEfficiencySetDataFrame['Date'], BreakEvenEfficiencySetDataFrame['HardwareEfficiency'], color=color, label='Used hardware Efficciency (J/Mh)')
     #ax1.legend(handles = [line1, line2])
     plt.xticks(rotation=90)
 

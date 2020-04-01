@@ -237,8 +237,7 @@ def calcTotalEnergyUsage(PriceperKWh, phases, upperBound):
             phaseData['Period'] = datetime.strftime(datePhases[i][0], "%m/%d/%Y") + "  -  " + datetime.strftime(datePhases[i][1], "%m/%d/%Y")
             phaseData['Date'] = breakEvenSlice[k]['date']
             phaseData['BreakEvenEfficiency'] = breakEvenSlice[k]['BreakEvenEfficiency']
-            phaseData['phaseHashRateMhsIncrease'] = float(phaseHashRateMhsIncrease)
-            phaseData['cumulativeHardwareEfficiency'] = float(getHardwareMixEfficiency())
+            phaseData['HardwareEfficiency'] = float(getHardwareMixEfficiency())
             phaseData['yearlyTWh'] = float(yearlyTWh)
             efficiencyData.append(phaseData)
     if upperBound:
@@ -338,8 +337,7 @@ def bestGuessEstimate(PriceperKWh, phases):
             phaseData['Period'] = datetime.strftime(datePhases[i][0], "%m/%d/%Y") + "  -  " + datetime.strftime(datePhases[i][1], "%m/%d/%Y")
             phaseData['Date'] = breakEvenSlice[k]['date']
             phaseData['BreakEvenEfficiency'] = breakEvenSlice[k]['BreakEvenEfficiency']
-            phaseData['phaseHashRateMhsIncrease'] = float(phaseHashRateMhsIncrease)
-            phaseData['cumulativeHardwareEfficiency'] = float(getHardwareMixEfficiency())
+            phaseData['HardwareEfficiency'] = float(getHardwareMixEfficiency())
             phaseData['yearlyTWh'] = float(yearlyTWh)
             efficiencyData.append(phaseData)
 
@@ -351,7 +349,7 @@ def bestGuessEstimate(PriceperKWh, phases):
     print("This equals %f TWh per year." % yearlyTWh)
     return efficiencyData
 
-def run(mode, plot, interval, priceperKWh, endDate):
+def run(mode, showplot, interval, priceperKWh, endDate):
     phases = generatePhases(blockdata,interval,endDate)
     if mode == "U":
         efficiencyData = calcTotalEnergyUsage(priceperKWh, phases, True)
@@ -362,19 +360,18 @@ def run(mode, plot, interval, priceperKWh, endDate):
     else:
         print("Error: Wrong mode.")
     if plot:
-        plot.plotBreakEvenEffAgainstSelectedEfficiency(efficiencyData, blockdata)
+        plot.plotResults(efficiencyData)
 
 def main():
     interval = 14
-    mode = "U"
+    mode = "B"
     endOfData = "3/3/2020"
     endDate = "12/31/2017"
     priceperKWh = 0.05
-    plot = False
-    run(mode,plot,interval,priceperKWh, endOfData)
-    print(getHashrate())
+    showplot = False
+    # run(mode,plot,interval,priceperKWh, endOfData)
+    plot.compareOtherResults()
     # plot.scatterPlotGpuEfficiencies()
-    # plot.compareOtherResults()
     # plot.scatterPlotGpuEfficiencies()
     # plot.plothashrates()
 
