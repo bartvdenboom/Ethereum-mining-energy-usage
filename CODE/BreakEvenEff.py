@@ -90,15 +90,17 @@ def calcBreakEvenEffSet(PriceperKWh, blockdata):
 def addToHardwareMix(phaseHardwareEfficiency, hashrateIncrease, releaseDate):
     hashratedata.append((phaseHardwareEfficiency, hashrateIncrease, releaseDate))
 
-def getHardwareMixEfficiency():
+def getHardwareMixEfficiency(upperBound):
     if not hashratedata:
         return -1
-    hardwaremix = np.array(hashratedata)[:,:2].astype(float)
-    cumulativeHardwareEfficiency = np.sum(np.prod(hardwaremix, axis=1),axis=0)
-    cumulativeWeight = np.sum(hardwaremix,axis=0)[1]
-    return float(cumulativeHardwareEfficiency/cumulativeWeight)
-
-
+    if upperBound:
+        hardwaremix = np.array(hashratedata)[:,:2].astype(float)
+        cumulativeHardwareEfficiency = np.sum(np.prod(hardwaremix, axis=1),axis=0)
+        cumulativeWeight = np.sum(hardwaremix,axis=0)[1]
+        return float(cumulativeHardwareEfficiency/cumulativeWeight)
+    else:
+        hardwaremix = np.array(hashratedata)[:,:1].astype(float)
+        return np.min(hardwaremix)
 
 def getMatchingHardwareEfficiency(efficiency, datetuple, upperbound):
     gpulist = getDateSet(datetuple) # Get a list of all hardware realeased before the the phase 'datetuple'
@@ -160,9 +162,9 @@ def getBestGuessHardwareEfficiency(meanBreakEvenEff, datetuple, asicshare=0.05):
 
 # Replaces most inefficient hardware in the hardware-mix with hardware with hardware with efficiency 'hardwareEfficiency'
 # untill the hardware-mix is within EFFICIENCYMARGIN of the target efficiency 'meanBreakEvenEff'
-def replaceHardware(hardwareEfficiency, meanBreakEvenEff, releaseDate):
+def replaceHardware(hardwareEfficiency, meanBreakEvenEff, releaseDate, upperBound):
     if hashratedata:
-        while(getHardwareMixEfficiency() - meanBreakEvenEff > EFFICIENCYMARGIN):
+        while(getHardwareMixEfficiency(upperBound) - meanBreakEvenEff > EFFICIENCYMARGIN):
             hardwaremix = np.array(hashratedata)[:,:2].astype(float)
             cumulativeHardwareEfficiency = np.sum(np.prod(hardwaremix, axis=1),axis=0)
             cumulativeWeight = np.sum(hardwaremix,axis=0)[1]
@@ -218,16 +220,12 @@ def calcTotalEnergyUsage(PriceperKWh, phases, upperBound):
                 selectedHardwareEfficiency,releaseDate = getMatchingHardwareEfficiency(meanBreakEvenEff,datePhases[i], upperBound)#minHardwareEfficiency
                 addToHardwareMix(selectedHardwareEfficiency, phaseHashRateMhsIncrease,releaseDate)
             else:
-                phaseHardwareEfficiencyJMh,releaseDate = getMatchingHardwareEfficiency(meanBreakEvenEff,datePhases[i],upperBound)
-                if upperBound:
-                    releaseDate=datetime.today() #Hack to ensure that hashrate declines never get removed
-                    addToHardwareMix(getHardwareMixEfficiency(), phaseHashRateMhsIncrease,releaseDate) # first remove the hashrate equivalent amount of wattage of the average hardware mix
-                else:
-                    removeMostInefficientHardware(phaseHashRateMhsIncrease)
-                replaceHardware(phaseHardwareEfficiencyJMh,meanBreakEvenEff,releaseDate)
-                selectedHardwareEfficiency = getHardwareMixEfficiency()
+                selectedHardwareEfficiency,releaseDate = getMatchingHardwareEfficiency(meanBreakEvenEff,datePhases[i],upperBound)
+                releaseDate=datetime.today() #Hack to ensure that hashrate declines never get removed from the hardwaremix set
+                addToHardwareMix(getHardwareMixEfficiency(upperBound), phaseHashRateMhsIncrease,releaseDate) # first remove the hashrate equivalent amount of wattage of the average hardware mix
+                replaceHardware(selectedHardwareEfficiency,meanBreakEvenEff,releaseDate, upperBound)
         totalHashRate = phaseEndHashRateMhs
-        totalWattage = totalHashRate * getHardwareMixEfficiency()
+        totalWattage = totalHashRate * getHardwareMixEfficiency(upperBound)
         energyUsageJoule += totalWattage * phaseTimespan
         EnergyUsageTWh = energyUsageJoule/3.6e15
         yearlyTWh = ((totalWattage*8765.81277)/1e12)
@@ -238,7 +236,7 @@ def calcTotalEnergyUsage(PriceperKWh, phases, upperBound):
         phaseData['Period'] = datetime.strftime(datePhases[i][0], "%m/%d/%Y") + "  -  " + datetime.strftime(datePhases[i][1], "%m/%d/%Y")
         phaseData['Date'] = breakEvenSlice[k]['date']
         phaseData['BreakEvenEfficiency'] = breakEvenSlice[k]['BreakEvenEfficiency']
-        phaseData['HardwareEfficiency'] = float(getHardwareMixEfficiency())
+        phaseData['HardwareEfficiency'] = getHardwareMixEfficiency(upperBound)
         phaseData['yearlyTWh'] = float(yearlyTWh)
         efficiencyData.append(phaseData)
     if upperBound:
@@ -326,10 +324,9 @@ def bestGuessEstimate(PriceperKWh, phases):
                 phaseHardwareEfficiencyJMh,releaseDate = getBestGuessHardwareEfficiency(meanBreakEvenEff,datePhases[i])
                 removeMostInefficientHardware(phaseHashRateMhsIncrease)
                 removeOldHardware(meanBreakEvenEff,datePhases[i])
-                replaceHardware(phaseHardwareEfficiencyJMh,meanBreakEvenEff,releaseDate)
-                selectedHardwareEfficiency = getHardwareMixEfficiency()
+                replaceHardware(phaseHardwareEfficiencyJMh,meanBreakEvenEff,releaseDate, False)
         totalHashRate = phaseEndHashRateMhs
-        totalWattage = totalHashRate * getHardwareMixEfficiency()
+        totalWattage = totalHashRate * getHardwareMixEfficiency(True)
         energyUsageJoule += totalWattage * phaseTimespan
         EnergyUsageTWh = energyUsageJoule/3.6e15
         yearlyTWh = ((totalWattage*8765.81277)/1e12)
@@ -339,7 +336,7 @@ def bestGuessEstimate(PriceperKWh, phases):
         phaseData['Period'] = datetime.strftime(datePhases[i][0], "%m/%d/%Y") + "  -  " + datetime.strftime(datePhases[i][1], "%m/%d/%Y")
         phaseData['Date'] = breakEvenSlice[k]['date']
         phaseData['BreakEvenEfficiency'] = breakEvenSlice[k]['BreakEvenEfficiency']
-        phaseData['HardwareEfficiency'] = float(getHardwareMixEfficiency())
+        phaseData['HardwareEfficiency'] = getHardwareMixEfficiency(True)
         phaseData['yearlyTWh'] = float(yearlyTWh)
         efficiencyData.append(phaseData)
 
@@ -362,7 +359,9 @@ def run(mode, showplot, interval, priceperKWh, endDate):
     else:
         print("Error: Wrong mode.")
     if showplot:
-        plot.plotResults(efficiencyData)
+        # plot.plotResults(efficiencyData)
+        # plot.plotBreakEvenEffAndHashrate(efficiencyData, blockdata)
+        print("")
 
 def main():
     interval = 14
@@ -371,8 +370,8 @@ def main():
     endDate = "12/31/2017"
     priceperKWh = 0.05
     showplot = False
-    # run(mode,showplot,interval,priceperKWh, endOfData)
-    plot.compareOtherResults()
+    run(mode,showplot,interval,priceperKWh, endOfData)
+    #plot.compareOtherResults()
     # plot.scatterPlotGpuEfficiencies()
     # plot.scatterPlotGpuEfficiencies()
     # plot.plothashrates()

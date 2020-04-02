@@ -41,6 +41,7 @@ def csvtojson(input, output):
     jsonfile.write(out)
 
 csvtojson('../JSONDATA/Digiconomist/data.csv','../JSONDATA/Digiconomist/data.json' )
+
 def plottwoaxis():
     BreakEvenEfficiencySetDataFrame = pd.DataFrame(BreakEvenEfficiencySet)
     data = pd.DataFrame(reversed(blockdata))
@@ -89,8 +90,7 @@ def scatterPlotGpuEfficiencies():
                         # plt.scatter(data_x[69], data_y[69], label = 'Mining Rigs', c=colors[types[69]]),
                         plt.scatter(data_x[62], data_y[62], label = 'Ethereum specific ASIC', c=colors[types[62]])]
 
-    # Create the figure
-    #plt.xticks(rotation=45)
+
     plt.legend(handles=legend_elements)
     ax.set_xlabel('Date')
     # ax.set_ylabel('Efficiency in J/Mh')
@@ -106,67 +106,26 @@ def Gigahashformatter(x, pos):
 
 def plothashrates():
     formatter = FuncFormatter(Gigahashformatter)
-    #crawlerdataframe = pd.DataFrame(crawlerdata,columns=['date', 'averagehashrate', 'correctedhashrate'])
-
-    #etherscandataframe = pd.DataFrame(blockdata,columns=['date', 'averagehashrate', 'computedhashrate', 'reportedhashrate'])
-    #ax1 = crawlerdataframe.plot(kind='line', x='date', y=['averagehashrate', 'correctedhashrate'])
     fig, ax = plt.subplots()
 
     data_x = pd.to_datetime(pd.DataFrame(blockdata)['date'])
     etherscan_y = [date['reportedhashrate'] for date in blockdata]
     etherscanReportedHashrate = pd.Series(data=etherscan_y, index=data_x)
 
-    #This study
+
+
     data_y = [date['computedhashrate'] for date in blockdata]
     computedHashrate = pd.Series(data=data_y, index=data_x)
     ax.plot(etherscanReportedHashrate, linestyle = '-.', label = 'Etherscan.io hashrate', color='red')
     ax.plot(computedHashrate, label = 'This study', color='blue')
 
+    ax.axvline(x=pd.to_datetime("7/1/2018"),color='red')
+    ax.axvline(x=pd.to_datetime("9/1/2018"),color='red')
     ax.yaxis.set_major_formatter(formatter)
     ax.set_xlabel('Date')
     ax.set_ylabel('Hashrate in GH/s')
     plt.title('Ethereum hashrate Etherscan.io vs this study.')
     plt.legend()
-
-    # upperbound_x = pd.to_datetime(pd.DataFrame(upperBoundData)['Date'])
-    # upperbound_y = [date['yearlyTWh'] for date in upperBoundData]
-    # upperboundLine = pd.Series(data=upperbound_y, index=upperbound_x)
-    # ax2 = etherscandataframe.plot(kind='line', x='date', y=['computedhashrate'])
-    # ax1 = etherscandataframe.plot(kind='line', x='date', y=['reportedhashrate'])
-
-
-
-
-    # ax1.set_xlabel("Date")
-    # ax1.set_ylabel("Hashrate GH/s")
-    # ax1.yaxis.set_major_formatter(formatter)
-    # ax2.set_xlabel("Date")
-    # ax2.set_ylabel("Hashrate GH/s")
-    # ax2.yaxis.set_major_formatter(formatter)
-    # ax2.axvline(x=200,color='red')
-    # ax2.axvline(x=454,color='red')
-    # ax2.axvline(x=598,color='red')
-    # ax2.axvline(x=778,color='red')
-    # ax2.axvline(x=970,color='red')
-    # ax2.axvline(x=1106,color='red')
-    # ax2.axvline(x=1141, color='red')
-    # ax2.axvline(x=1237,color='red')
-    # ax2.axvline(x=1275,color='red')
-    # ax2.axvline(x=1479,color='red')
-    # ax2.axvline(x=1538,color='red')
-    plt.xticks(rotation=45)
-    plt.show()
-
-def plotHashRategradient():
-    etherscandataframe = pd.DataFrame(blockdata,columns=['date', 'correctedhashrate'])
-    etherscanhashrate = pd.DataFrame(etherscandataframe, columns=['correctedhashrate']).to_numpy().flatten()
-    gradient = np.gradient(etherscanhashrate)
-    plt.plot(gradient, label="Gradient of hashrate")
-    plt.show()
-
-def plotBreakEvenEff(BreakEvenEfficiencySet):
-    df = pd.DataFrame(BreakEvenEfficiencySet)
-    df.plot(kind='line', x='Period', y=['BreakEvenEfficiency','selectedHardwareEfficiencyJMh'])
     plt.xticks(rotation=45)
     plt.show()
 
@@ -198,35 +157,37 @@ def plotResults(efficiencyData):
     # ax1.add_artist(first_legend)
     plt.show()
 
-def plotBreakEvenEffAgainstSelectedEfficiency(efficiencyData, DailyData ):
-    BreakEvenEfficiencySetDataFrame = pd.DataFrame(efficiencyData)
-    data = pd.DataFrame(DailyData)
+def plotBreakEvenEffAndHashrate(efficiencyData, DailyData ):
     fig, ax1 = plt.subplots()
 
-    color = 'tab:red'
     ax1.set_xlabel('Date')
-    ax1.set_ylabel('BreakEvenEfficiency (J/MH)', color=color)
-    ax1.tick_params(axis='y', labelcolor=color)
+    ax1.set_ylabel('BreakEvenEfficiency (J/MH)')
 
-    line1 = ax1.plot(BreakEvenEfficiencySetDataFrame['Date'], BreakEvenEfficiencySetDataFrame['BreakEvenEfficiency'], color=color, label='Break even Efficciency (J/Mh)')
-    color = 'tab:green'
-    line2 = ax1.plot(BreakEvenEfficiencySetDataFrame['Date'], BreakEvenEfficiencySetDataFrame['HardwareEfficiency'], color=color, label='Used hardware Efficciency (J/Mh)')
-    #ax1.legend(handles = [line1, line2])
+    breakeven_x = pd.to_datetime(pd.DataFrame(efficiencyData)['Date'])
+    breakeven_y = [date['BreakEvenEfficiency'] for date in efficiencyData]
+    breakevenLine = pd.Series(data=breakeven_y, index=breakeven_x)
+
+    hardware_x = breakeven_x
+    hardware_y = [date['HardwareEfficiency'] for date in efficiencyData]
+    hardwareLine = pd.Series(data=hardware_y, index=hardware_x)
+
+    line1 = ax1.plot(breakevenLine, color='red', label='Break even Efficciency (J/MH)')
+    line2 = ax1.plot(hardwareLine, color='green', label='Used hardware Efficciency (J/MhH)')
+    ax1.axvline(x=pd.to_datetime("7/1/2018"),color='red')
+    ax1.axvline(x=pd.to_datetime("9/1/2018"),color='red')
     plt.xticks(rotation=90)
 
-    ax2 = ax1.twinx()  # instantiate a second axes that shares the same x-axis
+    ax2 = ax1.twinx()
+    ax2.set_ylabel('Hashrate in GH/s')
+    formatter = FuncFormatter(Gigahashformatter)
+    ax2.yaxis.set_major_formatter(formatter)
 
-    color = 'tab:blue'
-    ax2.set_ylabel('', color=color)  # we already handled the x-label with ax1
-    #ax2.plot(data['date'], (data['correctedhashrate']/1e9), color=color)
-    #line3 = ax2.plot(data['date'], (data['averagedifficulty']/1e6), color=color, label='Average Difficulty')
-    ax2.tick_params(axis='y', labelcolor=color)
-    color = 'tab:pink'
-    line4 = ax2.plot(data['date'], (data['computedhashrate']), color=color, label='Hashrate')
-
+    hashrate_x = pd.to_datetime(pd.DataFrame(DailyData)['date'])
+    hashrate_y = [date['computedhashrate'] for date in DailyData]
+    hashrateLine = pd.Series(data=hashrate_y,index=hashrate_x)
+    line3 = ax2.plot(hashrateLine, color='blue', label='Hashrate (GH/s)')
     ax1.xaxis.set_major_locator(plt.MaxNLocator(20))
-
-    fig.tight_layout()  # otherwise the right y-label is slightly clipped
+    fig.tight_layout()
     #
     # data.plot(kind='line', x='date', y='averagehashrate', figsize = (16,9), ax=ax)
     # BreakEvenEfficiencySetDataFrame.plot(kind='line', x='date', y='BreakEvenEfficiency', figsize = (16,9), ax=ax)
@@ -234,7 +195,7 @@ def plotBreakEvenEffAgainstSelectedEfficiency(efficiencyData, DailyData ):
     # #plt.figure(BreakEvenEfficiencySetDataFrame, (200,100))
     #ax2.legend(handles = [line3,line4])
     first_legend = ax1.legend(handles = [line1[0],line2[0]] , loc = 'upper left')
-    second_legend = ax2.legend(handles = line4, loc = 'upper right')
+    second_legend = ax2.legend(handles = line3, loc = 'upper right')
     ax1.add_artist(first_legend)
     ax2.add_artist(second_legend)
     plt.show()
@@ -292,17 +253,17 @@ def compareOtherResults():
 
     fig, ax = plt.subplots()
 
-    ax.plot(digiconomistLine, label='Digiconomist Estimate', color='red')
-    ax.plot(upperboundLine, label='Upper bound (this study)', color='green')
-    ax.plot(lowerboundLine, label='Lower bound (this study)', color='blue')
-    ax.plot(bestGuessLine, label='Best guess (this study)', color='magenta')
-    ax.plot(zade2015Line, label = 'Zade (2018)',linestyle='-.', color='black')
-    ax.plot(zade2016Line, linestyle='-.', color='black')
-    ax.plot(zade2017Line, linestyle='-.', color='black')
-    ax.plot(zade2018Line, linestyle='-.', color='black')
-    ax.plot(krause2016Line, label = 'Krause & Tolalymat (2018)', linestyle=':', color='red')
-    ax.plot(krause2017Line, linestyle=':', color='red')
-    ax.plot(krause2018Line, linestyle=':', color='red')
+    ax.plot(digiconomistLine,   label='Digiconomist Estimate', color='red')
+    ax.plot(upperboundLine,     label='Upper bound (this study)', color='green')
+    ax.plot(lowerboundLine,     label='Lower bound (this study)', color='blue')
+    ax.plot(bestGuessLine,      label='Best guess (this study)', color='magenta')
+    ax.plot(zade2015Line,       label = 'Zade (2018)',linestyle='-.', color='black')
+    ax.plot(zade2016Line,       linestyle='-.', color='black')
+    ax.plot(zade2017Line,       linestyle='-.', color='black')
+    ax.plot(zade2018Line,       linestyle='-.', color='black')
+    ax.plot(krause2016Line,     label = 'Krause & Tolalymat (2018)', linestyle=':', color='red')
+    ax.plot(krause2017Line,     linestyle=':', color='red')
+    ax.plot(krause2018Line,     linestyle=':', color='red')
     ax.scatter(cleancoins_x,cleancoins_y, c='black', label='Cleancoin', marker="s")
 
 

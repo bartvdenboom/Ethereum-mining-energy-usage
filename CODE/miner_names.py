@@ -16,8 +16,6 @@ with open("../JSONDATA/Ethermine/miner_workers_matches_final.json") as r:
 with open('../JSONDATA/GPUdata/GPUDATA.json') as r:
     gpudata = json.load(r)
 
-
-
 asicHardwareNames = ["E3", "ANTMINER", "ETHMASTER", "A10", "BITMAIN", "INNOSILICON"]
 specificHardwareNames  = ["7870", "7990", "770", "R9", "750", "TITAN", "295X2", "970", "960", "390", "370", "380", "FURY",
                            "480", "460", "470", "570", "580", "550", "VEGA", "VII", "V100", "590",  "P100", "560",  "P104",
@@ -318,10 +316,9 @@ def plotHardwareDistribution(minerdata):
     for i in range(len(workersPerMiners)):
         hashratePerMiner.append(sum([float(worker['hashrate']) for worker in workersPerMiners[i]]))
     hashratePerMiner = np.array(hashratePerMiner)
-    data=hashratePerMiner
     bins=[0,5,10,20,30,50,100,200,500,1000,5000,10000,20000,100000]
-    plt.hist(data,range(int(data.min()), int(data.max()), 10), density=False)
-    plt.xscale('log')
+    plt.hist(hashratePerMiner,range(int(hashratePerMiner.min()), int(hashratePerMiner.max()), 100), density=False)
+    plt.xscale('linear')
     plt.show()
 
 def ASICshare(match_data):
@@ -373,18 +370,18 @@ def main():
     # Evaluates to 5.851414739775516
 
     # Plot histogram of distribution of hashrate per miner
-    # plotHardwareDistribution(matches_ethermine)
+    plotHardwareDistribution(matches_ethermine)
 
     # Plot pie chart of mining hardware distribution according to reported hashrate
     # plotHardwareCount(groupResults(matches_ethermine, True))
     # print((ASICshare(matches_nanopool)+ASICshare(matches_ethermine))/2)
-    hashrate = 100
-    eff = 5
-    share = 1
-    asiceff = 1.5
-    W = (hashrate-share)*eff+share*asiceff
-
-    print(W)
+    # hashrate = 100
+    # eff = 5
+    # share = 1
+    # asiceff = 1.5
+    # W = (hashrate-share)*eff+share*asiceff
+    #
+    # print(W)
 
 if __name__ == "__main__":
     main()
