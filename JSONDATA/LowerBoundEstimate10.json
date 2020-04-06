@@ -2,7 +2,7 @@
     {
         "Period": "08/07/2015  -  08/20/2015",
         "Date": "8/7/2015",
-        "BreakEvenEfficiency": 664.5286498237085,
+        "BreakEvenEfficiency": 332.26432491185426,
         "HardwareEfficiency": 6.25,
         "yearlyTWh": 0.01213215006719302,
         "MegaWatts": 1.3840302531573485
@@ -10,7 +10,7 @@
     {
         "Period": "08/21/2015  -  09/03/2015",
         "Date": "8/21/2015",
-        "BreakEvenEfficiency": 115.51764312510669,
+        "BreakEvenEfficiency": 57.758821562553344,
         "HardwareEfficiency": 6.25,
         "yearlyTWh": 0.018597270905717292,
         "MegaWatts": 2.1215683466756605
@@ -18,7 +18,7 @@
     {
         "Period": "09/04/2015  -  09/17/2015",
         "Date": "9/4/2015",
-        "BreakEvenEfficiency": 69.77846415789864,
+        "BreakEvenEfficiency": 34.88923207894932,
         "HardwareEfficiency": 6.25,
         "yearlyTWh": 0.019905764472548194,
         "MegaWatts": 2.2708407075124186
@@ -26,7 +26,7 @@
     {
         "Period": "09/18/2015  -  10/01/2015",
         "Date": "9/18/2015",
-        "BreakEvenEfficiency": 52.9884461745073,
+        "BreakEvenEfficiency": 26.49422308725365,
         "HardwareEfficiency": 6.25,
         "yearlyTWh": 0.02017507674074336,
         "MegaWatts": 2.3015637306092445
@@ -34,7 +34,7 @@
     {
         "Period": "10/02/2015  -  10/15/2015",
         "Date": "10/2/2015",
-        "BreakEvenEfficiency": 40.29118634484027,
+        "BreakEvenEfficiency": 20.145593172420135,
         "HardwareEfficiency": 6.25,
         "yearlyTWh": 0.020605518567850315,
         "MegaWatts": 2.3506683417161685
@@ -42,7 +42,7 @@
     {
         "Period": "10/16/2015  -  10/29/2015",
         "Date": "10/16/2015",
-        "BreakEvenEfficiency": 32.38074608750409,
+        "BreakEvenEfficiency": 16.190373043752047,
         "HardwareEfficiency": 6.25,
         "yearlyTWh": 0.0252145066838467,
         "MegaWatts": 2.876459644465655
@@ -50,7 +50,7 @@
     {
         "Period": "10/30/2015  -  11/12/2015",
         "Date": "10/30/2015",
-        "BreakEvenEfficiency": 49.537467366123586,
+        "BreakEvenEfficiency": 24.768733683061793,
         "HardwareEfficiency": 6.25,
         "yearlyTWh": 0.02863885975365767,
         "MegaWatts": 3.2671083110137737
@@ -58,7 +58,7 @@
     {
         "Period": "11/13/2015  -  11/26/2015",
         "Date": "11/13/2015",
-        "BreakEvenEfficiency": 39.567646946063185,
+        "BreakEvenEfficiency": 19.783823473031592,
         "HardwareEfficiency": 6.25,
         "yearlyTWh": 0.025990866789358975,
         "MegaWatts": 2.9650264580495906
@@ -66,7 +66,7 @@
     {
         "Period": "11/27/2015  -  12/10/2015",
         "Date": "11/27/2015",
-        "BreakEvenEfficiency": 41.01132344178537,
+        "BreakEvenEfficiency": 20.505661720892686,
         "HardwareEfficiency": 6.25,
         "yearlyTWh": 0.027798651833773884,
         "MegaWatts": 3.1712577673243962
@@ -74,7 +74,7 @@
     {
         "Period": "12/11/2015  -  12/24/2015",
         "Date": "12/11/2015",
-        "BreakEvenEfficiency": 39.824023661372195,
+        "BreakEvenEfficiency": 19.912011830686097,
         "HardwareEfficiency": 6.25,
         "yearlyTWh": 0.029867646511156327,
         "MegaWatts": 3.4072877546934333
@@ -82,7 +82,7 @@
     {
         "Period": "12/25/2015  -  01/07/2016",
         "Date": "12/25/2015",
-        "BreakEvenEfficiency": 36.041736352242346,
+        "BreakEvenEfficiency": 18.020868176121173,
         "HardwareEfficiency": 6.25,
         "yearlyTWh": 0.029439932457004676,
         "MegaWatts": 3.3584943267051637
@@ -90,7 +90,7 @@
     {
         "Period": "01/08/2016  -  01/21/2016",
         "Date": "1/8/2016",
-        "BreakEvenEfficiency": 41.94321223616537,
+        "BreakEvenEfficiency": 20.971606118082686,
         "HardwareEfficiency": 6.25,
         "yearlyTWh": 0.032828226217976396,
         "MegaWatts": 3.745029363429627
@@ -98,7 +98,7 @@
     {
         "Period": "01/22/2016  -  02/04/2016",
         "Date": "1/22/2016",
-        "BreakEvenEfficiency": 54.45977644015859,
+        "BreakEvenEfficiency": 27.229888220079296,
         "HardwareEfficiency": 6.25,
         "yearlyTWh": 0.03864235585509288,
         "MegaWatts": 4.408302671868826
@@ -106,7 +106,7 @@
     {
         "Period": "02/05/2016  -  02/18/2016",
         "Date": "2/5/2016",
-        "BreakEvenEfficiency": 81.41606818715269,
+        "BreakEvenEfficiency": 40.708034093576345,
         "HardwareEfficiency": 6.25,
         "yearlyTWh": 0.04158270313274714,
         "MegaWatts": 4.743736174135412
@@ -114,7 +114,7 @@
     {
         "Period": "02/19/2016  -  03/03/2016",
         "Date": "2/19/2016",
-        "BreakEvenEfficiency": 124.36957118072634,
+        "BreakEvenEfficiency": 62.18478559036317,
         "HardwareEfficiency": 6.25,
         "yearlyTWh": 0.05408139800141871,
         "MegaWatts": 6.169581694296068
@@ -122,7 +122,7 @@
     {
         "Period": "03/04/2016  -  03/17/2016",
         "Date": "3/4/2016",
-        "BreakEvenEfficiency": 218.63972153194652,
+        "BreakEvenEfficiency": 109.31986076597326,
         "HardwareEfficiency": 6.25,
         "yearlyTWh": 0.07712014513986305,
         "MegaWatts": 8.797831663003114
@@ -130,7 +130,7 @@
     {
         "Period": "03/18/2016  -  03/31/2016",
         "Date": "3/18/2016",
-        "BreakEvenEfficiency": 206.89402123765876,
+        "BreakEvenEfficiency": 103.44701061882938,
         "HardwareEfficiency": 6.25,
         "yearlyTWh": 0.09969458709612436,
         "MegaWatts": 11.373113904202674
@@ -138,7 +138,7 @@
     {
         "Period": "04/01/2016  -  04/14/2016",
         "Date": "4/1/2016",
-        "BreakEvenEfficiency": 172.6638232571808,
+        "BreakEvenEfficiency": 86.3319116285904,
         "HardwareEfficiency": 6.25,
         "yearlyTWh": 0.11531855746662381,
         "MegaWatts": 13.155489455728338
@@ -146,7 +146,7 @@
     {
         "Period": "04/15/2016  -  04/28/2016",
         "Date": "4/15/2016",
-        "BreakEvenEfficiency": 102.43625469327708,
+        "BreakEvenEfficiency": 51.21812734663854,
         "HardwareEfficiency": 6.25,
         "yearlyTWh": 0.135626728815974,
         "MegaWatts": 15.472236559756455
@@ -154,7 +154,7 @@
     {
         "Period": "04/29/2016  -  05/12/2016",
         "Date": "4/29/2016",
-        "BreakEvenEfficiency": 81.19291697082478,
+        "BreakEvenEfficiency": 40.59645848541239,
         "HardwareEfficiency": 6.25,
         "yearlyTWh": 0.1496981301496517,
         "MegaWatts": 17.077495729999683
@@ -162,7 +162,7 @@
     {
         "Period": "05/13/2016  -  05/26/2016",
         "Date": "5/13/2016",
-        "BreakEvenEfficiency": 99.93998752187697,
+        "BreakEvenEfficiency": 49.969993760938486,
         "HardwareEfficiency": 6.25,
         "yearlyTWh": 0.1789885620602603,
         "MegaWatts": 20.41893510124108
@@ -170,7 +170,7 @@
     {
         "Period": "05/27/2016  -  06/09/2016",
         "Date": "5/27/2016",
-        "BreakEvenEfficiency": 94.24757699369862,
+        "BreakEvenEfficiency": 47.12378849684931,
         "HardwareEfficiency": 3.548387097,
         "yearlyTWh": 0.11677293942225829,
         "MegaWatts": 13.321404698706369
@@ -178,7 +178,7 @@
     {
         "Period": "06/10/2016  -  06/23/2016",
         "Date": "6/10/2016",
-        "BreakEvenEfficiency": 105.95672776874387,
+        "BreakEvenEfficiency": 52.97836388437194,
         "HardwareEfficiency": 3.548387097,
         "yearlyTWh": 0.12761964497877298,
         "MegaWatts": 14.558792017043388
@@ -186,7 +186,7 @@
     {
         "Period": "06/24/2016  -  07/07/2016",
         "Date": "6/24/2016",
-        "BreakEvenEfficiency": 95.80949445831675,
+        "BreakEvenEfficiency": 47.904747229158374,
         "HardwareEfficiency": 3.548387097,
         "yearlyTWh": 0.13810533466679226,
         "MegaWatts": 15.754994806578816
@@ -194,7 +194,7 @@
     {
         "Period": "07/08/2016  -  07/21/2016",
         "Date": "7/8/2016",
-        "BreakEvenEfficiency": 69.23037912283266,
+        "BreakEvenEfficiency": 34.61518956141633,
         "HardwareEfficiency": 3.548387097,
         "yearlyTWh": 0.1472476000481308,
         "MegaWatts": 16.797940352099353
@@ -202,7 +202,7 @@
     {
         "Period": "07/22/2016  -  08/04/2016",
         "Date": "7/22/2016",
-        "BreakEvenEfficiency": 88.25736706485046,
+        "BreakEvenEfficiency": 44.12868353242523,
         "HardwareEfficiency": 3.548387097,
         "yearlyTWh": 0.12248917790158383,
         "MegaWatts": 13.973510627649857
@@ -210,7 +210,7 @@
     {
         "Period": "08/05/2016  -  08/18/2016",
         "Date": "8/5/2016",
-        "BreakEvenEfficiency": 73.62670619438065,
+        "BreakEvenEfficiency": 36.81335309719032,
         "HardwareEfficiency": 3.548387097,
         "yearlyTWh": 0.146780448670975,
         "MegaWatts": 16.744647931942424
@@ -218,7 +218,7 @@
     {
         "Period": "08/19/2016  -  09/01/2016",
         "Date": "8/19/2016",
-        "BreakEvenEfficiency": 60.90079104285907,
+        "BreakEvenEfficiency": 30.450395521429535,
         "HardwareEfficiency": 3.548387097,
         "yearlyTWh": 0.16370832433415175,
         "MegaWatts": 18.67577241604166
@@ -226,7 +226,7 @@
     {
         "Period": "09/02/2016  -  09/15/2016",
         "Date": "9/2/2016",
-        "BreakEvenEfficiency": 61.05666117960057,
+        "BreakEvenEfficiency": 30.528330589800284,
         "HardwareEfficiency": 3.548387097,
         "yearlyTWh": 0.17235064388924992,
         "MegaWatts": 19.66168436532211
@@ -234,7 +234,7 @@
     {
         "Period": "09/16/2016  -  09/29/2016",
         "Date": "9/16/2016",
-        "BreakEvenEfficiency": 61.54346132529662,
+        "BreakEvenEfficiency": 30.77173066264831,
         "HardwareEfficiency": 3.548387097,
         "yearlyTWh": 0.1984519158250394,
         "MegaWatts": 22.639305793094117
@@ -242,7 +242,7 @@
     {
         "Period": "09/30/2016  -  10/13/2016",
         "Date": "9/30/2016",
-        "BreakEvenEfficiency": 56.17061965148048,
+        "BreakEvenEfficiency": 28.08530982574024,
         "HardwareEfficiency": 3.548387097,
         "yearlyTWh": 0.21964734023517732,
         "MegaWatts": 25.057270329443426
@@ -250,7 +250,7 @@
     {
         "Period": "10/14/2016  -  10/27/2016",
         "Date": "10/14/2016",
-        "BreakEvenEfficiency": 45.168288503223295,
+        "BreakEvenEfficiency": 22.584144251611647,
         "HardwareEfficiency": 3.548387097,
         "yearlyTWh": 0.24234330147491756,
         "MegaWatts": 27.646415436148718
@@ -258,7 +258,7 @@
     {
         "Period": "10/28/2016  -  11/10/2016",
         "Date": "10/28/2016",
-        "BreakEvenEfficiency": 38.53090834495805,
+        "BreakEvenEfficiency": 19.265454172479025,
         "HardwareEfficiency": 3.548387097,
         "yearlyTWh": 0.14378774488761104,
         "MegaWatts": 16.403241622922664
@@ -266,7 +266,7 @@
     {
         "Period": "11/11/2016  -  11/24/2016",
         "Date": "11/11/2016",
-        "BreakEvenEfficiency": 60.10993900259079,
+        "BreakEvenEfficiency": 30.054969501295396,
         "HardwareEfficiency": 3.548387097,
         "yearlyTWh": 0.16638732173381907,
         "MegaWatts": 18.98139124112493
@@ -274,7 +274,7 @@
     {
         "Period": "11/25/2016  -  12/08/2016",
         "Date": "11/25/2016",
-        "BreakEvenEfficiency": 49.346277089438516,
+        "BreakEvenEfficiency": 24.673138544719258,
         "HardwareEfficiency": 3.548387097,
         "yearlyTWh": 0.1808645456438274,
         "MegaWatts": 20.6329464693583
@@ -282,7 +282,7 @@
     {
         "Period": "12/09/2016  -  12/22/2016",
         "Date": "12/9/2016",
-        "BreakEvenEfficiency": 38.00472832908525,
+        "BreakEvenEfficiency": 19.002364164542627,
         "HardwareEfficiency": 3.548387097,
         "yearlyTWh": 0.20261949479604502,
         "MegaWatts": 23.114741338017993
@@ -290,7 +290,7 @@
     {
         "Period": "12/23/2016  -  01/05/2017",
         "Date": "12/23/2016",
-        "BreakEvenEfficiency": 30.828074725227534,
+        "BreakEvenEfficiency": 15.414037362613767,
         "HardwareEfficiency": 3.548387097,
         "yearlyTWh": 0.21118325919408928,
         "MegaWatts": 24.091691750118144
@@ -298,7 +298,7 @@
     {
         "Period": "01/06/2017  -  01/19/2017",
         "Date": "1/6/2017",
-        "BreakEvenEfficiency": 38.793328242983,
+        "BreakEvenEfficiency": 19.3966641214915,
         "HardwareEfficiency": 3.548387097,
         "yearlyTWh": 0.2529470221308831,
         "MegaWatts": 28.85608314571418
@@ -306,7 +306,7 @@
     {
         "Period": "01/20/2017  -  02/02/2017",
         "Date": "1/20/2017",
-        "BreakEvenEfficiency": 35.070180526592885,
+        "BreakEvenEfficiency": 17.535090263296443,
         "HardwareEfficiency": 3.548387097,
         "yearlyTWh": 0.26312673479414844,
         "MegaWatts": 30.017380213124085
@@ -314,7 +314,7 @@
     {
         "Period": "02/03/2017  -  02/16/2017",
         "Date": "2/3/2017",
-        "BreakEvenEfficiency": 34.49825925763106,
+        "BreakEvenEfficiency": 17.24912962881553,
         "HardwareEfficiency": 3.548387097,
         "yearlyTWh": 0.30083715656477283,
         "MegaWatts": 34.3193682614753
@@ -322,7 +322,7 @@
     {
         "Period": "02/17/2017  -  03/02/2017",
         "Date": "2/17/2017",
-        "BreakEvenEfficiency": 33.83744374946724,
+        "BreakEvenEfficiency": 16.91872187473362,
         "HardwareEfficiency": 3.548387097,
         "yearlyTWh": 0.3550179253374812,
         "MegaWatts": 40.5002861289132
@@ -330,7 +330,7 @@
     {
         "Period": "03/03/2017  -  03/16/2017",
         "Date": "3/3/2017",
-        "BreakEvenEfficiency": 43.087418912646754,
+        "BreakEvenEfficiency": 21.543709456323377,
         "HardwareEfficiency": 3.548387097,
         "yearlyTWh": 0.4306978894090841,
         "MegaWatts": 49.13382257981813
@@ -338,7 +338,7 @@
     {
         "Period": "03/17/2017  -  03/30/2017",
         "Date": "3/17/2017",
-        "BreakEvenEfficiency": 81.29283971502217,
+        "BreakEvenEfficiency": 40.646419857511084,
         "HardwareEfficiency": 3.548387097,
         "yearlyTWh": 0.5363059122567464,
         "MegaWatts": 61.18153858957523
@@ -346,7 +346,7 @@
     {
         "Period": "03/31/2017  -  04/13/2017",
         "Date": "3/31/2017",
-        "BreakEvenEfficiency": 73.56822903021565,
+        "BreakEvenEfficiency": 36.784114515107824,
         "HardwareEfficiency": 3.548387097,
         "yearlyTWh": 0.5670847476365106,
         "MegaWatts": 64.6927743628399
@@ -354,7 +354,7 @@
     {
         "Period": "04/14/2017  -  04/27/2017",
         "Date": "4/14/2017",
-        "BreakEvenEfficiency": 61.61341514173133,
+        "BreakEvenEfficiency": 30.806707570865665,
         "HardwareEfficiency": 3.548387097,
         "yearlyTWh": 0.6752087589125157,
         "MegaWatts": 77.02751320714277
@@ -362,7 +362,7 @@
     {
         "Period": "04/28/2017  -  05/11/2017",
         "Date": "4/28/2017",
-        "BreakEvenEfficiency": 78.04914639868439,
+        "BreakEvenEfficiency": 39.02457319934219,
         "HardwareEfficiency": 3.548387097,
         "yearlyTWh": 0.8088144099191713,
         "MegaWatts": 92.26918611440651
@@ -370,7 +370,7 @@
     {
         "Period": "05/12/2017  -  05/25/2017",
         "Date": "5/12/2017",
-        "BreakEvenEfficiency": 79.44478111029782,
+        "BreakEvenEfficiency": 39.72239055514891,
         "HardwareEfficiency": 3.548387097,
         "yearlyTWh": 0.9747152520483441,
         "MegaWatts": 111.1950799798276
@@ -378,7 +378,7 @@
     {
         "Period": "05/26/2017  -  06/08/2017",
         "Date": "5/26/2017",
-        "BreakEvenEfficiency": 125.99428580876966,
+        "BreakEvenEfficiency": 62.99714290438483,
         "HardwareEfficiency": 3.548387097,
         "yearlyTWh": 1.3134440589630454,
         "MegaWatts": 149.8371107649206
@@ -386,7 +386,7 @@
     {
         "Period": "06/09/2017  -  06/22/2017",
         "Date": "6/9/2017",
-        "BreakEvenEfficiency": 153.99482492513835,
+        "BreakEvenEfficiency": 76.99741246256917,
         "HardwareEfficiency": 3.548387097,
         "yearlyTWh": 1.7189061849095408,
         "MegaWatts": 196.09204873646198
@@ -394,7 +394,7 @@
     {
         "Period": "06/23/2017  -  07/06/2017",
         "Date": "6/23/2017",
-        "BreakEvenEfficiency": 130.8349720799533,
+        "BreakEvenEfficiency": 65.41748603997665,
         "HardwareEfficiency": 2.631578947,
         "yearlyTWh": 1.5365682310425552,
         "MegaWatts": 175.29101651603665
@@ -402,7 +402,7 @@
     {
         "Period": "07/07/2017  -  07/20/2017",
         "Date": "7/7/2017",
-        "BreakEvenEfficiency": 81.67136526066459,
+        "BreakEvenEfficiency": 40.83568263033229,
         "HardwareEfficiency": 2.631578947,
         "yearlyTWh": 1.7134365525058177,
         "MegaWatts": 195.4680755183204
@@ -410,7 +410,7 @@
     {
         "Period": "07/21/2017  -  08/03/2017",
         "Date": "7/21/2017",
-        "BreakEvenEfficiency": 58.73550455018476,
+        "BreakEvenEfficiency": 29.36775227509238,
         "HardwareEfficiency": 2.631578947,
         "yearlyTWh": 1.7831722464611925,
         "MegaWatts": 203.42349229313876
@@ -418,7 +418,7 @@
     {
         "Period": "08/04/2017  -  08/17/2017",
         "Date": "8/4/2017",
-        "BreakEvenEfficiency": 49.107921258217786,
+        "BreakEvenEfficiency": 24.553960629108893,
         "HardwareEfficiency": 2.631578947,
         "yearlyTWh": 2.1593857123681373,
         "MegaWatts": 246.3417562098052
@@ -426,7 +426,7 @@
     {
         "Period": "08/18/2017  -  08/31/2017",
         "Date": "8/18/2017",
-        "BreakEvenEfficiency": 59.2783413575424,
+        "BreakEvenEfficiency": 29.6391706787712,
         "HardwareEfficiency": 2.631578947,
         "yearlyTWh": 2.2814212213355543,
         "MegaWatts": 260.2635124883638
@@ -434,7 +434,7 @@
     {
         "Period": "09/01/2017  -  09/14/2017",
         "Date": "9/1/2017",
-        "BreakEvenEfficiency": 62.047840946883326,
+        "BreakEvenEfficiency": 31.023920473441663,
         "HardwareEfficiency": 2.631578947,
         "yearlyTWh": 2.4662377910671753,
         "MegaWatts": 281.3473040979833
@@ -442,7 +442,7 @@
     {
         "Period": "09/15/2017  -  09/28/2017",
         "Date": "9/15/2017",
-        "BreakEvenEfficiency": 38.68433093991109,
+        "BreakEvenEfficiency": 19.342165469955546,
         "HardwareEfficiency": 2.631578947,
         "yearlyTWh": 2.367989418745609,
         "MegaWatts": 270.13917372839444
@@ -450,7 +450,7 @@
     {
         "Period": "09/29/2017  -  10/12/2017",
         "Date": "9/29/2017",
-        "BreakEvenEfficiency": 37.047504280095026,
+        "BreakEvenEfficiency": 18.523752140047513,
         "HardwareEfficiency": 2.631578947,
         "yearlyTWh": 2.4608435368432,
         "MegaWatts": 280.7319299888719
@@ -458,7 +458,7 @@
     {
         "Period": "10/13/2017  -  10/26/2017",
         "Date": "10/13/2017",
-        "BreakEvenEfficiency": 39.37397546898681,
+        "BreakEvenEfficiency": 19.686987734493403,
         "HardwareEfficiency": 2.631578947,
         "yearlyTWh": 2.6783928550577887,
         "MegaWatts": 305.5498589046168
@@ -466,7 +466,7 @@
     {
         "Period": "10/27/2017  -  11/09/2017",
         "Date": "10/27/2017",
-        "BreakEvenEfficiency": 43.17740438360068,
+        "BreakEvenEfficiency": 21.58870219180034,
         "HardwareEfficiency": 2.631578947,
         "yearlyTWh": 2.6621477636424276,
         "MegaWatts": 303.69662614211046
@@ -474,7 +474,7 @@
     {
         "Period": "11/10/2017  -  11/23/2017",
         "Date": "11/10/2017",
-        "BreakEvenEfficiency": 43.86138820767162,
+        "BreakEvenEfficiency": 21.93069410383581,
         "HardwareEfficiency": 2.631578947,
         "yearlyTWh": 2.8648189816902097,
         "MegaWatts": 326.8172680455516
@@ -482,7 +482,7 @@
     {
         "Period": "11/24/2017  -  12/07/2017",
         "Date": "11/24/2017",
-        "BreakEvenEfficiency": 64.0992820539034,
+        "BreakEvenEfficiency": 32.0496410269517,
         "HardwareEfficiency": 2.631578947,
         "yearlyTWh": 2.954086090881905,
         "MegaWatts": 337.00081993445366
@@ -490,7 +490,7 @@
     {
         "Period": "12/08/2017  -  12/21/2017",
         "Date": "12/8/2017",
-        "BreakEvenEfficiency": 60.41376831983865,
+        "BreakEvenEfficiency": 30.206884159919326,
         "HardwareEfficiency": 2.631578947,
         "yearlyTWh": 3.4172111263380076,
         "MegaWatts": 389.83391683119504
@@ -498,7 +498,7 @@
     {
         "Period": "12/22/2017  -  01/04/2018",
         "Date": "12/22/2017",
-        "BreakEvenEfficiency": 78.72933291104606,
+        "BreakEvenEfficiency": 39.36466645552303,
         "HardwareEfficiency": 2.631578947,
         "yearlyTWh": 3.8578992393353153,
         "MegaWatts": 440.1074196494976
@@ -506,7 +506,7 @@
     {
         "Period": "01/05/2018  -  01/18/2018",
         "Date": "1/5/2018",
-        "BreakEvenEfficiency": 101.30447040143808,
+        "BreakEvenEfficiency": 50.65223520071904,
         "HardwareEfficiency": 2.631578947,
         "yearlyTWh": 4.546392430796015,
         "MegaWatts": 518.6504149798324
@@ -514,7 +514,7 @@
     {
         "Period": "01/19/2018  -  02/01/2018",
         "Date": "1/19/2018",
-        "BreakEvenEfficiency": 94.3946213864295,
+        "BreakEvenEfficiency": 47.19731069321475,
         "HardwareEfficiency": 2.631578947,
         "yearlyTWh": 5.225039894583267,
         "MegaWatts": 596.0702141010098
@@ -522,7 +522,7 @@
     {
         "Period": "02/02/2018  -  02/15/2018",
         "Date": "2/2/2018",
-        "BreakEvenEfficiency": 70.33261251302773,
+        "BreakEvenEfficiency": 35.16630625651386,
         "HardwareEfficiency": 2.631578947,
         "yearlyTWh": 5.608175862049572,
         "MegaWatts": 639.7781938992489
@@ -530,7 +530,7 @@
     {
         "Period": "02/16/2018  -  03/01/2018",
         "Date": "2/16/2018",
-        "BreakEvenEfficiency": 65.50492822242799,
+        "BreakEvenEfficiency": 32.752464111213996,
         "HardwareEfficiency": 2.631578947,
         "yearlyTWh": 5.9734794700123865,
         "MegaWatts": 681.4518661014462
@@ -538,7 +538,7 @@
     {
         "Period": "03/02/2018  -  03/15/2018",
         "Date": "3/2/2018",
-        "BreakEvenEfficiency": 57.80603456558082,
+        "BreakEvenEfficiency": 28.90301728279041,
         "HardwareEfficiency": 2.631578947,
         "yearlyTWh": 6.143006677044662,
         "MegaWatts": 700.7914540530007
@@ -546,7 +546,7 @@
     {
         "Period": "03/16/2018  -  03/29/2018",
         "Date": "3/16/2018",
-        "BreakEvenEfficiency": 38.2382117587806,
+        "BreakEvenEfficiency": 19.1191058793903,
         "HardwareEfficiency": 2.631578947,
         "yearlyTWh": 6.139192708015971,
         "MegaWatts": 700.3563581721322
@@ -554,7 +554,7 @@
     {
         "Period": "03/30/2018  -  04/12/2018",
         "Date": "3/30/2018",
-        "BreakEvenEfficiency": 25.58912444230443,
+        "BreakEvenEfficiency": 12.794562221152216,
         "HardwareEfficiency": 2.631578947,
         "yearlyTWh": 5.919629467507918,
         "MegaWatts": 675.3086819019427
@@ -562,7 +562,7 @@
     {
         "Period": "04/13/2018  -  04/26/2018",
         "Date": "4/13/2018",
-        "BreakEvenEfficiency": 33.39959571609659,
+        "BreakEvenEfficiency": 16.699797858048296,
         "HardwareEfficiency": 2.631578947,
         "yearlyTWh": 6.334428445772848,
         "MegaWatts": 722.6287638097531
@@ -570,7 +570,7 @@
     {
         "Period": "04/27/2018  -  05/10/2018",
         "Date": "4/27/2018",
-        "BreakEvenEfficiency": 42.34204931365983,
+        "BreakEvenEfficiency": 21.171024656829914,
         "HardwareEfficiency": 2.631578947,
         "yearlyTWh": 6.433978168917927,
         "MegaWatts": 733.9853516992159
@@ -578,7 +578,7 @@
     {
         "Period": "05/11/2018  -  05/24/2018",
         "Date": "5/11/2018",
-        "BreakEvenEfficiency": 42.734882004708105,
+        "BreakEvenEfficiency": 21.367441002354052,
         "HardwareEfficiency": 2.631578947,
         "yearlyTWh": 6.256296184286302,
         "MegaWatts": 713.7154703666232
@@ -586,7 +586,7 @@
     {
         "Period": "05/25/2018  -  06/07/2018",
         "Date": "5/25/2018",
-        "BreakEvenEfficiency": 37.75854209589544,
+        "BreakEvenEfficiency": 18.87927104794772,
         "HardwareEfficiency": 2.631578947,
         "yearlyTWh": 6.37195226548962,
         "MegaWatts": 726.9094643792648
@@ -594,7 +594,7 @@
     {
         "Period": "06/08/2018  -  06/21/2018",
         "Date": "6/8/2018",
-        "BreakEvenEfficiency": 38.43732679410171,
+        "BreakEvenEfficiency": 19.218663397050854,
         "HardwareEfficiency": 2.631578947,
         "yearlyTWh": 6.716274622559011,
         "MegaWatts": 766.1896048641032
@@ -602,7 +602,7 @@
     {
         "Period": "06/22/2018  -  07/05/2018",
         "Date": "6/22/2018",
-        "BreakEvenEfficiency": 27.93960229088048,
+        "BreakEvenEfficiency": 13.96980114544024,
         "HardwareEfficiency": 2.631578947,
         "yearlyTWh": 6.9164359074009525,
         "MegaWatts": 789.0239147100733
@@ -610,7 +610,7 @@
     {
         "Period": "07/06/2018  -  07/19/2018",
         "Date": "7/6/2018",
-        "BreakEvenEfficiency": 27.803350066187587,
+        "BreakEvenEfficiency": 13.901675033093793,
         "HardwareEfficiency": 2.631578947,
         "yearlyTWh": 6.636753306520904,
         "MegaWatts": 757.1178486990322
@@ -618,7 +618,7 @@
     {
         "Period": "07/20/2018  -  08/02/2018",
         "Date": "7/20/2018",
-        "BreakEvenEfficiency": 27.33292746165405,
+        "BreakEvenEfficiency": 13.666463730827026,
         "HardwareEfficiency": 2.631578947,
         "yearlyTWh": 6.870269416548243,
         "MegaWatts": 783.7572620830964
@@ -626,7 +626,7 @@
     {
         "Period": "08/03/2018  -  08/16/2018",
         "Date": "8/3/2018",
-        "BreakEvenEfficiency": 24.99430977897335,
+        "BreakEvenEfficiency": 12.497154889486675,
         "HardwareEfficiency": 2.631578947,
         "yearlyTWh": 6.560913538059892,
         "MegaWatts": 748.4660818348611
@@ -634,7 +634,7 @@
     {
         "Period": "08/17/2018  -  08/30/2018",
         "Date": "8/17/2018",
-        "BreakEvenEfficiency": 19.047454651298533,
+        "BreakEvenEfficiency": 9.523727325649267,
         "HardwareEfficiency": 2.631578947,
         "yearlyTWh": 6.578804100998353,
         "MegaWatts": 750.507029252731
@@ -642,7 +642,7 @@
     {
         "Period": "08/31/2018  -  09/13/2018",
         "Date": "8/31/2018",
-        "BreakEvenEfficiency": 17.09578323222046,
+        "BreakEvenEfficiency": 8.54789161611023,
         "HardwareEfficiency": 2.631578947,
         "yearlyTWh": 5.783693539735058,
         "MegaWatts": 659.8011720634842
@@ -650,7 +650,7 @@
     {
         "Period": "09/14/2018  -  09/27/2018",
         "Date": "9/14/2018",
-        "BreakEvenEfficiency": 14.025386188627103,
+        "BreakEvenEfficiency": 7.012693094313551,
         "HardwareEfficiency": 1.712962963,
         "yearlyTWh": 4.037503042230524,
         "MegaWatts": 460.5965411500027
@@ -658,7 +658,7 @@
     {
         "Period": "09/28/2018  -  10/11/2018",
         "Date": "9/28/2018",
-        "BreakEvenEfficiency": 14.253372936170566,
+        "BreakEvenEfficiency": 7.126686468085283,
         "HardwareEfficiency": 1.712962963,
         "yearlyTWh": 3.9520240632064487,
         "MegaWatts": 450.8451374562554
@@ -666,7 +666,7 @@
     {
         "Period": "10/12/2018  -  10/25/2018",
         "Date": "10/12/2018",
-        "BreakEvenEfficiency": 12.837724679980475,
+        "BreakEvenEfficiency": 6.418862339990238,
         "HardwareEfficiency": 1.712962963,
         "yearlyTWh": 3.78653916319873,
         "MegaWatts": 431.9666940820058
@@ -674,7 +674,7 @@
     {
         "Period": "10/26/2018  -  11/08/2018",
         "Date": "10/26/2018",
-        "BreakEvenEfficiency": 14.043399193733899,
+        "BreakEvenEfficiency": 7.0216995968669496,
         "HardwareEfficiency": 1.712962963,
         "yearlyTWh": 3.7214682985413567,
         "MegaWatts": 424.5434389470033
@@ -682,7 +682,7 @@
     {
         "Period": "11/09/2018  -  11/22/2018",
         "Date": "11/9/2018",
-        "BreakEvenEfficiency": 14.759543003444197,
+        "BreakEvenEfficiency": 7.379771501722098,
         "HardwareEfficiency": 1.712962963,
         "yearlyTWh": 3.269541276592128,
         "MegaWatts": 372.98780642244174
@@ -690,7 +690,7 @@
     {
         "Period": "11/23/2018  -  12/06/2018",
         "Date": "11/23/2018",
-        "BreakEvenEfficiency": 9.469762357669962,
+        "BreakEvenEfficiency": 4.734881178834981,
         "HardwareEfficiency": 1.712962963,
         "yearlyTWh": 2.8372570476570655,
         "MegaWatts": 323.6730149390432
@@ -698,7 +698,7 @@
     {
         "Period": "12/07/2018  -  12/20/2018",
         "Date": "12/7/2018",
-        "BreakEvenEfficiency": 8.44486458893627,
+        "BreakEvenEfficiency": 4.222432294468135,
         "HardwareEfficiency": 1.712962963,
         "yearlyTWh": 2.4950988663865887,
         "MegaWatts": 284.6397626613452
@@ -706,7 +706,7 @@
     {
         "Period": "12/21/2018  -  01/03/2019",
         "Date": "12/21/2018",
-        "BreakEvenEfficiency": 10.336385484225591,
+        "BreakEvenEfficiency": 5.168192742112796,
         "HardwareEfficiency": 1.712962963,
         "yearlyTWh": 2.722453048146694,
         "MegaWatts": 310.5762260248109
@@ -714,7 +714,7 @@
     {
         "Period": "01/04/2019  -  01/17/2019",
         "Date": "1/4/2019",
-        "BreakEvenEfficiency": 12.853356480034508,
+        "BreakEvenEfficiency": 6.426678240017254,
         "HardwareEfficiency": 1.712962963,
         "yearlyTWh": 2.690222279138844,
         "MegaWatts": 306.8993543126798
@@ -722,7 +722,7 @@
     {
         "Period": "01/18/2019  -  01/31/2019",
         "Date": "1/18/2019",
-        "BreakEvenEfficiency": 10.055788688699579,
+        "BreakEvenEfficiency": 5.027894344349789,
         "HardwareEfficiency": 1.712962963,
         "yearlyTWh": 2.277692154169677,
         "MegaWatts": 259.83810217403
@@ -730,7 +730,7 @@
     {
         "Period": "02/01/2019  -  02/14/2019",
         "Date": "2/1/2019",
-        "BreakEvenEfficiency": 9.535557727488213,
+        "BreakEvenEfficiency": 4.767778863744106,
         "HardwareEfficiency": 1.712962963,
         "yearlyTWh": 2.119434488355792,
         "MegaWatts": 241.78413844399185
@@ -738,7 +738,7 @@
     {
         "Period": "02/15/2019  -  02/28/2019",
         "Date": "2/15/2019",
-        "BreakEvenEfficiency": 9.492604231831045,
+        "BreakEvenEfficiency": 4.7463021159155225,
         "HardwareEfficiency": 1.712962963,
         "yearlyTWh": 2.389434600998084,
         "MegaWatts": 272.5856305276851
@@ -746,7 +746,7 @@
     {
         "Period": "03/01/2019  -  03/14/2019",
         "Date": "3/1/2019",
-        "BreakEvenEfficiency": 9.5374788745423,
+        "BreakEvenEfficiency": 4.76873943727115,
         "HardwareEfficiency": 1.712962963,
         "yearlyTWh": 2.2518340571382587,
         "MegaWatts": 256.8882220305806
@@ -754,7 +754,7 @@
     {
         "Period": "03/15/2019  -  03/28/2019",
         "Date": "3/15/2019",
-        "BreakEvenEfficiency": 10.550705991423834,
+        "BreakEvenEfficiency": 5.275352995711917,
         "HardwareEfficiency": 1.712962963,
         "yearlyTWh": 2.1516581025285073,
         "MegaWatts": 245.46019393573098
@@ -762,7 +762,7 @@
     {
         "Period": "03/29/2019  -  04/11/2019",
         "Date": "3/29/2019",
-        "BreakEvenEfficiency": 11.47490388020758,
+        "BreakEvenEfficiency": 5.73745194010379,
         "HardwareEfficiency": 1.712962963,
         "yearlyTWh": 2.2965918979605013,
         "MegaWatts": 261.9941764921476
@@ -770,7 +770,7 @@
     {
         "Period": "04/12/2019  -  04/25/2019",
         "Date": "4/12/2019",
-        "BreakEvenEfficiency": 12.473194148120033,
+        "BreakEvenEfficiency": 6.2365970740600165,
         "HardwareEfficiency": 1.712962963,
         "yearlyTWh": 2.260598877283462,
         "MegaWatts": 257.8881087923878
@@ -778,7 +778,7 @@
     {
         "Period": "04/26/2019  -  05/09/2019",
         "Date": "4/26/2019",
-        "BreakEvenEfficiency": 12.042428383869574,
+        "BreakEvenEfficiency": 6.021214191934787,
         "HardwareEfficiency": 1.712962963,
         "yearlyTWh": 2.3628818230827844,
         "MegaWatts": 269.55650149972166
@@ -786,7 +786,7 @@
     {
         "Period": "05/10/2019  -  05/23/2019",
         "Date": "5/10/2019",
-        "BreakEvenEfficiency": 12.753504586772195,
+        "BreakEvenEfficiency": 6.376752293386097,
         "HardwareEfficiency": 1.712962963,
         "yearlyTWh": 2.48830136596234,
         "MegaWatts": 283.86430685335523
@@ -794,7 +794,7 @@
     {
         "Period": "05/24/2019  -  06/06/2019",
         "Date": "5/24/2019",
-        "BreakEvenEfficiency": 17.713386531774482,
+        "BreakEvenEfficiency": 8.856693265887241,
         "HardwareEfficiency": 1.712962963,
         "yearlyTWh": 2.5851121591143067,
         "MegaWatts": 294.90843883428124
@@ -802,7 +802,7 @@
     {
         "Period": "06/07/2019  -  06/20/2019",
         "Date": "6/7/2019",
-        "BreakEvenEfficiency": 16.761801894587023,
+        "BreakEvenEfficiency": 8.380900947293512,
         "HardwareEfficiency": 1.712962963,
         "yearlyTWh": 2.4806420237346765,
         "MegaWatts": 282.9905325179192
@@ -810,7 +810,7 @@
     {
         "Period": "06/21/2019  -  07/04/2019",
         "Date": "6/21/2019",
-        "BreakEvenEfficiency": 20.840633376539287,
+        "BreakEvenEfficiency": 10.420316688269644,
         "HardwareEfficiency": 1.712962963,
         "yearlyTWh": 2.5879405197690097,
         "MegaWatts": 295.2310969526913
@@ -818,7 +818,7 @@
     {
         "Period": "07/05/2019  -  07/18/2019",
         "Date": "7/5/2019",
-        "BreakEvenEfficiency": 19.19896214079225,
+        "BreakEvenEfficiency": 9.599481070396125,
         "HardwareEfficiency": 1.712962963,
         "yearlyTWh": 2.7741582158827094,
         "MegaWatts": 316.4747284332779
@@ -826,7 +826,7 @@
     {
         "Period": "07/19/2019  -  08/01/2019",
         "Date": "7/19/2019",
-        "BreakEvenEfficiency": 14.317039861003533,
+        "BreakEvenEfficiency": 7.158519930501766,
         "HardwareEfficiency": 1.712962963,
         "yearlyTWh": 2.650011168800134,
         "MegaWatts": 302.31208883099765
@@ -834,7 +834,7 @@
     {
         "Period": "08/02/2019  -  08/15/2019",
         "Date": "8/2/2019",
-        "BreakEvenEfficiency": 14.19463217094677,
+        "BreakEvenEfficiency": 7.097316085473385,
         "HardwareEfficiency": 1.712962963,
         "yearlyTWh": 2.7961369759283383,
         "MegaWatts": 318.9820555485511
@@ -842,7 +842,7 @@
     {
         "Period": "08/16/2019  -  08/29/2019",
         "Date": "8/16/2019",
-        "BreakEvenEfficiency": 11.559615482999167,
+        "BreakEvenEfficiency": 5.779807741499583,
         "HardwareEfficiency": 1.712962963,
         "yearlyTWh": 2.756932198325558,
         "MegaWatts": 314.50959205526794
@@ -850,7 +850,7 @@
     {
         "Period": "08/30/2019  -  09/12/2019",
         "Date": "8/30/2019",
-        "BreakEvenEfficiency": 10.600128702022282,
+        "BreakEvenEfficiency": 5.300064351011141,
         "HardwareEfficiency": 1.712962963,
         "yearlyTWh": 2.855349986196422,
         "MegaWatts": 325.7370492749439
@@ -858,7 +858,7 @@
     {
         "Period": "09/13/2019  -  09/26/2019",
         "Date": "9/13/2019",
-        "BreakEvenEfficiency": 11.15226094245189,
+        "BreakEvenEfficiency": 5.576130471225945,
         "HardwareEfficiency": 1.5,
         "yearlyTWh": 2.649912756077838,
         "MegaWatts": 302.3008619516566
@@ -866,7 +866,7 @@
     {
         "Period": "09/27/2019  -  10/10/2019",
         "Date": "9/27/2019",
-        "BreakEvenEfficiency": 10.00478911353008,
+        "BreakEvenEfficiency": 5.00239455676504,
         "HardwareEfficiency": 1.5,
         "yearlyTWh": 2.5349968824863924,
         "MegaWatts": 289.1913104922948
@@ -874,7 +874,7 @@
     {
         "Period": "10/11/2019  -  10/24/2019",
         "Date": "10/11/2019",
-        "BreakEvenEfficiency": 10.443259301263241,
+        "BreakEvenEfficiency": 5.221629650631621,
         "HardwareEfficiency": 1.5,
         "yearlyTWh": 2.542308464897091,
         "MegaWatts": 290.0254125433586
@@ -882,7 +882,7 @@
     {
         "Period": "10/25/2019  -  11/07/2019",
         "Date": "10/25/2019",
-        "BreakEvenEfficiency": 10.703255028987888,
+        "BreakEvenEfficiency": 5.351627514493944,
         "HardwareEfficiency": 1.5,
         "yearlyTWh": 2.532139970902473,
         "MegaWatts": 288.86539529665004
@@ -890,7 +890,7 @@
     {
         "Period": "11/08/2019  -  11/21/2019",
         "Date": "11/8/2019",
-        "BreakEvenEfficiency": 10.74571739898316,
+        "BreakEvenEfficiency": 5.37285869949158,
         "HardwareEfficiency": 1.5,
         "yearlyTWh": 2.4548952108542865,
         "MegaWatts": 280.05334762064354
@@ -898,7 +898,7 @@
     {
         "Period": "11/22/2019  -  12/05/2019",
         "Date": "11/22/2019",
-        "BreakEvenEfficiency": 8.813771424478022,
+        "BreakEvenEfficiency": 4.406885712239011,
         "HardwareEfficiency": 1.5,
         "yearlyTWh": 2.3004533226144157,
         "MegaWatts": 262.43468608951537
@@ -906,7 +906,7 @@
     {
         "Period": "12/06/2019  -  12/19/2019",
         "Date": "12/6/2019",
-        "BreakEvenEfficiency": 8.54502400975861,
+        "BreakEvenEfficiency": 4.272512004879305,
         "HardwareEfficiency": 1.5,
         "yearlyTWh": 2.105190820806097,
         "MegaWatts": 240.1592272208772
@@ -914,7 +914,7 @@
     {
         "Period": "12/20/2019  -  01/02/2020",
         "Date": "12/20/2019",
-        "BreakEvenEfficiency": 7.284146011147582,
+        "BreakEvenEfficiency": 3.642073005573791,
         "HardwareEfficiency": 1.5,
         "yearlyTWh": 2.053135095539347,
         "MegaWatts": 234.2207333661025
@@ -922,7 +922,7 @@
     {
         "Period": "01/03/2020  -  01/16/2020",
         "Date": "1/3/2020",
-        "BreakEvenEfficiency": 9.67165011832912,
+        "BreakEvenEfficiency": 4.83582505916456,
         "HardwareEfficiency": 1.5,
         "yearlyTWh": 2.21046931089424,
         "MegaWatts": 252.1693502808228
@@ -930,7 +930,7 @@
     {
         "Period": "01/17/2020  -  01/30/2020",
         "Date": "1/17/2020",
-        "BreakEvenEfficiency": 11.64942574743231,
+        "BreakEvenEfficiency": 5.824712873716155,
         "HardwareEfficiency": 1.5,
         "yearlyTWh": 2.161183122011915,
         "MegaWatts": 246.54680389801607
@@ -938,7 +938,7 @@
     {
         "Period": "01/31/2020  -  02/13/2020",
         "Date": "1/31/2020",
-        "BreakEvenEfficiency": 12.472305878106287,
+        "BreakEvenEfficiency": 6.236152939053143,
         "HardwareEfficiency": 1.5,
         "yearlyTWh": 2.3354498328365274,
         "MegaWatts": 266.4270723222996
@@ -946,7 +946,7 @@
     {
         "Period": "02/14/2020  -  02/27/2020",
         "Date": "2/14/2020",
-        "BreakEvenEfficiency": 18.536073025964335,
+        "BreakEvenEfficiency": 9.268036512982167,
         "HardwareEfficiency": 1.5,
         "yearlyTWh": 2.4795397354688964,
         "MegaWatts": 282.8647839655941
@@ -954,7 +954,7 @@
     {
         "Period": "02/28/2020  -  03/03/2020",
         "Date": "2/28/2020",
-        "BreakEvenEfficiency": 14.210696534201857,
+        "BreakEvenEfficiency": 7.105348267100928,
         "HardwareEfficiency": 1.5,
         "yearlyTWh": 2.4092765880382316,
         "MegaWatts": 274.84919553423583

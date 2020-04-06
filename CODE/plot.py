@@ -26,10 +26,17 @@ with open('../JSONDATA/Digiconomist/data.json') as f:
 #This study: upperbound and lowerbound data
 with open('../JSONDATA/UpperBoundEstimate.json') as f:
     upperBoundData = json.load(f)
+with open('../JSONDATA/UpperBoundEstimate10.json') as f:
+    upperBoundData10 = json.load(f)
 with open('../JSONDATA/LowerBoundEstimate.json') as f:
     lowerBoundData = json.load(f)
+with open('../JSONDATA/LowerBoundEstimate10.json') as f:
+    lowerBoundData10 = json.load(f)
 with open('../JSONDATA/BestGuessEstimate.json') as f:
     bestGuessData = json.load(f)
+with open('../JSONDATA/BestGuessEstimate10.json') as f:
+    bestGuessData10 = json.load(f)
+
 
 def csvtojson(input, output):
     csvfile = open(input, 'r')
@@ -157,6 +164,157 @@ def plotResults(efficiencyData):
     # ax1.add_artist(first_legend)
     plt.show()
 
+def plotLowerBoundResult():
+    lowerbound_MW_x = pd.to_datetime(pd.DataFrame(lowerBoundData)['Date'])
+    lowerbound_MW_y = [date['MegaWatts'] for date in lowerBoundData]
+    lowerboundLine_MW = pd.Series(data=lowerbound_MW_y, index=lowerbound_MW_x)
+
+    lowerbound_EFF_x = pd.to_datetime(pd.DataFrame(lowerBoundData)['Date'])
+    lowerbound_EFF_y = [date['HardwareEfficiency'] for date in lowerBoundData]
+    lowerboundLine_EFF = pd.Series(data=lowerbound_EFF_y, index=lowerbound_EFF_x)
+
+    fig, ax1 = plt.subplots()
+    color='green'
+    ax1.set_ylabel('Power consumption (MW)', color=color)
+    ax1.set_xlabel('Date')
+    ax1.tick_params(axis='y',colors=color)
+    line1 = ax1.plot(lowerboundLine_MW, color=color, label='Lower bound power consumption ')
+
+    ax2 = ax1.twinx()
+    color='red'
+    ax2.set_ylabel('Hardware Efficiency (J/MH)',color=color)
+    ax2.tick_params(colors=color)
+    line2 = ax2.plot(lowerboundLine_EFF, color=color, label='Lower bound hardware Efficiency')
+    plt.title('Power consumption and hardware efficiency (lower bound)')
+    fig.tight_layout()
+    first_legend = ax1.legend(handles = [line1[0], line2[0]] )
+    # second_legend = ax2.legend(handles = line2, loc = 'center right')
+    ax1.add_artist(first_legend)
+    # ax2.add_artist(second_legend)
+    plt.show()
+
+def plotUpperBoundResult():
+    upperbound_MW_x = pd.to_datetime(pd.DataFrame(upperBoundData)['Date'])
+    upperbound_MW_y = [date['MegaWatts'] for date in upperBoundData]
+    upperboundLine_MW = pd.Series(data=upperbound_MW_y, index=upperbound_MW_x)
+
+    upperbound_EFF_x = pd.to_datetime(pd.DataFrame(upperBoundData)['Date'])
+    upperbound_EFF_y = [date['HardwareEfficiency'] for date in upperBoundData]
+    upperboundLine_EFF = pd.Series(data=upperbound_EFF_y, index=upperbound_EFF_x)
+
+    upperbound_THR_EFF_x = pd.to_datetime(pd.DataFrame(upperBoundData)['Date'])
+    upperbound_THR_EFF_y = [date['BreakEvenEfficiency'] for date in upperBoundData]
+    upperboundLine_THR_EFF = pd.Series(data=upperbound_THR_EFF_y, index=upperbound_THR_EFF_x)
+
+    fig, ax1 = plt.subplots()
+    color='green'
+    ax1.set_ylabel('Power consumption (MW)', color=color)
+    ax1.set_xlabel('Date')
+    ax1.tick_params(axis='y',colors=color)
+    line1 = ax1.plot(upperboundLine_MW, color=color, label='Upper bound power consumption ')
+
+    ax2 = ax1.twinx()
+    color='red'
+    ax2.set_ylabel('Hardware Efficciency (J/MH)',color=color)
+    ax2.tick_params(colors=color)
+    ax2.set_ylim(top=225)
+    line2 = ax2.plot(upperboundLine_EFF, color=color, label='Upper bound hardware Efficiency')
+    line3 = ax2.plot(upperboundLine_THR_EFF, color=color, linestyle=':', label='Profitability Threshold')
+    plt.title('Power consumption and hardware efficiency (upper bound)')
+    fig.tight_layout()
+    first_legend = ax1.legend(handles = [line1[0], line2[0], line3[0]], loc='upper right' )
+    # second_legend = ax2.legend(handles = line2, loc = 'center right')
+    ax1.add_artist(first_legend)
+    # ax2.add_artist(second_legend)
+    plt.show()
+
+def plotBestGuessResult():
+    bestguess_MW_x = pd.to_datetime(pd.DataFrame(bestGuessData)['Date'])
+    bestguess_MW_y = [date['MegaWatts'] for date in bestGuessData]
+    bestguessLine_MW = pd.Series(data=bestguess_MW_y, index=bestguess_MW_x)
+
+    bestguess_EFF_x = pd.to_datetime(pd.DataFrame(bestGuessData)['Date'])
+    bestguess_EFF_y = [date['HardwareEfficiency'] for date in bestGuessData]
+    bestguessLine_EFF = pd.Series(data=bestguess_EFF_y, index=bestguess_EFF_x)
+
+    bestguess_THR_EFF_x = pd.to_datetime(pd.DataFrame(bestGuessData)['Date'])
+    bestguess_THR_EFF_y = [date['BreakEvenEfficiency'] for date in bestGuessData]
+    bestguessLine_THR_EFF = pd.Series(data=bestguess_THR_EFF_y, index=bestguess_THR_EFF_x)
+
+    fig, ax1 = plt.subplots()
+    color='green'
+    ax1.set_ylabel('Power consumption (MW)', color=color)
+    ax1.set_xlabel('Date')
+    ax1.tick_params(axis='y',colors=color)
+    line1 = ax1.plot(bestguessLine_MW, color=color, label='Best guess power consumption ')
+
+    ax2 = ax1.twinx()
+    color='red'
+    ax2.set_ylabel('Hardware Efficciency (J/MH)',color=color)
+    ax2.tick_params(colors=color)
+    ax2.set_ylim(top=225)
+
+    line2 = ax2.plot(bestguessLine_EFF, color=color, label='Best guess hardware Efficiency')
+    line3 = ax2.plot(bestguessLine_THR_EFF, color=color, linestyle=':', label='Profitability Threshold')
+    plt.title('Power consumption and hardware efficiency (Best guess)')
+    fig.tight_layout()
+    first_legend = ax1.legend(handles = [line1[0], line2[0], line3[0]], loc='upper right' )
+    # second_legend = ax2.legend(handles = line2, loc = 'center right')
+    ax1.add_artist(first_legend)
+    # ax2.add_artist(second_legend)
+    plt.show()
+
+def plotResultsVariableEnergyPrice():
+    # 0.05 USD/KWh
+    lowerbound_MW_x = pd.to_datetime(pd.DataFrame(lowerBoundData)['Date'])
+    lowerbound_MW_y = [date['MegaWatts'] for date in lowerBoundData]
+    lowerboundLine_MW = pd.Series(data=lowerbound_MW_y, index=lowerbound_MW_x)
+
+    bestguess_MW_x = pd.to_datetime(pd.DataFrame(bestGuessData)['Date'])
+    bestguess_MW_y = [date['MegaWatts'] for date in bestGuessData]
+    bestguessLine_MW = pd.Series(data=bestguess_MW_y, index=bestguess_MW_x)
+
+    upperbound_MW_x = pd.to_datetime(pd.DataFrame(upperBoundData)['Date'])
+    upperbound_MW_y = [date['MegaWatts'] for date in upperBoundData]
+    upperboundLine_MW = pd.Series(data=upperbound_MW_y, index=upperbound_MW_x)
+
+    # 0.10 USD/KWh
+    lowerbound_MW_x_10 = pd.to_datetime(pd.DataFrame(lowerBoundData10)['Date'])
+    lowerbound_MW_y_10 = [date['MegaWatts'] for date in lowerBoundData10]
+    lowerboundLine_MW_10 = pd.Series(data=lowerbound_MW_y_10, index=lowerbound_MW_x_10)
+
+    bestguess_MW_x_10 = pd.to_datetime(pd.DataFrame(bestGuessData10)['Date'])
+    bestguess_MW_y_10 = [date['MegaWatts'] for date in bestGuessData10]
+    bestguessLine_MW_10 = pd.Series(data=bestguess_MW_y_10, index=bestguess_MW_x_10)
+
+    upperbound_MW_x_10 = pd.to_datetime(pd.DataFrame(upperBoundData10)['Date'])
+    upperbound_MW_y_10 = [date['MegaWatts'] for date in upperBoundData10]
+    upperboundLine_MW_10 = pd.Series(data=upperbound_MW_y_10, index=upperbound_MW_x_10)
+
+    fig, ax = plt.subplots()
+    color='green'
+    ax.set_ylabel('Power consumption (MW)')
+    ax.set_xlabel('Date')
+    color='blue'
+    lower5 = ax.plot(lowerboundLine_MW, color=color, label='Lower bound (0.05 - 0.10 USD/KWh)')
+    lower10 = ax.plot(lowerboundLine_MW_10, color=color)
+    color='magenta'
+    best5 = ax.plot(bestguessLine_MW, color=color, label='Best guess (0.05 - 0.10 USD/KWh)')
+    best10 = ax.plot(bestguessLine_MW_10, color=color)
+    color='green'
+    upper5 = ax.plot(upperboundLine_MW, color=color, label='Upper bound (0.05 - 0.10 USD/KWh)')
+    upper10 =ax.plot(upperboundLine_MW_10, color=color)
+
+    ax.fill_between(lowerbound_MW_x, bestguess_MW_y,bestguess_MW_y_10, color='magenta', alpha=0.5)
+    ax.fill_between(lowerbound_MW_x, upperbound_MW_y,upperbound_MW_y_10, color='green', alpha=0.5)
+
+
+    plt.title('Effect of energy price on power consumption')
+    fig.tight_layout()
+    legend = ax.legend(handles = [lower5[0],  best5[0], upper5[0]], loc='upper left' )
+    ax.add_artist(legend)
+    plt.show()
+
 def plotBreakEvenEffAndHashrate(efficiencyData, DailyData ):
     fig, ax1 = plt.subplots()
 
@@ -172,9 +330,9 @@ def plotBreakEvenEffAndHashrate(efficiencyData, DailyData ):
     hardwareLine = pd.Series(data=hardware_y, index=hardware_x)
 
     line1 = ax1.plot(breakevenLine, color='red', label='Break even Efficciency (J/MH)')
-    line2 = ax1.plot(hardwareLine, color='green', label='Used hardware Efficciency (J/MhH)')
-    ax1.axvline(x=pd.to_datetime("7/1/2018"),color='red')
-    ax1.axvline(x=pd.to_datetime("9/1/2018"),color='red')
+    line2 = ax1.plot(hardwareLine, color='green', label='Used hardware Efficciency (J/MH)')
+    # ax1.axvline(x=pd.to_datetime("7/1/2018"),color='red')
+    # ax1.axvline(x=pd.to_datetime("9/1/2018"),color='red')
     plt.xticks(rotation=90)
 
     ax2 = ax1.twinx()
@@ -204,50 +362,50 @@ def compareOtherResults():
 
     #This study
     upperbound_x = pd.to_datetime(pd.DataFrame(upperBoundData)['Date'])
-    upperbound_y = [date['yearlyTWh'] for date in upperBoundData]
+    upperbound_y = [date['MegaWatts'] for date in upperBoundData]
     upperboundLine = pd.Series(data=upperbound_y, index=upperbound_x)
 
     lowerbound_x = pd.to_datetime(pd.DataFrame(lowerBoundData)['Date'])
-    lowerbound_y = [date['yearlyTWh'] for date in lowerBoundData]
+    lowerbound_y = [date['MegaWatts'] for date in lowerBoundData]
     lowerboundLine = pd.Series(data=lowerbound_y, index=lowerbound_x)
 
     bestguess_x = pd.to_datetime(pd.DataFrame(bestGuessData)['Date'])
-    bestguess_y = [date['yearlyTWh'] for date in bestGuessData]
+    bestguess_y = [date['MegaWatts'] for date in bestGuessData]
     bestGuessLine = pd.Series(data=bestguess_y, index=bestguess_x)
 
     #Digiconomist estimate
     digiconomist_x = pd.to_datetime(pd.DataFrame(DigiconomistData)['Date'])
-    digiconomist_y = [float(date['EECI']) for date in DigiconomistData]
+    digiconomist_y = [((float(date['EECI'])*1e6)/8765.81277) for date in DigiconomistData]
     digiconomistLine = pd.Series(data=digiconomist_y, index=digiconomist_x)
 
     #Cleancoins initiative estimate
     cleancoins_x = pd.to_datetime(pd.DataFrame(["3/5/2020"])[0])
-    cleancoins_y = float(5.65)
+    cleancoins_y = ((float(5.65)*1e6)/8765.81277)
     cleancoinsLine = pd.Series(data=cleancoins_y, index=cleancoins_x)
 
     #Zade (2018)
     zade_x2015 = pd.to_datetime(pd.DataFrame(["1/1/2015","12/31/2015"])[0])
-    zade_y2015 = [((wattage*8765.81277)/1e6) for wattage in [3.0,3.0]]
+    zade_y2015 = [3.0,3.0]
     zade2015Line = pd.Series(data=zade_y2015, index=zade_x2015)
     zade_x2016 = pd.to_datetime(pd.DataFrame(["1/1/2016","12/31/2016"])[0])
-    zade_y2016 = [((wattage*8765.81277)/1e6) for wattage in [19.0,19.0]]
+    zade_y2016 = [19.0,19.0]
     zade2016Line = pd.Series(data=zade_y2016, index=zade_x2016)
     zade_x2017 = pd.to_datetime(pd.DataFrame(["1/1/2017","12/31/2017"])[0])
-    zade_y2017 = [((wattage*8765.81277)/1e6) for wattage in [367.0,367.0]]
+    zade_y2017 = [367.0,367.0]
     zade2017Line = pd.Series(data=zade_y2017, index=zade_x2017)
     zade_x2018 = pd.to_datetime(pd.DataFrame(["1/1/2018","10/31/2018"])[0])
-    zade_y2018 = [((wattage*8765.81277)/1e6) for wattage in [991.0,991.0]]
+    zade_y2018 = [991.0,991.0]
     zade2018Line = pd.Series(data=zade_y2018, index=zade_x2018)
 
     #Krause (2019)
     krause_x2016 = pd.to_datetime(pd.DataFrame(["1/1/2016","12/31/2016"])[0])
-    krause_y2016 = [((wattage*8765.81277)/1e6) for wattage in [24.0,24.0]]
+    krause_y2016 = [24.0,24.0]
     krause2016Line = pd.Series(data=krause_y2016, index=krause_x2016)
     krause_x2017 = pd.to_datetime(pd.DataFrame(["1/1/2017","12/31/2017"])[0])
-    krause_y2017 = [((wattage*8765.81277)/1e6) for wattage in [299.9,299.0]]
+    krause_y2017 = [299.9,299.0]
     krause2017Line = pd.Series(data=krause_y2017, index=krause_x2017)
     krause_x2018 = pd.to_datetime(pd.DataFrame(["1/1/2018","6/30/2018"])[0])
-    krause_y2018 = [((wattage*8765.81277)/1e6) for wattage in [1165.0,1165.0]]
+    krause_y2018 = [1165.0,1165.0]
     krause2018Line = pd.Series(data=krause_y2018, index=krause_x2018)
 
 
@@ -268,7 +426,7 @@ def compareOtherResults():
 
 
     ax.set_xlabel('Date')
-    ax.set_ylabel('Estimated TWh per year')
+    ax.set_ylabel('Estimated power usage (MW)')
     plt.title('Comparison of Ethereum energy usage estimates in other studies.')
     plt.legend()
 
