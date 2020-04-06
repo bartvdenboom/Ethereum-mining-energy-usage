@@ -47,7 +47,7 @@ def csvtojson(input, output):
     out = json.dumps([row for row in reader],indent=4)
     jsonfile.write(out)
 
-csvtojson('../JSONDATA/Digiconomist/data.csv','../JSONDATA/Digiconomist/data.json' )
+# csvtojson('../JSONDATA/Digiconomist/data.csv','../JSONDATA/Digiconomist/data.json' )
 
 def plottwoaxis():
     BreakEvenEfficiencySetDataFrame = pd.DataFrame(BreakEvenEfficiencySet)
@@ -118,8 +118,6 @@ def plothashrates():
     data_x = pd.to_datetime(pd.DataFrame(blockdata)['date'])
     etherscan_y = [date['reportedhashrate'] for date in blockdata]
     etherscanReportedHashrate = pd.Series(data=etherscan_y, index=data_x)
-
-
 
     data_y = [date['computedhashrate'] for date in blockdata]
     computedHashrate = pd.Series(data=data_y, index=data_x)
@@ -431,4 +429,34 @@ def compareOtherResults():
     plt.legend()
 
     #plt.xticks(rotation=45)
+    plt.show()
+
+def plotProfThres():
+    breakeven_x = pd.to_datetime(pd.DataFrame(upperBoundData)['Date'])
+    breakeven_y = [date['BreakEvenEfficiency'] for date in upperBoundData]
+    breakevenLine = pd.Series(data=breakeven_y, index=breakeven_x)
+
+    hashrate_x = pd.to_datetime(pd.DataFrame(blockdata)['date'])
+    hashrate_y = [date['computedhashrate'] for date in blockdata]
+    hashrateLine = pd.Series(data=hashrate_y, index=hashrate_x)
+
+    ethprice_x = pd.to_datetime(pd.DataFrame(blockdata)['date'])
+    ethprice_y = [date['ethprice'] for date in blockdata]
+    ethpriceLine =pd.Series(data=ethprice_y, index=ethprice_x)
+
+    fig, ax1 = plt.subplots()
+    color='green'
+    ax1.set_ylabel('Profitability Threshold (J/MH)',color=color)
+    ax1.set_xlabel('Date')
+    ax1.tick_params(axis='y',colors=color)
+    line1 = ax1.plot(breakevenLine, color=color)
+
+    ax2 = ax1.twinx()
+    color='red'
+    ax2.set_ylabel('ETH/USD',color=color)
+    ax2.tick_params(axis='y',colors=color)
+    line2 = ax2.plot(ethpriceLine, color=color)
+
+    plt.title('Profitablity Threshold (green) and ETH/USD (red) against time.')
+    fig.tight_layout()
     plt.show()

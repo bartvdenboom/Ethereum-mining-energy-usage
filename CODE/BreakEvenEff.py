@@ -392,6 +392,7 @@ def main():
     priceperKWh = 0.05
     showplot = False
     # run(mode,showplot,interval,priceperKWh, endOfData)
+    plot.plotProfThres()
     # plot.plotLowerBoundResult()
     # plot.plotUpperBoundResult()
     # plot.plotBestGuessResult()
